@@ -1,0 +1,229 @@
+<extend name="User/index" />
+<block name="title">
+	<title>资源添加</title>
+</block>
+
+<block name="js">
+    
+</block>
+<block name="con">
+    <!-- 编辑器1 -->
+	<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Admin/editor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/Admin/editor/ueditor.all.min.js"> </script>
+    <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+    <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/Admin/editor/lang/zh-cn/zh-cn.js"></script>
+    <!-- 编辑器1 end -->
+    <!-- 引入文件上传控件的js/css -->
+    <script src="__PUBLIC__/Home/uploadVideos/jquery.min.js" type="text/javascript"></script>
+    <script src="__PUBLIC__/Home/uploadVideos/jquery.uploadifive.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/uploadVideos/uploadifive.css">
+    <div class="mws-panel grid_8">
+        <div class="mws-panel-header">
+            <span>资源添加</span>
+        </div>
+        <div class="mws-panel-body no-padding">
+            <form action="{:U('Sources/insert')}" class="mws-form" method="post" enctype="multipart/form-data">
+                <div class="mws-form-inline">
+                    <div class="mws-form-row">
+                        <label class="mws-form-label"></label>
+                        <div class="mws-form-item">
+                            <span id="notice" style="font-size:14px;color:red;font-weight:bold;">请先上传视频</span>
+                        </div>
+
+                    </div>
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">
+                            上传视频
+                        </label>
+                        
+                        <div class="mws-form-item">
+                            <style type="text/css">
+                                /*body {
+                                    font: 13px Arial, Helvetica, Sans-serif;
+                                }*/
+                                .uploadifive-button {
+                                    float: left;
+                                    margin-right: 10px;
+                                }
+                                #queue {
+                                    border: 1px solid #E5E5E5;
+                                    height: 90px;
+                                    overflow: auto;
+                                    margin-bottom: 10px;
+                                    padding: 0 3px 3px;
+                                    width: 180px;
+                                }
+                            </style>
+                            <form id="f">
+
+                                <div id="queue"></div>
+                                
+                                <input class="file_upload" name="file_upload" type="file" multiple="true" id="file_upload">
+                                <a style="position: relative; top: 8px;" href="javascript:$('#file_upload').uploadifive('upload')"></a>
+                            </form>
+                            <script type="text/javascript">
+                                        $('#file_upload').uploadifive({
+                                            'auto'             : true,
+                                            'checkScript'      : '{:U("Sources/checkExists")}',
+                                            'formData'         : {
+                                                                   'timestamp' : '{$timestamp}',
+                                                                   'token'     : '{$token}'
+                                                                 },
+                                            'queueID'          : 'queue',
+                                            'uploadScript'     : '{:U("Sources/uploadifive")}',
+                                            'onUploadComplete' : function(file, data) { 
+                                                //判断
+                                                if(data){
+                                                    //如果返回不为假,那就是返回了新插入的视频的id
+                                                    //修改提示信息和颜色
+                                                    $('#notice').text('视频已经上传成功,请继续填写视频信息');
+                                                    $('#notice').css('color','blue');
+                                                    //将id写入到隐藏域中
+                                                    $('#hidden').val(data);
+                                                }
+                                             }
+                                        });
+
+                                        
+
+                                    
+
+
+                            </script>
+                        </div>
+                    </div>
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">资源名</label>
+                        <div class="mws-form-item">
+                            <input type="text" class="small" name="name">
+                        </div>
+                    </div>
+
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">资源权限</label>
+                        <div class="mws-form-item">
+                            <select name="auth" style="width:130px">
+                                    <option value="0">所有人免费观看</option>
+                                    <option value="1">仅会员免费观看</option>
+                                    <option value="2">拥有观影券观看</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">资源类别</label>
+                        <div class="mws-form-item">
+                            <select id="first" name="firstSort" style="width:100px">
+                                    <option value="">请选择</option>
+                                <foreach name="firstSort" item="vo" >
+                                    <option value="{$vo['id']}">{$vo['name']}</option>
+                                </foreach>
+                            </select>
+                            <select id="second" name="secondSort" style="width:100px">
+                            </select>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                        $('#first').change(function(){
+                            $('#second').html('');
+                            //获取当前顶级分类的id的值
+                            var v = $(this).val();
+                            //发送ajax请求
+                            $.post("{:U('Sources/ajaxR')}", {sid:v}, function(data){
+                                //遍历返回的二级分类的对象
+                                for(var i in data){
+                                    //创建option
+                                    var op = $('<option value="'+data[i].id+'">'+data[i].name+'</option>');
+                                    //插入到二级分类中second
+                                    $('#second').append(op);
+                                }
+                            },'json');
+                        });
+                    </script>
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">资源日期/地区/集数</label>
+                        <div class="mws-form-item">
+                            <input type="text" class="small" name="year" style="width:150px">
+                            <select id="second" name="area" style="width:100px">
+                                <option value="">请选择</option>
+                                <option value="中国大陆">中国大陆</option>
+                                <option value="港台地区">港台地区</option>
+                                <option value="欧美地区">欧美地区</option>
+                                <option value="日韩地区">日韩地区</option>
+                            </select>
+                            <select id="first" name="step" style="width:100px">
+                                <option value="1">第1集</option>
+                                <for start="2" end="60">
+                                    <option value="{$i}">第{$i}集</option>
+                                </for>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">主要演员</label>
+                        <div class="mws-form-item">
+                            <input type="text" class="small" name="actors">
+                        </div>
+                    </div>
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">资源小图(<span style="color:blue">像素220x123</span>)</label>
+                        <div class="mws-form-item" style="width:30%">
+                            <input type="file" name="pic">
+                        </div>
+                    </div>
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">资源大图<br>(<span style="color:blue">像素1400x550</span>)</label>
+                        <div class="mws-form-item" style="width:30%">
+                            <input type="file" name="promote">
+                        </div>
+                    </div>
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">资源简介</label>
+                        <div class="mws-form-item">
+                            <input type="text" class="small" name="description">
+                        </div>
+                    </div>
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">资源详情</label>
+                        <div class="mws-form-item">
+                            <!-- 编辑器2 -->
+                            <script id="editor" type="text/plain" style="width:600px;height:500px;" name="introduction"></script>
+                            <!-- 编辑器2 end -->
+                        </div>
+                    </div>
+                    
+                    <div class="mws-form-row">
+	                    <label class="mws-form-label">状态</label>
+	                    <div class="mws-form-item clearfix">
+	                        <ul class="mws-form-list inline">
+	                            <li><input type="radio" name="status" value="1" checked="checked"> <label>启用</label></li>
+	                            <li><input type="radio" name="status" value="0"> <label>不启用</label></li>
+	                        </ul>
+	                    </div>
+	                </div>
+                    <div class="mws-form-row">
+                        <label class="mws-form-label"></label>
+
+                         <ul class="mws-form-list inline">
+                            <input type="hidden" id="hidden" class="btn btn-danger" name="id" value="">
+                            <input type="submit" class="btn btn-danger" value="添加">
+                            <input type="reset" class="btn " value="重置">
+                        </ul>
+                    </div>
+                </div>
+                
+            </form>
+        </div>      
+    </div>
+
+    <!-- 编辑器3 -->
+    <script type="text/javascript">
+        var ue = UE.getEditor('editor', {
+            
+            autoHeightEnabled: true,
+            autoFloatEnabled: true
+        });
+    </script>
+    <!-- 编辑器3 end-->
+</block>

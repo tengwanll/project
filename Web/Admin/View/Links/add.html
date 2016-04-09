@@ -1,0 +1,70 @@
+<extend name='User:index'/>
+<block name="title">
+<title>友链添加</title>
+</block>
+<block name="con">
+    <div class="mws-panel grid_8">
+        <div class="mws-panel-header">
+            <span>友链添加</span>
+        </div>
+        <div class="mws-panel-body no-padding">
+            <form action="{:U('Links/insert')}" class="mws-form" method="post" enctype="multipart/form-data">
+                <div class="mws-form-inline">
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">友链名称</label>
+                        <div class="mws-form-item">
+                            <input type="text" class="small" name="name">
+                        </div>
+                    </div>
+                    
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">友链类型</label>
+                        <div class="mws-form-item">
+                            <select class="small" name="type">
+                                <option value="">请选择</option>
+                                <option value="0">文字链接</option>
+                                <option value="1">图片链接</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="mws-form-row ad-img" style="display:none">
+                        <label class="mws-form-label">友链图片(<em style="color:blue">高度80px</em>)</label>
+                        <div class="mws-form-item" style="width:250px">
+                            <input type="file" class="small" name="img">
+                        </div>
+                    </div>
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">友链地址</label>
+                        <div class="mws-form-item">
+                            <input type="text" class="small" name="link">
+                        </div>
+                    </div>
+                </div>
+                <div class="mws-button-row">
+                    <input type="submit" class="btn btn-danger" value="添加">
+                    <input type="reset" class="btn " value="重置">
+                </div>
+            </form>
+        </div>      
+    </div>
+</block>
+
+<block name="myJs">
+    <script type="text/javascript">
+        //绑定用户点击友链类型的事件
+        $('select[name=type]').change(function(){
+            //判断是否是子分类
+            //获得当前select框的值
+            var v = $(this).val();
+            //判断
+            if(v != 0 && v != ''){
+                //如果不是请选择和顶级分类就显示图像和链接地址
+                $('.ad-img').show();
+            }else{
+                //如果是子分类就显示友链图像和链接地址
+                $('.ad-img').hide();
+            }
+        });
+    </script>
+</block>

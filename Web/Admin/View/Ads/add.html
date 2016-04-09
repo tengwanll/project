@@ -1,0 +1,72 @@
+<extend name='User:index'/>
+<block name="title">
+<title>广告添加</title>
+</block>
+<block name="con">
+    <div class="mws-panel grid_8">
+        <div class="mws-panel-header">
+            <span>广告添加</span>
+        </div>
+        <div class="mws-panel-body no-padding">
+            <form action="{:U('Ads/insert')}" class="mws-form" method="post" enctype="multipart/form-data">
+                <div class="mws-form-inline">
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">广告名称</label>
+                        <div class="mws-form-item">
+                            <input type="text" class="small" name="name">
+                        </div>
+                    </div>
+                    
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">父级分类</label>
+                        <div class="mws-form-item">
+                            <select class="small" name="pid">
+                                <option value="">请选择</option>
+                                <option value="0">顶级分类</option>
+                                <foreach name="adsTop" item="vo" >
+                                <option value="{$vo['id']}">{$vo['name']}</option>
+                                </foreach>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="mws-form-row ad-img" style="display:none">
+                        <label class="mws-form-label">广告图片(<em style="color:blue">220x125像素</em>)</label>
+                        <div class="mws-form-item" style="width:250px">
+                            <input type="file" class="small" name="img">
+                        </div>
+                    </div>
+                    <div class="mws-form-row ad-img" style="display:none">
+                        <label class="mws-form-label">广告链接地址</label>
+                        <div class="mws-form-item">
+                            <input type="text" class="small" name="link">
+                        </div>
+                    </div>
+                </div>
+                <div class="mws-button-row">
+                    <input type="submit" class="btn btn-danger" value="添加">
+                    <input type="reset" class="btn " value="重置">
+                </div>
+            </form>
+        </div>      
+    </div>
+</block>
+
+<block name="myJs">
+    <script type="text/javascript">
+        //绑定用户点击子分类时显示上传图片的选项
+        $('select[name=pid]').change(function(){
+            //判断是否是子分类
+            //获得当前select框的值
+            var v = $(this).val();
+            //判断
+            if(v != 0 && v != ''){
+                //如果不是请选择和顶级分类就显示图像和链接地址
+                $('.ad-img').show();
+            }else{
+                //如果是子分类就显示广告图像和链接地址
+                $('.ad-img').hide();
+            }
+        });
+    </script>
+</block>

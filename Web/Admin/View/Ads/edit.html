@@ -1,0 +1,68 @@
+<extend name="User/index" />
+<block name="title">
+    <title>广告修改</title>
+</block>
+
+<block name="con">
+    <div class="mws-panel grid_8">
+        <div class="mws-panel-header">
+            <span>广告修改</span>
+        </div>
+        <div class="mws-panel-body no-padding">
+            <form action="{:U('Ads/update')}" class="mws-form" method="post" enctype="multipart/form-data">
+                <div class="mws-form-inline">
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">广告名</label>
+                        <div class="mws-form-item">
+                            <input type="text" class="small" name="name" value="{$adInfo['name']}">
+                        </div>
+                    </div>
+                    
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">所属类别</label>
+                        <div class="mws-form-item">
+                            <select id="first" disabled="disabled" style="width:160px">
+                                <option value="">{$adInfo['pid']|getAdPar}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <if condition="$adInfo['pid'] neq '0' ">
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">广告图片(<span style="color:blue">像素220x125</span>)</label>
+                        <div class="mws-form-item" style="width:30%">
+                            <img src="__ROOT__{$adInfo['img']}" width="100" alt="">
+                            <input type="file" name="img">
+                        </div>
+                    </div>
+                    </if>
+
+                    <if condition="$adInfo['pid'] neq '0' ">
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">广告链接地址</label>
+                        <div class="mws-form-item">
+                            <input type="text" class="small" name="link" value="{$adInfo['link']}">
+                        </div>
+                    </div>
+                    </if>
+                    
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">状态</label>
+                        <div class="mws-form-item clearfix">
+                            <ul class="mws-form-list inline">
+                                <li><input type="radio" name="status" value="1" <if condition="$adInfo['status'] == '1'">checked="checked"</if> > <label>启用</label></li>
+                                <li><input type="radio" name="status" value="0" <if condition="$adInfo['status'] == '0'">checked="checked"</if> > <label>不启用</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="mws-button-row">
+                    <input type="hidden" class="btn btn-danger" value="{$adInfo['id']}" name="id">
+                    <input type="submit" class="btn btn-danger" value="修改">
+                    <input type="reset" class="btn " value="重置">
+                </div>
+            </form>
+        </div>      
+    </div>
+</block>
+<block name="myJs"></block>

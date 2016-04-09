@@ -1,0 +1,55 @@
+.siteInfo {
+  background: #2a2a2a;
+  overflow: hidden;
+  padding-bottom: 2rem;
+}
+.siteInfo ul {
+  padding: 0;
+  margin: 0;
+}
+.siteInfo ul a {
+  color: white;
+  line-height: 2rem;
+}
+.siteInfo > .wrap > ul {
+  float: left;
+}
+.siteInfo > .wrap > ul > li {
+  padding-right: 6rem;
+  vertical-align: top;
+  display: inline-block;
+}
+.siteInfo h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 0.2rem solid #64f5f5;
+  line-height: 2rem;
+  color: white;
+}
+.siteInfo p {
+  color: white;
+  float: right;
+  clear: right;
+  font-size: 1rem;
+  line-height: 2rem;
+  width: 18rem;
+}
+.siteInfo p .value {
+  float: left;
+}
+.siteInfo p .fa {
+  float: left;
+  line-height: 2rem;
+  width: 2rem;
+  text-align: center;
+}
+.siteInfo .address {
+  padding-top: 4rem;
+}
+.footer {
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  background: #1d1d1d;
+  color: white;
+}

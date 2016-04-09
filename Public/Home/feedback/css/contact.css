@@ -1,0 +1,72 @@
+.main > header {
+	background: url("pic/contact_header_bg_img.jpg") center / cover; height: 20rem; color: white;
+}
+.main > header .color {
+	background: rgba(42, 42, 42, 0.4); width: 100%; height: 100%; margin-top: -1rem;
+}
+.main > header h2 {
+	text-align: center; padding-top: 4.2rem;
+}
+.main > header p {
+	text-align: center; padding-top: 1.4rem; font-size: 0.8rem;
+}
+.page header {
+	padding: 2rem 0px 4rem; text-align: center;
+}
+.page header h4 {
+	color: rgb(3, 3, 3);
+}
+.page header::after {
+	width: 2rem; height: 4px; border-bottom-color: rgb(9, 218, 218); border-bottom-width: 4px; border-bottom-style: solid; display: inline-block; content: "";
+}
+.page .map {
+	text-align: center;
+}
+.page .map img {
+	margin: 0px auto; width: 40rem; padding-bottom: 4rem; display: block;
+}
+.page .map::after {
+	border-width: 1rem 2rem 2rem; border-style: solid; border-color: white transparent transparent; margin-bottom: -3rem; display: inline-block; content: "";
+}
+.page .info {
+	background: rgb(145, 143, 143); color: white; padding-top: 0.5rem; padding-bottom: 1rem; margin-bottom: 1rem;
+}
+.page .info h5 {
+	text-align: center; line-height: 5; font-size: 1rem;
+}
+.page .info p {
+	text-align: center; line-height: 2; font-size: 0.8rem;
+}
+.page .form {
+	background: rgb(9, 218, 218); padding: 1rem 0px; margin-bottom: 5rem;
+}
+.page .form form {
+	border-radius: 0.5rem; border: 1px solid white; border-image: none; width: 1196px; text-align: center;
+}
+.page .form form div {
+	width: 40%; padding-top: 1rem; display: inline-block;
+}
+.page .form form label {
+	width: 4rem; text-align: right; color: white; line-height: 4;
+}
+.page .form form input {
+	background: none; border-width: medium medium 1px; border-style: none none solid; border-color: currentColor currentColor white; border-image: none; width: 50%; text-align: left;
+}
+.page .form form input:focus {
+	border: currentColor; border-image: none; borde-bottom: 1px solid white;
+}
+.page .form form .email {
+	margin: 0px auto; width: 80%; text-align: left; padding-left: 3.8rem;
+}
+.page .form form .email input {
+	width: 27%;
+}
+.page .form form .txt {
+	width: 100%; text-align: left; padding-left: 9.7rem; display: block;
+}
+.page .form form .btn-group {
+	width: 8%; text-align: center; padding-bottom: 2rem;
+}
+.page .form form .btn-group .btn {
+	margin: 0px auto; line-height: 2; display: inline-block;
+}

@@ -1,0 +1,101 @@
+.title {
+  font-size: 1.5rem;
+  color: #050505;
+  text-align: center;
+  position: relative;
+  border-bottom: 1px solid #11c7c7;
+}
+.title h3 {
+  line-height: 4rem;
+}
+.title h4 {
+  position: absolute;
+  color: #11c7c7;
+  font-weight: bold;
+  width: 15rem;
+  text-align: center;
+  line-height: 2rem;
+  left: 50%;
+  margin-left: -7.5rem;
+  bottom: -1.5rem;
+  background: white;
+}
+.title .pr {
+  position: absolute;
+  left: 50%;
+  margin-left: -1.5rem;
+  bottom: -2.4rem;
+  width: 3rem;
+  height: 0.4rem;
+  font-size: 0.4rem;
+  background: #11c7c7;
+}
+.title.spa h4 {
+  width: 20rem;
+  margin-left: -10rem;
+}
+.section {
+  padding-top: 4rem;
+}
+.section .photo {
+  text-align: center;
+}
+.section .photo img {
+  width: 30rem;
+}
+.section .photo p {
+  line-height: 6;
+}
+.section article {
+  line-height: 2;
+}
+.section article p {
+  padding-bottom: 2rem;
+}
+.team ul {
+  text-align: center;
+  padding: 0;
+}
+.team ul li {
+  display: inline-block;
+  width: 18rem;
+}
+.team ul a {
+  color: #050505;
+  text-align: center;
+}
+.team ul img {
+  width: 10rem;
+  display: inline-block;
+}
+.team ul h3 {
+  display: inline-block;
+  padding-left: 0;
+  width: 8rem;
+  text-align: left;
+}
+.team ul p {
+  display: inline-block;
+  width: 10rem;
+}
+.biological {
+  padding-bottom: 4rem;
+}
+.biological li {
+  overflow: hidden;
+  padding-top: 2rem;
+}
+.biological img {
+  width: 20rem;
+  float: left;
+}
+.biological h4 {
+  line-height: 4;
+  font-weight: bold;
+}
+.biological p {
+  line-height: 2;
+}
+.biological section {
+  padding-left: 22rem;
+}

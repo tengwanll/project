@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+
+<!-- Viewport Metatag -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<!-- Required Stylesheets -->
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/bootstrap/css/bootstrap.min.css" media="screen">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/fonts/ptsans/stylesheet.css" media="screen">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/fonts/icomoon/style.css" media="screen">
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/login.css" media="screen">
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/mws-theme.css" media="screen">
+
+<title>芒果后台登陆</title>
+
+</head>
+
+<body>
+
+    <div id="mws-login-wrapper">
+        <div id="mws-login">
+            <h1>后台登陆</h1>
+            <div class="mws-login-lock"><i class="icon-lock"></i></div>
+            <div id="mws-login-form">
+                <form class="mws-form" action="{:U('Admin/Login/doLogin')}" method="post">
+                    <div class="mws-form-row">
+                        <div class="mws-form-item">
+                            <input type="text" name="email" class="mws-login-username required" placeholder="email" id="email">
+                        </div>
+                    </div>
+                    <div class="mws-form-row">
+                        <div class="mws-form-item">
+                            <input type="password" name="password" class="mws-login-password required" placeholder="password" id="password">
+                        </div>
+                    </div>
+                    <div id="mws-login-remember" class="mws-form-row mws-inset">
+                        <ul class="mws-form-list inline">
+                            <li>
+                                <input id="remember" type="checkbox" name="remember" value="1"> 
+                                <label for="remember">记 住 密 码</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mws-form-row">
+                        <input type="submit" value="登 陆" class="btn btn-success mws-login-button">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript Plugins -->
+    <script src="__PUBLIC__/Admin/js/libs/jquery-1.8.3.min.js"></script>
+    <script src="__PUBLIC__/Admin/js/libs/jquery.placeholder.min.js"></script>
+    <script src="__PUBLIC__/Admin/custom-plugins/fileinput.js"></script>
+    
+    <!-- jQuery-UI Dependent Scripts -->
+    <script src="__PUBLIC__/Admin/jui/js/jquery-ui-effects.min.js"></script>
+
+    <!-- Plugin Scripts -->
+    <script src="__PUBLIC__/Admin/plugins/validate/jquery.validate-min.js"></script>
+
+    <!-- Login Script -->
+    <script src="__PUBLIC__/Admin/js/core/login.js"></script>
+    <script type="text/javascript">
+    $('#email').blur(function(){
+        //接收传递过来的json数据
+        var arr={$login_r|default='[]'};
+        for(var i=0;i<arr.length;i++){
+            if($(this).val()==arr[i][0]){
+                $('#password').val(arr[i][1]);
+            }
+           
+        }
+    });
+    </script>
+
+</body>
+</html>

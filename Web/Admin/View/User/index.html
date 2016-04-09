@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--><html lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+
+<!-- Viewport Metatag -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<!-- Plugin Stylesheets first to ease overrides -->
+<block name="css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/plugins/colorpicker/colorpicker.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/custom-plugins/picklist/picklist.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/plugins/select2/select2.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/plugins/ibutton/jquery.ibutton.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/plugins/cleditor/jquery.cleditor.css" media="screen">
+
+    <!-- Required Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/bootstrap/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/fonts/ptsans/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/fonts/icomoon/style.css" media="screen">
+
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/mws-style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/icons/icol16.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/icons/icol32.css" media="screen">
+
+    <!-- Demo Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/demo.css" media="screen">
+
+    <!-- jQuery-UI Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/jui/css/jquery.ui.all.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/jui/jquery-ui.custom.css" media="screen">
+
+    <!-- Theme Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/mws-theme.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/themer.css" media="screen">
+</block>
+<block name="title">
+<title>用户列表</title>
+</block>
+</head>
+
+<body>
+    <!-- Themer End -->
+    <block name='con'>
+	<div class="mws-panel grid_8 mws-collapsible">
+                     <div class="mws-form-message success" style="display:none">
+                        修改成功
+                    </div>
+                    <div class="mws-form-message error" style="display:none">
+                        修改失败   
+                    </div>
+                    <div class="mws-panel-header">
+                        <span><i class="icon-table"></i>用户列表</span>
+                    <div class="mws-collapse-button mws-inset"><span></span></div></div>
+                    <div class="mws-panel-inner-wrap"><div class="mws-panel-body no-padding">
+                        <div role="grid" class="dataTables_wrapper" id="DataTables_Table_0_wrapper"><div id="DataTables_Table_0_length" class="dataTables_length"><form action="{:U('User/index')}"><label>显示
+                        <select name="num" size="1" aria-controls="DataTables_Table_0">
+                        <option value="5" <if condition="$num == 5">selected = "selected"</if>>5</option>
+                        <option value="10" <if condition="$num == 10">selected = "selected"</if>>10</option>
+                        <option value="20" <if condition="$num == 20">selected = "selected"</if>>20</option>
+                        <option value="50" <if condition="$num == 50">selected = "selected"</if>>50</option>
+                        </select> 数据</label></div><div class="dataTables_filter" id="DataTables_Table_0_filter"><label>邮箱: <input type="text" aria-controls="DataTables_Table_0" name="search" value="{$search}"></label><button class="btn">搜索</button></form></div>
+                        <table class="mws-table mws-datatable dataTable" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info">
+                            <thead>
+                                <tr role="row">
+                                <th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 125px;" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">用户ID</th>
+                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 172px;" aria-label="Browser: activate to sort column ascending">邮箱</th>
+                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 159px;" aria-label="Platform(s): activate to sort column ascending">昵称</th>
+                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 106px;" aria-label="Engine version: activate to sort column ascending">省市</th>
+                                <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 75px;" aria-label="CSS grade: activate to sort column ascending">性别</th>
+                                <th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" style="width: 126px;" aria-label="">生日</th>
+                                <th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" style="width: 126px;" aria-label="">头像</th>
+                                <th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" style="width: 126px;" aria-label="">权限</th>
+                                <th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" style="width: 126px;" aria-label="">状态</th>
+                                <th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" style="width: 126px;" aria-label="">观影券</th>
+                                <th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" style="width: 126px;" aria-label="">操作</th>
+                                </tr>
+                            </thead>
+                            
+                        <tbody role="alert" aria-live="polite" aria-relevant="all">
+                        <foreach name="data" item="v" >
+                                 <tr class="odd">
+                                    <td class="  sorting_1">{$v['id']}</td>
+                                    <td class=" ">{$v['email']}</td>
+                                    <td class=" ">{$v['name']}</td>
+                                    <td class=" ">{$v['province']}-{$v['city']}</td>
+                                    <td class=" ">{$v['sex']|getSex}</td>
+                                    <td class=" ">{$v['birthDay']}</td>
+                                    <td class=" "><img src="__ROOT__/{$v['headPic']}" alt="" width="100%"></td>
+                                    <td class=" ">{$v['auth']}</td>
+                                    <td class=" ">
+                                         <input name="" class="ibutton" type="checkbox" <if condition="$v['status'] ==1">checked="checked"</if> >
+                                    </td>
+                                    <td class=" ">{$v['ticket']}</td>
+                                     <td class=" ">
+                                        <span class="btn-group">
+                                            <a class="btn btn-small" href="{:U('Admin/User/edit',array('id'=>$v['id']))}"><i class="icon-pencil"></i></a>
+                                            <a class="btn btn-small" href="{:U('Admin/User/delete',array('id'=>$v['id']))}"><i class="icon-trash"></i></a>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </foreach>
+                            <style type="text/css">
+                                .dataTables_paginate a,.dataTables_paginate .current{
+                                        background-color: #444444;
+                                        border-left: 1px solid rgba(255, 255, 255, 0.15);
+                                        border-right: 1px solid rgba(0, 0, 0, 0.5);
+                                        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.5), 0 1px 0 rgba(255, 255, 255, 0.15) inset;
+                                        color: #fff;
+                                        cursor: pointer;
+                                        display: block;
+                                        float: left;
+                                        font-size: 12px;
+                                        height: 20px;
+                                        line-height: 20px;
+                                        outline: medium none;
+                                        padding: 0 10px;
+                                        text-align: center;
+                                        text-decoration: none;
+                                  }
+                                  .dataTables_paginate .current{
+                                      background-color: #88a9eb;
+                                    }
+                                </style>
+                            </tbody>
+                                </table>
+                                <div class="dataTables_info" id="DataTables_Table_0_info">show 1 to {$num} of {$count} entries</div>
+                                <div class="dataTables_paginate paging_full_numbers" id="DataTables_Table_1_paginate">{$pages}</div>
+                        </div>
+                    </div>
+                </div>
+    </block>
+    <!-- JavaScript Plugins -->
+    <block name="js">
+    <script src="__PUBLIC__/Admin/js/libs/jquery-1.8.3.min.js"></script>
+    <script src="__PUBLIC__/Admin/js/libs/jquery.mousewheel.min.js"></script>
+    <script src="__PUBLIC__/Admin/js/libs/jquery.placeholder.min.js"></script>
+    <script src="__PUBLIC__/Admin/custom-plugins/fileinput.js"></script>
+    
+    <!-- jQuery-UI Dependent Scripts -->
+    <script src="__PUBLIC__/Admin/jui/js/jquery-ui-1.9.2.min.js"></script>
+    <script src="__PUBLIC__/Admin/jui/jquery-ui.custom.min.js"></script>
+    <script src="__PUBLIC__/Admin/jui/js/jquery.ui.touch-punch.js"></script>
+
+    <script src="__PUBLIC__/Admin/jui/js/globalize/globalize.js"></script>
+    <script src="__PUBLIC__/Admin/jui/js/globalize/cultures/globalize.culture.en-US.js"></script>
+
+    <!-- Plugin Scripts -->
+    <script src="__PUBLIC__/Admin/custom-plugins/picklist/picklist.min.js"></script>
+    <script src="__PUBLIC__/Admin/plugins/autosize/jquery.autosize.min.js"></script>
+    <script src="__PUBLIC__/Admin/plugins/select2/select2.min.js"></script>
+    <script src="__PUBLIC__/Admin/plugins/colorpicker/colorpicker-min.js"></script>
+    <script src="__PUBLIC__/Admin/plugins/validate/jquery.validate-min.js"></script>
+    <script src="__PUBLIC__/Admin/plugins/ibutton/jquery.ibutton.min.js"></script>
+    <script src="__PUBLIC__/Admin/plugins/cleditor/jquery.cleditor.min.js"></script>
+    <script src="__PUBLIC__/Admin/plugins/cleditor/jquery.cleditor.table.min.js"></script>
+    <script src="__PUBLIC__/Admin/plugins/cleditor/jquery.cleditor.xhtml.min.js"></script>
+    <script src="__PUBLIC__/Admin/plugins/cleditor/jquery.cleditor.icon.min.js"></script>
+
+    <!-- Core Script -->
+    <script src="__PUBLIC__/Admin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/Admin/js/core/mws.js"></script>
+
+    <!-- Themer Script (Remove if not needed) -->
+    <script src="__PUBLIC__/Admin/js/core/themer.js"></script>
+
+    <!-- Demo Scripts (remove if not needed) -->
+    <script src="__PUBLIC__/Admin/js/demo/demo.formelements.js"></script>
+    
+    </block>
+    <block name="myJs">
+        <script type="text/javascript">
+        //当按钮加载完成之后 绑定事件
+        $(function(){
+            function show(status){
+                $('.'+status).fadeIn();
+                setTimeout(function(){
+                    $('.'+status).fadeOut();
+                },2000)
+            }
+            $('.ibutton-container').click(function(){
+                //获取当前的状态
+                var res = $(this).find('.ibutton').attr('checked');
+                //获取id
+                var id = $(this).parents('tr').find('td:nth-child(1)').html();
+                //如果是undefined的话 证明要禁用当前用  false 0 0.0 ''  NaN null undefined
+                //获取当前要发送的状态的值
+                var status = res ? 1 : 0;
+                //发送ajax post请求
+                $.post('{:U("User/ajaxUpdate")}', {status:status, id:id}, function(data){
+                    //执行成功
+                    if(data==0){
+                        show('success');
+                    }else{
+                        show('error');
+                    }
+                })
+            })
+        })
+    </script>
+    </block>
+
+
+</body>
+</html>
