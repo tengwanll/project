@@ -8,8 +8,8 @@
     <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
     <!-- <link rel="stylesheet" type="text/css" href="../public/libs/font-awesome.min.css"> -->
-    <link rel="stylesheet" type="text/css" href="/panxu/Public/Home/css/public.css">
-    <link rel="stylesheet" type="text/css" href="/panxu/Public/Home/index/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/baihaobio_site/Public/Home/css/public.css">
+    <link rel="stylesheet" type="text/css" href="/baihaobio_site/Public/Home/index/css/index.css">
 </head>
 
 <body>
@@ -26,59 +26,21 @@
                 <div class="search">
                     <div>
                         <input type="text" placeholder="关键字/关键词">
-                        <button><span class="fa fa-search"></span></button>
+                        <button>搜索</button>
                     </div>
                 </div>
                 <nav>
                     <ul>
-                        <li>
-                            <a href="#">首页</a>
-                        </li>
-                        <li>
-                            <a href="#">关于佰昊</a>
-                        </li>
-                        <li class="active">
-                            <a href="#">服务项目</a>
-                            <ul class="list-unstyled">
-                                <li><a href="#">基因组学生物技术服务</a></li>
-                                <li><a href="#">蛋白质组学生物技术服务</a></li>
-                                <li><a href="#">细胞学生物技术服务</a></li>
-                                <li><a href="#">生物信息数据分析服务</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">特色项目</a>
-                            <ul class="list-unstyled">
-                                <li><a href="#">高通量测序</a></li>
-                                <li><a href="#">蛋白芯片</a></li>
-                                <li><a href="#">高通量测序</a></li>
-                                <li><a href="#">蛋白芯片</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">企业资讯</a>
-                            <ul class="list-unstyled">
-                                <li><a href="#">促销活动</a></li>
-                                <li><a href="#">新闻动态</a></li>
-                                <li><a href="#">实验室展示</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">联系我们</a>
-                            <ul class="list-unstyled">
-                                <li><a href="#">在线留言</a></li>
-                                <li><a href="#">人才招聘</a></li>
-                                <li><a href="#">联系方式</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">关于佰昊</a></li>
+                        <li><a href="#">服务项目</a></li>
+                        <li><a href="#">特色项目</a></li>
+                        <li><a href="#">企业资讯</a></li>
+                        <li><a href="#">联系我们</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
-        <!-- ==================== -->
-        <!-- 以上部分为header模板 -->
-        <!-- ==================== -->
-        <!-- 首屏欢迎图 -->
         <div class="welcome row section">
             <div class="wrap">
                 <div class="info">
@@ -152,7 +114,7 @@
                         </div>
                         <div class="contact">
                             <p> <?php echo ($info['short_desc']); ?></p>
-                            <img src="/panxu/Public/Home/index/pic/news_img.jpg">
+                            <img src="/baihaobio_site/Public/Home/index/pic/news_img.jpg">
                         </div>
                     </div>
                 </li><?php endforeach; endif; ?>
@@ -172,17 +134,17 @@
                 <ul class="banner list-unstyled">
                     <li class="index_0">
                         <a href="#">
-                            <img src="/panxu/Public/Home/index/pic/activity_img.jpg">
+                            <img src="/baihaobio_site/Public/Home/index/pic/activity_img.jpg">
                         </a>
                     </li>
                     <li class="index_1">
                         <a href="#">
-                            <img src="/panxu/Public/Home/index/pic/activity_img.jpg">
+                            <img src="/baihaobio_site/Public/Home/index/pic/activity_img.jpg">
                         </a>
                     </li>
                     <li class="index_2">
                         <a href="#">
-                            <img src="/panxu/Public/Home/index/pic/activity_img.jpg">
+                            <img src="/baihaobio_site/Public/Home/index/pic/activity_img.jpg">
                         </a>
                     </li>
                 </ul>
@@ -213,10 +175,6 @@
                 </ul>
             </div>
         </div>
-        <!-- ==================== -->
-        <!-- 以下部分为footer模板 -->
-        <!-- ==================== -->
-        <!-- 站点信息 -->
         <div class="siteInfo row">
             <div class="wrap">
                 <ul class="list-unstyled">
@@ -261,8 +219,8 @@
         </footer>
     </div>
     <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/panxu/Public/Home/js/public.js"></script>
-    <script type="text/javascript" src="/panxu/Public/Home/index/js/index.js"></script>
+    <script type="text/javascript" src="/baihaobio_site/Public/Home/js/public.js"></script>
+    <script type="text/javascript" src="/baihaobio_site/Public/Home/index/js/index.js"></script>
 </body>
 
 </html>

@@ -1,84 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>index</title>
-    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="../public/libs/font-awesome.min.css"> -->
-    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/public.css">
-    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/index/css/index.css">
-</head>
-
-<body>
-    <div class="container-fluid">
-        <header class="header row">
-            <div class="wrap">
-                <div class="logo">
-                    <a href="#">
-                        <!-- <img src="../pic/news_img.jpg"> -->
-                        <h1>佰昊生物</h1>
-                        <p>Hk's son biological</p>
-                    </a>
-                </div>
-                <div class="search">
-                    <div>
-                        <input type="text" placeholder="关键字/关键词">
-                        <button><span class="fa fa-search"></span></button>
-                    </div>
-                </div>
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="#">首页</a>
-                        </li>
-                        <li>
-                            <a href="#">关于佰昊</a>
-                        </li>
-                        <li class="active">
-                            <a href="#">服务项目</a>
-                            <ul class="list-unstyled">
-                                <li><a href="#">基因组学生物技术服务</a></li>
-                                <li><a href="#">蛋白质组学生物技术服务</a></li>
-                                <li><a href="#">细胞学生物技术服务</a></li>
-                                <li><a href="#">生物信息数据分析服务</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">特色项目</a>
-                            <ul class="list-unstyled">
-                                <li><a href="#">高通量测序</a></li>
-                                <li><a href="#">蛋白芯片</a></li>
-                                <li><a href="#">高通量测序</a></li>
-                                <li><a href="#">蛋白芯片</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">企业资讯</a>
-                            <ul class="list-unstyled">
-                                <li><a href="#">促销活动</a></li>
-                                <li><a href="#">新闻动态</a></li>
-                                <li><a href="#">实验室展示</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">联系我们</a>
-                            <ul class="list-unstyled">
-                                <li><a href="#">在线留言</a></li>
-                                <li><a href="#">人才招聘</a></li>
-                                <li><a href="#">联系方式</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <!-- ==================== -->
-        <!-- 以上部分为header模板 -->
-        <!-- ==================== -->
-        <!-- 首屏欢迎图 -->
+<include file="Public/header" title="index" name="index" />
         <div class="welcome row section">
             <div class="wrap">
                 <div class="info">
@@ -125,7 +45,7 @@
                         <p>{$service['description']}</p>
                     </li>
                     </foreach>
-                   
+
                 </ul>
             </div>
             <div class="pr">
@@ -217,56 +137,4 @@
                 </ul>
             </div>
         </div>
-        <!-- ==================== -->
-        <!-- 以下部分为footer模板 -->
-        <!-- ==================== -->
-        <!-- 站点信息 -->
-        <div class="siteInfo row">
-            <div class="wrap">
-                <ul class="list-unstyled">
-                    <li>
-                        <h4>集团介绍</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#">企业宗旨</a></li>
-                            <li><a href="#">企业文化</a></li>
-                            <li><a href="#">企业发展</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h4>诚聘信息</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#">诚聘精英</a></li>
-                            <li><a href="#">投递简历</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <h4>联系我们</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#">合作加盟</a></li>
-                            <li><a href="#">详情咨询</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <p class="address">
-                    <span class="fa fa-map-marker"></span>
-                    <span class="value">辽宁省沈阳市浑南区</span>
-                </p>
-                <p class="tel">
-                    <span class="fa fa-phone"></span>
-                    <span class="value">024-8721-4321</span>
-                </p>
-            </div>
-        </div>
-        <footer class="footer row">
-            <span>佰昊生物科技有限公司</span>
-            <span>版权所有</span>
-            <span>c2010-2016</span>
-            <span>辽ICP备 432454号</span>
-        </footer>
-    </div>
-    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/Home/js/public.js"></script>
-    <script type="text/javascript" src="__PUBLIC__/Home/index/js/index.js"></script>
-</body>
-
-</html>
+<include file="Public/footer" title="index" name="index" />
