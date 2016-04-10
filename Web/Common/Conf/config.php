@@ -1,7 +1,7 @@
 <?php
 return array(
 	//'配置项'=>'配置值'
-	'DB_TYPE'   => 'mysql', // 数据库类型
+	'DB_TYPE'   => 'mariadb', // 数据库类型
 	'DB_USER'   => 'root', // 用户名
 	'DB_PWD'    => '123456', // 密码
 	'DB_DSN'    => 'mysql:host=120.27.5.26;dbname=project;charset=UTF8;port=3306',
