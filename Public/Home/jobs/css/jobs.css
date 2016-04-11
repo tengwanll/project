@@ -1,0 +1,67 @@
+.main .pageHeader {
+  height: 20rem;
+  background: url('pic/jobs_header_img.jpg');
+  background-size: cover;
+  background-position: center middle;
+}
+.main .pageHeader .bgcolor {
+  background: rgba(42, 42, 42, 0.4);
+  height: 100%;
+  width: 100%;
+  margin-top: -0.5rem;
+}
+.main .pageHeader h5 {
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+}
+.main .pageHeader h5.cn {
+  padding-top: 6rem;
+}
+.main .pageHeader h5.en {
+  line-height: 2;
+  font-size: 1.4rem;
+}
+.main .area header {
+  border-bottom: 1px solid #a1a0a0;
+  padding-top: 2rem;
+}
+.main .area header h3 {
+  padding-left: 1rem;
+  border-left: 6px solid #09dada;
+}
+.main .area .info {
+  padding-top: 2rem;
+}
+.main .concept img {
+  float: left;
+  height: 15rem;
+  padding-right: 2rem;
+}
+.main .concept p {
+  font-size: 0.8rem;
+  line-height: 2;
+}
+.main .jobList .info {
+  width: 90%;
+  margin: 0 auto;
+}
+.main .jobList .laboratory {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  border-bottom: 1px solid #a1a0a0;
+}
+.main .jobList .laboratory h3 {
+  margin-top: 0;
+  color: #09dada;
+  line-height: 2;
+}
+.main .jobList .laboratory:first-child {
+  padding-top: 0;
+}
+.main .jobList .laboratory:last-child {
+  border: none;
+}
+.main .jobList .jobInfo {
+  padding-bottom: 1rem;
+}

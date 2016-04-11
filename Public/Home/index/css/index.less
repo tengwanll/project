@@ -83,6 +83,7 @@
     border-bottom: 1px solid #64f5f5;
     padding-bottom: 4rem;
     .infoList {
+        display: none;
         width: 100%;
         background: #f4f4f4;
         padding-bottom: 2rem;
@@ -91,11 +92,17 @@
             width: 24%;
             padding-left: 1.4rem;
             padding-right: 1.4rem;
+            a {
+                color: #030303;
+                text-decoration: none;
+
+            }
             span {
                 display: block;
                 text-align: center;
                 font-size: 5rem;
                 line-height: 10rem;
+                color: #969797;
             }
             h6 {
                 text-align: center;
@@ -105,6 +112,14 @@
             p {
                 line-height: 2;
             }
+            a:hover {
+                span {
+                    color: #64f5f5;
+                }
+            }
+        }
+        &.active {
+            display: block;
         }
     }
     .pr {

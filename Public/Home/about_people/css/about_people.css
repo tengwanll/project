@@ -1,0 +1,36 @@
+.main header {
+  background: #f7f6f6;
+  padding: 4rem 0 4rem 5rem;
+  overflow: hidden;
+}
+.main header .wrap {
+  background: none;
+}
+.main header .wrap img {
+  border: 1px solid #101010;
+  float: left;
+}
+.main header .wrap div {
+  float: left;
+  padding-left: 4rem;
+  padding-top: 1.3rem;
+}
+.main header .wrap h3 {
+  color: #11c7c7;
+}
+.main header .wrap p {
+  line-height: 3;
+}
+.main article h3 {
+  color: #09dada;
+  border-bottom: 2px solid #a2a2a2;
+  line-height: 3rem;
+  margin-bottom: 2rem;
+}
+.main article p {
+  line-height: 2;
+  text-indent: 1.4rem;
+}
+.main article li {
+  padding-bottom: 2rem;
+}

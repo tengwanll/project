@@ -1,0 +1,101 @@
+.main {
+    & > header {
+        background: url('./pic/special_list_header_bg.jpg') no-repeat;
+        background-size: cover;
+        background-position: center center;
+        .color {
+            background: rgba(0, 0, 0, 0.2);
+            text-align: center;
+            .wrap {
+                padding: 3rem 0 3rem 20%;
+                div {
+                    text-align: left;
+                    width: 50%;
+                    color: white;
+                    padding: 2rem 0;
+                    h2 {
+                        border-bottom: 4px solid white;
+                        line-height: 1;
+                        padding-bottom: 0.8rem;
+                        .en {
+                            font-size: 0.9rem;
+                            vertical-align: bottom;
+                        }
+                        .cn {
+                            vertical-align: bottom;
+                        }
+                    }
+                    p {
+                        line-height: 2;
+                    }
+                }
+            }
+        }
+    }
+    & > nav {
+        background: #11c7c7;
+        overflow: hidden;
+        ul {
+            padding: 0.5rem 0;
+            overflow: hidden;
+            li {
+                float: left;
+                width: 25%;
+                border-left: 2px solid white;
+                &:first-child {
+                    border: none;
+                }
+                a {
+                    font-size: 0.8rem;
+                    line-height: 2;
+                    display: block;
+                    color: white;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .list {
+        padding: 2rem 0;
+        header {
+            border-bottom: 1px solid #adacac;
+            padding: 0.4rem 0;
+            h4 {
+                border-left: 6px solid #11c7c7;
+                padding-left: 1rem;
+                margin-left: 1rem;
+            }
+        }
+        ul {
+            overflow: hidden;
+            li {
+                float: left;
+                width: 33%;
+                padding: 4rem 0;
+                a {
+                    display: block;
+                    overflow: hidden;
+                    text-align: center;
+                    color: #2a2a2a;
+                    img {
+                        display: inline-block;
+                        width: 80%;
+                    }
+                    h5 {
+                        display: inline-block;
+                        width: 80%;
+                        text-align: left;
+                        font-size: 1rem;
+                        line-height: 2;
+                    }
+                    p {
+                        line-height: 2;
+                        display: inline-block;
+                        width: 80%;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+    }
+}

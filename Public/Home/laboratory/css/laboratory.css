@@ -1,0 +1,42 @@
+.main {
+  background: #09dada;
+  overflow: hidden;
+}
+.main .list {
+  padding: 2rem 0;
+  overflow: hidden;
+}
+.main .list ul {
+  vertical-align: top;
+  display: inline-block;
+  width: 33%;
+  padding-right: 1rem;
+}
+.main .list ul li {
+  display: inline-block;
+  background: white;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+.main .list ul li a {
+  display: block;
+  width: 100%;
+  color: #020202;
+}
+.main .list ul li a:hover {
+  text-decoration: none;
+}
+.main .list ul li a img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+.main .list ul li a h6 {
+  font-size: 1rem;
+  line-height: 2;
+}
+.main .list ul li a p {
+  line-height: 2;
+}
