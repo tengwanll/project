@@ -8,8 +8,8 @@
     <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
     <!-- <link rel="stylesheet" type="text/css" href="../public/libs/font-awesome.min.css"> -->
-    <link rel="stylesheet" type="text/css" href="/panxu/Public/Home/css/public.css">
-    <link rel="stylesheet" type="text/css" href="/panxu/Public/Home/about/css/about.css">
+    <link rel="stylesheet" type="text/css" href="/baihaobio_site/Public/Home/css/public.css">
+    <link rel="stylesheet" type="text/css" href="/baihaobio_site/Public/Home/about/css/about.css">
 </head>
 
 <body>
@@ -53,7 +53,7 @@
                 </header>
                 <div class="section wrap">
                     <div class="photo">
-                        <img src="/panxu/Public/Home/about/pic/comp_img.jpg">
+                        <img src="/baihaobio_site/Public/Home/about/pic/comp_img.jpg">
                         <p>公司外景图</p>
                     </div>
                     <article>
@@ -73,7 +73,7 @@
                     <ul class="list-unstyled">
                     <?php if(is_array($employees)): foreach($employees as $key=>$employee): ?><li>
                             <a href="<?php echo U('Home/people/index',array('id'=>$employee['id']));?>">
-                                <img src="/panxu/Public/Home/about/pic/avatar_01_img.jpg">
+                                <img src="/baihaobio_site/Public/Home/about/pic/avatar_01_img.jpg">
                                 <h3 class="name"><?php echo ($employee['name']); ?></h3>
                                 <p><?php echo ($employee['description']); ?></p>
                             </a>
@@ -90,7 +90,7 @@
                 <div class="section wrap biological">
                     <ul class="list-unstyled">
                         <?php if(is_array($training)): foreach($training as $key=>$vo): ?><li>
-                            <img src="/panxu/Public/Home/about/pic/Biological_01_img.jpg">
+                            <img src="/baihaobio_site/Public/Home/about/pic/Biological_01_img.jpg">
                             <section>
                                 <h4><?php echo ($vo['title']); ?></h4>
                                 <p><?php echo ($vo['content']); ?>
@@ -148,8 +148,8 @@
             <span>辽ICP备 432454号</span>
         </footer>
     </div>
-    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/panxu/Public/Home/about/js/about.js"></script>
+    <script src="/baihaobio_site/Public/Home/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/baihaobio_site/Public/Home/about/js/about.js"></script>
 </body>
 
 </html>

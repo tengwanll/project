@@ -83,6 +83,7 @@
   padding-bottom: 4rem;
 }
 .project .infoList {
+  display: none;
   width: 100%;
   background: #f4f4f4;
   padding-bottom: 2rem;
@@ -93,11 +94,16 @@
   padding-left: 1.4rem;
   padding-right: 1.4rem;
 }
+.project .infoList li a {
+  color: #030303;
+  text-decoration: none;
+}
 .project .infoList li span {
   display: block;
   text-align: center;
   font-size: 5rem;
   line-height: 10rem;
+  color: #969797;
 }
 .project .infoList li h6 {
   text-align: center;
@@ -106,6 +112,12 @@
 }
 .project .infoList li p {
   line-height: 2;
+}
+.project .infoList li a:hover span {
+  color: #64f5f5;
+}
+.project .infoList.active {
+  display: block;
 }
 .project .pr {
   position: absolute;

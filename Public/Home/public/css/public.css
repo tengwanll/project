@@ -1,0 +1,239 @@
+.header {
+  font-size: 14px;
+  background: #2a2a2a;
+  height: 3rem;
+  color: #fcfcfc;
+  position: absolute;
+  z-index: 99;
+  top: 0;
+  left: 15px;
+  width: 100%;
+}
+.header a {
+  color: #fcfcfc;
+  text-decoration: none;
+}
+.logo {
+  float: left;
+}
+.logo a {
+  padding-top: 0.3rem;
+  display: inline-block;
+  height: 2rem;
+  line-height: 3rem;
+}
+.logo img {
+  float: left;
+}
+.logo h1 {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+}
+.logo p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.6rem;
+  line-height: 0.6rem;
+}
+.search {
+  float: right;
+  padding-top: 0.7rem;
+  height: 3rem;
+}
+.search div {
+  border: 1px solid #fcfcfc;
+  border-radius: 10px;
+  position: relative;
+}
+.search input,
+.search button {
+  line-height: 2;
+  background: #2a2a2a;
+  border: none;
+}
+.search input {
+  margin-right: 0.2rem;
+  padding-left: 0.4rem;
+  width: 100%;
+}
+.search button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.header nav {
+  float: right;
+  padding-right: 2rem;
+}
+.header nav > ul > li {
+  display: inline-block;
+  width: 5rem;
+  position: relative;
+}
+.header nav > ul > li > a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  line-height: 3rem;
+}
+.header nav > ul > li > ul {
+  display: none;
+  position: absolute;
+  width: 8rem;
+  left: -2rem;
+  margin: 0;
+}
+.header nav > ul > li > ul a {
+  display: block;
+  width: 100%;
+  background: red;
+  height: 100%;
+  line-height: 2rem;
+  text-align: center;
+}
+.siteInfo {
+  background: #2a2a2a;
+  overflow: hidden;
+  padding-bottom: 2rem;
+}
+.siteInfo ul {
+  padding: 0;
+  margin: 0;
+}
+.siteInfo ul a {
+  color: white;
+  line-height: 2rem;
+}
+.siteInfo > .wrap > ul {
+  float: left;
+}
+.siteInfo > .wrap > ul > li {
+  padding-right: 6rem;
+  vertical-align: top;
+  display: inline-block;
+}
+.siteInfo h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 0.2rem solid #64f5f5;
+  line-height: 2rem;
+  color: white;
+}
+.siteInfo p {
+  color: white;
+  float: right;
+  clear: right;
+  font-size: 1rem;
+  line-height: 2rem;
+  width: 18rem;
+}
+.siteInfo p .value {
+  float: left;
+}
+.siteInfo p .fa {
+  float: left;
+  line-height: 2rem;
+  width: 2rem;
+  text-align: center;
+}
+.siteInfo .address {
+  padding-top: 4rem;
+}
+.footer {
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  background: #1d1d1d;
+  color: white;
+}
+html {
+  font-size: 20px;
+  height: 100%;
+  width: 100%;
+}
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 14px;
+  font-family: "Artial", "Microsoft Yahei", "微软雅黑";
+}
+body a {
+  font-size: 14px;
+}
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+}
+.container-fluid {
+  height: 100%;
+  width: 100%;
+}
+.main {
+  height: auto;
+  padding-top: 3rem;
+}
+.row {
+  margin: 0 -15px;
+}
+.wrap {
+  width: 60rem;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
+}
+.section {
+  padding: 2rem 0;
+}
+.active {
+  display: block;
+}
+.tabs {
+  padding: 0 0 1.5rem 0;
+}
+.tabs li {
+  display: inline-block;
+}
+.tabs li a {
+  overflow: hidden;
+  display: block;
+  color: #050505;
+  padding: 0 20px;
+  border-right: 1px solid #969797;
+}
+.tabs li a h4 {
+  margin: 0;
+  float: left;
+  font-size: 1rem;
+  line-height: 2rem;
+  border-top: 0.2rem solid #969797;
+}
+.tabs li a p {
+  margin: 0;
+  float: left;
+  font-size: 0.6rem;
+  padding: 0.2rem 10px 0;
+  line-height: 2rem;
+}
+.tabs li a span {
+  padding-top: 0.2rem;
+  padding-left: 0.5rem;
+  line-height: 2rem;
+  font-size: 1rem;
+}
+.tabs li:first-child a {
+  padding-left: 0;
+}
+.tabs li:last-child a {
+  border: none;
+}
+.tabs li.active h4 {
+  border-top-color: #64f5f5;
+}
+.tabs li.active span {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}

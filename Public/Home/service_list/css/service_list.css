@@ -1,0 +1,89 @@
+.main > header {
+  background: #f4f4f4;
+}
+.main > header ul li {
+  line-height: 4rem;
+  width: 19%;
+  display: inline-block;
+  text-align: left;
+}
+.main > header ul li a {
+  display: inline-block;
+  height: 2rem;
+  line-height: 2rem;
+  width: 70%;
+  border-radius: 8px;
+  border: 2px solid #09dada;
+  text-decoration: none;
+  text-align: center;
+  color: #2a2a2a;
+}
+.main > header ul li a:hover {
+  color: white;
+  background: #09dada;
+}
+.main > header ul li.active a {
+  background: #09dada;
+  color: white;
+}
+.main > header ul li:first-child {
+  text-align: center;
+}
+.main .info {
+  display: none;
+}
+.main .info.active {
+  display: block;
+}
+.main .info header {
+  overflow: hidden;
+}
+.main .info header div:first-child {
+  float: left;
+  padding: 1rem 2rem;
+}
+.main .info header div:first-child img {
+  display: inline-block;
+  width: 24rem;
+}
+.main .info header div:last-child {
+  padding-left: 28rem;
+  padding-top: 3rem;
+  width: 50rem;
+}
+.main .info header div:last-child h3 {
+  line-height: 2;
+}
+.main .info header div:last-child p {
+  line-height: 2;
+}
+.main .info ul {
+  overflow: hidden;
+  padding-top: 2rem;
+}
+.main .info ul li {
+  float: left;
+  width: 33%;
+  text-align: center;
+  padding-bottom: 3rem;
+}
+.main .info ul li a {
+  text-decoration: none;
+  text-align: center;
+  color: #2a2a2a;
+}
+.main .info ul li img {
+  width: 70%;
+}
+.main .info ul li h4 {
+  width: 70%;
+  display: inline-block;
+  text-align: left;
+  line-height: 4;
+}
+.main .info ul li p {
+  display: inline-block;
+  text-align: left;
+  width: 70%;
+  line-height: 1.5;
+}
