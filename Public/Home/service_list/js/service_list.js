@@ -1,6 +1,4 @@
 $(document).ready(function() {
-
-
 	$(document).on('click', '.header_nav a', function (e) {
 		e.preventDefault();
 

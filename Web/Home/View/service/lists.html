@@ -4,7 +4,7 @@
         <ul class="wrap">
             <li>项目分类：</li>
             <foreach name="service" item="vo">
-                <if condition="$vo['id']=$serviceId">
+                <if condition="$vo['id']==$serviceId">
                     <li class="active"><a href="{:U('Home/service/list',array('serviceId'=>$vo['id']))}">{$vo['title']}</a></li>
                     <else/>
                     <li><a href="{:U('Home/service/list',array('serviceId'=>$vo['id']))}">{$vo['title']}</a></li>
