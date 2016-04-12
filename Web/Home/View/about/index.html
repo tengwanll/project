@@ -28,7 +28,7 @@
             <ul class="list-unstyled">
                 <foreach name="employees" item="employee">
                     <li>
-                        <a href="{:U('Home/people/index',array('id'=>$employee['id']))}">
+                        <a href="{:U('Home/about/employee',array('id'=>$employee['id']))}">
                             <img src="__PUBLIC__/Home/about/pic/avatar_01_img.jpg">
                             <h3 class="name">{$employee['name']}</h3>
                             <p>{$employee['description']}</p>

@@ -3,34 +3,15 @@
     <div class="bg">
         <div class="wrap">
             <ul class="list-unstyled">
+                <foreach name="service" item="vo">
                 <li>
-                    <a href="#">
+                    <a href="{:U('Home/service/lists',array('serviceId'=>$vo['id']))}">
                         <span class="fa fa-car icon"></span>
-                        <span class="title">基因组学技术服务</span>
-                        <img src="./pic/service_nav_1_img.jpg">
+                        <span class="title">{$vo['title']}</span>
+                        <img src="__PUBLIC__/Home/service/pic/service_nav_1_img.jpg">
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <span class="fa fa-car icon"></span>
-                        <span class="title">基因组学技术服务</span>
-                        <img src="./pic/service_nav_2_img.jpg">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="fa fa-car icon"></span>
-                        <span class="title">基因组学技术服务</span>
-                        <img src="./pic/service_nav_3_img.jpg">
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="fa fa-car icon"></span>
-                        <span class="title">基因组学技术服务</span>
-                        <img src="./pic/service_nav_4_img.jpg">
-                    </a>
-                </li>
+                    </foreach>>
             </ul>
         </div>
     </div>

@@ -14,6 +14,7 @@ class IndexController extends Controller {
     	$this->assign('normalService',$normalService);
     	$this->assign('specialService',$specialService);
     	$this->assign('informations',$informations);
+        $this->assign('root','index');
         $this->display();
     }
 }

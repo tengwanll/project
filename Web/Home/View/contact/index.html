@@ -13,7 +13,7 @@
             <h4 class="en">CONTACT US</h4>
         </header>
         <div class="map">
-            <img src="./pic/contact_map_img.jpg">
+            <img src="__PUBLIC__/Home/contact/pic/contact_map_img.jpg">
         </div>
         <div class="info">
             <h5>辽宁佰昊生物科技有限公司</h5>
@@ -36,30 +36,30 @@
             <h4 class="en">Online Message</h4>
         </header>
         <div class="row form">
-            <form action="#" type="post" class="wrap">
+            <form action="{:U('Home/contact/add'}" type="post" class="wrap" method="post">
                 <div>
                     <label>姓名：</label>
-                    <input type="text">
+                    <input type="text" name="name">
                 </div>
                 <div>
                     <label>联系地址：</label>
-                    <input type="tel">
+                    <input type="tel" name="address">
                 </div>
                 <div>
                     <label>电话：</label>
-                    <input type="email">
+                    <input type="email" name="telephone">
                 </div>
                 <div>
                     <label>工作单位：</label>
-                    <input type="text">
+                    <input type="text" name="work">
                 </div>
                 <div class="email">
                     <label>邮箱：</label>
-                    <input type="text">
+                    <input type="text" name="email">
                 </div>
                 <div class="txt">
                     <label>内容：</label>
-                    <input type="text">
+                    <input type="text" name="content">
                 </div>
                 <div class="btn-group">
                     <button class="btn btn-default btn-block">发送</button>

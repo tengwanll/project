@@ -1,12 +1,13 @@
 <?php
 namespace Home\Controller;
 use Think\Controller;
-class FeedbackController extends Controller {
+class ContactController extends Controller {
     public function index(){
+        $this->assign('root','contact');
         $this->display();
     }
 
-    public function addFeedback(){
+    public function add(){
     	$data['name']=I('post.name');
     	$data['address']=I('post.address');
     	$data['telephone']=I('post.telephone');

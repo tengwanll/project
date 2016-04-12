@@ -1,0 +1,40 @@
+<include file="public/header" name="service_list" title="服务列表" />
+<div class="main row">
+    <header class="header_nav">
+        <ul class="wrap">
+            <li>项目分类：</li>
+            <foreach name="service" item="vo">
+                <if condition="$vo['id']=$serviceId">
+                    <li class="active"><a href="{:U('Home/service/list',array('serviceId'=>$vo['id']))}">{$vo['title']}</a></li>
+                    <else/>
+                    <li><a href="{:U('Home/service/list',array('serviceId'=>$vo['id']))}">{$vo['title']}</a></li>
+                    </if>
+            </foreach>
+        </ul>
+    </header>
+    <div class="info wrap active">
+        <header>
+            <div>
+                <img src="__PUBLIC__/Home/service_list/pic/service_header_img.jpg">
+            </div>
+            <div>
+                <h3>{$serviceInfo['title']}</h3>
+                <p>{$serviceInfo['description']}</p>
+            </div>
+        </header>
+        <div>
+            <ul class="list-unstyled">
+                <foreach name="serviceList" item="result">
+                    <li>
+                        <a href="{:U('Home/service/list',array('serviceId'=>$vo['id']))}">
+                            <img src="__PUBLIC__/Home/service/pic/service_list_img.jpg">
+                            <h4>{$result['title']}</h4>
+                            <p>{$result['description']}</p>
+                        </a>
+                    </li>
+                </foreach>>
+            </ul>
+        </div>
+    </div>
+</div>
+<include file="public/footer" />
