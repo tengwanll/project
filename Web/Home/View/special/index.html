@@ -17,143 +17,31 @@
     </header>
     <nav>
         <ul class="wrap list-unstyled">
-            <li><a href="#">基因组学</a></li>
-            <li><a href="#">细胞学</a></li>
-            <li><a href="#">蛋白质组学</a></li>
-            <li><a href="#">生物信息</a></li>
+            <foreach name="service" item="vo">
+            <li><a href="#">{$vo['title']}</a></li>
+            </foreach>
         </ul>
     </nav>
+    <foreach name="serviceList" item="serviceSort">
     <div class="list">
         <div class="wrap">
             <header>
-                <h4>基因组学特殊项目</h4>
+                <h4>{$serviceSort['title']}</h4>
             </header>
             <ul class="list-unstyled">
+                <foreach name="serviceSort['sortList']" item="service">
                 <li>
-                    <a href="#">
-                        <img src="./pic/special_list_1_img.jpg">
-                        <h5>实验title</h5>
-                        <p>T浓度的被测标本在试剂条上具 有不同的反应速度，从而表现不 同的颜色变化速率。因此，通过 对颜色变化
+                    <a href="{:U('Home/special/info',array('serviceId'=>$service['id']))}">
+                        <img src="__PUBLIC__/Home/special_list/pic/special_list_1_img.jpg">
+                        <h5>{$service['title']}</h5>
+                        <p>{$service['description']}
                         </p>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <img src="./pic/special_list_1_img.jpg">
-                        <h5>实验title</h5>
-                        <p>T浓度的被测标本在试剂条上具 有不同的反应速度，从而表现不 同的颜色变化速率。因此，通过 对颜色变化
-                        </p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./pic/special_list_1_img.jpg">
-                        <h5>实验title</h5>
-                        <p>T浓度的被测标本在试剂条上具 有不同的反应速度，从而表现不 同的颜色变化速率。因此，通过 对颜色变化
-                        </p>
-                    </a>
-                </li>
+                </foreach>
             </ul>
         </div>
     </div>
-    <div class="list">
-        <div class="wrap">
-            <header>
-                <h4>基因组学特殊项目</h4>
-            </header>
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">
-                        <img src="./pic/special_list_1_img.jpg">
-                        <h5>实验title</h5>
-                        <p>T浓度的被测标本在试剂条上具 有不同的反应速度，从而表现不 同的颜色变化速率。因此，通过 对颜色变化
-                        </p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./pic/special_list_1_img.jpg">
-                        <h5>实验title</h5>
-                        <p>T浓度的被测标本在试剂条上具 有不同的反应速度，从而表现不 同的颜色变化速率。因此，通过 对颜色变化
-                        </p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./pic/special_list_1_img.jpg">
-                        <h5>实验title</h5>
-                        <p>T浓度的被测标本在试剂条上具 有不同的反应速度，从而表现不 同的颜色变化速率。因此，通过 对颜色变化
-                        </p>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="list">
-        <div class="wrap">
-            <header>
-                <h4>基因组学特殊项目</h4>
-            </header>
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">
-                        <img src="./pic/special_list_1_img.jpg">
-                        <h5>实验title</h5>
-                        <p>T浓度的被测标本在试剂条上具 有不同的反应速度，从而表现不 同的颜色变化速率。因此，通过 对颜色变化
-                        </p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./pic/special_list_1_img.jpg">
-                        <h5>实验title</h5>
-                        <p>T浓度的被测标本在试剂条上具 有不同的反应速度，从而表现不 同的颜色变化速率。因此，通过 对颜色变化
-                        </p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./pic/special_list_1_img.jpg">
-                        <h5>实验title</h5>
-                        <p>T浓度的被测标本在试剂条上具 有不同的反应速度，从而表现不 同的颜色变化速率。因此，通过 对颜色变化
-                        </p>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="list">
-        <div class="wrap">
-            <header>
-                <h4>基因组学特殊项目</h4>
-            </header>
-            <ul class="list-unstyled">
-                <li>
-                    <a href="#">
-                        <img src="./pic/special_list_1_img.jpg">
-                        <h5>实验title</h5>
-                        <p>T浓度的被测标本在试剂条上具 有不同的反应速度，从而表现不 同的颜色变化速率。因此，通过 对颜色变化
-                        </p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./pic/special_list_1_img.jpg">
-                        <h5>实验title</h5>
-                        <p>T浓度的被测标本在试剂条上具 有不同的反应速度，从而表现不 同的颜色变化速率。因此，通过 对颜色变化
-                        </p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./pic/special_list_1_img.jpg">
-                        <h5>实验title</h5>
-                        <p>T浓度的被测标本在试剂条上具 有不同的反应速度，从而表现不 同的颜色变化速率。因此，通过 对颜色变化
-                        </p>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    </foreach>
 </div>
 <include file="public/footer" />

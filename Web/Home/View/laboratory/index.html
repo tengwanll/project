@@ -3,73 +3,27 @@
     <div class="wrap">
         <div class="list">
             <ul class="column-left list-unstyled">
-                <li>
+                <foreach name="labs" item="vo" key="key">
+                <if condition="$key!=0&&$key%3==0">
+                    </ul>
+                    <ul class="column-left list-unstyled">
+                    <li>
                     <a href="#">
-                        <img src="./pic/activity_img.jpg">
-                        <h6>啥子实验</h6>
-                        <p>这是一张图片的Demo,据说要弄成瀑布流</p>
+                        <img src="__PUBLIC__/Home/laboratory/pic/activity_img.jpg">
+                        <h6>{$vo['name']}</h6>
+                        <p>{$vo['description']}</p>
                     </a>
                 </li>
-                <li>
+                <else/>
+                    <li>
                     <a href="#">
-                        <img src="./pic/sales_list_1_img.jpg">
-                        <h6>啥子实验</h6>
-                        <p>这是一张图片的Demo,据说要弄成瀑布流</p>
+                        <img src="__PUBLIC__/Home/laboratory/pic/activity_img.jpg">
+                        <h6>{$vo['name']}</h6>
+                        <p>{$vo['description']}</p>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                        <img src="./pic/news_img.jpg">
-                        <h6>啥子实验</h6>
-                        <p>这是一张图片的Demo,据说要弄成瀑布流</p>
-                    </a>
-                </li>
-            </ul>
-            <ul class="column-center list-unstyled">
-                <li>
-                    <a href="#">
-                        <img src="./pic/laboratory_list_1_img.jpg">
-                        <h6>啥子实验</h6>
-                        <p>这是一张图片的Demo,据说要弄成瀑布流</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./pic/news_img.jpg">
-                        <h6>啥子实验</h6>
-                        <p>这是一张图片的Demo,据说要弄成瀑布流</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./pic/sales_list_4_img.jpg">
-                        <h6>啥子实验</h6>
-                        <p>这是一张图片的Demo,据说要弄成瀑布流</p>
-                    </a>
-                </li>
-            </ul>
-            <ul class="column-right list-unstyled">
-                <li>
-                    <a href="#">
-                        <img src="./pic/laboratory_list_3_img.jpg">
-                        <h6>啥子实验</h6>
-                        <p>这是一张图片的Demo,据说要弄成瀑布流</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./pic/sales_list_4_img.jpg">
-                        <h6>啥子实验</h6>
-                        <p>这是一张图片的Demo,据说要弄成瀑布流</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="./pic/sales_list_4_img.jpg">
-                        <h6>啥子实验</h6>
-                        <p>这是一张图片的Demo,据说要弄成瀑布流</p>
-                    </a>
-                </li>
+                </if>
+                </foreach>
             </ul>
         </div>
     </div>
