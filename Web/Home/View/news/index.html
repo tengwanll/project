@@ -5,7 +5,7 @@
             <nav class="wrap">
                 <ul>
                     <li><a href="#">促销活动</a></li>
-                    <li class="active"><a href="#">新闻动态</a></li>
+                    <li class="active"><a href="{:U('Home/news/index')}">新闻动态</a></li>
                     <li><a href="#">实验室展示</a></li>
                 </ul>
             </nav>
@@ -17,8 +17,9 @@
                     <header>
                         <h3>最新动态</h3>
                         <ul>
-                            <li>案发后我认为方式是飞洒的</li>
-                            <li>案发后我认为方式是飞洒的太远野也让他鳄鱼头</li>
+                            <foreach name="newsCurrent" item="vo">
+                            <li>{$vo['title']}</li>
+                            </foreach>
                         </ul>
                     </header>
                 </div>
@@ -28,42 +29,14 @@
                     <h3>新闻列表</h3>
                 </header>
                 <ul>
+                    <foreach name="news" item="vo">
                     <li>
-                        <h6>刀锋为我方式撒人物广告的时间格式的偶就过段时间 问题分公司</h6>
+                        <h6>{$vo['title']}</h6>
                         <div class="info">
-                            <img src="./pic/news_list_1_img.jpg" height="294" width="500">
+                            <img src="__PUBLIC__/Home/news/pic/news_list_1_img.jpg" height="294" width="500">
                         </div>
                     </li>
-                    <li>
-                        <h6>刀锋为我方式撒人物广告的时间格式的偶就过段时间 问题分公司</h6>
-                        <div class="info">
-                            <img src="./pic/news_list_1_img.jpg" height="294" width="500">
-                        </div>
-                    </li>
-                    <li>
-                        <h6>刀锋为我方式撒人物广告的时间格式的偶就过段时间 问题分公司</h6>
-                        <div class="info">
-                            <img src="./pic/news_list_1_img.jpg" height="294" width="500">
-                        </div>
-                    </li>
-                    <li>
-                        <h6>刀锋为我方式撒人物广告的时间格式的偶就过段时间 问题分公司</h6>
-                        <div class="info">
-                            <img src="./pic/news_list_1_img.jpg" height="294" width="500">
-                        </div>
-                    </li>
-                    <li>
-                        <h6>刀锋为我方式撒人物广告的时间格式的偶就过段时间 问题分公司</h6>
-                        <div class="info">
-                            <img src="./pic/news_list_1_img.jpg" height="294" width="500">
-                        </div>
-                    </li>
-                    <li>
-                        <h6>刀锋为我方式撒人物广告的时间格式的偶就过段时间 问题分公司</h6>
-                        <div class="info">
-                            <img src="./pic/news_list_1_img.jpg" height="294" width="500">
-                        </div>
-                    </li>
+                    </foreach>
                 </ul>
             </div>
         </div>

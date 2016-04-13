@@ -12,29 +12,35 @@
             </foreach>
         </ul>
     </header>
-    <div class="info wrap active">
+    <foreach name="serviceList" item="result">
+        <if condition="$result['id']==$serviceId">
+            <div class="info wrap active">
+        <else/>
+            <div class="info wrap">
+        </if>
         <header>
             <div>
                 <img src="__PUBLIC__/Home/service_list/pic/service_header_img.jpg">
             </div>
             <div>
-                <h3>{$serviceInfo['title']}</h3>
-                <p>{$serviceInfo['description']}</p>
+                <h3>{$result['title']}</h3>
+                <p>{$result['description']}</p>
             </div>
         </header>
         <div>
             <ul class="list-unstyled">
-                <foreach name="serviceList" item="result">
+                <foreach name="result['sortList']" item="sortList">
                     <li>
-                        <a href="{:U('Home/service/list',array('serviceId'=>$vo['id']))}">
-                            <img src="__PUBLIC__/Home/service/pic/service_list_img.jpg">
-                            <h4>{$result['title']}</h4>
-                            <p>{$result['description']}</p>
+                        <a href="{:U('Home/service/info',array('serviceId'=>$sortList['id']))}">
+                            <img src="__PUBLIC__/Home/service_list/pic/service_list_img.jpg">
+                            <h4>{$sortList['title']}</h4>
+                            <p>{$sortList['description']}</p>
                         </a>
                     </li>
                 </foreach>>
             </ul>
         </div>
-    </div>
+        </div>
+    </foreach>
 </div>
 <include file="public/footer" />

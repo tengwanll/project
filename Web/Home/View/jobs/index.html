@@ -12,7 +12,7 @@
         </header>
         <div class="info">
             <p>
-                <img src="./pic/company_pic_img.jpg">
+                <img src="__PUBLIC__/Home/jobs/pic/company_pic_img.jpg">
                 <span class="value">
                             辽宁佰昊生物科技有限公司的人才理念是你发的健康发 送 该方法 是大法官都发给我啥都没看我饿哦日没浮浮 动规范问题唐人规范去锐特规范为规范共分为锐特个共 分为规范悟空 问题欧诺4 课后-36看课后题开好头好锐 特45 回家，吗雷霆人员锐特恐怕要 总局股份而快捷提 问经过客服我怕热儿童儿童计划热儿童锐特热 元问题辽宁佰昊生物科技有限公司的人才理念是你发的健康发 送 该方法 是大法官都发给我啥都没看我饿哦日没浮浮 动规范问题唐人规范去锐特规范为规范共分为锐特个共 分为规范悟空 问题欧诺4 课后-36看课后题开好头好锐 特45 回家，吗雷霆人员锐特恐怕要 总局股份而快捷提 问经过客服我怕热儿童儿童计划热儿童锐特热 元问题辽宁佰昊生物科技有限公司的人才理念是你发的健康发 送 该方法 是大法官都发给我啥都没看我饿哦日没浮浮 动规范问题唐人规范去锐特规范为规范共分为锐特个共 分为规范悟空 问题欧诺4 课后-36看课后题开好头好锐 特45 回家，吗雷霆人员锐特恐怕要 总局股份而快捷提 问经过客服我怕热儿童儿童计划热儿童锐特热 元问题元问题辽宁佰昊生物科技有限公司的人才理念是你发的健康发 送 该方法 是大法官都发给我啥都没看我饿哦日没浮浮 动规范问题唐人规范去锐特规范为规范共分为锐特个共 分为规范悟空 问题欧诺4 课后-36看课后题开好头好锐 特45 回家，吗雷霆人员锐特恐怕要 总局股份而快捷提 问经过客服我怕热儿童儿童计划热儿童锐特热 元问题元问题辽宁佰昊生物科技有限公司的人才理念是你发的健康发 送 该方法 是大法官都发给我啥都没看我饿哦日没浮浮 动规范问题唐人规范去锐特规范为规范共分为锐特个共 分为规范悟空 问题欧诺4 课后-36看课后题开好头好锐 特45 回家，吗雷霆人员锐特恐怕要 总局股份而快捷提 问经过客服我怕热儿童儿童计划热儿童锐特热 元问题
                         </span>
@@ -25,66 +25,26 @@
         </header>
         <div class="info">
             <ul class="list-unstyled">
+            <foreach name="job" item="result" key="key">
                 <li class="laboratory">
-                    <h3>基因组学实验室</h3>
+                    <h3>{$key}</h3>
                     <ul class="list-unstyled">
+                        <foreach name="result" item="vo">
                         <li class="jobInfo">
-                            <p><span class="title">招聘岗位：</span><span class="value">技术研究员</span>(<span class="num">3</span>人)</p>
+                            <p><span class="title">招聘岗位：</span><span class="value">{$vo['station']}</span>(<span class="num">{$vo['number']}</span>人)</p>
                             <div>
                                 <p class="title">任职要求：</p>
                                 <ol>
-                                    <li>分子生物学、生物化学相关专业，硕士以上学历；</li>
-                                    <li>有实验经验，了解分子生物学基本原理，掌握分子克隆实验技术；</li>
-                                    <li>有较强的英文文献查询阅读和编写能力。</li>
+                                    <foreach name="vo['demand']" item="demand">
+                                    <li>{$demand['content']}</li>
+                                    </foreach>
                                 </ol>
                             </div>
                         </li>
-                        <li class="jobInfo">
-                            <div>
-                                <span class="title">招聘岗位：</span>
-                                <span class="value">技术研究员</span>(<span class="num">3</span>人<span>,<span>本科</span>学历以上</span>)
-                            </div>
-                            <div>
-                                <p class="title">任职要求：</p>
-                                <ol>
-                                    <li>分子生物学、生物化学相关专业，硕士以上学历；</li>
-                                    <li>有实验经验，了解分子生物学基本原理，掌握分子克隆实验技术；</li>
-                                    <li>有较强的英文文献查询阅读和编写能力。</li>
-                                </ol>
-                            </div>
-                        </li>
+                        </foreach>
                     </ul>
                 </li>
-                <li class="laboratory">
-                    <h3>基因组学实验室</h3>
-                    <ul class="list-unstyled">
-                        <li class="jobInfo">
-                            <p><span class="title">招聘岗位：</span><span class="value">技术研究员</span>(<span class="num">3</span>人)</p>
-                            <div>
-                                <p class="title">任职要求：</p>
-                                <ol>
-                                    <li>分子生物学、生物化学相关专业，硕士以上学历；</li>
-                                    <li>有实验经验，了解分子生物学基本原理，掌握分子克隆实验技术；</li>
-                                    <li>有较强的英文文献查询阅读和编写能力。</li>
-                                </ol>
-                            </div>
-                        </li>
-                        <li class="jobInfo">
-                            <div>
-                                <span class="title">招聘岗位：</span>
-                                <span class="value">技术研究员</span>(<span class="num">3</span>人<span>,<span>本科</span>学历以上</span>)
-                            </div>
-                            <div>
-                                <p class="title">任职要求：</p>
-                                <ol>
-                                    <li>分子生物学、生物化学相关专业，硕士以上学历；</li>
-                                    <li>有实验经验，了解分子生物学基本原理，掌握分子克隆实验技术；</li>
-                                    <li>有较强的英文文献查询阅读和编写能力。</li>
-                                </ol>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
+            </foreach>
             </ul>
         </div>
     </div>
