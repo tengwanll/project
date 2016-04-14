@@ -17,4 +17,10 @@ class IndexController extends Controller {
         $this->assign('root','index');
         $this->display();
     }
+
+    // 搜索界面
+    public function search () {
+
+        $this -> display();
+    }
 }

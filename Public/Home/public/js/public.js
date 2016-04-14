@@ -1,16 +1,20 @@
 $(document).ready(function() {
 
-	var navTime = null;
 
-	// header nav
+
+
+	/**
+	 * header nav 展示
+	 */
+	var navTime = null;
 	$(document).on('mouseover', '.header nav > ul > li > a', function () {
-		$(this).next().show();
+		$(this).next().slideDown(80);
 	});
 
 	$(document).on('mouseout', '.header nav > ul > li > a', function () {
 		var list = $(this).next();
 		navTime = setTimeout(function () {
-			list.hide();
+			list.slideUp(80);
 		}, 10);
 	});
 
@@ -20,7 +24,9 @@ $(document).ready(function() {
 	});
 
 	$(document).on('mouseout', '.header nav ul ul', function () {
-		$(this).hide();
+		$(this).slideUp(80);
 	});
+
+
 
 });

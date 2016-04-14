@@ -1,44 +1,49 @@
 <include file="public/header" title="新闻动态" name="news" />
-<div class="main">
-    <div class="row">
-        <header class="news_header">
-            <nav class="wrap">
-                <ul>
-                    <li><a href="#">促销活动</a></li>
-                    <li class="active"><a href="{:U('Home/news/index')}">新闻动态</a></li>
-                    <li><a href="#">实验室展示</a></li>
-                </ul>
-            </nav>
+<div class="main row">
+    <header class="news_header">
+        <nav class="wrap">
+            <ul>
+                <li><a href="#">促销活动</a></li>
+                <li class="active"><a href="{:U('Home/news/index')}">新闻动态</a></li>
+                <li><a href="#">实验室展示</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="wrap">
+        <header>
+            <h3>新闻动态</h3>
         </header>
-        <div class="news page active">
-            <div>
-                <div class="banner"></div>
-                <div class="newest">
-                    <header>
-                        <h3>最新动态</h3>
-                        <ul>
-                            <foreach name="newsCurrent" item="vo">
-                            <li>{$vo['title']}</li>
-                            </foreach>
-                        </ul>
-                    </header>
-                </div>
-            </div>
-            <div class="newsList">
-                <header>
-                    <h3>新闻列表</h3>
-                </header>
-                <ul>
-                    <foreach name="news" item="vo">
-                    <li>
-                        <h6>{$vo['title']}</h6>
+        <div class="newsList">
+            <ul class="list-unstyled">
+                <foreach name="news" item="vo">
+                    <li class="newsItem">
+                        <img src="__PUBLIC__/Home/news/pic/news_list_1_img.jpg" height="294" width="500">
                         <div class="info">
-                            <img src="__PUBLIC__/Home/news/pic/news_list_1_img.jpg" height="294" width="500">
+                            <h4>{$vo['title']}</h4>
+                            <p>规范功夫大使馆二 规范让我突然放很高 的很高个地方官的发给我 规范个人 二 而已而他也一...</p>
                         </div>
                     </li>
-                    </foreach>
+                </foreach>
+            </ul>
+            <div class="paging">
+                <ul>
+                    <li><a href="#"><span class="fa fa-angle-left"></span></a></li>
+                    <li class="active"><a href="#"><span>1</span></a></li>
+                    <li><a href="#"><span>2</span></a></li>
+                    <li><a href="#"><span>3</span></a></li>
+                    <li><a href="#"><span class="fa fa-angle-right"></span></a></li>
                 </ul>
             </div>
+        </div>
+        <div class="newest">
+            <header>
+                <h3>最新动态</h3>
+            </header>
+            <ul class="list-unstyled">
+                <foreach name="newsCurrent" item="vo">
+                    <li><a href="#">{$vo['title']}</a><span class="time">2013-02-01</span></li>
+                </foreach>
+            </ul>
         </div>
     </div>
 </div>
