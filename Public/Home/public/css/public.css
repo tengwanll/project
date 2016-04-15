@@ -45,6 +45,7 @@
   border: 1px solid #fcfcfc;
   border-radius: 10px;
   position: relative;
+  overflow: hidden;
 }
 .search input,
 .search button {
@@ -99,48 +100,36 @@
   overflow: hidden;
   padding-bottom: 2rem;
 }
-.siteInfo ul {
-  padding: 0;
-  margin: 0;
-}
-.siteInfo ul a {
-  color: white;
-  line-height: 2rem;
-}
-.siteInfo > .wrap > ul {
+.siteInfo ul li {
   float: left;
+  overflow: hidden;
+  width: 30%;
+  padding-right: 2rem;
 }
-.siteInfo > .wrap > ul > li {
-  padding-right: 6rem;
-  vertical-align: top;
-  display: inline-block;
-}
-.siteInfo h4 {
+.siteInfo ul li h4 {
+  width: 40%;
+  text-align: center;
   margin-top: 2rem;
   margin-bottom: 1rem;
   border-bottom: 0.2rem solid #64f5f5;
   line-height: 2rem;
   color: white;
 }
-.siteInfo p {
+.siteInfo ul li img {
+  width: 8rem;
+  float: left;
+}
+.siteInfo ul li p {
   color: white;
-  float: right;
-  clear: right;
-  font-size: 1rem;
-  line-height: 2rem;
-  width: 18rem;
 }
-.siteInfo p .value {
+.siteInfo ul li .fa {
   float: left;
-}
-.siteInfo p .fa {
-  float: left;
-  line-height: 2rem;
   width: 2rem;
   text-align: center;
+  font-size: 2rem;
 }
-.siteInfo .address {
-  padding-top: 4rem;
+.siteInfo ul li:nth-child(2) .connect {
+  float: left;
 }
 .footer {
   height: 4rem;
@@ -234,7 +223,9 @@ ol {
   border-top-color: #64f5f5;
 }
 .tabs li.active span {
-  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 .news_header {
   width: 100%;
