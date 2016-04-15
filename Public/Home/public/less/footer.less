@@ -3,47 +3,41 @@
     overflow: hidden;
     padding-bottom: 2rem;
     ul {
-        padding: 0;
-        margin: 0;
-        a {
-            color: white;
-            line-height: 2rem;
+        li {
+            float: left;
+            overflow: hidden;
+            width: 30%;
+            padding-right: 2rem;
+            h4 {
+                width: 40%;
+                text-align: center;
+                margin-top: 2rem;
+                margin-bottom: 1rem;
+                border-bottom: 0.2rem solid #64f5f5;
+                line-height: 2rem;
+                color: white;
+            }
+            img {
+                width: 8rem;
+                float: left;
+            }
+            p {
+                color: white;
+            }
+            .fa {
+                float: left;
+                width: 2rem;
+                text-align: center;
+                font-size: 2rem;
+            }
+            &:nth-child(1) {
+            }
+            &:nth-child(2) {
+                .connect {
+                    float: left;
+                }
+            }
         }
-    }
-    & > .wrap > ul {
-    	float: left;
-        &> li {
-            padding-right: 6rem;
-            vertical-align: top;
-            display: inline-block;
-        }
-    }
-    h4 {
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-        border-bottom: 0.2rem solid #64f5f5;
-        line-height: 2rem;
-        color: white;
-    }
-    p {
-    	color: white;
-    	float: right;
-    	clear: right;
-		font-size: 1rem;
-		line-height: 2rem;
-		width: 18rem;
-		.value {
-			float: left;
-		}
-		.fa {
-			float: left;
-			line-height: 2rem;
-			width: 2rem;
-			text-align: center;
-		}
-    }
-    .address {
-		padding-top: 4rem;
     }
 }
 

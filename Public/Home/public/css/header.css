@@ -45,6 +45,7 @@
   border: 1px solid #fcfcfc;
   border-radius: 10px;
   position: relative;
+  overflow: hidden;
 }
 .search input,
 .search button {
