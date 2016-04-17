@@ -1,5 +1,5 @@
 .main {
-  background: url('pic/service_bg.jpg') no-repeat;
+  background: url('../pic/service_bg.jpg') no-repeat;
   background-size: cover;
   background-position: center center;
 }
