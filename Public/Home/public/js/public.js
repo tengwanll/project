@@ -23,8 +23,8 @@ $(document).ready(function() {
 		$(this).show();
 	});
 
-	$(document).on('mouseout', '.header nav ul ul', function () {
-		$(this).slideUp(80);
+	$(document).on('mouseout', '.header nav > ul > li > ul', function () {
+		$(this).hide();
 	});
 
 
