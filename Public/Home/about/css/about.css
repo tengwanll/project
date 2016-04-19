@@ -20,19 +20,18 @@
   bottom: -1.5rem;
   background: white;
 }
-.title .pr {
-  position: absolute;
-  left: 50%;
-  margin-left: -1.5rem;
-  bottom: -2.4rem;
-  width: 3rem;
-  height: 0.4rem;
-  font-size: 0.4rem;
-  background: #11c7c7;
-}
 .title.spa h4 {
   width: 20rem;
   margin-left: -10rem;
+}
+.title:after {
+  position: absolute;
+  content: "";
+  height: 2rem;
+  width: 3rem;
+  left: 50%;
+  margin-left: -1.5rem;
+  border-bottom: 0.4rem solid #11c7c7;
 }
 .section {
   padding-top: 4rem;
@@ -77,25 +76,4 @@
 .team ul p {
   display: inline-block;
   width: 10rem;
-}
-.biological {
-  padding-bottom: 4rem;
-}
-.biological li {
-  overflow: hidden;
-  padding-top: 2rem;
-}
-.biological img {
-  width: 20rem;
-  float: left;
-}
-.biological h4 {
-  line-height: 4;
-  font-weight: bold;
-}
-.biological p {
-  line-height: 2;
-}
-.biological section {
-  padding-left: 22rem;
 }
