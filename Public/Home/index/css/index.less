@@ -211,81 +211,35 @@
 
 .activity {
     background: #f4f4f4;
-    .banner {
-        text-align: center;
-        height: 20rem;
-        padding: 0;
-        position: relative;
-        li {
-            border-radius: 10px;
-            overflow: hidden;
-            position: absolute;
-            a {
-                display: block;
-            }
-        }
-        .index_0 {
-            top: 3rem;
-            left: 3rem;
-        }
-        .index_1 {
-            top: 0rem;
-            left: 50%;
-            margin-left: -15rem;
-            z-index: 99;
-        }
-        .index_2 {
-            top: 3rem;
-            right: 3rem;
-        }
-        .index_0 img,
-        .index_2 img {
-            width: 20rem;
-        }
-        .index_1 img {
-            width: 30rem;
-        }
-    }
-    .banner_nav {
-        padding: 0;
-        text-align: center;
+    .list {
+        width: 100%;
         li {
             display: inline-block;
-            margin-right: 10px;
-            a {
+            width: 33%;
+            h5, img, p {
                 display: block;
-                height: 0.5rem;
-                width: 0.5rem;
-                background: #aaa;
-                border-radius: 1rem;
+                margin: 0 auto;
+                width: 80%;
             }
-        }
-        .active {
-            a {
-                background: #11c7c7;
-            }
-        }
-    }
-    .banner_info {
-        padding: 0;
-        margin: 0;
-        li {
-        	display: none;
-            h4 {
-                padding: 0;
+            h5 {
+                line-height: 4;
                 font-size: 1rem;
-                line-height: 3;
-                text-align: center;
-                padding-right: 0.2rem;
             }
             p {
-            	padding-left: 0.5rem;
-                width: 30rem;
-                margin: 0 auto;
+                line-height: 1.4;
+                padding-bottom: 1rem;
             }
-        }
-        .active {
-			display: block;
+            a {
+                float: left;
+                border: 2px solid #64f5f5;
+                display: block;
+                color: #64f5f5;
+                border-radius: 6px;
+                width: 20%;
+                text-align: center;
+                line-height: 2;
+                margin-left: 10%;
+            }
         }
     }
 }

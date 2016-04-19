@@ -202,78 +202,36 @@
 .activity {
   background: #f4f4f4;
 }
-.activity .banner {
-  text-align: center;
-  height: 20rem;
-  padding: 0;
-  position: relative;
+.activity .list {
+  width: 100%;
 }
-.activity .banner li {
-  border-radius: 10px;
-  overflow: hidden;
-  position: absolute;
-}
-.activity .banner li a {
-  display: block;
-}
-.activity .banner .index_0 {
-  top: 3rem;
-  left: 3rem;
-}
-.activity .banner .index_1 {
-  top: 0rem;
-  left: 50%;
-  margin-left: -15rem;
-  z-index: 99;
-}
-.activity .banner .index_2 {
-  top: 3rem;
-  right: 3rem;
-}
-.activity .banner .index_0 img,
-.activity .banner .index_2 img {
-  width: 20rem;
-}
-.activity .banner .index_1 img {
-  width: 30rem;
-}
-.activity .banner_nav {
-  padding: 0;
-  text-align: center;
-}
-.activity .banner_nav li {
+.activity .list li {
   display: inline-block;
-  margin-right: 10px;
+  width: 33%;
 }
-.activity .banner_nav li a {
+.activity .list li h5,
+.activity .list li img,
+.activity .list li p {
   display: block;
-  height: 0.5rem;
-  width: 0.5rem;
-  background: #aaa;
-  border-radius: 1rem;
-}
-.activity .banner_nav .active a {
-  background: #11c7c7;
-}
-.activity .banner_info {
-  padding: 0;
-  margin: 0;
-}
-.activity .banner_info li {
-  display: none;
-}
-.activity .banner_info li h4 {
-  padding: 0;
-  font-size: 1rem;
-  line-height: 3;
-  text-align: center;
-  padding-right: 0.2rem;
-}
-.activity .banner_info li p {
-  padding-left: 0.5rem;
-  width: 30rem;
   margin: 0 auto;
+  width: 80%;
 }
-.activity .banner_info .active {
+.activity .list li h5 {
+  line-height: 4;
+  font-size: 1rem;
+}
+.activity .list li p {
+  line-height: 1.4;
+  padding-bottom: 1rem;
+}
+.activity .list li a {
+  float: left;
+  border: 2px solid #64f5f5;
   display: block;
+  color: #64f5f5;
+  border-radius: 6px;
+  width: 20%;
+  text-align: center;
+  line-height: 2;
+  margin-left: 10%;
 }
