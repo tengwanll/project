@@ -7,6 +7,12 @@ class ContactController extends Controller {
         $this->display();
     }
 
+    // 在线留言界面
+    public function message() {
+        $this -> display();
+    }
+
+
     public function add(){
     	$data['name']=I('post.name');
     	$data['address']=I('post.address');
