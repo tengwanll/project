@@ -8,62 +8,19 @@
     </header>
     <div class="content row">
         <ul class="list-unstyled wrap">
+            <foreach name="service" item="vo">
             <li>
-                <a href="#">
+                <if condition="vo['type']==1">
+                    <a href="{:U('Home/service/info',array('serviceId'=>$vo['id']))}">
+                <else/>
+                    <a href="{:U('Home/special/info',array('serviceId'=>$vo['id']))}">
+                </if>
                     <img src="__PUBLIC__/Home/search/pic/result_pic.jpg" />
-                    <h6>蛋白质服务项目</h6>
-                    <p>T浓度的被测标本在试剂条上具 有不同的反应速度，从而表现不 同的颜色变化速率。因此，通过 对颜色变化</p>
+                    <h6>{$vo['title']}</h6>
+                    <p>{$vo['short_desc']}</p>
                 </a>
             </li>
-            <li>
-                <a href="#">
-                    <img src="__PUBLIC__/Home/search/pic/result_pic.jpg" />
-                    <h6>蛋白质服务项目</h6>
-                    <p>T浓度的被测标本在试剂条上具 有不同的反应速度，从而表现不 同的颜色变化速率。因此，通过 对颜色变化</p>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="__PUBLIC__/Home/search/pic/result_pic.jpg" />
-                    <h6>蛋白质服务项目</h6>
-                    <p>T浓度的被测标本在试剂条上具 有不同的反应速度，从而表现不 同的颜色变化速率。因此，通过 对颜色变化</p>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="__PUBLIC__/Home/search/pic/result_pic.jpg" />
-                    <h6>蛋白质服务项目</h6>
-                    <p>T浓度的被测标本在试剂条上具 有不同的反应速度，从而表现不 同的颜色变化速率。因此，通过 对颜色变化</p>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="__PUBLIC__/Home/search/pic/result_pic.jpg" />
-                    <h6>蛋白质服务项目</h6>
-                    <p>T浓度的被测标本在试剂条上具 有不同的反应速度，从而表现不 同的颜色变化速率。因此，通过 对颜色变化</p>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="__PUBLIC__/Home/search/pic/result_pic.jpg" />
-                    <h6>蛋白质服务项目</h6>
-                    <p>T浓度的被测标本在试剂条上具 有不同的反应速度，从而表现不 同的颜色变化速率。因此，通过 对颜色变化</p>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="__PUBLIC__/Home/search/pic/result_pic.jpg" />
-                    <h6>蛋白质服务项目</h6>
-                    <p>T浓度的被测标本在试剂条上具 有不同的反应速度，从而表现不 同的颜色变化速率。因此，通过 对颜色变化</p>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="__PUBLIC__/Home/search/pic/result_pic.jpg" />
-                    <h6>蛋白质服务项目</h6>
-                    <p>T浓度的被测标本在试剂条上具 有不同的反应速度，从而表现不 同的颜色变化速率。因此，通过 对颜色变化</p>
-                </a>
-            </li>
+            </foreach>
         </ul>
     </div>
 </div>
