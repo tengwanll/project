@@ -3,9 +3,9 @@
     <header class="news_header">
         <nav class="wrap">
             <ul>
-                <li><a href="#">促销活动</a></li>
+                <li><a href="{:U('Home/sale/index')}">促销活动</a></li>
                 <li class="active"><a href="{:U('Home/news/index')}">新闻动态</a></li>
-                <li><a href="#">实验室展示</a></li>
+                <li><a href="{:U('Home/laboratory/index')}">实验室展示</a></li>
             </ul>
         </nav>
     </header>
@@ -17,10 +17,10 @@
             <ul class="list-unstyled">
                 <foreach name="news" item="vo">
                     <li class="newsItem">
-                        <img src="__PUBLIC__/Home/news/pic/news_list_1_img.jpg" height="294" width="500">
+                        <img src="__PUBLIC__/Uploads/pics/news_list_1_img.jpg" height="294" width="500">
                         <div class="info">
                             <h4>{$vo['title']}</h4>
-                            <p>规范功夫大使馆二 规范让我突然放很高 的很高个地方官的发给我 规范个人 二 而已而他也一...</p>
+                            <p>{$vo['description'}</p>
                         </div>
                     </li>
                 </foreach>

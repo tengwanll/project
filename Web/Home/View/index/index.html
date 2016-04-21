@@ -11,8 +11,8 @@
                 <span class="en">ANNOUNGEMENT</span>
             </h3>
             <div>
-                <span class="cn">{$notice['notice']}</span>
-                <span class="en">{$notice['english_notice']}</span>
+                <span class="en">{$notice['english_content']}</span>
+                <span class="cn">{$notice['content']}</span>
             </div>
         </div>
     </div>
@@ -82,7 +82,7 @@
                     </div>
                     <div class="contact">
                         <p> {$info['short_desc']}</p>
-                        <img src="__PUBLIC__/Home/index/pic/news_img.jpg">
+                        <img src="__PUBLIC__/Uploads/pics/news_img.jpg">
                     </div>
                 </div>
             </li>
@@ -101,24 +101,14 @@
             </li>
         </ul>
         <ul class="list list-unstyled">
+            <foreach name="activity" item="vo">
             <li>
-                <img src="__PUBLIC__/Home/index/pic/activity_img.jpg">
-                <h5>活动名称1</h5>
-                <p><span>活动介绍：</span><span class="value">啊死了点卡连锁店坷拉三季稻拉萨孔家店啦开始觉得啦科技时代</span></p>
+                <img src="__PUBLIC__/Uploads/pics/activity_img.jpg">
+                <h5>{$vo['title']}</h5>
+                <p><span>活动介绍：</span><span class="value">{$vo['short_desc']}</span></p>
                 <a href="#">更多详情</a>
             </li>
-            <li>
-                <img src="__PUBLIC__/Home/index/pic/activity_img.jpg">
-                <h5>活动名称1</h5>
-                <p><span>活动介绍：</span><span class="value">啊死了点卡连锁店坷拉三季稻拉萨孔家店啦开始觉得啦科技时代</span></p>
-                <a href="#">更多详情</a>
-            </li>
-            <li>
-                <img src="__PUBLIC__/Home/index/pic/activity_img.jpg">
-                <h5>活动名称1</h5>
-                <p><span>活动介绍：</span><span class="value">啊死了点卡连锁店坷拉三季稻拉萨孔家店啦开始觉得啦科技时代</span></p>
-                <a href="#">更多详情</a>
-            </li>
+            </foreach>
         </ul>
     </div>
 </div>

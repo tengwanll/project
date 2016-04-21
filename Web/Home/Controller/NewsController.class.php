@@ -4,10 +4,13 @@ use Think\Controller;
 class NewsController extends Controller {
     public function index(){
         $model=M('news');
+        $noticeModel=M('notice');
+        $notice=$noticeModel->where('status=1')->select();
         $news=$model->where('status=1')->select();
         $newsCurrent=$model->where('status=1')->order('create_time desc')->limit(3)->select();
         $this->assign('news',$news);
         $this->assign('newsCurrent',$newsCurrent);
+        $this->assign('notice',$notice);
         $this->assign('root','news');
         $this->display();
     }
