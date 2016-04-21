@@ -1,5 +1,5 @@
 .main > header {
-  background: url('../pic/contact_header_bg_img.jpg');
+  background: url('../../public/background/contact_header_bg.jpg');
   background-size: cover;
   background-position: center center;
   height: 20rem;
@@ -20,110 +20,21 @@
   padding-top: 1.4rem;
   font-size: 0.8rem;
 }
-.page header {
-  text-align: center;
-  padding: 2rem 0 4rem;
-}
-.page header h4 {
-  color: #030303;
-}
-.page header:after {
-  content: '';
-  display: inline-block;
-  height: 4px;
-  width: 2rem;
-  border-bottom: 4px solid #09dada;
-}
-.page .map {
-  text-align: center;
-}
-.page .map img {
-  display: block;
-  margin: 0 auto;
-  width: 40rem;
+.map {
   padding-bottom: 4rem;
 }
-.page .map:after {
-  content: '';
-  display: inline-block;
-  border-left: 2rem solid transparent;
-  border-right: 2rem solid transparent;
-  border-top: 1rem solid white;
-  border-bottom: 2rem solid transparent;
-  margin-bottom: -3rem;
-}
-.page .info {
-  background: #918f8f;
-  padding-top: 0.5rem;
-  padding-bottom: 1rem;
-  margin-bottom: 1rem;
-  color: white;
-}
-.page .info h5 {
-  text-align: center;
-  line-height: 5;
-  font-size: 1rem;
-}
-.page .info p {
-  text-align: center;
-  font-size: 0.8rem;
-  line-height: 2;
-}
-.page .form {
-  background: #09dada;
-  padding: 1rem 0;
-  margin-bottom: 5rem;
-}
-.page .form form {
-  text-align: center;
-  width: 1196px;
-  border: 1px solid white;
-  border-radius: 0.5rem;
-}
-.page .form form div {
-  width: 40%;
-  display: inline-block;
-  padding-top: 1rem;
-}
-.page .form form label {
-  text-align: right;
-  color: white;
-  width: 4rem;
-  line-height: 4;
-}
-.page .form form input {
-  width: 50%;
-  text-align: left;
-  border: none;
-  background: none;
-  border-bottom: 1px solid white;
-}
-.page .form form input:focus {
-  border: none;
-  borde-bottom: 1px solid white;
-}
-.page .form form .email {
-  padding-left: 3.8rem;
-  width: 80%;
+#map {
+  width: 60%;
   margin: 0 auto;
-  text-align: left;
+  height: 400px;
 }
-.page .form form .email input {
-  width: 27%;
+#map .icon {
+  background: url(http://lbs.amap.com/console/public/show/marker.png) no-repeat;
 }
-.page .form form .txt {
-  display: block;
-  width: 100%;
-  text-align: left;
-  padding-left: 9.7rem;
+#map .icon-cir {
+  height: 31px;
+  width: 28px;
 }
-.page .form form .btn-group {
-  width: 8%;
-  padding-bottom: 2rem;
-  text-align: center;
-}
-.page .form form .btn-group .btn {
-  line-height: 2;
-  margin: 0 auto;
-  display: inline-block;
+#map .icon-cir-red {
+  background-position: -11px -5px;
 }
