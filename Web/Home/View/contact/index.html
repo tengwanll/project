@@ -7,28 +7,41 @@
             <p>佰昊生物科技有限公司是东北第一家适当就没看啥地方规范的快乐</p>
         </div>
     </header>
-    <div class="page row">
-        <header>
-            <h4 class="cn">联系我们</h4>
-            <h4 class="en">CONTACT US</h4>
-        </header>
-        <div class="map">
-            <img src="__PUBLIC__/Home/contact/pic/contact_map_img.jpg">
+    <div class="row">
+        <div class="wrap">
+            <div class="page_title">
+                <header>
+                    <h3 class="cn">实时地图</h3>
+                    <h3 class="en">REAL-TIME MAP</h3>
+                </header>
+            </div>
+            <div class="map">
+                <div id="map"></div>
+            </div>
         </div>
-        <div class="info">
-            <h5>辽宁佰昊生物科技有限公司</h5>
-            <address>
-                <p>地址：辽宁省本溪市中国药都产业...</p>
-            </address>
-            <p>邮编：123000</p>
-            <p>电话：18241891790</p>
-            <p>QQ：126371641</p>
-            <p>邮箱：126371641@qq.com</p>
-            <div class="qrcode">
-                <img src="">
-                <p>微信二维码</p>
+        <div class="wrap">
+            <div class="page_title">
+                <header>
+                    <h3 class="cn">联系我们</h3>
+                    <h3 class="en">CONTACT US</h3>
+                </header>
+            </div>
+            <div class="info">
+                <h5>辽宁佰昊生物科技有限公司</h5>
+                <address>
+                    <p><span class="title">地址：</span><span class="value">辽宁省本溪市中国药都产业辽宁省本溪市中国药都产业</span></p>
+                </address>
+                <p><span class="title">邮编：</span><span class="value">123000</span></p>
+                <p><span class="title">电话：</span><span class="value">18241891790</span></p>
+                <p><span class="title">QQ：</span><span class="value">126371641</span></p>
+                <p><span class="title">邮箱：</span><span class="value">126371641@qq.com</span></p>
+                <div class="qrcode">
+                    <img src="">
+                    <p>微信二维码</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<include file="public/footer" />
+<script src="http://webapi.amap.com/maps?v=1.2&key=8325164e247e15eea68b59e89200988b"></script>
+<include file="public/footer" name="contact" />

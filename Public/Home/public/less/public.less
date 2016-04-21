@@ -1,8 +1,6 @@
 @import url('./var.less');
 @import url('./header.less');
 @import url('./footer.less');
-
-
 html {
     font-size: @bodyFontSize;
     // font-size: 12px;
@@ -55,68 +53,45 @@ ol {
     display: block;
 }
 
-.tabs {
-    padding: 0 0 1.5rem 0;
-    li {
-        display: inline-block;
-        a {
-            overflow: hidden;
-            display: block;
-            color: #050505;
-            padding: 0 20px;
-            border-right: 1px solid #969797;
-            h4 {
-                margin: 0;
-                float: left;
-                font-size: 1rem;
-                line-height: 2rem;
-                border-top: 0.2rem solid #969797;
-            }
-            p {
-                margin: 0;
-                float: left;
-                font-size: 0.6rem;
-                padding: 0.2rem 10px 0;
-                line-height: 2rem;
-            }
-            span {
-                padding-top: 0.2rem;
-                padding-left: 0.5rem;
-                line-height: 2rem;
-                font-size: 1rem;
-            }
-        }
-        &:first-child {
-            a {
-                padding-left: 0;
-            }
-        }
-        &:last-child {
-            a {
-                border: none;
-            }
-        }
-        &.active {
-            h4 {
-                border-top-color: #64f5f5;
-            }
-            span {
-                transform: rotate(90deg);
-                // transition: transform 0.3s;
-            }
-        }
-    }
-}
-
 // 页面标题
 .page_title {
-    
-
-
-
-    h3 {
-
+    padding: 2rem 0;
+    header {
+        text-align: center;
+        h3 {
+            line-height: 1;
+            color: #030303;
+            &.cn {
+                font-size: 1.4rem;
+            }
+            &.en {
+                font-size: 1.2rem;
+            }
+        }
+        &:after {
+            content: '';
+            display: inline-block;
+            width: 2rem;
+            border-bottom: 4px solid #09dada;
+        }
     }
 }
 
+// 文章标题
+.article_title {
+    border-right: 1rem solid red;
+    header {
+        padding: 0 1rem;
+        border-bottom: 1px solid #ccc;
+        h4 {
+            padding-left: 1rem;
+        }
+    }
+}
 
+// 段落标题
+.paragraph_title {
+    header {
+        h5 {}
+    }
+}

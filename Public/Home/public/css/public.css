@@ -180,50 +180,35 @@ ol {
 .active {
   display: block;
 }
-.tabs {
-  padding: 0 0 1.5rem 0;
+.page_title {
+  padding: 2rem 0;
 }
-.tabs li {
+.page_title header {
+  text-align: center;
+}
+.page_title header h3 {
+  line-height: 1;
+  color: #030303;
+}
+.page_title header h3.cn {
+  font-size: 1.4rem;
+}
+.page_title header h3.en {
+  font-size: 1.2rem;
+}
+.page_title header:after {
+  content: '';
   display: inline-block;
+  width: 2rem;
+  border-bottom: 4px solid #09dada;
 }
-.tabs li a {
-  overflow: hidden;
-  display: block;
-  color: #050505;
-  padding: 0 20px;
-  border-right: 1px solid #969797;
+.article_title {
+  border-right: 1rem solid red;
 }
-.tabs li a h4 {
-  margin: 0;
-  float: left;
-  font-size: 1rem;
-  line-height: 2rem;
-  border-top: 0.2rem solid #969797;
+.article_title header {
+  padding: 0 1rem;
+  border-bottom: 1px solid #ccc;
 }
-.tabs li a p {
-  margin: 0;
-  float: left;
-  font-size: 0.6rem;
-  padding: 0.2rem 10px 0;
-  line-height: 2rem;
-}
-.tabs li a span {
-  padding-top: 0.2rem;
-  padding-left: 0.5rem;
-  line-height: 2rem;
-  font-size: 1rem;
-}
-.tabs li:first-child a {
-  padding-left: 0;
-}
-.tabs li:last-child a {
-  border: none;
-}
-.tabs li.active h4 {
-  border-top-color: #64f5f5;
-}
-.tabs li.active span {
-  -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-          transform: rotate(90deg);
+.article_title header h4 {
+  padding-left: 1rem;
 }
