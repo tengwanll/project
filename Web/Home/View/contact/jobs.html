@@ -6,11 +6,14 @@
             <h5 class="en">Welcome to Bai Hao Biotechnology</h5>
         </div>
     </header>
-    <div class="area wrap concept">
-        <header>
-            <h3>人才理念</h3>
-        </header>
-        <div class="info">
+    <div class="row concept">
+        <div class="page_title">
+            <header>
+                <h3 class="cn">人才理念</h3>
+                <h3 class="en">CONCEPT</h3>
+            </header>
+        </div>
+        <div class="info wrap">
             <p>
                 <img src="__PUBLIC__/Home/jobs/pic/company_pic_img.jpg">
                 <span class="value">
@@ -19,32 +22,35 @@
             </p>
         </div>
     </div>
-    <div class="area wrap jobList">
-        <header>
-            <h3>诚聘英才</h3>
-        </header>
-        <div class="info">
+    <div class="row jobList">
+        <div class="page_title">
+            <header>
+                <h3 class="cn">诚聘精英</h3>
+                <h3 class="en">JOBLIST</h3>
+            </header>
+        </div>
+        <div class="wrap info">
             <ul class="list-unstyled">
-            <foreach name="job" item="result" key="key">
-                <li class="laboratory">
-                    <h3>{$key}</h3>
-                    <ul class="list-unstyled">
-                        <foreach name="result" item="vo">
-                        <li class="jobInfo">
-                            <p><span class="title">招聘岗位：</span><span class="value">{$vo['station']}</span>(<span class="num">{$vo['number']}</span>人)</p>
-                            <div>
-                                <p class="title">任职要求：</p>
-                                <ol>
-                                    <foreach name="vo['demand']" item="demand">
-                                    <li>{$demand['content']}</li>
-                                    </foreach>
-                                </ol>
-                            </div>
-                        </li>
-                        </foreach>
-                    </ul>
-                </li>
-            </foreach>
+                <foreach name="job" item="result" key="key">
+                    <li class="laboratory">
+                        <h3>{$key}</h3>
+                        <ul class="list-unstyled">
+                            <foreach name="result" item="vo">
+                                <li class="jobInfo">
+                                    <p><span class="title">招聘岗位：</span><span class="value">{$vo['station']}</span>(<span class="num">{$vo['number']}</span>人)</p>
+                                    <div>
+                                        <p class="title">任职要求：</p>
+                                        <ol>
+                                            <foreach name="vo['demand']" item="demand">
+                                                <li>{$demand['content']}</li>
+                                            </foreach>
+                                        </ol>
+                                    </div>
+                                </li>
+                            </foreach>
+                        </ul>
+                    </li>
+                </foreach>
             </ul>
         </div>
     </div>

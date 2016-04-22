@@ -185,20 +185,33 @@ ol {
 }
 .page_title header {
   text-align: center;
+  height: 1rem;
+  border-bottom: 1px solid #09dada;
+  padding-bottom: 2.7rem;
+  margin-bottom: 2rem;
 }
 .page_title header h3 {
   line-height: 1;
   color: #030303;
+  position: relative;
 }
 .page_title header h3.cn {
   font-size: 1.4rem;
 }
 .page_title header h3.en {
-  font-size: 1.2rem;
+  margin: 0;
+  line-height: 2;
+  display: inline-block;
+  padding: 0 2rem;
+  background: white;
+  font-size: 0.8rem;
+  color: #09dada;
 }
 .page_title header:after {
   content: '';
-  display: inline-block;
+  display: block;
+  margin: 0 auto;
+  padding-top: 1rem;
   width: 2rem;
   border-bottom: 4px solid #09dada;
 }

@@ -12,6 +12,25 @@ class ContactController extends Controller {
         $this -> display();
     }
 
+    // 招聘界面
+    public function jobs () {
+        $job=M('job');
+        $jobDemand=M('job_demand');
+        $jobs=$job->where('status=1')->select();
+        $arr=array();
+        foreach($jobs as $item){
+            $id=$item['id'];
+            $demands=$jobDemand->where("job_id=$id")->select();
+            $arr[$item['lab']][]=array(
+                'station'=>$item['station'],
+                'number'=>$item['number'],
+                'demand'=>$demands,
+            );
+        }
+        $this->assign('job',$arr);
+        $this->assign('root','jobs');
+        $this->display();
+    }
 
     public function add(){
     	$data['name']=I('post.name');

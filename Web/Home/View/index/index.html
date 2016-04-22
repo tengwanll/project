@@ -74,7 +74,7 @@
     <ol class="list-unstyled">
         <foreach name="informations" item="info" key="k">
             <!-- <li class="active"> -->
-            <li>
+            <li <if condition="$k eq 0">class="active"</if> >
                 <div class="wrap">
                     <div class="title">
                         <span class="num">{++$k}</span>

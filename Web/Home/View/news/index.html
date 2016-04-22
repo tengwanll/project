@@ -1,14 +1,5 @@
 <include file="public/header" title="新闻动态" name="news" />
 <div class="main row">
-    <header class="news_header">
-        <nav class="wrap">
-            <ul>
-                <li><a href="{:U('Home/sale/index')}">促销活动</a></li>
-                <li class="active"><a href="{:U('Home/news/index')}">新闻动态</a></li>
-                <li><a href="{:U('Home/laboratory/index')}">实验室展示</a></li>
-            </ul>
-        </nav>
-    </header>
     <div class="wrap">
         <header>
             <h3>新闻动态</h3>
@@ -20,7 +11,7 @@
                         <img src="__PUBLIC__/Uploads/pics/news_list_1_img.jpg" height="294" width="500">
                         <div class="info">
                             <h4>{$vo['title']}</h4>
-                            <p>{$vo['description'}</p>
+                            <p>{$vo['description']}</p>
                         </div>
                     </li>
                 </foreach>
