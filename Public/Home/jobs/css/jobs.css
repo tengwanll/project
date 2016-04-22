@@ -22,17 +22,6 @@
   line-height: 2;
   font-size: 1.4rem;
 }
-.main .area header {
-  border-bottom: 1px solid #a1a0a0;
-  padding-top: 2rem;
-}
-.main .area header h3 {
-  padding-left: 1rem;
-  border-left: 6px solid #09dada;
-}
-.main .area .info {
-  padding-top: 2rem;
-}
 .main .concept img {
   float: left;
   height: 15rem;
