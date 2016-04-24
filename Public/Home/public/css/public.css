@@ -177,9 +177,6 @@ p {
   height: 100%;
   position: relative;
 }
-.section {
-  padding: 2rem 0;
-}
 .active {
   display: block;
 }

@@ -5,11 +5,17 @@
 .main header .center_block {
   overflow: hidden;
   height: 100%;
-  width: 60%;
+  width: 50%;
   margin: auto;
+  padding: 1.5rem 0;
 }
 .main header .center_block img {
   border: 1px solid #101010;
+  float: left;
+  width: 8rem;
+  margin-right: 4rem;
+}
+.main header .center_block div {
   float: left;
 }
 .main header .center_block h3 {
