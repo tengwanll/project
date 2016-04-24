@@ -32,7 +32,7 @@
                 <foreach name="serviceSort['sortList']" item="service">
                 <li>
                     <a href="{:U('Home/special/info',array('serviceId'=>$service['id']))}">
-                        <img src="__PUBLIC__/Home/special_list/pic/special_list_1_img.jpg">
+                        <img src="__ROOT__/{$service['logo']}">
                         <h5>{$service['title']}</h5>
                         <p>{$service['description']}
                         </p>

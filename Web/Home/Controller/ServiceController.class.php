@@ -36,6 +36,7 @@ class ServiceController extends Controller {
                 'id'=>$id,
                 'title'=>$list['title'],
                 'description'=>$list['description'],
+                'logo'=>$list['logo'],
                 'sortList'=>$serviceInfo->where("sort_id= $id and status=1")->select()
             );
         }

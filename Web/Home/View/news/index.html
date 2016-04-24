@@ -8,7 +8,7 @@
             <ul class="list-unstyled">
                 <foreach name="news" item="vo">
                     <li class="newsItem">
-                        <img src="__PUBLIC__/Uploads/pics/news_list_1_img.jpg" height="294" width="500">
+                        <img src="__ROOT__/{$vo['photo']}" height="294" width="500">
                         <div class="info">
                             <h4>{$vo['title']}</h4>
                             <p>{$vo['description']}</p>
