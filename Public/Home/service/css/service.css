@@ -18,6 +18,8 @@
   float: left;
   padding: 1rem 0 10rem;
   background: rgba(0, 0, 0, 0.4);
+  -webkit-transition: background 0.4s;
+          transition: background 0.4s;
   border-right: 1px solid white;
 }
 .main ul li:first-child {
@@ -25,6 +27,8 @@
 }
 .main ul li:hover {
   background: #6cc9ca;
+  -webkit-transition: background 0.4s;
+          transition: background 0.4s;
 }
 .main ul li span {
   color: white;

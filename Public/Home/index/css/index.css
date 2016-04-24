@@ -95,15 +95,19 @@
   padding-right: 1.4rem;
 }
 .project .infoList li a {
-  color: #030303;
   text-decoration: none;
+  color: #030303;
+}
+.project .infoList li a span {
+  color: #969797;
+  -webkit-transition: color 0.2s;
+          transition: color 0.2s;
 }
 .project .infoList li span {
   display: block;
   text-align: center;
   font-size: 5rem;
   line-height: 10rem;
-  color: #969797;
 }
 .project .infoList li h6 {
   text-align: center;
@@ -115,6 +119,8 @@
 }
 .project .infoList li a:hover span {
   color: #64f5f5;
+  -webkit-transition: color 0.2s;
+          transition: color 0.2s;
 }
 .project .infoList.active {
   display: block;
@@ -199,6 +205,12 @@
 .news ol .active .contact {
   display: block;
 }
+.news ol .active .contact p {
+  height: 20rem;
+}
+.news ol .active .contact p:after {
+  background: none;
+}
 .activity {
   background: #f4f4f4;
 }
@@ -281,4 +293,22 @@
   -webkit-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
           transform: rotate(90deg);
+}
+.tabs.more a {
+  border-right: none;
+}
+.tabs.more li.more_link {
+  float: right;
+  line-height: 1.8rem;
+}
+.tabs.more li.more_link a {
+  display: block;
+}
+.tabs.more li.more_link a:after {
+  padding: 0 0.4rem;
+  content: '>>';
+}
+.tabs.more li.more_link a:hover {
+  text-decoration: none;
+  color: #969797;
 }

@@ -13,9 +13,6 @@
 .section article {
   line-height: 2;
 }
-.section article p {
-  padding-bottom: 2rem;
-}
 .team ul {
   text-align: center;
   padding: 0;
@@ -41,4 +38,5 @@
 .team ul p {
   display: inline-block;
   width: 10rem;
+  height: 10rem;
 }
