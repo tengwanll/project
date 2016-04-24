@@ -39,9 +39,11 @@
         <ul class="infoList active">
             <foreach name="normalService" item="service">
                 <li>
-                    <span class="fa fa-car"></span>
-                    <h6>{$service['title']}</h6>
-                    <p>{$service['description']}</p>
+                    <a href="#">
+                        <span class="fa fa-car"></span>
+                        <h6>{$service['title']}</h6>
+                        <p>{$service['description']}</p>
+                    </a>
                 </li>
             </foreach>
         </ul>
@@ -62,12 +64,15 @@
 <!-- 资讯 -->
 <div class="news row section">
     <div class="wrap">
-        <ul class="tabs">
+        <ul class="tabs more">
             <li class="active">
                 <a href="#">
                     <h4>最新资讯</h4>
                     <p>information</p>
                 </a>
+            </li>
+            <li class="more_link">
+                <a href="#">more</a>
             </li>
         </ul>
     </div>
@@ -81,7 +86,7 @@
                         <h6>{$info['title']}</h6>
                     </div>
                     <div class="contact">
-                        <p> {$info['short_desc']}</p>
+                        <p class="indent ellipsis_more_line">{$info['short_desc']}</p>
                         <img src="__PUBLIC__/Uploads/pics/news_img.jpg">
                     </div>
                 </div>
@@ -92,22 +97,25 @@
 <!-- 促销活动 -->
 <div class="activity row section">
     <div class="wrap">
-        <ul class="tabs">
+        <ul class="tabs more">
             <li class="active">
                 <a href="#">
                     <h4>促销活动</h4>
                     <p>activity</p>
                 </a>
             </li>
+            <li class="more_link">
+                <a href="#">more</a>
+            </li>
         </ul>
         <ul class="list list-unstyled">
             <foreach name="activity" item="vo">
-            <li>
-                <img src="__PUBLIC__/Uploads/pics/activity_img.jpg">
-                <h5>{$vo['title']}</h5>
-                <p><span>活动介绍：</span><span class="value">{$vo['short_desc']}</span></p>
-                <a href="#">更多详情</a>
-            </li>
+                <li>
+                    <img src="__PUBLIC__/Uploads/pics/activity_img.jpg">
+                    <h5>{$vo['title']}</h5>
+                    <p><span>活动介绍：</span><span class="value">{$vo['short_desc']}</span></p>
+                    <a href="#">更多详情</a>
+                </li>
             </foreach>
         </ul>
     </div>

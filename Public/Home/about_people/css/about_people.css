@@ -1,35 +1,25 @@
 .main header {
-  background: #f7f6f6;
-  padding: 4rem 0 4rem 5rem;
   overflow: hidden;
+  border-bottom: 1px solid #c4c4c4;
 }
-.main header .wrap {
-  background: none;
+.main header .center_block {
+  overflow: hidden;
+  height: 100%;
+  width: 60%;
+  margin: auto;
 }
-.main header .wrap img {
+.main header .center_block img {
   border: 1px solid #101010;
   float: left;
 }
-.main header .wrap div {
-  float: left;
-  padding-left: 4rem;
-  padding-top: 1.3rem;
-}
-.main header .wrap h3 {
+.main header .center_block h3 {
   color: #11c7c7;
 }
-.main header .wrap p {
+.main header .center_block p {
   line-height: 3;
-}
-.main article h3 {
-  color: #09dada;
-  border-bottom: 2px solid #a2a2a2;
-  line-height: 3rem;
-  margin-bottom: 2rem;
 }
 .main article p {
   line-height: 2;
-  text-indent: 1.4rem;
 }
 .main article li {
   padding-bottom: 2rem;

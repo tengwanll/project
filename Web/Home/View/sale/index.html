@@ -1,19 +1,14 @@
 <include file="public/header" title="促销活动" name="sale" />
-<div class="main row">
+<div class="main">
+    <include file="public/breadcrumb" />
     <div class="row">
-        <header class="news_header">
-            <nav class="wrap">
-                <ul>
-                    <li class="active"><a href="{:U('Home/sale/index')}">促销活动</a></li>
-                    <li><a href="{:U('Home/news/index')}">新闻动态</a></li>
-                    <li><a href="{:U('Home/laboratory/index')}">实验室展示</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div class="wrap sales_list page active">
+        <div class="page_title">
             <header>
-                <h3>促销活动列表</h3>
+                <h3 class="cn">促销活动</h3>
+                <h3 class="en">Sale activity</h3>
             </header>
+        </div>
+        <div class="wrap sales_list page active">
             <ul class="list-unstyled">
                 <foreach name="activity" item="vo">
                 <li>

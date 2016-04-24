@@ -94,15 +94,18 @@
             padding-left: 1.4rem;
             padding-right: 1.4rem;
             a {
-                color: #030303;
                 text-decoration: none;
+                color: #030303;
+                span {
+                    color: #969797;
+                    transition: color 0.2s;
+                }
             }
             span {
                 display: block;
                 text-align: center;
                 font-size: 5rem;
                 line-height: 10rem;
-                color: #969797;
             }
             h6 {
                 text-align: center;
@@ -115,6 +118,7 @@
             a:hover {
                 span {
                     color: #64f5f5;
+                    transition: color 0.2s;
                 }
             }
         }
@@ -204,6 +208,12 @@
             }
             .contact {
                 display: block;
+                p {
+                    height: 20rem;
+                    &:after {
+                        background: none;
+                    }
+                }
             }
         }
     }
@@ -293,7 +303,26 @@
             }
             span {
                 transform: rotate(90deg);
-                // transition: transform 0.3s;
+            }
+        }
+    }
+    &.more {
+        a {
+            border-right: none;
+        }
+        li.more_link {
+            float: right;
+            line-height: 1.8rem;
+            a {
+                display: block;
+                &:after {
+                    padding: 0 0.4rem;
+                    content: '>>';
+                }
+            }
+            a:hover {
+                text-decoration: none;
+                color: #969797;
             }
         }
     }
