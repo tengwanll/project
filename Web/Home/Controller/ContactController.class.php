@@ -9,6 +9,7 @@ class ContactController extends Controller {
 
     // 在线留言界面
     public function message() {
+        $this->assign('root','message');
         $this -> display();
     }
 

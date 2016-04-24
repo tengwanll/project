@@ -4,20 +4,28 @@
         <div class="list">
             <ul class="column-left list-unstyled">
                 <foreach name="labs" item="vo" key="key">
-                <if condition="$key!=0&&$key%3==0">
-                    </ul>
-                    <ul class="column-left list-unstyled">
+                <if condition="$key==0">
                     <li>
                     <a href="#">
-                        <img src="__PUBLIC__/Home/laboratory/pic/activity_img.jpg">
+                        <img src="__ROOT__/{$vo['photo']}">
+                        <h6>{$vo['name']}</h6>
+                        <p>{$vo['description']}</p>
+                    </a>
+                </li>
+                <elseif condition="$key%4==2"/>
+                    <li>
+                    <a href="#">
+                        <img src="__ROOT__/{$vo['photo']}">
                         <h6>{$vo['name']}</h6>
                         <p>{$vo['description']}</p>
                     </a>
                 </li>
                 <else/>
+                    </ul>
+                    <ul class="column-left list-unstyled">
                     <li>
                     <a href="#">
-                        <img src="__PUBLIC__/Home/laboratory/pic/activity_img.jpg">
+                        <img src="__ROOT__/{$vo['photo']}">
                         <h6>{$vo['name']}</h6>
                         <p>{$vo['description']}</p>
                     </a>

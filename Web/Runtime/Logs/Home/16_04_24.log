@@ -1,0 +1,1782 @@
+[ 2016-04-24T20:28:14+08:00 ] ::1 /panxu/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.009074s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.043027s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.043094s ]
+SQL: DESCRIBE notice [ RunTime:0.065963s ]
+SQL: SELECT * FROM `notice` WHERE `id` = 1 ORDER BY create_time desc LIMIT 1   [ RunTime:0.065643s ]
+SQL: DESCRIBE service_sort [ RunTime:0.064365s ]
+SQL: DESCRIBE activity [ RunTime:0.067155s ]
+SQL: SELECT * FROM `activity` WHERE ( status=1 ) LIMIT 3   [ RunTime:0.065279s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=2 and parent_id=0 and status=1 ) LIMIT 4   [ RunTime:0.064976s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and parent_id=0 and status=1 ) LIMIT 4   [ RunTime:0.065550s ]
+SQL: DESCRIBE news [ RunTime:0.065668s ]
+SQL: SELECT * FROM `news` ORDER BY create_time desc LIMIT 3   [ RunTime:0.065978s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000132s ]
+NOTIC: [8] Undefined variable: specilaService E:\project\htdocs\panxu\Web\Runtime\Cache\Home\a5d07c113795da31d2426caff16ba5bc.php 第 122 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.283742s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.283802s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.022517s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.022565s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.074658s ]
+INFO: [ app_end ] --END-- [ RunTime:0.074752s ]
+
+[ 2016-04-24T20:28:18+08:00 ] ::1 /panxu/Home/contact
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000297s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000480s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000115s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019382s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019444s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000255s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000288s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000794s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000841s ]
+
+[ 2016-04-24T20:28:34+08:00 ] ::1 /panxu/Home/laboratory
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000297s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000381s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000424s ]
+SQL: DESCRIBE lab [ RunTime:0.075407s ]
+SQL: SELECT * FROM `lab` WHERE ( status=1 )  [ RunTime:0.075348s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000229s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000392s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.071092s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.071225s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000222s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000262s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000981s ]
+INFO: [ app_end ] --END-- [ RunTime:0.014712s ]
+
+[ 2016-04-24T20:31:38+08:00 ] ::1 /panxu/Home/news
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000451s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000507s ]
+SQL: DESCRIBE news [ RunTime:0.077764s ]
+SQL: DESCRIBE notice [ RunTime:0.077632s ]
+SQL: SELECT * FROM `notice` WHERE ( status=1 )  [ RunTime:0.077618s ]
+SQL: SELECT * FROM `news` WHERE ( status=1 )  [ RunTime:0.235055s ]
+SQL: SELECT * FROM `news` WHERE ( status=1 ) ORDER BY create_time desc LIMIT 3   [ RunTime:0.179871s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000246s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000379s ]
+NOTIC: [8] Undefined index: description E:\project\htdocs\panxu\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 97 行.
+NOTIC: [8] Undefined index: description E:\project\htdocs\panxu\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 97 行.
+NOTIC: [8] Undefined index: description E:\project\htdocs\panxu\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 97 行.
+NOTIC: [8] Undefined index: description E:\project\htdocs\panxu\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 97 行.
+NOTIC: [8] Undefined index: description E:\project\htdocs\panxu\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 97 行.
+NOTIC: [8] Undefined index: description E:\project\htdocs\panxu\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 97 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.108800s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.108902s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000528s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001940s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002083s ]
+
+[ 2016-04-24T20:31:55+08:00 ] ::1 /panxu/Home/news
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000343s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001430s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001627s ]
+SQL: DESCRIBE news [ RunTime:0.072548s ]
+SQL: DESCRIBE notice [ RunTime:0.073372s ]
+SQL: SELECT * FROM `notice` WHERE ( status=1 )  [ RunTime:0.071744s ]
+SQL: SELECT * FROM `news` WHERE ( status=1 )  [ RunTime:0.247719s ]
+SQL: SELECT * FROM `news` WHERE ( status=1 ) ORDER BY create_time desc LIMIT 3   [ RunTime:0.144866s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+NOTIC: [8] Undefined index: description E:\project\htdocs\panxu\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 97 行.
+NOTIC: [8] Undefined index: description E:\project\htdocs\panxu\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 97 行.
+NOTIC: [8] Undefined index: description E:\project\htdocs\panxu\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 97 行.
+NOTIC: [8] Undefined index: description E:\project\htdocs\panxu\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 97 行.
+NOTIC: [8] Undefined index: description E:\project\htdocs\panxu\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 97 行.
+NOTIC: [8] Undefined index: description E:\project\htdocs\panxu\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 97 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039164s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039303s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000258s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000292s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000623s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000693s ]
+
+[ 2016-04-24T20:36:47+08:00 ] ::1 /panxu/Home/contact
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000674s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001691s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000070s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000176s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018085s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018288s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000433s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000476s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000754s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000879s ]
+
+[ 2016-04-24T20:39:16+08:00 ] ::1 /panxu/Home/contact
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000064s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002543s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002617s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002779s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000149s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000216s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013142s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013205s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000417s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000462s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000841s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000902s ]
+
+[ 2016-04-24T20:42:09+08:00 ] ::1 /panxu/Home/contact
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000526s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000127s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000221s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.125940s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.126006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000247s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000279s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000537s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000609s ]
+
+[ 2016-04-24T20:43:20+08:00 ] ::1 /panxu/Home/contact
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001100s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000455s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000496s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000205s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010596s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010649s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000290s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000581s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000616s ]
+
+[ 2016-04-24T20:43:25+08:00 ] ::1 /panxu/Home/contact
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000547s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000116s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000193s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010508s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010599s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000579s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000645s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002006s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002207s ]
+
+[ 2016-04-24T20:43:49+08:00 ] ::1 /panxu/Home/about
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000292s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000529s ]
+SQL: DESCRIBE employee [ RunTime:0.069503s ]
+SQL: SELECT `id`,`name`,`photo`,`description` FROM `employee` LIMIT 3   [ RunTime:0.068703s ]
+SQL: DESCRIBE training [ RunTime:0.069000s ]
+SQL: DESCRIBE company [ RunTime:0.069143s ]
+SQL: SELECT * FROM `company` LIMIT 1   [ RunTime:0.070441s ]
+SQL: SELECT * FROM `training`  [ RunTime:0.069649s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000123s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000179s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028800s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028862s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000308s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000339s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001245s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001333s ]
+
+[ 2016-04-24T20:43:56+08:00 ] ::1 /panxu/Home/about
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000283s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000588s ]
+SQL: DESCRIBE employee [ RunTime:0.067304s ]
+SQL: SELECT `id`,`name`,`photo`,`description` FROM `employee` LIMIT 3   [ RunTime:0.067471s ]
+SQL: DESCRIBE training [ RunTime:0.068022s ]
+SQL: DESCRIBE company [ RunTime:0.070833s ]
+SQL: SELECT * FROM `company` LIMIT 1   [ RunTime:0.068467s ]
+SQL: SELECT * FROM `training`  [ RunTime:0.069179s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000256s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000340s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037076s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037221s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001060s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001139s ]
+
+[ 2016-04-24T20:46:21+08:00 ] ::1 /panxu/Home/about
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002498s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002610s ]
+SQL: DESCRIBE employee [ RunTime:0.070800s ]
+SQL: SELECT `id`,`name`,`photo`,`description` FROM `employee` LIMIT 3   [ RunTime:0.074384s ]
+SQL: DESCRIBE training [ RunTime:0.074266s ]
+SQL: DESCRIBE company [ RunTime:0.075601s ]
+SQL: SELECT * FROM `company` LIMIT 1   [ RunTime:0.076084s ]
+SQL: SELECT * FROM `training`  [ RunTime:0.073675s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000317s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000463s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.061717s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.061806s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000305s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001159s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001294s ]
+
+[ 2016-04-24T20:46:47+08:00 ] ::1 /panxu/Home/about
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002398s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002852s ]
+SQL: DESCRIBE employee [ RunTime:0.086237s ]
+SQL: SELECT `id`,`name`,`photo`,`description` FROM `employee` LIMIT 3   [ RunTime:0.087084s ]
+SQL: DESCRIBE training [ RunTime:0.085253s ]
+SQL: DESCRIBE company [ RunTime:0.085530s ]
+SQL: SELECT * FROM `company` LIMIT 1   [ RunTime:0.085682s ]
+SQL: SELECT * FROM `training`  [ RunTime:0.085579s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000298s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000483s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.060817s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.060931s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002197s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002286s ]
+
+[ 2016-04-24T20:48:15+08:00 ] ::1 /panxu/Home/about
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000341s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000555s ]
+SQL: DESCRIBE employee [ RunTime:0.085996s ]
+SQL: SELECT `id`,`name`,`photo`,`description` FROM `employee` LIMIT 3   [ RunTime:0.084895s ]
+SQL: DESCRIBE training [ RunTime:0.086225s ]
+SQL: DESCRIBE company [ RunTime:0.085065s ]
+SQL: SELECT * FROM `company` LIMIT 1   [ RunTime:0.084435s ]
+SQL: SELECT * FROM `training`  [ RunTime:0.085744s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000518s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000732s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.085109s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.085241s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000845s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000901s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001150s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001237s ]
+
+[ 2016-04-24T20:48:29+08:00 ] ::1 /panxu/Home/about
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000705s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000674s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000738s ]
+SQL: DESCRIBE employee [ RunTime:0.076586s ]
+SQL: SELECT `id`,`name`,`photo`,`description` FROM `employee` LIMIT 3   [ RunTime:0.075133s ]
+SQL: DESCRIBE training [ RunTime:0.074737s ]
+SQL: DESCRIBE company [ RunTime:0.075605s ]
+SQL: SELECT * FROM `company` LIMIT 1   [ RunTime:0.076718s ]
+SQL: SELECT * FROM `training`  [ RunTime:0.076709s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000244s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000382s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044876s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045014s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002794s ]
+
+[ 2016-04-24T20:49:05+08:00 ] ::1 /panxu/Home/about
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000314s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001461s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001600s ]
+SQL: DESCRIBE employee [ RunTime:0.067764s ]
+SQL: SELECT `id`,`name`,`photo`,`description` FROM `employee` LIMIT 3   [ RunTime:0.067727s ]
+SQL: DESCRIBE training [ RunTime:0.068651s ]
+SQL: DESCRIBE company [ RunTime:0.067751s ]
+SQL: SELECT * FROM `company` LIMIT 1   [ RunTime:0.068247s ]
+SQL: SELECT * FROM `training`  [ RunTime:0.068517s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000299s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000437s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055970s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056059s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000392s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001469s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001625s ]
+
+[ 2016-04-24T20:49:31+08:00 ] ::1 /panxu/index.php/Home/about/employee/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000360s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000463s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000505s ]
+SQL: DESCRIBE employee [ RunTime:0.095822s ]
+SQL: SELECT * FROM `employee` WHERE `id` = 1 LIMIT 1   [ RunTime:0.096534s ]
+SQL: DESCRIBE thesis [ RunTime:0.095443s ]
+SQL: SELECT `content` FROM `thesis` WHERE ( employee_id=1 and status=1 )  [ RunTime:0.095751s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000272s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000470s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.080047s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.080287s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000660s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000754s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001605s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001739s ]
+
+[ 2016-04-24T20:49:50+08:00 ] ::1 /panxu/index.php/Home/about/employee/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000289s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000648s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000699s ]
+SQL: DESCRIBE employee [ RunTime:0.078760s ]
+SQL: SELECT * FROM `employee` WHERE `id` = 1 LIMIT 1   [ RunTime:0.076456s ]
+SQL: DESCRIBE thesis [ RunTime:0.076502s ]
+SQL: SELECT `content` FROM `thesis` WHERE ( employee_id=1 and status=1 )  [ RunTime:0.111084s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000154s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000236s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026021s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026137s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000679s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000742s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001989s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002168s ]
+
+[ 2016-04-24T20:49:56+08:00 ] ::1 /panxu/index.php/Home/about/employee/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000548s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000591s ]
+SQL: DESCRIBE employee [ RunTime:0.070425s ]
+SQL: SELECT * FROM `employee` WHERE `id` = 1 LIMIT 1   [ RunTime:0.070067s ]
+SQL: DESCRIBE thesis [ RunTime:0.069877s ]
+SQL: SELECT `content` FROM `thesis` WHERE ( employee_id=1 and status=1 )  [ RunTime:0.069402s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000365s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000644s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.040073s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040254s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000862s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000935s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002576s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002682s ]
+
+[ 2016-04-24T20:50:45+08:00 ] ::1 /panxu/index.php/Home/about/employee/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000383s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000683s ]
+SQL: DESCRIBE employee [ RunTime:0.104256s ]
+SQL: SELECT * FROM `employee` WHERE `id` = 1 LIMIT 1   [ RunTime:0.103533s ]
+SQL: DESCRIBE thesis [ RunTime:0.102904s ]
+SQL: SELECT `content` FROM `thesis` WHERE ( employee_id=1 and status=1 )  [ RunTime:0.105663s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000252s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000384s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.060828s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.061037s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000801s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000957s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003488s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003709s ]
+
+[ 2016-04-24T20:51:04+08:00 ] ::1 /panxu/index.php/Home/contact
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000488s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000375s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000458s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019101s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019183s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001615s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001693s ]
+
+[ 2016-04-24T20:52:08+08:00 ] ::1 /panxu/index.php/Home/message
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001228s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001678s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001773s ]
+ERR: 无法加载控制器:Message
+
+[ 2016-04-24T20:57:43+08:00 ] ::1 /panxu/index.php/Home/contact/message
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000520s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000566s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000117s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000192s ]
+NOTIC: [8] Undefined variable: root E:\project\htdocs\panxu\Web\Runtime\Cache\Home\a17ce730e71298fe601a4d0892389254.php 第 160 行.
+NOTIC: [8] Undefined variable: root E:\project\htdocs\panxu\Web\Runtime\Cache\Home\a17ce730e71298fe601a4d0892389254.php 第 160 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.101836s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.101898s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000532s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000696s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000752s ]
+
+[ 2016-04-24T20:58:14+08:00 ] ::1 /panxu/index.php/Home/contact/message
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000906s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000978s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000193s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012287s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012370s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000803s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000860s ]
+
+[ 2016-04-24T20:58:56+08:00 ] ::1 /panxu/index.php/Home/contact/message
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000641s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000143s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009553s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009626s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000284s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000659s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000708s ]
+
+[ 2016-04-24T21:04:53+08:00 ] ::1 /panxu/index.php/Home/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000702s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002871s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003095s ]
+SQL: DESCRIBE notice [ RunTime:0.068172s ]
+SQL: SELECT * FROM `notice` WHERE `id` = 1 ORDER BY create_time desc LIMIT 1   [ RunTime:0.068304s ]
+SQL: DESCRIBE service_sort [ RunTime:0.069361s ]
+SQL: DESCRIBE activity [ RunTime:0.068739s ]
+SQL: SELECT * FROM `activity` WHERE ( status=1 ) LIMIT 3   [ RunTime:0.067171s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=2 and parent_id=0 and status=1 ) LIMIT 4   [ RunTime:0.067563s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and parent_id=0 and status=1 ) LIMIT 4   [ RunTime:0.069536s ]
+SQL: DESCRIBE news [ RunTime:0.067719s ]
+SQL: SELECT * FROM `news` ORDER BY create_time desc LIMIT 3   [ RunTime:0.068992s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000214s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000298s ]
+NOTIC: [8] Undefined variable: specilaService E:\project\htdocs\panxu\Web\Runtime\Cache\Home\a5d07c113795da31d2426caff16ba5bc.php 第 124 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.061344s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.061424s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000631s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000690s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001276s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003457s ]
+
+[ 2016-04-24T21:05:33+08:00 ] ::1 /panxu/index.php/Home/about
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000294s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000451s ]
+SQL: DESCRIBE employee [ RunTime:0.079216s ]
+SQL: SELECT `id`,`name`,`photo`,`description` FROM `employee` LIMIT 3   [ RunTime:0.078938s ]
+SQL: DESCRIBE training [ RunTime:0.080514s ]
+SQL: DESCRIBE company [ RunTime:0.079738s ]
+SQL: SELECT * FROM `company` LIMIT 1   [ RunTime:0.081047s ]
+SQL: SELECT * FROM `training`  [ RunTime:0.079585s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000133s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000180s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046776s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046836s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002552s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002643s ]
+
+[ 2016-04-24T21:05:40+08:00 ] ::1 /panxu/index.php/Home/about
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000614s ]
+SQL: DESCRIBE employee [ RunTime:0.080494s ]
+SQL: SELECT `id`,`name`,`photo`,`description` FROM `employee` LIMIT 3   [ RunTime:0.079646s ]
+SQL: DESCRIBE training [ RunTime:0.079764s ]
+SQL: DESCRIBE company [ RunTime:0.079767s ]
+SQL: SELECT * FROM `company` LIMIT 1   [ RunTime:0.080634s ]
+SQL: SELECT * FROM `training`  [ RunTime:0.078972s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000149s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037771s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037843s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000892s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000957s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001138s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001227s ]
+
+[ 2016-04-24T21:06:36+08:00 ] ::1 /panxu/index.php/Home/about
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000937s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000881s ]
+SQL: DESCRIBE employee [ RunTime:0.092181s ]
+SQL: SELECT `id`,`name`,`photo`,`description` FROM `employee` LIMIT 3   [ RunTime:0.092278s ]
+SQL: DESCRIBE training [ RunTime:0.094314s ]
+SQL: DESCRIBE company [ RunTime:0.092786s ]
+SQL: SELECT * FROM `company` LIMIT 1   [ RunTime:0.094169s ]
+SQL: SELECT * FROM `training`  [ RunTime:0.093032s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000162s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034312s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034373s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001133s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001215s ]
+
+[ 2016-04-24T21:08:31+08:00 ] ::1 /panxu/index.php/Home/about
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000350s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000693s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000747s ]
+SQL: DESCRIBE employee [ RunTime:0.076153s ]
+SQL: SELECT `id`,`name`,`photo`,`description` FROM `employee` LIMIT 3   [ RunTime:0.076527s ]
+SQL: DESCRIBE training [ RunTime:0.077177s ]
+SQL: DESCRIBE company [ RunTime:0.077553s ]
+SQL: SELECT * FROM `company` LIMIT 1   [ RunTime:0.076650s ]
+SQL: SELECT * FROM `training`  [ RunTime:0.077787s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000380s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000539s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.127822s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.127936s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000338s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000369s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003158s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003236s ]
+
+[ 2016-04-24T21:08:36+08:00 ] ::1 /panxu/index.php/Home/about
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000417s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000541s ]
+SQL: DESCRIBE employee [ RunTime:0.052338s ]
+SQL: SELECT `id`,`name`,`photo`,`description` FROM `employee` LIMIT 3   [ RunTime:0.051385s ]
+SQL: DESCRIBE training [ RunTime:0.052203s ]
+SQL: DESCRIBE company [ RunTime:0.051366s ]
+SQL: SELECT * FROM `company` LIMIT 1   [ RunTime:0.050984s ]
+SQL: SELECT * FROM `training`  [ RunTime:0.051029s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000245s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000324s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027530s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027585s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000317s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000893s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000976s ]
+
+[ 2016-04-24T21:09:17+08:00 ] ::1 /panxu/index.php/Home/about/employee/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000462s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000536s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000585s ]
+SQL: DESCRIBE employee [ RunTime:0.069848s ]
+SQL: SELECT * FROM `employee` WHERE `id` = 1 LIMIT 1   [ RunTime:0.071593s ]
+SQL: DESCRIBE thesis [ RunTime:0.068974s ]
+SQL: SELECT `content` FROM `thesis` WHERE ( employee_id=1 and status=1 )  [ RunTime:0.069260s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000124s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000183s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024126s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024198s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000509s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000562s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001145s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001233s ]
+
+[ 2016-04-24T21:09:35+08:00 ] ::1 /panxu/index.php/Home/about/employee/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000517s ]
+SQL: DESCRIBE employee [ RunTime:0.105372s ]
+SQL: SELECT * FROM `employee` WHERE `id` = 1 LIMIT 1   [ RunTime:0.102809s ]
+SQL: DESCRIBE thesis [ RunTime:0.107231s ]
+SQL: SELECT `content` FROM `thesis` WHERE ( employee_id=1 and status=1 )  [ RunTime:0.104263s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000104s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000169s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010662s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010760s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000542s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001142s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001238s ]
+
+[ 2016-04-24T21:10:08+08:00 ] ::1 /panxu/index.php/Home/contact
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000113s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001344s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000845s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000986s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000126s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.210355s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.210421s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000554s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002863s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002956s ]
+
+[ 2016-04-24T21:13:37+08:00 ] ::1 /panxu/index.php/Home/contact
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000480s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000615s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000672s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000129s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025244s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025317s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000330s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006358s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006459s ]
+
+[ 2016-04-24T21:14:17+08:00 ] ::1 /panxu/index.php/Home/contact/message
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000665s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000563s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000624s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000142s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000325s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.065988s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.066050s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000378s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000699s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000747s ]
+
+[ 2016-04-24T21:14:57+08:00 ] ::1 /panxu/index.php/Home/contact/job
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000897s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+ERR: 非法操作:job
+
+[ 2016-04-24T21:15:03+08:00 ] ::1 /panxu/index.php/Home/contact/jobs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000064s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000506s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+SQL: DESCRIBE job [ RunTime:0.054858s ]
+SQL: DESCRIBE job_demand [ RunTime:0.054391s ]
+SQL: SELECT * FROM `job` WHERE ( status=1 )  [ RunTime:0.053901s ]
+SQL: SELECT * FROM `job_demand` WHERE ( job_id=1 )  [ RunTime:0.053808s ]
+SQL: SELECT * FROM `job_demand` WHERE ( job_id=2 )  [ RunTime:0.053740s ]
+SQL: SELECT * FROM `job_demand` WHERE ( job_id=3 )  [ RunTime:0.056348s ]
+SQL: SELECT * FROM `job_demand` WHERE ( job_id=4 )  [ RunTime:0.053890s ]
+SQL: SELECT * FROM `job_demand` WHERE ( job_id=5 )  [ RunTime:0.053689s ]
+SQL: SELECT * FROM `job_demand` WHERE ( job_id=6 )  [ RunTime:0.054903s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000141s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047527s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047650s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000523s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000574s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003317s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003404s ]
+
+[ 2016-04-24T21:16:59+08:00 ] ::1 /panxu/index.php/Home/laboratory
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000567s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000622s ]
+SQL: DESCRIBE lab [ RunTime:0.062294s ]
+SQL: SELECT * FROM `lab` WHERE ( status=1 )  [ RunTime:0.060749s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000132s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055620s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.055762s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000270s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000302s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000849s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000928s ]
+
+[ 2016-04-24T21:21:20+08:00 ] ::1 /panxu/index.php/Home/laboratory
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000329s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000617s ]
+SQL: DESCRIBE lab [ RunTime:0.085969s ]
+SQL: SELECT * FROM `lab` WHERE ( status=1 )  [ RunTime:0.085589s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000116s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010674s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010746s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000358s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000884s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000963s ]
+
+[ 2016-04-24T21:23:18+08:00 ] ::1 /panxu/index.php/Home/NEW
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000265s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000445s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000488s ]
+ERR: 无法加载控制器:NEW
+
+[ 2016-04-24T21:23:23+08:00 ] ::1 /panxu/index.php/Home/news
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000339s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000381s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000421s ]
+SQL: DESCRIBE news [ RunTime:0.092222s ]
+SQL: DESCRIBE notice [ RunTime:0.091732s ]
+SQL: SELECT * FROM `notice` WHERE ( status=1 )  [ RunTime:0.092203s ]
+SQL: SELECT * FROM `news` WHERE ( status=1 )  [ RunTime:0.183304s ]
+SQL: SELECT * FROM `news` WHERE ( status=1 ) ORDER BY create_time desc LIMIT 3   [ RunTime:0.193483s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000127s ]
+NOTIC: [8] Undefined index: description E:\project\htdocs\panxu\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 88 行.
+NOTIC: [8] Undefined index: description E:\project\htdocs\panxu\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 88 行.
+NOTIC: [8] Undefined index: description E:\project\htdocs\panxu\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 88 行.
+NOTIC: [8] Undefined index: description E:\project\htdocs\panxu\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 88 行.
+NOTIC: [8] Undefined index: description E:\project\htdocs\panxu\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 88 行.
+NOTIC: [8] Undefined index: description E:\project\htdocs\panxu\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 88 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047793s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047877s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000265s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002742s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002832s ]
+
+[ 2016-04-24T21:25:48+08:00 ] ::1 /panxu/index.php/Home/service
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000388s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000892s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000993s ]
+SQL: DESCRIBE service_sort [ RunTime:0.057107s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and status=1 and parent_id=0 ) LIMIT 4   [ RunTime:0.055579s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000115s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024664s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024745s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000330s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000701s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000754s ]
+
+[ 2016-04-24T21:25:56+08:00 ] ::1 /panxu/index.php/Home/service/lists/serviceId/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000566s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001349s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001502s ]
+SQL: DESCRIBE service_sort [ RunTime:0.085824s ]
+SQL: DESCRIBE service [ RunTime:0.088174s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and status=1 and parent_id=0 )  [ RunTime:0.087683s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 1 and status=1 )  [ RunTime:0.085691s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 2 and status=1 )  [ RunTime:0.085975s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 3 and status=1 )  [ RunTime:0.085667s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 4 and status=1 )  [ RunTime:0.086876s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000132s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000204s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.086788s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.086854s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000371s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004243s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004376s ]
+
+[ 2016-04-24T21:27:34+08:00 ] ::1 /panxu/index.php/Home/service/lists/serviceId/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000925s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001017s ]
+SQL: DESCRIBE service_sort [ RunTime:0.070031s ]
+SQL: DESCRIBE service [ RunTime:0.070013s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and status=1 and parent_id=0 )  [ RunTime:0.071624s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 1 and status=1 )  [ RunTime:0.070780s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 2 and status=1 )  [ RunTime:0.070410s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 3 and status=1 )  [ RunTime:0.070815s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 4 and status=1 )  [ RunTime:0.069504s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000139s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047205s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047276s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000339s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000422s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001345s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001429s ]
+
+[ 2016-04-24T21:27:38+08:00 ] ::1 /panxu/index.php/Home/service
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001153s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001286s ]
+SQL: DESCRIBE service_sort [ RunTime:0.089569s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and status=1 and parent_id=0 ) LIMIT 4   [ RunTime:0.091339s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000231s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000444s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029134s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029297s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000749s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000829s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000852s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000912s ]
+
+[ 2016-04-24T21:27:43+08:00 ] ::1 /panxu/index.php/Home/service
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000652s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000663s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000727s ]
+SQL: DESCRIBE service_sort [ RunTime:0.067832s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and status=1 and parent_id=0 ) LIMIT 4   [ RunTime:0.068594s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000113s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008661s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008722s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000559s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000599s ]
+
+[ 2016-04-24T21:28:02+08:00 ] ::1 /panxu/index.php/Home/service
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000599s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000886s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000967s ]
+SQL: DESCRIBE service_sort [ RunTime:0.072669s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and status=1 and parent_id=0 ) LIMIT 4   [ RunTime:0.071225s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000114s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024419s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024492s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000246s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000286s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000452s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000495s ]
+
+[ 2016-04-24T21:28:19+08:00 ] ::1 /panxu/index.php/Home/service
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000888s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000843s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000908s ]
+SQL: DESCRIBE service_sort [ RunTime:0.055599s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and status=1 and parent_id=0 ) LIMIT 4   [ RunTime:0.054803s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025188s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025275s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000419s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000458s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000541s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000579s ]
+
+[ 2016-04-24T21:28:48+08:00 ] ::1 /panxu/index.php/Home/service
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000341s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000449s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000490s ]
+SQL: DESCRIBE service_sort [ RunTime:0.099152s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and status=1 and parent_id=0 ) LIMIT 4   [ RunTime:0.099622s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000110s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010849s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010933s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000371s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000449s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000483s ]
+
+[ 2016-04-24T21:29:15+08:00 ] ::1 /panxu/index.php/Home/service
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000701s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001423s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001511s ]
+SQL: DESCRIBE service_sort [ RunTime:0.077012s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and status=1 and parent_id=0 ) LIMIT 4   [ RunTime:0.078070s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000075s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000127s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009450s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009513s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000248s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000288s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000462s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000504s ]
+
+[ 2016-04-24T21:29:22+08:00 ] ::1 /panxu/index.php/Home/service/lists/serviceId/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000829s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001067s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001310s ]
+SQL: DESCRIBE service_sort [ RunTime:0.066888s ]
+SQL: DESCRIBE service [ RunTime:0.067350s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and status=1 and parent_id=0 )  [ RunTime:0.069600s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 1 and status=1 )  [ RunTime:0.066453s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 2 and status=1 )  [ RunTime:0.069265s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 3 and status=1 )  [ RunTime:0.067261s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 4 and status=1 )  [ RunTime:0.066978s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000142s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000217s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.067461s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.067549s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000259s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003808s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003956s ]
+
+[ 2016-04-24T21:29:29+08:00 ] ::1 /panxu/index.php/Home/service/lists/serviceId/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001214s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001329s ]
+SQL: DESCRIBE service_sort [ RunTime:0.092745s ]
+SQL: DESCRIBE service [ RunTime:0.090933s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and status=1 and parent_id=0 )  [ RunTime:0.093077s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 1 and status=1 )  [ RunTime:0.090747s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 2 and status=1 )  [ RunTime:0.092400s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 3 and status=1 )  [ RunTime:0.092046s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 4 and status=1 )  [ RunTime:0.091665s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000124s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.050578s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050656s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000301s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000331s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001010s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001094s ]
+
+[ 2016-04-24T21:29:55+08:00 ] ::1 /panxu/index.php/Home/service/lists/serviceId/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000352s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002918s ]
+SQL: DESCRIBE service_sort [ RunTime:0.087192s ]
+SQL: DESCRIBE service [ RunTime:0.085843s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and status=1 and parent_id=0 )  [ RunTime:0.086142s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 1 and status=1 )  [ RunTime:0.086532s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 2 and status=1 )  [ RunTime:0.084754s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 3 and status=1 )  [ RunTime:0.084963s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 4 and status=1 )  [ RunTime:0.086229s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000130s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.073268s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.073378s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000453s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001155s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001235s ]
+
+[ 2016-04-24T21:32:45+08:00 ] ::1 /panxu/index.php/Home/service/lists/serviceId/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000456s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000499s ]
+SQL: DESCRIBE service_sort [ RunTime:0.073852s ]
+SQL: DESCRIBE service [ RunTime:0.075089s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and status=1 and parent_id=0 )  [ RunTime:0.075251s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 1 and status=1 )  [ RunTime:0.075923s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 2 and status=1 )  [ RunTime:0.074277s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 3 and status=1 )  [ RunTime:0.074701s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 4 and status=1 )  [ RunTime:0.073761s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000169s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000262s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.054292s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054350s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000387s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000441s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000926s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001005s ]
+
+[ 2016-04-24T21:34:23+08:00 ] ::1 /panxu/index.php/Home/service/lists/serviceId/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000638s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000785s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000888s ]
+SQL: DESCRIBE service_sort [ RunTime:0.076708s ]
+SQL: DESCRIBE service [ RunTime:0.077531s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and status=1 and parent_id=0 )  [ RunTime:0.076632s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 1 and status=1 )  [ RunTime:0.076277s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 2 and status=1 )  [ RunTime:0.076550s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 3 and status=1 )  [ RunTime:0.075127s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 4 and status=1 )  [ RunTime:0.076443s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000157s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000229s ]
+NOTIC: [8] Undefined index: logo E:\project\htdocs\panxu\Web\Runtime\Cache\Home\91fc14f2dba03459f740c7ee086d11af.php 第 91 行.
+NOTIC: [8] Undefined index: logo E:\project\htdocs\panxu\Web\Runtime\Cache\Home\91fc14f2dba03459f740c7ee086d11af.php 第 91 行.
+NOTIC: [8] Undefined index: logo E:\project\htdocs\panxu\Web\Runtime\Cache\Home\91fc14f2dba03459f740c7ee086d11af.php 第 91 行.
+NOTIC: [8] Undefined index: logo E:\project\htdocs\panxu\Web\Runtime\Cache\Home\91fc14f2dba03459f740c7ee086d11af.php 第 91 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053862s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053918s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000307s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000344s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001223s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001564s ]
+
+[ 2016-04-24T21:36:01+08:00 ] ::1 /panxu/index.php/Home/service/lists/serviceId/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000463s ]
+SQL: DESCRIBE service_sort [ RunTime:0.082299s ]
+SQL: DESCRIBE service [ RunTime:0.083354s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and status=1 and parent_id=0 )  [ RunTime:0.082519s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 1 and status=1 )  [ RunTime:0.081544s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 2 and status=1 )  [ RunTime:0.082976s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 3 and status=1 )  [ RunTime:0.082022s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 4 and status=1 )  [ RunTime:0.083080s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000141s ]
+NOTIC: [8] Undefined index: logo E:\project\htdocs\panxu\Web\Runtime\Cache\Home\91fc14f2dba03459f740c7ee086d11af.php 第 91 行.
+NOTIC: [8] Undefined index: logo E:\project\htdocs\panxu\Web\Runtime\Cache\Home\91fc14f2dba03459f740c7ee086d11af.php 第 91 行.
+NOTIC: [8] Undefined index: logo E:\project\htdocs\panxu\Web\Runtime\Cache\Home\91fc14f2dba03459f740c7ee086d11af.php 第 91 行.
+NOTIC: [8] Undefined index: logo E:\project\htdocs\panxu\Web\Runtime\Cache\Home\91fc14f2dba03459f740c7ee086d11af.php 第 91 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046314s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046363s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000365s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000436s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000987s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001076s ]
+
+[ 2016-04-24T21:37:38+08:00 ] ::1 /panxu/index.php/Home/service/lists/serviceId/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000516s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000601s ]
+SQL: DESCRIBE service_sort [ RunTime:0.071546s ]
+SQL: DESCRIBE service [ RunTime:0.072534s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and status=1 and parent_id=0 )  [ RunTime:0.074446s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 1 and status=1 )  [ RunTime:0.072662s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 2 and status=1 )  [ RunTime:0.072091s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 3 and status=1 )  [ RunTime:0.071756s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 4 and status=1 )  [ RunTime:0.072182s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000127s ]
+NOTIC: [8] Undefined index: logo E:\project\htdocs\panxu\Web\Runtime\Cache\Home\91fc14f2dba03459f740c7ee086d11af.php 第 91 行.
+NOTIC: [8] Undefined index: logo E:\project\htdocs\panxu\Web\Runtime\Cache\Home\91fc14f2dba03459f740c7ee086d11af.php 第 91 行.
+NOTIC: [8] Undefined index: logo E:\project\htdocs\panxu\Web\Runtime\Cache\Home\91fc14f2dba03459f740c7ee086d11af.php 第 91 行.
+NOTIC: [8] Undefined index: logo E:\project\htdocs\panxu\Web\Runtime\Cache\Home\91fc14f2dba03459f740c7ee086d11af.php 第 91 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.089780s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.089861s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000366s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000400s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\project\htdocs\panxu\Web\Home\Controller\ServiceController.class.php:42) E:\project\htdocs\panxu\ThinkPHP\Library\Think\View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\project\htdocs\panxu\Web\Home\Controller\ServiceController.class.php:42) E:\project\htdocs\panxu\ThinkPHP\Library\Think\View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\project\htdocs\panxu\Web\Home\Controller\ServiceController.class.php:42) E:\project\htdocs\panxu\ThinkPHP\Library\Think\View.class.php 第 93 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004747s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004872s ]
+
+[ 2016-04-24T21:37:50+08:00 ] ::1 /panxu/index.php/Home/service/lists/serviceId/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000045s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000700s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000821s ]
+SQL: DESCRIBE service_sort [ RunTime:0.049799s ]
+SQL: DESCRIBE service [ RunTime:0.050401s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and status=1 and parent_id=0 )  [ RunTime:0.050581s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 1 and status=1 )  [ RunTime:0.048601s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 2 and status=1 )  [ RunTime:0.050727s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 3 and status=1 )  [ RunTime:0.049136s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 4 and status=1 )  [ RunTime:0.049035s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000128s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000183s ]
+NOTIC: [8] Undefined index: logo E:\project\htdocs\panxu\Web\Runtime\Cache\Home\91fc14f2dba03459f740c7ee086d11af.php 第 91 行.
+NOTIC: [8] Undefined index: logo E:\project\htdocs\panxu\Web\Runtime\Cache\Home\91fc14f2dba03459f740c7ee086d11af.php 第 91 行.
+NOTIC: [8] Undefined index: logo E:\project\htdocs\panxu\Web\Runtime\Cache\Home\91fc14f2dba03459f740c7ee086d11af.php 第 91 行.
+NOTIC: [8] Undefined index: logo E:\project\htdocs\panxu\Web\Runtime\Cache\Home\91fc14f2dba03459f740c7ee086d11af.php 第 91 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052822s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052880s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000301s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000332s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\project\htdocs\panxu\Web\Home\Controller\ServiceController.class.php:42) E:\project\htdocs\panxu\ThinkPHP\Library\Think\View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\project\htdocs\panxu\Web\Home\Controller\ServiceController.class.php:42) E:\project\htdocs\panxu\ThinkPHP\Library\Think\View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\project\htdocs\panxu\Web\Home\Controller\ServiceController.class.php:42) E:\project\htdocs\panxu\ThinkPHP\Library\Think\View.class.php 第 93 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001685s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001769s ]
+
+[ 2016-04-24T21:37:51+08:00 ] ::1 /panxu/index.php/Home/service/lists/serviceId/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001484s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001577s ]
+SQL: DESCRIBE service_sort [ RunTime:0.051608s ]
+SQL: DESCRIBE service [ RunTime:0.051152s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and status=1 and parent_id=0 )  [ RunTime:0.051064s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 1 and status=1 )  [ RunTime:0.050434s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 2 and status=1 )  [ RunTime:0.052826s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 3 and status=1 )  [ RunTime:0.051897s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 4 and status=1 )  [ RunTime:0.050794s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000106s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000192s ]
+NOTIC: [8] Undefined index: logo E:\project\htdocs\panxu\Web\Runtime\Cache\Home\91fc14f2dba03459f740c7ee086d11af.php 第 91 行.
+NOTIC: [8] Undefined index: logo E:\project\htdocs\panxu\Web\Runtime\Cache\Home\91fc14f2dba03459f740c7ee086d11af.php 第 91 行.
+NOTIC: [8] Undefined index: logo E:\project\htdocs\panxu\Web\Runtime\Cache\Home\91fc14f2dba03459f740c7ee086d11af.php 第 91 行.
+NOTIC: [8] Undefined index: logo E:\project\htdocs\panxu\Web\Runtime\Cache\Home\91fc14f2dba03459f740c7ee086d11af.php 第 91 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.050523s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050613s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000610s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000676s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\project\htdocs\panxu\Web\Home\Controller\ServiceController.class.php:42) E:\project\htdocs\panxu\ThinkPHP\Library\Think\View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\project\htdocs\panxu\Web\Home\Controller\ServiceController.class.php:42) E:\project\htdocs\panxu\ThinkPHP\Library\Think\View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at E:\project\htdocs\panxu\Web\Home\Controller\ServiceController.class.php:42) E:\project\htdocs\panxu\ThinkPHP\Library\Think\View.class.php 第 93 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001449s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001570s ]
+
+[ 2016-04-24T21:39:17+08:00 ] ::1 /panxu/index.php/Home/service/lists/serviceId/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000298s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000444s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000493s ]
+SQL: DESCRIBE service_sort [ RunTime:0.054985s ]
+SQL: DESCRIBE service [ RunTime:0.054357s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and status=1 and parent_id=0 )  [ RunTime:0.053362s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 1 and status=1 )  [ RunTime:0.052951s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 2 and status=1 )  [ RunTime:0.054010s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 3 and status=1 )  [ RunTime:0.052981s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 4 and status=1 )  [ RunTime:0.053932s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000075s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044808s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044910s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000393s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001369s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001463s ]
+
+[ 2016-04-24T21:40:02+08:00 ] ::1 /panxu/index.php/Home/service/lists/serviceId/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000264s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000448s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000494s ]
+SQL: DESCRIBE service_sort [ RunTime:0.094138s ]
+SQL: DESCRIBE service [ RunTime:0.094762s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and status=1 and parent_id=0 )  [ RunTime:0.093836s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 1 and status=1 )  [ RunTime:0.093107s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 2 and status=1 )  [ RunTime:0.094777s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 3 and status=1 )  [ RunTime:0.093573s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 4 and status=1 )  [ RunTime:0.094133s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.050219s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050281s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000261s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000295s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001072s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001172s ]
+
+[ 2016-04-24T21:40:14+08:00 ] ::1 /panxu/index.php/Home/service/info/serviceId/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000440s ]
+SQL: DESCRIBE service [ RunTime:0.080098s ]
+SQL: SELECT * FROM `service` WHERE `id` = 1 LIMIT 1   [ RunTime:0.079130s ]
+SQL: DESCRIBE service_sort [ RunTime:0.078956s ]
+SQL: SELECT * FROM `service_sort` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.080111s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000123s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000201s ]
+NOTIC: [8] Undefined variable: sortTile E:\project\htdocs\panxu\Web\Runtime\Cache\Home\16c3ed5cf2963c521858e77de2c0f9fd.php 第 81 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.079269s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.079373s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000409s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000492s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000829s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000896s ]
+
+[ 2016-04-24T21:40:39+08:00 ] ::1 /panxu/index.php/Home/special
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000374s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001060s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001216s ]
+SQL: DESCRIBE service_sort [ RunTime:0.097199s ]
+SQL: DESCRIBE service [ RunTime:0.097575s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=2 and status=1 and parent_id=0 )  [ RunTime:0.098190s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 5 and status=1 )  [ RunTime:0.099066s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 6 and status=1 )  [ RunTime:0.098758s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 7 and status=1 )  [ RunTime:0.097146s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 8 and status=1 )  [ RunTime:0.098279s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000133s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000206s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039101s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000275s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000884s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000968s ]
+
+[ 2016-04-24T21:41:11+08:00 ] ::1 /panxu/index.php/Home/special
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000350s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000390s ]
+SQL: DESCRIBE service_sort [ RunTime:0.077583s ]
+SQL: DESCRIBE service [ RunTime:0.076357s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=2 and status=1 and parent_id=0 )  [ RunTime:0.076190s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 5 and status=1 )  [ RunTime:0.077311s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 6 and status=1 )  [ RunTime:0.078048s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 7 and status=1 )  [ RunTime:0.077641s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 8 and status=1 )  [ RunTime:0.076225s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000213s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039170s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.039224s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000173s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000202s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000963s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001044s ]
+
+[ 2016-04-24T21:43:14+08:00 ] ::1 /panxu/index.php/Home/special
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000305s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000556s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000611s ]
+SQL: DESCRIBE service_sort [ RunTime:0.090021s ]
+SQL: DESCRIBE service [ RunTime:0.088611s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=2 and status=1 and parent_id=0 )  [ RunTime:0.096440s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 5 and status=1 )  [ RunTime:0.089067s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 6 and status=1 )  [ RunTime:0.089150s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 7 and status=1 )  [ RunTime:0.087230s ]
+SQL: SELECT * FROM `service` WHERE ( sort_id= 8 and status=1 )  [ RunTime:0.087994s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000088s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000141s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036387s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036458s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000265s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000911s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001027s ]
+
+[ 2016-04-24T21:43:36+08:00 ] ::1 /panxu/index.php/Home/special/info/serviceId/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000190s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001404s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000766s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000852s ]
+SQL: DESCRIBE service [ RunTime:0.056685s ]
+SQL: SELECT * FROM `service` WHERE `id` = 3 LIMIT 1   [ RunTime:0.057694s ]
+SQL: DESCRIBE service_sort [ RunTime:0.059955s ]
+SQL: SELECT * FROM `service_sort` WHERE ( id=7 ) LIMIT 1   [ RunTime:0.057695s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000075s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000121s ]
+NOTIC: [8] Undefined variable: sortTile E:\project\htdocs\panxu\Web\Runtime\Cache\Home\364be9a94e5b4b9bdbbaeac60aba4d1c.php 第 81 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.061897s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.061975s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000327s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001864s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001966s ]
+
+[ 2016-04-24T21:44:42+08:00 ] ::1 /panxu/index.php/Home/about
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000747s ]
+SQL: DESCRIBE employee [ RunTime:0.079157s ]
+SQL: SELECT `id`,`name`,`photo`,`description` FROM `employee` LIMIT 3   [ RunTime:0.079839s ]
+SQL: DESCRIBE training [ RunTime:0.079629s ]
+SQL: DESCRIBE company [ RunTime:0.079264s ]
+SQL: SELECT * FROM `company` LIMIT 1   [ RunTime:0.082465s ]
+SQL: SELECT * FROM `training`  [ RunTime:0.079723s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000158s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000236s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032612s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032715s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000299s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000353s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000873s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000954s ]
+
+[ 2016-04-24T21:45:16+08:00 ] ::1 /panxu/index.php/Home/contact
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000956s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000570s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000101s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000153s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.197894s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.197981s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000266s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001048s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001150s ]
+
+[ 2016-04-24T21:45:25+08:00 ] ::1 /panxu/index.php/Home/contact/message
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000948s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000155s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009684s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009742s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000228s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000261s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000824s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000889s ]
+
+[ 2016-04-24T21:45:39+08:00 ] ::1 /panxu/index.php/Home/contact/jobs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000322s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000561s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000618s ]
+SQL: DESCRIBE job [ RunTime:0.061776s ]
+SQL: DESCRIBE job_demand [ RunTime:0.059196s ]
+SQL: SELECT * FROM `job` WHERE ( status=1 )  [ RunTime:0.060490s ]
+SQL: SELECT * FROM `job_demand` WHERE ( job_id=1 )  [ RunTime:0.060611s ]
+SQL: SELECT * FROM `job_demand` WHERE ( job_id=2 )  [ RunTime:0.059327s ]
+SQL: SELECT * FROM `job_demand` WHERE ( job_id=3 )  [ RunTime:0.058840s ]
+SQL: SELECT * FROM `job_demand` WHERE ( job_id=4 )  [ RunTime:0.059207s ]
+SQL: SELECT * FROM `job_demand` WHERE ( job_id=5 )  [ RunTime:0.059089s ]
+SQL: SELECT * FROM `job_demand` WHERE ( job_id=6 )  [ RunTime:0.058617s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000109s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037509s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037681s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000363s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000396s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000963s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001041s ]
+
+[ 2016-04-24T21:46:08+08:00 ] ::1 /panxu/index.php/Home/contact/jobs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000850s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000910s ]
+SQL: DESCRIBE job [ RunTime:0.073540s ]
+SQL: DESCRIBE job_demand [ RunTime:0.070899s ]
+SQL: SELECT * FROM `job` WHERE ( status=1 )  [ RunTime:0.071039s ]
+SQL: SELECT * FROM `job_demand` WHERE ( job_id=1 )  [ RunTime:0.071163s ]
+SQL: SELECT * FROM `job_demand` WHERE ( job_id=2 )  [ RunTime:0.071148s ]
+SQL: SELECT * FROM `job_demand` WHERE ( job_id=3 )  [ RunTime:0.070976s ]
+SQL: SELECT * FROM `job_demand` WHERE ( job_id=4 )  [ RunTime:0.071639s ]
+SQL: SELECT * FROM `job_demand` WHERE ( job_id=5 )  [ RunTime:0.070409s ]
+SQL: SELECT * FROM `job_demand` WHERE ( job_id=6 )  [ RunTime:0.071411s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033695s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033771s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000269s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000315s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003751s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003863s ]
+

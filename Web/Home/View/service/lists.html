@@ -20,7 +20,7 @@
         </if>
         <header>
             <div>
-                <img src="__PUBLIC__/Home/service_list/pic/service_header_img.jpg">
+                <img src="__ROOT__/{$result['logo']}">
             </div>
             <div>
                 <h3>{$result['title']}</h3>
@@ -32,7 +32,7 @@
                 <foreach name="result['sortList']" item="sortList">
                     <li>
                         <a href="{:U('Home/service/info',array('serviceId'=>$sortList['id']))}">
-                            <img src="__PUBLIC__/Home/service_list/pic/service_list_img.jpg">
+                            <img src="__ROOT__/{$result['logo']}">
                             <h4>{$sortList['title']}</h4>
                             <p>{$sortList['description']}</p>
                         </a>

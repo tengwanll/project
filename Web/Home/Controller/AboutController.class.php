@@ -6,9 +6,12 @@ class AboutController extends Controller {
     	$people=M('employee');
     	$employees=$people->field('id,name,photo,description')->limit('3')->select();
     	$training=M('training');
+        $companyModel=M('company');
+        $company=$companyModel->find();
     	$trainings=$training->select();
     	$this->assign('training',$trainings);
-    	$this->assign('employees',$employees);
+        $this->assign('employees',$employees);
+        $this->assign('company',$company);
         $this->assign('root','about');
         $this->display();
     }
