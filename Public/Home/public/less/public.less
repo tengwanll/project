@@ -49,11 +49,16 @@ p {
     position: relative;
 }
 
+.section {
+    padding: 2rem 0;
+}
+
 .active {
     display: block;
 }
 
 // 面包屑导航
+// <include file="Public/breadcrumb" />
 #breadcrumb {
     nav {
         ul {
@@ -75,6 +80,16 @@ p {
 }
 
 // 页面标题
+/**
+ * <div class="row">
+ *     <div class="page_title">
+ *          <header>
+ *              <h3 class="cn">公司介绍</h3>
+ *              <h3 class="en">Company introduction</h3>
+ *          </header>
+ *      </div>
+ * </div>
+ */
 .page_title {
     padding: 1rem 0;
     header {
@@ -110,6 +125,8 @@ p {
         }
     }
 }
+
+
 
 // 文章标题
 .article_title {

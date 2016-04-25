@@ -177,6 +177,9 @@ p {
   height: 100%;
   position: relative;
 }
+.section {
+  padding: 2rem 0;
+}
 .active {
   display: block;
 }
@@ -193,6 +196,16 @@ p {
 #breadcrumb nav ul li a {
   display: block;
 }
+/**
+ * <div class="row">
+ *     <div class="page_title">
+ *          <header>
+ *              <h3 class="cn">��˾����</h3>
+ *              <h3 class="en">Company introduction</h3>
+ *          </header>
+ *      </div>
+ * </div>
+ */
 .page_title {
   padding: 1rem 0;
 }

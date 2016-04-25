@@ -24,7 +24,7 @@ class ServiceController extends Controller {
         $this->display();
     }
 
-    public function lists(){
+    public function list(){
         $serviceId=I('get.serviceId');
         $service=M('service_sort');
         $serviceInfo=M('service');

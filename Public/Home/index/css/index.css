@@ -78,7 +78,7 @@
 }
 .project {
   position: relative;
-  padding-top: 5.5rem;
+  padding-top: 2rem;
   border-bottom: 1px solid #64f5f5;
   padding-bottom: 4rem;
 }
@@ -213,6 +213,7 @@
 }
 .activity {
   background: #f4f4f4;
+  padding-bottom: 3rem;
 }
 .activity .list {
   width: 100%;
@@ -247,8 +248,11 @@
   line-height: 2;
   margin-left: 10%;
 }
+.section {
+  padding: 2rem 0;
+}
 .tabs {
-  padding: 0 0 1.5rem 0;
+  padding-bottom: 1.5rem;
 }
 .tabs li {
   display: inline-block;
