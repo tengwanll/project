@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>[title]</title>
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/public/css/public.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/[name]/css/[name].css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header class="header row">
+            <div class="wrap">
+                <div class="logo">
+                    <a href="__APP__">
+                        <!-- <img src="../pic/news_img.jpg"> -->
+                        <h1>佰昊生物</h1>
+                        <p class="no_indent">Hk's son biological</p>
+                    </a>
+                </div>
+                <div class="search">
+                    <div>
+                    <form action="{:U('Home/index/search')}" method="post">
+                        <input type="text" placeholder="搜索项目" name="title">
+                        <button><span class="fa fa-search"></span></button>
+                    </form>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="__APP__">首页</a>
+                        </li>
+                        <li>
+                            <a href="__MODULE__/about">关于佰昊</a>
+                        </li>
+                        <li>
+                            <a href="__MODULE__/service">服务项目</a>
+                            <ul class="list-unstyled">
+                                <li><a href="__MODULE__/service/info">基因组学生物技术服务</a></li>
+                                <li><a href="__MODULE__/service/info">蛋白质组学生物技术服务</a></li>
+                                <li><a href="__MODULE__/service/info">细胞学生物技术服务</a></li>
+                                <li><a href="__MODULE__/service/info">生物信息数据分析服务</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="__MODULE__/special">特色项目</a>
+                            <ul class="list-unstyled">
+                                <li><a href="__MODULE__/special/info">高通量测序</a></li>
+                                <li><a href="__MODULE__/special/info">蛋白芯片</a></li>
+                                <li><a href="__MODULE__/special/info">高通量测序</a></li>
+                                <li><a href="__MODULE__/special/info">蛋白芯片</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">企业资讯</a>
+                            <ul class="list-unstyled">
+                                <li><a href="__MODULE__/sale">促销活动</a></li>
+                                <li><a href="__MODULE__/news">新闻动态</a></li>
+                                <li><a href="__MODULE__/laboratory">实验室展示</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">联系我们</a>
+                            <ul class="list-unstyled">
+                                <li><a href="__MODULE__/contact">联系方式</a></li>
+                                <li><a href="__MODULE__/contact/message">在线留言</a></li>
+                                <li><a href="__MODULE__/contact/jobs">人才招聘</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
