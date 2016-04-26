@@ -27,6 +27,9 @@
 .main article p {
   line-height: 2;
 }
+.main article ol {
+  padding-left: 1rem;
+}
 .main article li {
   padding-bottom: 2rem;
 }

@@ -54,7 +54,7 @@ p {
 }
 
 .active {
-    display: block;
+    display: block !important;
 }
 
 // 面包屑导航
@@ -80,6 +80,7 @@ p {
 }
 
 // 页面标题
+
 /**
  * <div class="row">
  *     <div class="page_title">
@@ -90,6 +91,7 @@ p {
  *      </div>
  * </div>
  */
+
 .page_title {
     padding: 1rem 0;
     header {
@@ -126,16 +128,16 @@ p {
     }
 }
 
-
-
 // 文章标题
 .article_title {
-    border-right: 1rem solid red;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
     header {
-        padding: 0 1rem;
-        border-bottom: 1px solid #ccc;
+        border-left: 0.4rem solid #11c7c7;
+        padding: 0 0.1rem;
         h4 {
-            padding-left: 1rem;
+            padding-left: 0.7rem;
         }
     }
 }

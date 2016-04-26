@@ -1,14 +1,13 @@
 $(document).ready(function() {
 
-
-	$(document).on('click', '.header_nav a', function (e) {
+	// 画面切换
+	$(document).on('click', '.cat li', function (e) {
 		e.preventDefault();
+		var _index = $('.cat li').index(this);
+		$(this).parent().find('.active').removeClass('active');
+		$(this).addClass('active');
 
-		var _index = $('.header_nav a').index(this);
-
-		$('.header_nav .active').removeClass('active');
-		$($('.header_nav li')[_index + 1]).addClass('active');
-		$($('.info.active')).removeClass('active');
-		$($('.info')[_index]).addClass('active');
+		$('.list.active').removeClass('active');
+		$($('.list')[_index]).addClass('active');
 	});
 });

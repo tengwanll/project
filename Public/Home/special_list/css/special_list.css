@@ -4,7 +4,7 @@
   background-position: center center;
 }
 .main > header .color {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.6);
   text-align: center;
 }
 .main > header .color .wrap {
@@ -31,69 +31,55 @@
 .main > header .color .wrap div p {
   line-height: 2;
 }
-.main > nav {
-  background: #11c7c7;
+.main .catList {
   overflow: hidden;
 }
-.main > nav ul {
-  padding: 0.5rem 0;
-  overflow: hidden;
-}
-.main > nav ul li {
+.main .cat {
   float: left;
-  width: 25%;
-  border-left: 2px solid white;
+  width: 20%;
 }
-.main > nav ul li:first-child {
-  border: none;
+.main .cat ul li {
+  padding: 0 16%;
+  border-bottom: 1px solid white;
 }
-.main > nav ul li a {
-  font-size: 0.8rem;
-  line-height: 2;
-  display: block;
-  color: white;
+.main .cat ul li a {
+  background: rgba(0, 0, 0, 0.6);
   text-align: center;
+  display: block;
+  line-height: 2rem;
+  color: white;
+}
+.main .cat ul .active a {
+  background: #11c7c7;
 }
 .main .list {
-  padding: 2rem 0;
-}
-.main .list header {
-  border-bottom: 1px solid #adacac;
-  padding: 0.4rem 0;
-}
-.main .list header h4 {
-  border-left: 6px solid #11c7c7;
-  padding-left: 1rem;
-  margin-left: 1rem;
-}
-.main .list ul {
-  overflow: hidden;
+  display: none;
+  float: left;
+  width: 80%;
+  padding: 0 1rem;
+  background: #eee;
 }
 .main .list ul li {
   float: left;
   width: 33%;
-  padding: 4rem 0;
+  padding: 1.5rem 0;
 }
 .main .list ul li a {
   display: block;
-  overflow: hidden;
   text-align: center;
   color: #2a2a2a;
 }
 .main .list ul li a img {
-  display: inline-block;
   width: 80%;
 }
 .main .list ul li a h5 {
-  display: inline-block;
   width: 80%;
-  text-align: left;
+  margin: 0 auto;
+  line-height: 3;
   font-size: 1rem;
-  line-height: 2;
+  text-align: left;
 }
 .main .list ul li a p {
-  line-height: 2;
-  display: inline-block;
   width: 80%;
-  text-align: left;
+  margin: 0 auto;
 }
