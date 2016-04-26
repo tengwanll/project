@@ -181,7 +181,7 @@ p {
   padding: 2rem 0;
 }
 .active {
-  display: block;
+  display: block !important;
 }
 #breadcrumb nav ul li {
   display: inline-block;
@@ -242,14 +242,16 @@ p {
   border-bottom: 4px solid #09dada;
 }
 .article_title {
-  border-right: 1rem solid red;
-}
-.article_title header {
-  padding: 0 1rem;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
   border-bottom: 1px solid #ccc;
 }
+.article_title header {
+  border-left: 0.4rem solid #11c7c7;
+  padding: 0 0.1rem;
+}
 .article_title header h4 {
-  padding-left: 1rem;
+  padding-left: 0.7rem;
 }
 .paragraph_title {
   padding: 2rem 0;

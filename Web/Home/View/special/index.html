@@ -1,6 +1,6 @@
 <include file="Public/header" name="special_list" title="特殊服务列表" />
-<div class="main row">
-    <header>
+<div class="main">
+    <header class="row">
         <div class="color">
             <div class="wrap">
                 <div>
@@ -15,14 +15,15 @@
             </div>
         </div>
     </header>
-    <nav>
+    <!--     <nav>
         <ul class="wrap list-unstyled">
             <foreach name="service" item="vo">
             <li><a href="#">{$vo['title']}</a></li>
             </foreach>
         </ul>
-    </nav>
-    <foreach name="serviceList" item="serviceSort">
+    </nav> -->
+    <include file="public/breadcrumb" />
+    <!-- <foreach name="serviceList" item="serviceSort">
     <div class="list">
         <div class="wrap">
             <header>
@@ -42,6 +43,276 @@
             </ul>
         </div>
     </div>
-    </foreach>
+    </foreach> -->
+    <div class="wrap catList">
+        <nav class="cat">
+            <ul>
+                <li class="active"><a href="#">基因组学</a></li>
+                <li><a href="#">细胞学</a></li>
+                <li><a href="#">蛋白质组学</a></li>
+                <li><a href="#">生物信息</a></li>
+            </ul>
+        </nav>
+        <div class="list">
+            <div class="article_title">
+                <header>
+                    <h4>基因组学</h4>
+                </header>
+            </div>
+            <ul class="list-unstyled">
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="list active">
+            <div class="article_title">
+                <header>
+                    <h4>细胞学</h4>
+                </header>
+            </div>
+            <ul class="list-unstyled">
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="list">
+            <div class="article_title">
+                <header>
+                    <h4>蛋白质组学</h4>
+                </header>
+            </div>
+            <ul class="list-unstyled">
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="list">
+            <div class="article_title">
+                <header>
+                    <h4>生物信息</h4>
+                </header>
+            </div>
+            <ul class="list-unstyled">
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">
+                        <h5 class="title">蛋白质服务项目</h5>
+                        <p class="ellipsis_more_line">asdasdas dasdasdasdasdasdas</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
-<include file="Public/footer" />
+<include file="Public/footer" name="special_list"/>
