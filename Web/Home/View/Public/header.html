@@ -23,9 +23,11 @@
                 </div>
                 <div class="search">
                     <div>
-                        <input type="text" placeholder="搜索项目">
+                    <form action="{:U('Home/contact/add')}" method="post">
+                        <input type="text" placeholder="搜索项目" name="title">
                         <button><span class="fa fa-search"></span></button>
                     </div>
+                    </form>
                 </div>
                 <nav>
                     <ul>

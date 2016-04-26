@@ -23,7 +23,7 @@ class IndexController extends Controller {
 
     // 搜索界面
     public function search () {
-        $title=I('get.title');
+        $title=I('post.title');
         $serviceModel=M('service,service_sort');
         $where=' service.sort_id=service_sort.id ';
         if($title){
