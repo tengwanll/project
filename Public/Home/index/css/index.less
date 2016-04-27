@@ -223,8 +223,9 @@
     padding-bottom: 3rem;
     .list {
         width: 100%;
+        overflow: hidden;
         li {
-            display: inline-block;
+            float: left;
             width: 33%;
             h5,
             img,
@@ -261,12 +262,15 @@
 }
 
 .tabs {
+    overflow: hidden;
+    list-style: none;
     padding-bottom: 1.5rem;
     li {
-        display: inline-block;
+        float: left;
         a {
             overflow: hidden;
             display: block;
+            float: left;
             color: #050505;
             padding: 0 20px;
             border-right: 1px solid #969797;
@@ -302,6 +306,7 @@
             }
         }
         &.active {
+            overflow: hidden;
             h4 {
                 border-top-color: #64f5f5;
             }
