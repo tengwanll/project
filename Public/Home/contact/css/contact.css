@@ -35,3 +35,26 @@
 #map .icon-cir-red {
   background-position: -11px -5px;
 }
+.info h5 {
+  font-size: 1.2rem;
+  line-height: 2;
+}
+.info address {
+  margin-bottom: 0;
+}
+.qrcode {
+  float: left;
+  width: 50%;
+  text-align: right;
+}
+.qrcode div {
+  width: 50%;
+  padding-right: 2rem;
+  display: inline-block;
+}
+.qrcode img,
+.qrcode p {
+  width: 80%;
+  display: inline-block;
+  text-align: center;
+}
