@@ -23,7 +23,6 @@
         </ul>
     </nav> -->
     <include file="public/breadcrumb" />
-    
     <div class="wrap catList">
         <nav class="cat">
             <ul>
@@ -39,8 +38,8 @@
                 </foreach>
             </ul>
         </nav>
-        <foreach name="serviceList" item="serviceSort">
-        <div class="list">
+        <foreach name="serviceList" item="serviceSort" key="k">
+        <div class="list <if condition='$k eq 0'>active</if>">
             <div class="article_title">
                 <header>
                     <h4>{$serviceSort['title']}</h4>

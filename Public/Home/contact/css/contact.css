@@ -20,40 +20,40 @@
   padding-top: 1.4rem;
   font-size: 0.8rem;
 }
-#map {
+.main #map {
   width: 60%;
   margin: 0 auto;
   height: 400px;
 }
-#map .icon {
+.main #map .icon {
   background: url(http://lbs.amap.com/console/public/show/marker.png) no-repeat;
 }
-#map .icon-cir {
+.main #map .icon-cir {
   height: 31px;
   width: 28px;
 }
-#map .icon-cir-red {
+.main #map .icon-cir-red {
   background-position: -11px -5px;
 }
-.info h5 {
+.main .info h5 {
   font-size: 1.2rem;
   line-height: 2;
 }
-.info address {
+.main .info address {
   margin-bottom: 0;
 }
-.qrcode {
+.main .qrcode {
   float: left;
   width: 50%;
   text-align: right;
 }
-.qrcode div {
+.main .qrcode div {
   width: 50%;
   padding-right: 2rem;
   display: inline-block;
 }
-.qrcode img,
-.qrcode p {
+.main .qrcode img,
+.main .qrcode p {
   width: 80%;
   display: inline-block;
   text-align: center;

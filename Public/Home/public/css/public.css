@@ -131,6 +131,13 @@
 .siteInfo ul li:nth-child(2) .connect {
   float: left;
 }
+.siteInfo ul .qrcode img {
+  height: 8rem;
+  width: 8rem;
+}
+.siteInfo ul .qrcode div div {
+  padding-left: 9rem;
+}
 .footer {
   height: 4rem;
   line-height: 4rem;
@@ -184,17 +191,15 @@ p {
   display: block !important;
 }
 #breadcrumb nav ul li {
-  display: inline-block;
-  line-height: 2rem;
+  float: left;
+  line-height: 3rem;
 }
 #breadcrumb nav ul li:after {
   content: '>';
+  padding: 0 0.5rem;
 }
 #breadcrumb nav ul li:last-child:after {
   content: '';
-}
-#breadcrumb nav ul li a {
-  display: block;
 }
 /**
  * <div class="row">

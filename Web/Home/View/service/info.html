@@ -1,37 +1,45 @@
 <include file="Public/header" name="service_info" title="服务详情" />
-<div class="main row">
+<div class="main">
     <include file="public/breadcrumb" />
     <article class="wrap">
-        <header>
-            <h3>项目简介</h3>
-        </header>
-        <p>{$serviceInfo['description']}
-        </p>
+        <div class="article_title">
+            <header>
+                <h4>项目简介</h4>
+            </header>
+        </div>
+        <p>{$serviceInfo['description']}</p>
     </article>
     <article class="wrap">
-        <header>
-            <h3>实验流程</h3>
-            <p>{$serviceInfo['experiment_flow']}</p>
-        </header>
+        <div class="article_title">
+            <header>
+                <h4>实验流程</h4>
+            </header>
+        </div>
+        <p>{$serviceInfo['experiment_flow']}</p>
     </article>
     <article class="wrap">
-        <header>
-            <h3>用户须知</h3>
-        </header>
+        <div class="article_title">
+            <header>
+                <h4>用户须知</h4>
+            </header>
+        </div>
         <p>{$serviceInfo['user_notice']}
         </p>
     </article>
     <article class="wrap">
-        <header>
-            <h3>结果展示</h3>
-        </header>
-        <p>{$serviceInfo['result_show']}
-        </p>
+        <div class="article_title">
+            <header>
+                <h4>结果展示</h4>
+            </header>
+        </div>
+        <p>{$serviceInfo['result_show']}</p>
     </article>
     <article class="wrap">
-        <header>
-            <h3>服务周期</h3>
-        </header>
+        <div class="article_title">
+            <header>
+                <h4>服务周期</h4>
+            </header>
+        </div>
         <p>{$serviceInfo['server_circle']}
         </p>
     </article>

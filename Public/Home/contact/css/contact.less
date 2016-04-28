@@ -21,48 +21,45 @@
             font-size: 0.8rem;
         }
     }
-}
-
-#map {
-    width: 60%;
-    margin: 0 auto;
-    height: 400px;
-    .icon {
-        background: url(http://lbs.amap.com/console/public/show/marker.png) no-repeat;
+    #map {
+        width: 60%;
+        margin: 0 auto;
+        height: 400px;
+        .icon {
+            background: url(http://lbs.amap.com/console/public/show/marker.png) no-repeat;
+        }
+        .icon-cir {
+            height: 31px;
+            width: 28px;
+        }
+        .icon-cir-red {
+            background-position: -11px -5px;
+        }
     }
-    .icon-cir {
-        height: 31px;
-        width: 28px;
+    .info {
+        h5 {
+            font-size: 1.2rem;
+            line-height: 2;
+        }
+        .title {}
+        address {
+            margin-bottom: 0;
+        }
     }
-    .icon-cir-red {
-        background-position: -11px -5px;
-    }
-}
-
-.info {
-    h5 {
-        font-size: 1.2rem;
-        line-height: 2;
-    }
-    .title {
-    }
-    address {
-        margin-bottom: 0;
-    }
-}
-
-.qrcode {
-    float: left;
-    width: 50%;
-    text-align: right;
-    div {
+    .qrcode {
+        float: left;
         width: 50%;
-        padding-right: 2rem;
-        display: inline-block;
-    }
-    img, p {
-        width: 80%;
-        display: inline-block;
-        text-align: center;
+        text-align: right;
+        div {
+            width: 50%;
+            padding-right: 2rem;
+            display: inline-block;
+        }
+        img,
+        p {
+            width: 80%;
+            display: inline-block;
+            text-align: center;
+        }
     }
 }
