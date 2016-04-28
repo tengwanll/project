@@ -1,7 +1,10 @@
 <div class="row" id="breadcrumb">
     <nav class="wrap">
         <ul class="list-unstyled">
-            <li><a href="__APP__">首页</a></li>
+            <li><a href="{:U('Home/Index/index')}">首页</a></li>
+            <foreach name ="navigation" item="vo">
+				<li><a href="{$vo['url']}">{$vo['title']}</a></li>
+            </foreach>
         </ul>
     </nav>
 </div>

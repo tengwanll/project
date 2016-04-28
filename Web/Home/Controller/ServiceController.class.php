@@ -18,6 +18,16 @@ class ServiceController extends Controller {
         $serviceSort=M('service_sort');
         $serviceSortData=$serviceSort->where("id=$sortId")->find();
         $sortTitle=$serviceSortData['title'];
+        $navigation=array();
+        $navigation[]=array(
+            'title'=>$sortTitle,
+            'url'=>__ROOT__.'/Home/service/lists/serviceId/'.$sortId
+        );
+        $navigation[]=array(
+            'title'=>$serviceInfo['title'],
+            'url'=>__ROOT__.'/Home/service/info/serviceId/'.$serviceId
+        );
+        $this->assign('navigation',$navigation);
     	$this->assign('serviceInfo',$serviceInfo);
         $this->assign('root','service_info');
         $this->assign('sortTitle',$sortTitle);
@@ -29,6 +39,8 @@ class ServiceController extends Controller {
         $service=M('service_sort');
         $serviceInfo=M('service');
         $services=$service->where('type=1 and status=1 and parent_id=0')->select();
+        $serviceSortData=$service->where("id=$serviceId")->find();
+        $sortTitle=$serviceSortData['title'];
         $serviceList=array();
         foreach($services as $list){
             $id=$list['id'];
@@ -40,6 +52,12 @@ class ServiceController extends Controller {
                 'sortList'=>$serviceInfo->where("sort_id= $id and status=1")->select()
             );
         }
+        $navigation=array();
+        $navigation[]=array(
+            'title'=>$sortTitle,
+            'url'=>__ROOT__.'/Home/service/lists/serviceId/'.$serviceId
+        );
+        $this->assign('navigation',$navigation);
         $this->assign('service',$services);
         $this->assign('serviceList',$serviceList);
         $this->assign('serviceId',$serviceId);

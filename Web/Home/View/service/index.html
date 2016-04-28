@@ -5,7 +5,7 @@
             <ul class="list-unstyled">
                 <foreach name="service" item="vo">
                 <li>
-                    <a href="{:U('Home/service/list',array('serviceId'=>$vo['id']))}">
+                    <a href="{:U('Home/service/lists',array('serviceId'=>$vo['id']))}">
                         <span class="fa fa-car icon"></span>
                         <span class="title">{$vo['title']}</span>
                         <img src="__PUBLIC__/Uploads/pics/service_nav_1_img.jpg">

@@ -16,6 +16,12 @@ class SpecialController extends Controller {
                 'sortList'=>$serviceInfo->where("sort_id= $id and status=1")->select()
             );
         }
+        $navigation=array();
+        $navigation[]=array(
+            'title'=>'特殊项目',
+            'url'=>__ROOT__.'/Home/special/index'
+        );
+        $this->assign('navigation',$navigation);
         $this->assign('root','special_list');
         $this->assign('service',$services);
         $this->assign('serviceList',$serviceList);
@@ -30,6 +36,16 @@ class SpecialController extends Controller {
         $serviceSort=M('service_sort');
         $serviceSortData=$serviceSort->where("id=$sortId")->find();
         $sortTitle=$serviceSortData['title'];
+        $navigation=array();
+        $navigation[]=array(
+            'title'=>$sortTitle,
+            'url'=>__ROOT__.'/Home/special/index'
+        );
+        $navigation[]=array(
+            'title'=>$serviceInfo['title'],
+            'url'=>__ROOT__.'/Home/special/info/serviceId/'.$serviceId
+        );
+        $this->assign('navigation',$navigation);
         $this->assign('serviceInfo',$serviceInfo);
         $this->assign('root','special_info');
         $this->assign('sortTitle',$sortTitle);
