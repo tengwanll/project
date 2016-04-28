@@ -10,10 +10,8 @@
   padding-left: 1rem;
   border-left: 4px solid #09dada;
 }
-.main > div > div {
-  float: left;
-}
 .main > div .newsList {
+  float: left;
   width: 60%;
 }
 .main > div .newsList li.newsItem {
@@ -41,6 +39,7 @@
 .main > div .newsList .paging ul {
   display: inline-block;
   padding: 2rem 0;
+  width: 100%;
 }
 .main > div .newsList .paging li {
   display: inline-block;
@@ -55,10 +54,14 @@
   text-align: center;
   background: #858585;
 }
+.main > div .newsList .paging li.active {
+  display: inline-block !important;
+}
 .main > div .newsList .paging li.active a {
   background: #09dada;
 }
 .main > div .newest {
+  float: right;
   width: 40%;
   padding: 0 1rem 2rem 1rem;
   margin-top: 2rem;

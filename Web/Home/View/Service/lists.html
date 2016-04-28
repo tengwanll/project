@@ -1,5 +1,5 @@
 <include file="Public/header" name="service_list" title="服务列表" />
-<div class="main row">
+<div class="main">
     <include file="public/breadcrumb" />
     <foreach name="serviceList" item="result">
         <if condition="$result['id']==$serviceId">
@@ -26,7 +26,7 @@
                             <p>{$sortList['description']}</p>
                         </a>
                     </li>
-                </foreach>>
+                </foreach>
             </ul>
         </div>
         </div>
