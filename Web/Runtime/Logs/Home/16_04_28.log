@@ -4738,3 +4738,271 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000915s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000975s ]
 
+[ 2016-04-28T23:39:20+08:00 ] ::1 /project/index.php/Home/about
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000387s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000778s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000841s ]
+SQL: DESCRIBE employee [ RunTime:0.032404s ]
+SQL: SELECT `id`,`name`,`photo`,`description` FROM `employee` LIMIT 3   [ RunTime:0.032047s ]
+SQL: DESCRIBE training [ RunTime:0.032462s ]
+SQL: DESCRIBE company [ RunTime:0.032358s ]
+SQL: SELECT * FROM `company` LIMIT 1   [ RunTime:0.032888s ]
+SQL: SELECT * FROM `training`  [ RunTime:0.032778s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000128s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035884s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035937s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000287s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000312s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001011s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001093s ]
+
+[ 2016-04-28T23:39:26+08:00 ] ::1 /project/index.php/Home/service
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000435s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000568s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000619s ]
+SQL: DESCRIBE service_sort [ RunTime:0.038603s ]
+SQL: SELECT * FROM `service_sort` WHERE ( type=1 and status=1 and parent_id=0 ) LIMIT 4   [ RunTime:0.038609s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000111s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021571s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021613s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000195s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000219s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000857s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000916s ]
+
+[ 2016-04-28T23:39:28+08:00 ] ::1 /project/index.php/Home/special/info
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000294s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000368s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000400s ]
+SQL: DESCRIBE service [ RunTime:0.037140s ]
+SQL: SELECT * FROM `service` WHERE `id` = 0 LIMIT 1   [ RunTime:0.036757s ]
+SQL: DESCRIBE service_sort [ RunTime:0.036785s ]
+SQL: SELECT * FROM `service_sort` WHERE ( id= ) LIMIT 1   [ RunTime:0.036497s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `service_sort` WHERE ( id= ) LIMIT 1  
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000098s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035197s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000190s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000212s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000915s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000998s ]
+
+[ 2016-04-28T23:39:30+08:00 ] ::1 /project/index.php/Home/special/info
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000393s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000431s ]
+SQL: DESCRIBE service [ RunTime:0.034404s ]
+SQL: SELECT * FROM `service` WHERE `id` = 0 LIMIT 1   [ RunTime:0.034046s ]
+SQL: DESCRIBE service_sort [ RunTime:0.034309s ]
+SQL: SELECT * FROM `service_sort` WHERE ( id= ) LIMIT 1   [ RunTime:0.033371s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `service_sort` WHERE ( id= ) LIMIT 1  
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000114s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033273s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033320s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000201s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000227s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000850s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000907s ]
+
+[ 2016-04-28T23:39:32+08:00 ] ::1 /project/index.php/Home/sale
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000629s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000519s ]
+SQL: DESCRIBE activity [ RunTime:0.036091s ]
+SQL: SELECT * FROM `activity` WHERE ( status=1 )  [ RunTime:0.035559s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000123s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021973s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022016s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000195s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000218s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000615s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000658s ]
+
+[ 2016-04-28T23:39:34+08:00 ] ::1 /project/index.php/Home/news
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000306s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000614s ]
+SQL: DESCRIBE news [ RunTime:0.033252s ]
+SQL: DESCRIBE notice [ RunTime:0.033251s ]
+SQL: SELECT * FROM `notice` WHERE ( status=1 )  [ RunTime:0.032838s ]
+SQL: SELECT * FROM `news` WHERE ( status=1 )  [ RunTime:0.100361s ]
+SQL: SELECT * FROM `news` WHERE ( status=1 ) ORDER BY create_time desc LIMIT 3   [ RunTime:0.033876s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000133s ]
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024805s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024841s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000202s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000229s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000657s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000704s ]
+
+[ 2016-04-28T23:39:36+08:00 ] ::1 /project/index.php/Home/laboratory
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000382s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000415s ]
+SQL: DESCRIBE lab [ RunTime:0.035278s ]
+SQL: SELECT * FROM `lab` WHERE ( status=1 )  [ RunTime:0.035014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020267s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020311s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000197s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000586s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000630s ]
+
+[ 2016-04-28T23:39:38+08:00 ] ::1 /project/index.php/Home/news
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000567s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000645s ]
+SQL: DESCRIBE news [ RunTime:0.037891s ]
+SQL: DESCRIBE notice [ RunTime:0.034810s ]
+SQL: SELECT * FROM `notice` WHERE ( status=1 )  [ RunTime:0.034172s ]
+SQL: SELECT * FROM `news` WHERE ( status=1 )  [ RunTime:0.104480s ]
+SQL: SELECT * FROM `news` WHERE ( status=1 ) ORDER BY create_time desc LIMIT 3   [ RunTime:0.035379s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020528s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020570s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000260s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000358s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001345s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001421s ]
+
+[ 2016-04-28T23:40:00+08:00 ] ::1 /project/index.php/Home/news
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000419s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000453s ]
+SQL: DESCRIBE news [ RunTime:0.044440s ]
+SQL: DESCRIBE notice [ RunTime:0.044452s ]
+SQL: SELECT * FROM `notice` WHERE ( status=1 )  [ RunTime:0.044141s ]
+SQL: SELECT * FROM `news` WHERE ( status=1 )  [ RunTime:0.133299s ]
+SQL: SELECT * FROM `news` WHERE ( status=1 ) ORDER BY create_time desc LIMIT 3   [ RunTime:0.045116s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022735s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022768s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000198s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000789s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000846s ]
+
+[ 2016-04-28T23:40:26+08:00 ] ::1 /project/index.php/Home/news
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000352s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000512s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000553s ]
+SQL: DESCRIBE news [ RunTime:0.032761s ]
+SQL: DESCRIBE notice [ RunTime:0.032535s ]
+SQL: SELECT * FROM `notice` WHERE ( status=1 )  [ RunTime:0.032524s ]
+SQL: SELECT * FROM `news` WHERE ( status=1 )  [ RunTime:0.099175s ]
+SQL: SELECT * FROM `news` WHERE ( status=1 ) ORDER BY create_time desc LIMIT 3   [ RunTime:0.033969s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000129s ]
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+NOTIC: [8] Undefined index: description E:\project\Web\Runtime\Cache\Home\c13ae44ff63cc45c73df4ef88c7f2c75.php 第 95 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024661s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024699s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000282s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000841s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000903s ]
+
