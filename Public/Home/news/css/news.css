@@ -67,16 +67,6 @@
   margin-top: 2rem;
   border-left: 1px solid #c3c1c1;
 }
-.main > div .newest header {
-  border-bottom: 1px solid #c3c1c1;
-  padding: 1rem 0;
-}
-.main > div .newest header h3 {
-  margin: 0;
-  line-height: 1;
-  padding-left: 1rem;
-  border-left: 4px solid #09dada;
-}
 .main > div .newest li {
   line-height: 3;
   border-bottom: 1px solid #c3c1c1;
