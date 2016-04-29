@@ -10,10 +10,8 @@
                 border-left: 4px solid #09dada;
             }
         }
-        & > div {
-            float: left;
-        }
         .newsList {
+            float: left;
             width: 60%;
             li.newsItem {
                 overflow: hidden;
@@ -39,6 +37,7 @@
                 ul {
                     display: inline-block;
                     padding: 2rem 0;
+                    width: 100%;
                 }
                 li {
                     display: inline-block;
@@ -52,27 +51,21 @@
                         text-align: center;
                         background: #858585;
                     }
-                    &.active a {
-                        background: #09dada;
+                    &.active {
+                        display: inline-block !important;
+                        a {
+                            background: #09dada;
+                        }
                     }
                 }
             }
         }
         .newest {
+            float: right;
             width: 40%;
             padding: 0 1rem 2rem 1rem;
             margin-top: 2rem;
             border-left: 1px solid #c3c1c1;
-            header {
-                border-bottom: 1px solid #c3c1c1;
-                padding: 1rem 0;
-                h3 {
-                    margin: 0;
-                    line-height: 1;
-                    padding-left: 1rem;
-                    border-left: 4px solid #09dada;
-                }
-            }
             li {
                 line-height: 3;
                 border-bottom: 1px solid #c3c1c1;

@@ -1,31 +1,6 @@
 .main {
   padding-bottom: 2rem;
 }
-.main > header ul {
-  padding-top: 2rem;
-  line-height: 2rem;
-}
-.main > header ul li {
-  display: inline-block;
-}
-.main > header ul li:after {
-  content: ">";
-}
-.main > header ul li:last-child:after {
-  content: "";
-}
-.main article header {
-  border-bottom: 1px solid #959595;
-  padding-bottom: 0.8rem;
-  margin-bottom: 1rem;
-}
-.main article header h3 {
-  border-left: 5px solid #11c7c7;
-  margin-left: 1rem;
-  padding-left: 1rem;
-  line-height: 1.5;
-  font-size: 1rem;
-}
 .main article p {
   padding-left: 1rem;
   line-height: 2;

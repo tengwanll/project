@@ -34,6 +34,13 @@
 .siteInfo ul li:nth-child(2) .connect {
   float: left;
 }
+.siteInfo ul .qrcode img {
+  height: 8rem;
+  width: 8rem;
+}
+.siteInfo ul .qrcode div div {
+  padding-left: 9rem;
+}
 .footer {
   height: 4rem;
   line-height: 4rem;
