@@ -8,12 +8,13 @@
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/style.css">
 </head>
 
-<body class="container-fluid" ng-controller="AdminController">
-    <header id="header">
-        <a href="/">退出登录</a>
+<body class="container-fluid">
+    <header id="header"  ng-controller="HeaderController">
+        <a href="#" ng-click="uploadPassword()">更改密码</a>
+        <a href="#" ng-click="logout()">退出登录</a>
     </header>
     <div class="row" id="main">
-        <aside class="col-md-2" id="sideBar">
+        <aside class="col-md-2 col-sm-2" id="sideBar">
             <nav>
                 <ul class="list-unstyled">
                     <li><a href="#/">首页</a></li>
@@ -28,7 +29,7 @@
                 </ul>
             </nav>
         </aside>
-        <div class="col-md-10 mainView" ng-view></div>
+        <div class="col-md-10 col-sm-10 mainView" ng-view></div>
     </div>
     <script src="//cdn.bootcss.com/require.js/2.1.22/require.js" data-main="__PUBLIC__/Admin/main.js"></script>
 </body>
