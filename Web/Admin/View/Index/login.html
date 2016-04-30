@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+    #main {
+        padding-top: 200px;
+    }
+    </style>
+</head>
+
+<body class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4" id="main">
+            <div clas="form-group">
+                <label for="username">账号：</label>
+                <input type="text" id="username" value="panxu" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">密码：</label>
+                <input type="password" id="password" value="123456" class="form-control">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block">登陆</button>
+            </div>
+        </div>
+    </div>
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('button').click(function() {
+            var btn = $(this).attr('disabled', 'disabled').html('登陆中');
+            var postData = {
+                username: $('#username').val(),
+                password: $('#password').val()
+            };
+            $.ajax({
+                url: '/Admin/admin/login',
+                data: postData,
+                type: 'post',
+                success: function(data) {
+                    if (data.errno === 0) {
+                        window.location.href = "/Admin/Index/index.html";
+                    } else {
+                        btn.html('登陆').removeAttr('disabled');
+                        alert(data);
+                    }
+                },
+                error: function() {
+                    btn.html('登陆').removeAttr('disabled');
+
+                }
+            });
+        });
+    });
+    </script>
+</body>
+
+</html>
