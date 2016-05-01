@@ -40,7 +40,7 @@ define(['app', 'angular-route'], function(app) {
                 controller: 'SettingController'
             })
             .otherwise({
-                redirectTo: ''
+                redirectTo: '/'
             });
     }])
 });
