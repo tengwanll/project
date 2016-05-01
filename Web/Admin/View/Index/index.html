@@ -6,26 +6,32 @@
     <title>Document</title>
     <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/style.css">
-    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/libs/remodal/remodal.min.js">
-    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/libs/remodal/remodal-default-theme.css">
+    <!-- <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/libs/remodal/remodal.min.js"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/libs/remodal/remodal-default-theme.css"> -->
     <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body class="container-fluid">
-    <header id="header" ng-controller="HeaderController">
-    <div class="breadcrumb" style="display: none;"></div>
-        <div><a href="#" ng-click="uploadPassword()"><span class="fa fa-user" class="user"></span></a>
-            <a href="#" ng-click="logout()" class="signout"><span class="fa fa-sign-out"></span></a></div>
-    </header>
-    <div class="row">
-        <aside class="col-md-2 col-sm-2" id="sideBar" ng-controller="SideBarController">
-            <nav>
-                <ul class="list-unstyled">
-                    <li ng-repeat="item in sideBarDatas.menu" ng-click="selectMenu()"><a href="#{{item.url}}">{{item.name}}</a></li>
-                </ul>
-            </nav>
-        </aside>
-        <div class="col-md-10 col-sm-10 mainView" ng-view id="main"></div>
+    <div class="row" ng-controller="MainController">
+        <header id="header">
+            <div>
+                <a href="#" ng-click="uploadPassword()"><span class="fa fa-user" class="user"></span></a>
+                <a href="#" ng-click="logout()" class="signout"><span class="fa fa-sign-out"></span></a>
+            </div>
+        </header>
+        <div class="section">
+            <aside class="col-md-2 col-sm-2" id="sideBar">
+                <nav>
+                    <ul class="list-unstyled">
+                        <li ng-repeat="item in mainDatas.menu" class="{{mainDatas.currentMenu === $index ? 'active' : ''}}"><a ui-sref="{{item.state}}" ng-click="changeMenu($index)">{{item.name}}</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            <div class="col-md-10 col-sm-10 mainView">
+                <div class="breadcrumb"></div>
+                <div ui-view id="main"></div>
+            </div>
+        </div>
     </div>
     <script src="//cdn.bootcss.com/require.js/2.1.22/require.js" data-main="__PUBLIC__/Admin/main.js"></script>
 </body>
