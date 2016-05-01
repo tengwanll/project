@@ -127,6 +127,41 @@
             );
             $this->buildResponse(0,$result);
         }
+
+        public function company(){
+            $companyModel=M('company');
+            $fileModel=M('file');
+            $company=$companyModel->where("id=1")->find();
+            $photoId=$company['photo'];
+            $photo=$fileModel->where("id=$photoId")->find();
+            $photoUrl=$photo?__ROOT__.'/'.$photo['url']:'';
+            $arr=array(
+                'name'=>$company['name'],
+                'information'=>$company['information'],
+                'photo'=>$photoUrl
+            );
+            $this->buildResponse(0,$arr);
+        }
+
+        public function updateCompany(){
+            $json=$this->getContent();
+            $name=$json['name'];
+            $information=$json['information'];
+            $photo=$json['photo'];
+            $companyModel=M('company');
+            $data=array();
+            if($name){
+                $data['name']=$name;
+            }
+            if($information){
+                $data['information']=$information;
+            }
+            if($photo){
+                $data['photo']=$photo;
+            }
+            $companyModel->where("id=1")->save($data);
+            $this->buildResponse(0);
+        }
     }
 
     ?>

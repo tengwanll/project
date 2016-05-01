@@ -20,26 +20,17 @@ class JobsController extends CommonController
         }else{
             $where='status=1';
         }
-        $jobDemandModel=M('job_demand');
         $jobList=$jobModel->where($where)->page($page)->select();
         $total=$jobModel->where($where)->count();
         $arr=array();
         foreach($jobList as $lists){
             $id=$lists['id'];
-            $jobDemand=$jobDemandModel->where("job_id=$id")->select();
-            $demandArray=array();
-            foreach($jobDemand as $demands){
-                $demandArray[]=array(
-                    'id'=>$demands['id'],
-                    'demandContent'=>$demands['content']
-                );
-            }
             $arr[]=array(
                 'id'=>$id,
                 'lab'=>$lists['lab'],
                 'station'=>$lists['station'],
                 'number'=>$lists['number'],
-                'jobDemand'=>$demandArray,
+                'demand'=>$lists['demand'],
                 'createTime'=>$lists['create_time']
             );
         }
@@ -55,11 +46,13 @@ class JobsController extends CommonController
         $lab=$json['lab'];
         $station=$json['station'];
         $number=$json['number'];
+        $demand=$json['demand'];
         $date=date('Y-m-d H:i:s',time());
         $data=array(
             'lab'=>$lab?$lab:'',
             'station'=>$station?$station:'',
             'number'=>$number?$number:'',
+            'demand'=>$demand,
             'status'=>1,
             'create_time'=>$date,
             'update_time'=>$date
@@ -75,6 +68,7 @@ class JobsController extends CommonController
         $lab=$json['lab'];
         $station=$json['station'];
         $number=$json['number'];
+        $demand=$json['demand'];
         $jobModel=M('job');
         $job=$jobModel->where("id=$jobId")->find();
         if(!$job){
@@ -89,6 +83,9 @@ class JobsController extends CommonController
         }
         if($number){
             $data['number']=$number;
+        }
+        if($demand){
+            $data['demand']=$demand;
         }
         $jobModel->where("id=$jobId")->save($data);
         $this->buildResponse(0);
