@@ -13,10 +13,10 @@ class IndexController extends BaseController {
 
     // 登录页
     public function login () {
-        if (session['username']) {
-            $this -> redirect('index');
-        } else {
+        // if (session['username']) {
+            // $this -> redirect('index');
+        // } else {
             $this -> display();
-        }
+        // }
     }
 }
