@@ -21,11 +21,10 @@ class ContactController extends Controller {
         $arr=array();
         foreach($jobs as $item){
             $id=$item['id'];
-            $demands=$jobDemand->where("job_id=$id")->select();
             $arr[$item['lab']][]=array(
                 'station'=>$item['station'],
                 'number'=>$item['number'],
-                'demand'=>$demands,
+                'demand'=>$item['demand'],
             );
         }
         $this->assign('job',$arr);
