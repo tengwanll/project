@@ -41,6 +41,24 @@ class JobsController extends CommonController
         $this->buildResponse(0,$result);
     }
 
+    public function detail(){
+        $jobId=I('get.jobId');
+        $jobModel=M('job');
+        $job=$jobModel->where("id=$jobId")->find();
+        if(!$job){
+            $this->buildResponse(10210);
+        }
+        $arr=array(
+            'id'=>$job['id'],
+            'lab'=>$job['lab'],
+            'station'=>$job['station'],
+            'number'=>$job['number'],
+            'demand'=>$job['demand'],
+            'createTime'=>$job['create_time']
+        );
+        $this->buildResponse(0,$arr);
+    }
+
     public function create(){
         $json=$this->getContent();
         $lab=$json['lab'];

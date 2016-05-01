@@ -44,6 +44,28 @@ class ActivityController extends CommonController
         $this->buildResponse(0,$result);
     }
 
+    public function detail(){
+        $activityId=I('get.activityId');
+        $activityModel=M('activity');
+        $fileModel=M('file');
+        $activity=$activityModel->where("id=$activityId")->find();
+        if(!$activity){
+            $this->buildResponse(10207);
+        }
+        $photoId=$activity['photo'];
+        $photo=$fileModel->where("id=$photoId")->find();
+        $photoUrl=$photo?__ROOT__.'/'.$photo['url']:'';
+        $arr=array(
+            'id'=>$activity['id'],
+            'title'=>$activity['title'],
+            'shortDesc'=>$activity['short_desc'],
+            'content'=>$activity['content'],
+            'photo'=>$photoUrl,
+            'createTime'=>$activity['create_time']
+        );
+        $this->buildResponse(0,$arr);
+    }
+
     public function create(){
         $json=$this->getContent();
         $title=$json['title'];

@@ -58,6 +58,37 @@ class ServiceController extends CommonController
         $this->buildResponse(0,$result);
     }
 
+    public function detail(){
+        $serviceId=I('get.serviceId');
+        $fileModel=M('file');
+        $serviceModel=M('service s,service_sort t');
+        $where=" s.status=1 and s.sort_id=t.id and s.id=$serviceId ";
+        $service=$serviceModel->field('s.id,s.title,s.logo,s.short_desc,s.description,s.experiment_flow,s.user_notice,s.result_show,s.server_circle,s.experiment_theory,s.advantage,s.literature,s.create_time,t.title as sortTitle')->where($where)->find();
+        if(!$service){
+            $this->buildResponse(10206);
+        }
+        $logoId=$service['logo'];
+        $photo=$fileModel->where("id=$logoId")->find();
+        $photoUrl=$photo?__ROOT__.'/'.$photo['url']:'';
+        $arr=array(
+            'id'=>$service['id'],
+            'title'=>$service['title'],
+            'sortTitle'=>$service['sortTitle'],
+            'logo'=>$photoUrl,
+            'shortDesc'=>$service['short_desc'],
+            'description'=>$service['description'],
+            'experimentFlow'=>$service['experiment_flow'],
+            'userNotice'=>$service['user_notice'],
+            'resultShow'=>$service['result_show'],
+            'serverCircle'=>$service['server_circle'],
+            'experimentTheory'=>$service['experiment_theory'],
+            'advantage'=>$service['advantage'],
+            'literature'=>$service['literature'],
+            'createTime'=>$service['create_time']
+        );
+        $this->buildResponse(0,$arr);
+    }
+
     public function create(){
         $serviceModel=M('service');
         $json=$this->getContent();

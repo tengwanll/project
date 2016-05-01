@@ -43,6 +43,27 @@ class TrainingController extends CommonController
         $this->buildResponse(0,$result);
     }
 
+    public function detail(){
+        $trainingId=I('get.trainingId');
+        $trainingModel=M('training');
+        $fileModel=M('file');
+        $training=$trainingModel->where("id=$trainingId")->find();
+        if(!$training){
+            $this->buildResponse(10209);
+        }
+        $photoId=$training['photo'];
+        $photo=$fileModel->where("id=$photoId")->find();
+        $photoUrl=$photo?__ROOT__.'/'.$photo['url']:'';
+        $arr=array(
+            'id'=>$training['id'],
+            'title'=>$training['title'],
+            'content'=>$training['content'],
+            'photo'=>$photoUrl,
+            'createTime'=>$training['create_time']
+        );
+        $this->buildResponse(0,$arr);
+    }
+
     public function create(){
         $json=$this->getContent();
         $title=$json['title'];

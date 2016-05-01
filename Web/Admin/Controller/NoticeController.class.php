@@ -38,6 +38,22 @@ class NoticeController extends CommonController
         $this->buildResponse(0,$result);
     }
 
+    public function detail(){
+        $noticeId=I('get.noticeId');
+        $noticeModel=M('notice');
+        $notice=$noticeModel->where("id=$noticeId")->find();
+        if(!$notice){
+            $this->buildResponse(10211);
+        }
+        $arr=array(
+            'id'=>$notice['id'],
+            'englishContent'=>$notice['english_content'],
+            'content'=>$notice['content'],
+            'createTime'=>$notice['create_time']
+        );
+        $this->buildResponse(0,$arr);
+    }
+
     public function create(){
         $json=$this->getContent();
         $englishContent=$json['englishContent'];

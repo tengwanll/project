@@ -47,6 +47,31 @@ class LaboratoryController extends CommonController
         $this->buildResponse(0,$result);
     }
 
+    public function detail(){
+        $labId=I('get.labId');
+        $labModel=M('lab');
+        $fileModel=M('file');
+        $lab=$labModel->where("id=$labId")->find();
+        if(!$lab){
+            $this->buildResponse(10208);
+        }
+        $photoId=$lab['photo'];
+        $photoDetailId=$lab['photo_detail'];
+        $photo=$fileModel->where("id=$photoId")->find();
+        $photoUrl=$photo?__ROOT__.'/'.$photo['url']:'';
+        $photoDetail=$fileModel->where("id=$photoDetailId")->find();
+        $photoDetailUrl=$photoDetail?__ROOT__.'/'.$photoDetail['url']:'';
+        $arr=array(
+            'id'=>$lab['id'],
+            'name'=>$lab['name'],
+            'photoDetailUrl'=>$photoDetailUrl,
+            'description'=>$lab['description'],
+            'photo'=>$photoUrl,
+            'createTime'=>$lab['create_time']
+        );
+        $this->buildResponse(0,$arr);
+    }
+
     public function create(){
         $json=$this->getContent();
         $name=$json['name'];

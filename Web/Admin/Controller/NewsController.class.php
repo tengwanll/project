@@ -38,6 +38,28 @@
             $this->buildResponse(0,$result);
 		}
 
+        public function detail(){
+            $newsId=I('get.newsId');
+            $newsModel=M('news');
+            $fileModel=M('file');
+            $news=$newsModel->where("id=$newsId")->find();
+            if(!$news){
+                $this->buildResponse(10205);
+            }
+            $photoId=$news['photo'];
+            $photo=$fileModel->where("id=$photoId")->find();
+            $photoUrl=$photo?__ROOT__.'/'.$photo['url']:'';
+            $arr=array(
+                'id'=>$news['id'],
+                'title'=>$news['title'],
+                'shortDesc'=>$news['short_desc'],
+                'content'=>$news['content'],
+                'photo'=>$photoUrl,
+                'createTime'=>$news['create_time']
+            );
+            $this->buildResponse(0,$arr);
+        }
+
         /**
          * 添加新闻
          */
