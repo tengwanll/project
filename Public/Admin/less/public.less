@@ -1,7 +1,8 @@
 html,
 body,
 .container-fluid,
-.row {
+.row,
+.section {
     height: 100%;
 }
 
@@ -16,7 +17,7 @@ body,
     text-align: right;
     background: white;
     line-height: 50px;
-    border-bottom:1px solid #eee;
+    border-bottom: 1px solid #eee;
     a {
         display: inline-block;
         height: 30px;
@@ -54,9 +55,12 @@ body,
                     color: white;
                     line-height: 40px;
                     &:hover {
-                    	text-decoration: none;
-                    	background: #3b4975;
+                        text-decoration: none;
+                        background: #3b4975;
                     }
+                }
+                &.active {
+                    background: #3b4975;
                 }
             }
         }
@@ -66,5 +70,30 @@ body,
 // 主体样式
 #main {
     height: 100%;
-    padding-top: 100px;
+    padding-top: 80px;
+}
+
+.table {
+    th {
+        text-align: center;
+    }
+    td {
+        text-align: center;
+    }
+}
+
+.breadcrumb {
+    background: none;
+    ul {
+        li {
+            display: inline-block;
+            a {}
+            &:after {
+                content: '>';
+            }
+            &:last-child:after {
+                content: '';
+            }
+        }
+    }
 }
