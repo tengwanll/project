@@ -32,6 +32,21 @@ define(['app'], function(app) {
                 controller: 'ServiceController',
                 // resolve: loader("ServiceController")
             })
+            .state('serviceAdd', {
+                url: '/service/add',
+                templateUrl: baseurl + '/tpl/service/detail.html',
+                controller: 'ServiceController',
+            })
+            .state('serviceDatail', {
+                url: '/service/detail',
+                templateUrl: baseurl + '/tpl/service/detail.html',
+                controller: 'ServiceController',
+            })
+            .state('serviceEdit', {
+                url: '/service/edit',
+                templateUrl: baseurl + '/tpl/service/detail.html',
+                controller: 'ServiceController',
+            })
             // .state('serviceDetail', {
             //     url: '/service/:type/:id',
             //     templateUrl: baseurl + '/tpl/'

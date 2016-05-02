@@ -26,7 +26,4 @@ $(document).ready(function() {
 	$(document).on('mouseout', '.header nav > ul > li > ul', function () {
 		$(this).hide();
 	});
-
-
-
 });

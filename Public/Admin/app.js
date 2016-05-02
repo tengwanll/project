@@ -1,6 +1,6 @@
 define(['angular', 'uiRouter'], function(angular) {
     var app = angular.module('admin', ['ui.router'])
-        .controller('MainController', ['$scope', '$http', function($scope, $http) {
+        .controller('MainController', ['$scope', '$http', '$rootScope', function($scope, $http, $rootScope) {
             // 所有数据
             $scope.mainDatas = {
                 menu: [
@@ -47,6 +47,43 @@ define(['angular', 'uiRouter'], function(angular) {
             // 更改菜单
             $scope.changeMenu = function($index) {
                 $scope.mainDatas.currentMenu = $index;
+            };
+
+            // 富文本编辑器
+            $rootScope.initEditor = function() {
+                wangEditor.config.printLog = false;
+                var editor = new wangEditor('wangeditor');
+                editor.config.menus = [
+                    // 'source','|','bold','underline','italic','strikethrough',
+                    // 'eraser',
+                    // 'forecolor',
+                    // 'bgcolor',
+                    // '|',
+                    // 'quote',
+                    // 'fontfamily',
+                    // 'fontsize',
+                    // 'head',
+                    // 'unorderlist',
+                    // 'orderlist',
+                    // 'alignleft',
+                    // 'aligncenter',
+                    // 'alignright',
+                    // '|',
+                    // 'link',
+                    // 'unlink',
+                    // 'table',
+                    // 'emotion',
+                    // '|',
+                    'img',
+                    // 'video',
+                    // 'location',
+                    // 'insertcode',
+                    // '|',
+                    // 'undo',
+                    // 'redo',
+                    // 'fullscreen'
+                ];
+                editor.create();
             };
 
         }])
