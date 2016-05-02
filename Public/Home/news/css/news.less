@@ -1,15 +1,5 @@
 .main {
-    & > div {
-        overflow: hidden;
-        & > header {
-            border-bottom: 1px solid #c0c0c0;
-            padding: 0.5rem 0;
-            h3 {
-                line-height: 1;
-                padding-left: 1rem;
-                border-left: 4px solid #09dada;
-            }
-        }
+    & > div.wrap {
         .newsList {
             float: left;
             width: 60%;
@@ -70,6 +60,9 @@
                 line-height: 3;
                 border-bottom: 1px solid #c3c1c1;
                 overflow: hidden;
+                .title {
+                    width: 75%;
+                }
                 a {
                     color: #2a2a2a;
                     float: left;

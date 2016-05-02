@@ -1,0 +1,41 @@
+<div>
+    <div class="btn-group">
+        <button class="btn btn-primary" ng-click="submit()">保存</button>
+        <button class="btn btn-warning">放弃</button>
+    </div>
+    <div class="form-group">
+        <label for="title">标题：</label>
+        <input type="text" placeholder="请输入标题" id="title" ng-model="serviceDatas.newData.title">
+    </div>
+    <div class="form-group">
+        <label for="sort">分类：</label>
+        <select id="sort" ng-model="serviceDatas.newData.sort_id">
+            <option value="{{item.id}}" ng-repeat="item in serviceDatas.sort">{{item.title}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="photo">封面：</label>
+        <input type="text" id="photo" ng-model="serviceDatas.newData.logo">
+    </div>
+    <div class="form-group">
+        <label for="description">项目简介：</label>
+        <input id="description" ng-model="serviceDatas.newData.description">
+    </div>
+    <div class="form-group">
+        <label for="experimentFlow">实验流程：</label>
+        <input type="text" id="experimentFlow" ng-model="serviceDatas.newData.experimentFlow">
+    </div>
+    <div class="form-group">
+        <label for="userNotice">用户须知：</label>
+        <input type="text" id="userNotice" ng-model="serviceDatas.newData.userNotice">
+    </div>
+    <div class="form-group">
+        <label for="resultShow">结果展示：</label>
+        <input type="text" id="resultShow" ng-model="serviceDatas.newData.resultShow">
+    </div>
+    <div class="form-group">
+        <label for="serverCircle">服务周期：</label>
+        <input type="text" id="serverCircle" ng-model="serviceDatas.newData.serverCircle">
+    </div>
+    <div id="wangeditor"></div>
+</div>

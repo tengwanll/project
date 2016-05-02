@@ -15,24 +15,24 @@ require.config({
         'PicsController': './scripts/controllers/PicsController',
         'InfoController': './scripts/controllers/InfoController',
         'SettingController': './scripts/controllers/SettingController',
-
+        'wangEditor': './libs/wangeditor/wangEditor.min',
     },
     shim: {
         'angular': {
             exports: 'angular',
         },
         'bootstrap': {
-        	exports: 'bootstrap',
         	deps: ['jquery']
         },
         'uiRouter': {
             deps: ['angular'],
-            exports: 'uiRouter'
         },
         'angular-ui-router': {
             deps: ['angular'],
-            exports: 'angular-ui-router'
         },
+        'wangEditor': {
+            deps: ['jquery']
+        }
     },
     deps: ['routes'],
     urlArgs: "bust=" + (new Date()).getTime() // debug:防止读写缓存
@@ -54,6 +54,7 @@ require([
         'PicsController',
         'InfoController',
         'SettingController',
+        'wangEditor',
         ],
     function (angular, $) {
     	$(document).ready(function() {

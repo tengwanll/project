@@ -1,6 +1,5 @@
 <include file="Public/header" name="service_list" title="服务列表" />
 <div class="main">
-    <include file="public/breadcrumb" />
     <foreach name="serviceList" item="result">
         <if condition="$result['id']==$serviceId">
             <div class="info wrap active">

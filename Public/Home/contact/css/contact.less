@@ -1,24 +1,31 @@
 .main {
     & > header {
         background: url('../../public/background/contact_header_bg.jpg');
-        background-size: cover;
-        background-position: center center;
+        background-size: 100% auto;
+        background-position: top left;
         height: 20rem;
         color: white;
         .color {
-            background: rgba(42, 42, 42, 0.4);
+            background: rgba(42, 42, 42, 0.3);
             height: 100%;
             width: 100%;
             margin-top: -1rem;
         }
         h2 {
             text-align: center;
-            padding-top: 4.2rem;
+            padding-top: 7rem;
+            font-size: 2rem;
+            letter-spacing: 0.3rem;
         }
         p {
             text-align: center;
-            padding-top: 1.4rem;
-            font-size: 0.8rem;
+            padding-top: 1rem;
+            font-size: 1rem;
+            span {
+                display: inline-block;
+                width: 4rem;
+                font-weight: normal;
+            }
         }
     }
     #map {
