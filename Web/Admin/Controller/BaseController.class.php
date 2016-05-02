@@ -29,7 +29,12 @@ class BaseController extends Controller {
      * @return mixed
      */
     public function getContent(){
-        parse_str(file_get_contents("php://input"),$arr);
+        $content=file_get_contents("php://input");
+        if(json_decode($content,true)){
+            $arr=json_decode($content,true);
+        }else{
+            parse_str($content,$arr);
+        }
         return $arr;
     }
 
