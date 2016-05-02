@@ -109,7 +109,7 @@ class ServiceController extends CommonController
         $data=array(
             'title'=>$title?$title:'',
             'logo'=>$logo?$logo:0,
-            'short_desc'=>$shortDesc?$shortDesc:'',
+            'short_desc'=>$description?$description:'',
             'description'=>$description?$description:'',
             'experiment_flow'=>$experimentFlow?$experimentFlow:'',
             'user_notice'=>$userNotice?$userNotice:'',
