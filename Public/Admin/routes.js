@@ -1,46 +1,89 @@
-define(['app', 'angular-route'], function(app) {
-    app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+define(['app'], function(app) {
+    return app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
         // $locationProvider.html5Mode(true);
-        var baseurl = "/Public/Admin"
-        $routeProvider
-            .when('/', {
-                templateUrl: baseurl + '/tpl/index.tpl.html',
-                controller: 'IndexController'
+
+        var baseurl = "/Public/Admin";
+        $urlRouterProvider.otherwise('/');
+
+        var loader = function(ctrlName) {
+            return {
+                loadCtrl: ["$q", function($q) {
+                    var deferred = $q.defer();
+                    require(['./scripts/controllers/' + ctrlName], function() {
+                        deferred.resolve();
+                    });
+                    return deferred.promise;
+                }]
+            };
+        };
+
+        $stateProvider
+            // 首页
+            .state('index', {
+                url: '/',
+                templateUrl: baseurl + '/tpl/index/index.html',
+                controller: 'IndexController',
+                // resolve: loader("IndexController")
             })
-            .when('/service', {
-                templateUrl: baseurl + '/tpl/service.tpl.html',
-                controller: 'ServiceController'
+            // 服务
+            .state('service', {
+                url: '/service',
+                templateUrl: baseurl + '/tpl/service/list.html',
+                controller: 'ServiceController',
+                // resolve: loader("ServiceController")
             })
-            .when('/employee', {
-                templateUrl: baseurl + '/tpl/employee.tpl.html',
-                controller: 'EmployeeController'
+            // .state('serviceDetail', {
+            //     url: '/service/:type/:id',
+            //     templateUrl: baseurl + '/tpl/'
+            // })
+            // 职员
+            .state('employee', {
+                url: '/employee',
+                templateUrl: baseurl + '/tpl/employee/list.html',
+                controller: 'EmployeeController',
+                // resolve: loader("EmployeeController")
             })
-            .when('/activity', {
-                templateUrl: baseurl + '/tpl/activity.tpl.html',
-                controller: 'ActivityController'
+            // 活动
+            .state('activity', {
+                url: '/activity',
+                templateUrl: baseurl + '/tpl/activity/list.html',
+                controller: 'ActivityController',
+                // resolve: loader("ActivityController")
             })
-            .when('/news', {
-                templateUrl: baseurl + '/tpl/news.tpl.html',
-                controller: 'NewsController'
+            // 新闻
+            .state('news', {
+                url: '/news',
+                templateUrl: baseurl + '/tpl/news/list.html',
+                controller: 'NewsController',
+                // resolve: loader("NewsController")
             })
-            .when('/jobs', {
-                templateUrl: baseurl + '/tpl/jobs.tpl.html',
-                controller: 'JobsController'
+            // 招聘
+            .state('jobs', {
+                url: '/jobs',
+                templateUrl: baseurl + '/tpl/jobs/list.html',
+                controller: 'JobsController',
+                // resolve: loader("JobsController")
             })
-            .when('/pics', {
-                templateUrl: baseurl + '/tpl/pics.tpl.html',
-                controler: 'PicsController'
+            // 实验室
+            .state('pics', {
+                url: '/pics',
+                templateUrl: baseurl + '/tpl/pics/list.html',
+                controller: 'PicsController',
+                // resolve: loader("PicsController")
             })
-            .when('/info', {
-                templateUrl: baseurl + '/tpl/info.tpl.html',
-                controler: 'InfoController'
+            // 公司信息
+            .state('info', {
+                url: '/info',
+                templateUrl: baseurl + '/tpl/info/list.html',
+                controller: 'InfoController',
+                // resolve: loader("InfoController")
             })
-            .when('/setting', {
-                templateUrl: baseurl + '/tpl/setting.tpl.html',
-                controller: 'SettingController'
+            // 设置
+            .state('setting', {
+                url: '/setting',
+                templateUrl: baseurl + '/tpl/setting/index.html',
+                controller: 'SettingController',
+                // resolve: loader("SettingController")
             })
-            .otherwise({
-                redirectTo: ''
-            });
     }])
 });
