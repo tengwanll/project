@@ -27,7 +27,7 @@ class ServiceController extends CommonController
             $where[]=" s.title like '%$title%' ";
         }
         $where=$this->makeQueryString($where);
-        $serviceList=$serviceModel->field('s.id,s.title,s.logo,s.short_desc,s.description,s.experiment_flow,s.user_notice,s.result_show,s.server_circle,s.experiment_theory,s.advantage,s.literature,s.create_time,t.title as sortTitle')->where($where)->page($page)->select();
+        $serviceList=$serviceModel->field('s.id,s.title,s.logo,s.short_desc,s.description,s.experiment_flow,s.user_notice,s.result_show,s.server_circle,s.experiment_theory,s.advantage,s.literature,s.create_time,t.title as sortTitle,t.type')->where($where)->page($page)->select();
         $total=$serviceModel->where($where)->count();
         $arr=array();
         foreach($serviceList as $lists){
@@ -37,6 +37,7 @@ class ServiceController extends CommonController
             $arr[]=array(
                 'id'=>$lists['id'],
                 'title'=>$lists['title'],
+                'type'=>$lists['type'],
                 'sortTitle'=>$lists['sortTitle'],
                 'logo'=>$photoUrl,
                 'shortDesc'=>$lists['short_desc'],

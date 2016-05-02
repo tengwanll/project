@@ -8,6 +8,6 @@ return array(
 	'DB_HOST'   => '120.27.5.26', // 服务器地址
 	'DB_PREFIX' => '', // 数据库表前缀 
 	'DEFAULT_FILTER'=>'',
-    'URL_ROUTER_ON'   => true,
+    'URL_ROUTER_ON'   => true,//开启路由
     'SHOW_PAGE_TRACE' =>false,//开启thinkPHP调试模式
 );
