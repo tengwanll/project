@@ -9,13 +9,17 @@
     </div>
     <div class="form-group">
         <label for="sort">分类：</label>
+        <select ng-model="serviceDatas.topSort" value="1">
+            <option value="0" selected="selected">普通服务</option>
+            <option value="1">特色服务</option>
+        </select>
         <select id="sort" ng-model="serviceDatas.newData.sort_id">
-            <option value="{{item.id}}" ng-repeat="item in serviceDatas.sort">{{item.title}}</option>
+            <option value="{{item.id}}" ng-repeat="item in serviceDatas.sort" ng-if="(item.type === serviceDatas.topSort)">{{item.title}}</option>
         </select>
     </div>
     <div class="form-group">
         <label for="photo">封面：</label>
-        <input type="text" id="photo" ng-model="serviceDatas.newData.logo">
+        <input type="file" id="photo" ng-model="serviceDatas.newData.logo" onchange="angular.element(this).scope().uploadImg(event)">
     </div>
     <div class="form-group">
         <label for="description">项目简介：</label>
