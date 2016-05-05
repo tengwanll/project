@@ -5,12 +5,13 @@ define(['app'], function(app) {
             list: [],
             topSort: 0, // 0 普通服务， 1 特色服务
             sort: [],
-            newData: {},
+            newData: {
+            },
             state: 0, // 0: 添加 1: 查看 2. 修改
         };
 
         // 获取列表数据
-        $http.get('/Admin/service/serviceList').then(function(res) {
+        $http.get('/Admin/service/serviceList/page/1/rows/1000').then(function(res) {
             $scope.serviceDatas.list = res.data.result.serviceList;
         });
 
@@ -18,6 +19,11 @@ define(['app'], function(app) {
         $http.get('/Admin/service/sortList').then(function(res) {
             $scope.serviceDatas.sort = res.data.result;
         })
+
+        $scope.showSort = function (sort) {
+            if (sort.type === $scope.serviceDatas.topSort) return true;
+            return false;
+        }
 
         // 添加服务
 
@@ -33,7 +39,6 @@ define(['app'], function(app) {
 
         // 提交操作
         $scope.submit = function() {
-            console.log($scope.serviceDatas.newData)
             // 新增
             if ($scope.serviceDatas.state === 0) {
                 $http.post('/Admin/service/create', $scope.serviceDatas.newData).then(function(res) {
@@ -50,7 +55,8 @@ define(['app'], function(app) {
             }
         }
 
-        $scope.uploadImg = function(event) {
+        // 上传图片
+        $scope.uploadImg = function(event, type) {
             var formData = new FormData();
             formData.append('photo', event.target.files[0]);
             $http({
@@ -61,7 +67,7 @@ define(['app'], function(app) {
                 },
                 data: formData
             }).then(function(res) {
-                $scope.serviceDatas.newData.photo = res.data.result;
+                $scope.serviceDatas.newData[type] = res.data.result;
             });
         };
 
