@@ -226,6 +226,7 @@ class ServiceController extends CommonController
             $arr[]=array(
                 'id'=>$lists['id'],
                 'title'=>$lists['title'],
+                'type'=>$lists['type'],
                 'logo'=>$logoUrl,
                 'photo'=>$photoUrl,
                 'description'=>$lists['description'],
