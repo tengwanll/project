@@ -81,6 +81,9 @@
             );
             $newsModel=M('news');
             $newsId=$newsModel->data($data)->add();
+            if(!$newsId){
+                $this->buildResponse(10214);
+            }
             $this->buildResponse(0,$newsId);
         }
 
@@ -112,7 +115,10 @@
             if($photo){
                 $data['photo']=$photo;
             }
-            $newsModel->where("id=$newsId")->save($data);
+            $newsId=$newsModel->where("id=$newsId")->save($data);
+            if(!$newsId){
+                $this->buildResponse(10214);
+            }
             $this->buildResponse(0);
         }
 
@@ -127,7 +133,10 @@
                 $this->buildResponse(10205);
             }
             $data=array('status'=>0);
-            $newsModel->where("id=$newsId")->save($data);
+            $newsId=$newsModel->where("id=$newsId")->save($data);
+            if(!$newsId){
+                $this->buildResponse(10214);
+            }
             $this->buildResponse(0);
         }
 	}

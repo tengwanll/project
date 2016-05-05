@@ -68,6 +68,9 @@ class NoticeController extends CommonController
         );
         $noticeModel=M('notice');
         $noticeId=$noticeModel->data($data)->add();
+        if(!$noticeId){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0,$noticeId);
     }
 
@@ -88,7 +91,10 @@ class NoticeController extends CommonController
         if($content){
             $data['content']=$content;
         }
-        $noticeModel->where("id=$noticeId")->save($data);
+        $noticeId=$noticeModel->where("id=$noticeId")->save($data);
+        if(!$noticeId){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0);
     }
 
@@ -100,7 +106,10 @@ class NoticeController extends CommonController
             $this->buildResponse(10211);
         }
         $data=array('status'=>0);
-        $noticeModel->where("id=$noticeId")->save($data);
+        $noticeId=$noticeModel->where("id=$noticeId")->save($data);
+        if(!$noticeId){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0);
     }
 }

@@ -80,6 +80,9 @@ class TrainingController extends CommonController
         );
         $trainingModel=M('training');
         $trainingId=$trainingModel->data($data)->add();
+        if(!$trainingId){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0,$trainingId);
     }
 
@@ -104,7 +107,10 @@ class TrainingController extends CommonController
         if($photo){
             $data['photo']=$photo;
         }
-        $trainingModel->where("id=$trainingId")->save($data);
+        $trainingId=$trainingModel->where("id=$trainingId")->save($data);
+        if(!$trainingId){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0);
     }
 
@@ -116,7 +122,10 @@ class TrainingController extends CommonController
             $this->buildResponse(10209);
         }
         $data=array('status'=>0);
-        $trainingModel->where("id=$trainingId")->save($data);
+        $trainingId=$trainingModel->where("id=$trainingId")->save($data);
+        if(!$trainingId){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0);
     }
 }

@@ -124,6 +124,9 @@ class ServiceController extends CommonController
             'sort_id'=>$sortId
         );
         $id=$serviceModel->data($data)->add();
+        if(!$id){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0,$id);
     }
 
@@ -184,7 +187,10 @@ class ServiceController extends CommonController
         if($sortId){
             $data['sort_id']=$sortId;
         }
-        $serviceModel->where("id=$serviceId")->save($data);
+        $id=$serviceModel->where("id=$serviceId")->save($data);
+        if(!$id){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0);
     }
 
@@ -196,7 +202,10 @@ class ServiceController extends CommonController
             $this->buildResponse(10206);
         }
         $data=array('status'=>0);
-        $serviceModel->where("id=$serviceId")->save($data);
+        $id=$serviceModel->where("id=$serviceId")->save($data);
+        if(!$id){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0);
     }
 

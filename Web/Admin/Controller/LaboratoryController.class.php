@@ -90,6 +90,9 @@ class LaboratoryController extends CommonController
         );
         $labModel=M('lab');
         $labId=$labModel->data($data)->add();
+        if(!$labId){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0,$labId);
     }
 
@@ -118,7 +121,10 @@ class LaboratoryController extends CommonController
         if($photo){
             $data['photo']=$photo;
         }
-        $labModel->where("id=$labId")->save($data);
+        $labId=$labModel->where("id=$labId")->save($data);
+        if(!$labId){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0);
     }
 
@@ -130,7 +136,10 @@ class LaboratoryController extends CommonController
             $this->buildResponse(10208);
         }
         $data=array('status'=>0);
-        $labModel->where("id=$labId")->save($data);
+        $labId=$labModel->where("id=$labId")->save($data);
+        if(!$labId){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0);
     }
 }

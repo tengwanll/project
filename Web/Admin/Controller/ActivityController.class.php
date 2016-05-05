@@ -84,6 +84,9 @@ class ActivityController extends CommonController
         );
         $activityModel=M('activity');
         $activityId=$activityModel->data($data)->add();
+        if(!$activityId){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0,$activityId);
     }
 
@@ -112,7 +115,10 @@ class ActivityController extends CommonController
         if($photo){
             $data['photo']=$photo;
         }
-        $activityModel->where("id=$activityId")->save($data);
+        $id=$activityModel->where("id=$activityId")->save($data);
+        if(!$id){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0);
     }
 
@@ -124,7 +130,10 @@ class ActivityController extends CommonController
             $this->buildResponse(10207);
         }
         $data=array('status'=>0);
-        $activityModel->where("id=$activityId")->save($data);
+        $id=$activityModel->where("id=$activityId")->save($data);
+        if(!$id){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0);
     }
 }

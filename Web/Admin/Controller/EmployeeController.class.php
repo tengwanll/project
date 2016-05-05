@@ -105,8 +105,11 @@ class EmployeeController extends CommonController
             'update_time'=>$date
         );
         $employeeModel=M('employee');
-        $employeeId=$employeeModel->data($data)->add();
-        $this->buildResponse(0,$employeeId);
+        $id=$employeeModel->data($data)->add();
+        if(!$id){
+            $this->buildResponse(10214);
+        }
+        $this->buildResponse(0,$id);
     }
 
     public function createThesis(){
@@ -123,6 +126,9 @@ class EmployeeController extends CommonController
         );
         $thesisModel=M('thesis');
         $thesisId=$thesisModel->data($data)->add();
+        if(!$thesisId){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0,$thesisId);
     }
 
@@ -139,7 +145,10 @@ class EmployeeController extends CommonController
         if($content){
             $data['content']=$content;
         }
-        $thesisModel->where("id=$thesisId")->save($data);
+        $thesisId=$thesisModel->where("id=$thesisId")->save($data);
+        if(!$thesisId){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0,$thesisId);
     }
 
@@ -180,7 +189,10 @@ class EmployeeController extends CommonController
         if($study){
             $data['study']=$study;
         }
-        $employeeModel->where("id=$employeeId")->save($data);
+        $thesisId=$employeeModel->where("id=$employeeId")->save($data);
+        if(!$thesisId){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0);
     }
 
@@ -192,7 +204,10 @@ class EmployeeController extends CommonController
             $this->buildResponse(10212);
         }
         $data=array('status'=>0);
-        $employeeModel->where("id=$employeeId")->save($data);
+        $thesisId=$employeeModel->where("id=$employeeId")->save($data);
+        if(!$thesisId){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0);
     }
 
@@ -204,7 +219,10 @@ class EmployeeController extends CommonController
             $this->buildResponse(10213);
         }
         $data=array('status'=>0);
-        $thesisModel->where("id=$thesisId")->save($data);
+        $thesisId=$thesisModel->where("id=$thesisId")->save($data);
+        if(!$thesisId){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0);
     }
 }

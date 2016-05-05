@@ -159,7 +159,10 @@
             if($photo){
                 $data['photo']=$photo;
             }
-            $companyModel->where("id=1")->save($data);
+            $id=$companyModel->where("id=1")->save($data);
+            if(!$id){
+                $this->buildResponse(10214);
+            }
             $this->buildResponse(0);
         }
     }

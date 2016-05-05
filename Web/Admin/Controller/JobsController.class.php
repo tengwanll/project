@@ -77,6 +77,9 @@ class JobsController extends CommonController
         );
         $jobModel=M('job');
         $jobId=$jobModel->data($data)->add();
+        if(!$jobId){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0,$jobId);
     }
 
@@ -105,7 +108,10 @@ class JobsController extends CommonController
         if($demand){
             $data['demand']=$demand;
         }
-        $jobModel->where("id=$jobId")->save($data);
+        $jobId=$jobModel->where("id=$jobId")->save($data);
+        if(!$jobId){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0);
     }
 
@@ -117,7 +123,10 @@ class JobsController extends CommonController
             $this->buildResponse(10210);
         }
         $data=array('status'=>0);
-        $jobModel->where("id=$jobId")->save($data);
+        $jobId=$jobModel->where("id=$jobId")->save($data);
+        if(!$jobId){
+            $this->buildResponse(10214);
+        }
         $this->buildResponse(0);
     }
 }
