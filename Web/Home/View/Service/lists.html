@@ -21,8 +21,9 @@
                     <li>
                         <a href="{:U('Home/service/info',array('serviceId'=>$sortList['id']))}">
                             <img src="__ROOT__/{$result['logo']}">
-                            <h4>{$sortList['title']}</h4>
-                            <p>{$sortList['description']}</p>
+                            <h4 class="ellipsis_one_line">{$sortList['title']}</h4>
+                            <p class="description">{$sortList['description']}</p>
+                            <p class="more">查看详情</p>
                         </a>
                     </li>
                 </foreach>
