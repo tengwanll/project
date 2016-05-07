@@ -1,5 +1,5 @@
 <div>
-<!--     <select class="btn btn-default" ng-change="sortList(value)">
+    <!-- <select class="btn btn-default" ng-change="sortList(value)">
         <option value="">所有项目</option>
         <option value="{{item.id}}" ng-repeat="item in serviceDatas.sort">{{item.title}}</option>
     </select> -->
@@ -18,16 +18,33 @@
         </thead>
         <tbody class="table-hover">
             <tr ng-repeat="item in serviceDatas.list">
-                <td>{{$index + 1}}</td>
+                <td>{{serviceDatas.pageLen * (serviceDatas.currentPage - 1) + $index + 1}}</td>
                 <td>{{item.title}}</td>
                 <td>{{item.sortTitle}}</td>
                 <td>{{item.createTime | date:'yyyy-MM-dd hh:ss'}}</td>
                 <td>
-                    <a href="" ui-sref="serviceDatail">详情</a>
-                    <a href="" ui-sref="serviceEdit">编辑</a>
-                    <a href="" ng-click="deleteService(item.id)">删除</a>
+                    <a ui-sref="serviceDatail">详情</a>
+                    <a ui-sref="serviceEdit">编辑</a>
+                    <a ng-click="deleteService(item.id)">删除</a>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
+<nav>
+    <ul class="pagination">
+        <li ng-if="serviceDatas.currentPage !== 1">
+            <a aria-label="Previous" ng-click="changePage('prev')">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        <li class="active">
+            <a href="#">{{serviceDatas.currentPage}}</a>
+        </li>
+        <li ng-if="serviceDatas.pageLen * serviceDatas.currentPage < serviceDatas.listTotal">
+            <a aria-label="Next" ng-click="changePage('next')">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>

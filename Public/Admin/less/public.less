@@ -6,6 +6,34 @@ body,
     height: 100%;
 }
 
+
+// 必需字段样式
+._required {
+    &:after {
+        content: '*';
+        color: red;
+        font-size: 16px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // 头部样式
 #header {
     position: fixed;
@@ -39,7 +67,7 @@ body,
 #sideBar {
     background: #32323a;
     height: 100%;
-    position: relative;
+    position: fixed;
     z-index: 999;
     nav {
         position: absolute;
