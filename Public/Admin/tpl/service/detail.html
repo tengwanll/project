@@ -1,13 +1,13 @@
-<div>
+<div class="serviceDetail">
     <div class="btn-group">
         <button class="btn btn-primary" ng-click="submit()">保存</button>
         <button class="btn btn-warning">放弃</button>
     </div>
-    <div class="form-group">
+    <div class="form-group _required">
         <label for="title">标题：</label>
         <input type="text" placeholder="请输入标题" id="title" ng-model="serviceDatas.newData.title">
     </div>
-    <div class="form-group">
+    <div class="form-group _required">
         <label for="sort">分类：</label>
         <select ng-model="serviceDatas.topSort">
             <option value="0" selected="selected">普通服务</option>
@@ -18,28 +18,27 @@
         </select>
     </div>
     <div class="form-group">
-        <label for="photo">封面：</label>
-        <input type="file" id="photo" ng-model="serviceDatas.newData.logo" onchange="angular.element(this).scope().uploadImg(event, 'photo')">
+        <label for="photo" class="_required">封面：</label>
+        <input type="file" id="photo" onchange="angular.element(this).scope().uploadImg(event, 'photo')">
     </div>
     <div class="form-group">
-        <label for="description">项目简介：</label>
-        <input id="description" ng-model="serviceDatas.newData.description">
+        <label for="description" class="_required">项目简介：</label>
+        <textarea id="description" ng-model="serviceDatas.newData.description"></textarea>
     </div>
     <div class="form-group">
         <label for="experimentFlow">实验流程：</label>
-        <input type="text" id="experimentFlow" ng-model="serviceDatas.newData.experimentFlow">
+        <input type="file" id="experimentFlow" onchange="angular.element(this).scope().uploadImg(event, 'experimentFlow')">
     </div>
     <div class="form-group">
         <label for="userNotice">用户须知：</label>
-        <input type="text" id="userNotice" ng-model="serviceDatas.newData.userNotice">
+        <textarea id="userNotice" ng-model="serviceDatas.newData.userNotice"></textarea>
     </div>
     <div class="form-group">
         <label for="resultShow">结果展示：</label>
-        <input type="text" id="resultShow" ng-model="serviceDatas.newData.resultShow">
+        <input type="file" id="resultShow" onchange="angular.element(this).scope().uploadImg(event, 'resultShow')">
     </div>
     <div class="form-group">
         <label for="serverCircle">服务周期：</label>
-        <input type="text" id="serverCircle" ng-model="serviceDatas.newData.serverCircle">
+        <textarea id="serverCircle" ng-model="serviceDatas.newData.serverCircle"></textarea>
     </div>
-    <div id="wangeditor"></div>
 </div>
