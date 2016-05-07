@@ -1,6 +1,4 @@
 $(document).ready(function() {
-
-
 	// 服务项目切换
 	$(document).on('click', '.project .tabs li', function (e) {
 		e.preventDefault();
@@ -18,6 +16,5 @@ $(document).ready(function() {
 		$('.news ol .active').removeClass('active');
 		$(this).addClass('active');
 	});
-
 
 });

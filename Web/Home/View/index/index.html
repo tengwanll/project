@@ -105,7 +105,9 @@
                 <li>
                     <img src="__PUBLIC__/Uploads/pics/activity_img.jpg">
                     <h5>{$vo['title']}</h5>
-                    <p><span>活动介绍：</span><span class="value">{$vo['short_desc']}</span></p>
+                    <div class="activityInfo ellipsis_more_line">
+                        <p><span>活动介绍：</span><span class="value">{$vo['short_desc']}</span></p>
+                    </div>
                     <a href="#">更多详情</a>
                 </li>
             </foreach>
