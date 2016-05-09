@@ -6,20 +6,25 @@
             <span class="title">搜索结果</span>
         </h3>
     </header>
-    <div class="content row">
-        <ul class="list-unstyled wrap">
+    <div class="content wrap">
+        <ul class="list-unstyled">
             <foreach name="service" item="vo">
-            <li>
-                <if condition="vo['type']==1">
-                    <a href="{:U('Home/service/info',array('serviceId'=>$vo['id']))}">
-                <else/>
-                    <a href="{:U('Home/special/info',array('serviceId'=>$vo['id']))}">
-                </if>
-                    <img src="__ROOT__/{$vo['logo']}" />
-                    <h6>{$vo['title']}</h6>
-                    <p>{$vo['short_desc']}</p>
-                </a>
-            </li>
+                <li>
+                    <div class="result">
+                        <h6 class="ellipsis_one_line">
+                            <if condition="vo['type']==1">
+                                <a href="{:U('Home/service/info',array('serviceId'=>$vo['id']))}" class="ellipsis_one_line">
+                            <else/>
+                                <a href="{:U('Home/special/info',array('serviceId'=>$vo['id']))}" class="ellipsis_one_line">
+                            </if>
+                                {$vo['title']}
+                            </a>
+                        </h6>
+                        <div class="sort">
+                            <p><span>分类：</span><span>基因组分类</span></p>
+                        </div>
+                    </div>
+                </li>
             </foreach>
         </ul>
     </div>

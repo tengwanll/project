@@ -1,64 +1,27 @@
 .main {
-    & > header {
-        background: #f4f4f4;
-        ul {
-            li {
-                line-height: 4rem;
-                width: 19%;
-                display: inline-block;
-                text-align: left;
-                a {
-                    display: inline-block;
-                    height: 2rem;
-                    line-height: 2rem;
-                    width: 70%;
-                    border-radius: 8px;
-                    border: 2px solid #09dada;
-                    text-decoration: none;
-                    text-align: center;
-                    color: #2a2a2a;
-                    &:hover {
-                        color: white;
-                        background: #09dada;
-                    }
-                }
-                &.active {
-                    a {
-                        background: #09dada;
-                        color: white;
-                    }
-                }
-                &:first-child {
-                    text-align: center;
-                }
-            }
-        }
-    }
     .info {
-        display: none;
-        &.active {
-            display: block;
-        }
         header {
             overflow: hidden;
-            div:first-child {
+            width: 100%;
+            padding: 2rem;
+            border-bottom: 1px solid #aaa;
+            .photo {
                 float: left;
-                padding: 1rem 2rem;
+                width: 30%;
                 img {
                     display: inline-block;
-                    width: 24rem;
+                    width: 16rem;
+                    text-align: center;
                 }
             }
-            div:last-child {
-                padding-left: 28rem;
-                padding-top: 3rem;
-                width: 50rem;
+            .des {
+                padding-left: 2rem;
+                float: left;
+                width: 60%;
                 h3 {
-                    line-height: 2;
+                    line-height: 3;
                 }
-                p {
-                    line-height: 2;
-                }
+                p {}
             }
         }
         ul {
@@ -73,7 +36,7 @@
                     width: 70%;
                     margin: 0 auto;
                     border-radius: 0.2rem;
-                    box-shadow: 0 0.1rem 0.5rem #aaa;
+                    box-shadow: 0 0.1rem 0.5rem #ccc;
                 }
                 h4 {
                     margin: 0;
@@ -83,7 +46,9 @@
                         line-height: 8rem;
                         color: white;
                         font-size: 1rem;
-                        &:hover, &:link {
+                        padding: 0 0.5rem;
+                        &:hover,
+                        &:link {
                             text-decoration: none;
                         }
                     }
