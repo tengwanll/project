@@ -11,7 +11,7 @@
             <ul class="list-unstyled">
                 <foreach name="news" item="vo">
                     <li class="newsItem">
-                        <a href="#">
+                        <a href="{:U('Home/news/info',array('newsId'=>$vo['id']))}">
                         <img src="__ROOT__/{$vo['photo']}" />
                         <div class="info">
                             <h4>{$vo['title']}</h4>

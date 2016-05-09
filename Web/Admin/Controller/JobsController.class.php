@@ -116,7 +116,7 @@ class JobsController extends CommonController
     }
 
     public function delete(){
-        $jobId=I('get.jobId');
+        $jobId=I('post.jobId');
         $jobModel=M('job');
         $job=$jobModel->where("id=$jobId")->find();
         if(!$job){

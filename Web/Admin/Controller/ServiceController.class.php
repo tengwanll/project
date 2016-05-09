@@ -195,7 +195,7 @@ class ServiceController extends CommonController
     }
 
     public function delete(){
-        $serviceId=I('get.serviceId');
+        $serviceId=I('post.serviceId');
         $serviceModel=M('service');
         $service=$serviceModel->where("id=$serviceId")->find($serviceId);
         if(!$service){

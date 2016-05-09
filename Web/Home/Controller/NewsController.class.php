@@ -20,18 +20,17 @@ class NewsController extends Controller {
     }
 
     public function info(){
+        $newsId=I('get.newsId');
         $model=M('news');
-        $model2=M('activity');
-        $model3=M('lab');
-        $labs=$model3->where('status=1')->select();
-        $activity=$model2->where('status=1')->select();
-        $news=$model->where('status=1')->select();
-        $newsCurrent=$model->where('status=1')->order('create_time desc')->limit(3)->select();
+        $navigation=array();
+        $navigation[]=array(
+            'title'=>'新闻动态',
+            'url'=>__ROOT__.'/Home/news'
+        );
+        $news=$model->where("status=1 and id=$newsId ")->find();
         $this->assign('news',$news);
-        $this->assign('newsCurrent',$newsCurrent);
-        $this->assign('activity',$activity);
-        $this->assign('labs',$labs);
         $this->assign('root','news_info');
+        $this->assign('navigation',$navigation);
         $this->display();
     }
 }

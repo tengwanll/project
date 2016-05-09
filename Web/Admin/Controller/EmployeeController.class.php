@@ -197,7 +197,7 @@ class EmployeeController extends CommonController
     }
 
     public function deleteEmployee(){
-        $employeeId=I('get.employeeId');
+        $employeeId=I('post.employeeId');
         $employeeModel=M('notice');
         $employee=$employeeModel->where("id=$employeeId")->find();
         if(!$employee){
@@ -212,7 +212,7 @@ class EmployeeController extends CommonController
     }
 
     public function deleteThesis(){
-        $thesisId=I('get.thesisId');
+        $thesisId=I('post.thesisId');
         $thesisModel=M('thesis');
         $thesis=$thesisModel->where("id=$thesisId")->find();
         if(!$thesis){
