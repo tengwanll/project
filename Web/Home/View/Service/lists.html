@@ -1,0 +1,38 @@
+<include file="Public/header" name="service_list" title="服务列表" />
+<div class="main">
+    <foreach name="serviceList" item="result">
+        <if condition="$result['id']==$serviceId">
+            <div class="info wrap active">
+                <else/>
+                <div class="info wrap">
+        </if>
+        <header>
+            <div>
+                <img src="__ROOT__/{$result['logo']}">
+            </div>
+            <div>
+                <h3>{$result['title']}</h3>
+                <p>{$result['description']}</p>
+            </div>
+        </header>
+        <div>
+            <ul class="list-unstyled">
+                <foreach name="result['sortList']" item="sortList">
+                    <li>
+                        <div class="card">
+                            <h4 class="ellipsis_one_line">
+                                <a href="{:U('Home/service/info',array('serviceId'=>$sortList['id']))}">{$sortList['title']}</a>
+                            </h4>
+                            <div class="des">
+                                <p class="description">{$sortList['description']}</p>
+                                <a href="{:U('Home/service/info',array('serviceId'=>$sortList['id']))}" class="more">查看详情</a>
+                            </div>
+                        </div>
+                    </li>
+                </foreach>
+            </ul>
+        </div>
+        </div>
+    </foreach>
+    </div>
+    <include file="Public/footer" />
