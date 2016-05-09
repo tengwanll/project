@@ -20,7 +20,7 @@
                 <foreach name="result['sortList']" item="sortList">
                     <li>
                         <a href="{:U('Home/service/info',array('serviceId'=>$sortList['id']))}">
-                            <img src="__ROOT__/{$result['logo']}">
+                            <img src="__ROOT__/{$sortList['logo']}">
                             <h4 class="ellipsis_one_line">{$sortList['title']}</h4>
                             <p class="description">{$sortList['description']}</p>
                             <p class="more">查看详情</p>
@@ -28,6 +28,8 @@
                     </li>
                 </foreach>
             </ul>
+
+
         </div>
         </div>
     </foreach>

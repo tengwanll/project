@@ -5,15 +5,22 @@ class SpecialController extends Controller {
     public function index(){
         $model=M('service_sort');
         $serviceInfo=M('service');
+        $fileModel=M('file');
         $services=$model->where('type=2 and status=1 and parent_id=0')->select();
         $serviceList=array();
         foreach($services as $list){
             $id=$list['id'];
+            $sortList=$serviceInfo->where("sort_id= $id and status=1")->select();
+            foreach($sortList as $k=>$value){
+                $logoId=$value['logo'];
+                $logo=$fileModel->where("id=$logoId")->find();
+                $sortList[$k]['logo']=$logo?$logo['url']:'';
+            }
             $serviceList[]=array(
                 'id'=>$id,
                 'title'=>$list['title'],
                 'description'=>$list['description'],
-                'sortList'=>$serviceInfo->where("sort_id= $id and status=1")->select()
+                'sortList'=>$sortList
             );
         }
         $navigation=array();
