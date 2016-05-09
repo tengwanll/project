@@ -38,7 +38,7 @@
             </foreach>
         </ul>
         <ul class="infoList">
-            <foreach name="specilaService" item="service">
+            <foreach name="specialService" item="service">
                 <li>
                     <span class="fa fa-car"></span>
                     <h6>{$service['title']}</h6>
@@ -79,7 +79,7 @@
                     </div>
                     <div class="contact">
                         <p class="indent ellipsis_more_line">{$info['short_desc']}</p>
-                        <img src="__PUBLIC__/Uploads/pics/news_img.jpg">
+                        <img src="__ROOT__/{$info['photo']}">
                     </div>
                 </div>
             </li>
@@ -103,7 +103,7 @@
         <ul class="list list-unstyled">
             <foreach name="activity" item="vo">
                 <li>
-                    <img src="__PUBLIC__/Uploads/pics/activity_img.jpg">
+                    <img src="__ROOT__/{$vo['photo']}">
                     <h5>{$vo['title']}</h5>
                     <div class="activityInfo ellipsis_more_line">
                         <p><span>活动介绍：</span><span class="value">{$vo['short_desc']}</span></p>
