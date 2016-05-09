@@ -12,13 +12,11 @@
                 <foreach name="news" item="vo">
                     <li class="newsItem">
                         <a href="#">
-                            <!-- <img src="__ROOT__/{$vo['photo']}" height="294" width="500"> -->
-                            <img src="__PUBLIC__/Uploads/pics/news_img.jpg" />
-                            <div class="info">
-                                <h4>{$vo['title']}</h4>
-                                <p>{$vo['description']}</p>
-                            </div>
-                        </a>
+                        <img src="__ROOT__/{$vo['photo']}" />
+                        <div class="info">
+                            <h4>{$vo['title']}</h4>
+                            <p>{$vo['description']}</p>
+                        </div>
                     </li>
                 </foreach>
             </ul>
@@ -39,8 +37,8 @@
                 </header>
             </div>
             <ul class="list-unstyled">
-                <foreach name="newsCurrent" item="vo">
-                    <li><a href="#" class="title ellipsis_one_line">{$vo['title']}</a><span class="time">2013-02-01</span></li>
+                <foreach name="notice" item="vo">
+                    <li><a href="#" class="title ellipsis_one_line">{$vo['content']}</a><span class="time">{$vo['create_time']}</span></li>
                 </foreach>
             </ul>
         </div>
