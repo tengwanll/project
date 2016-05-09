@@ -35,6 +35,11 @@
     .catList {
         overflow: hidden;
         padding: 2rem 0;
+        a {
+            &:hover, &:link {
+                text-decoration: none;
+            }
+        }
     }
     .cat {
         float: left;
@@ -86,6 +91,11 @@
                     p {
                         width: 80%;
                         margin: 0 auto;
+                        height: 5rem;
+                        overflow: hidden;
+                    }
+                    .more {
+                        background:red;
                     }
                 }
             }

@@ -71,7 +71,10 @@ p {
                 }
                 &:last-child a {
                     color: #2a2a2a;
-                    &:hover, &:visited, &:active, &:link {
+                    &:hover,
+                    &:visited,
+                    &:active,
+                    &:link {
                         text-decoration: none;
                         cursor: default;
                     }
@@ -173,11 +176,13 @@ p {
 
 // ¶ÎÂäÊ×ÐÐËõ½ø
 .indent {
-    text-indent: 1.5rem;
-    text-align: justify;
-    margin: 0;
-    padding-bottom: 1.5rem;
-    &:last-child {
-        padding: 0;
+    p {
+        text-indent: 1.5rem;
+        text-align: justify;
+        margin: 0;
+        padding-bottom: 1.5rem;
+        &:last-child {
+            padding: 0;
+        }
     }
 }
