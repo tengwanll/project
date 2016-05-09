@@ -7,6 +7,9 @@
     define('IMAGE_PATH', './Image');
 	//开启调试模式
 	define('APP_DEBUG',true);
+    //关闭缓存
+    define('DB_FIELD_CACHE',false);
+    define('HTML_CACHE_ON',false);
 
 	require './ThinkPHP/ThinkPHP.php';
 

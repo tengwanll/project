@@ -99,7 +99,7 @@ class NoticeController extends CommonController
     }
 
     public function delete(){
-        $noticeId=I('get.noticeId');
+        $noticeId=I('post.noticeId');
         $noticeModel=M('notice');
         $notice=$noticeModel->where("id=$noticeId")->find();
         if(!$notice){

@@ -129,7 +129,7 @@ class LaboratoryController extends CommonController
     }
 
     public function delete(){
-        $labId=I('get.labId');
+        $labId=I('post.labId');
         $labModel=M('lab');
         $lab=$labModel->where("id=$labId")->find();
         if(!$lab){

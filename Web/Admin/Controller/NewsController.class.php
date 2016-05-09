@@ -126,7 +126,7 @@
          * 删除新闻
          */
         public function delete(){
-            $newsId=I('get.newsId');
+            $newsId=I('post.newsId');
             $newsModel=M('news');
             $news=$newsModel->where("id=$newsId")->find();
             if(!$news){

@@ -1,0 +1,34 @@
+<include file="Public/header" title="职员信息" name="about_people" />
+<div class="main">
+    <include file="public/breadcrumb" />
+    <div class="row">
+        <header class="wrap">
+            <div class="center_block">
+                <img src="__ROOT__/{$people['photo']}">
+                <div>
+                    <h3>{$people['name']}</h3>
+                    <p class="info">{$people['position']}</p>
+                    <p class="tel"><span>电话：</span><span class="value">{$people['telephone']}</span></p>
+                    <p class="email"><span>Email：</span><span class="value">{$people['email']}</span></p>
+                </div>
+            </div>
+        </header>
+        <article class="wrap">
+            <h5 class="paragraph_title">个人简历</h5>
+            <p class="indent">{$people['description']}</p>
+        </article>
+        <article class="wrap">
+            <h5 class="paragraph_title">研究方向</h5>
+            <p class="indent">{$people['study']}</p>
+        </article>
+        <article class="wrap">
+            <h5 class="paragraph_title">近期主要代表论著</h5>
+            <ol>
+                <foreach name="thesis" item="vo">
+                    <li>{$vo['content']}</li>
+                </foreach>
+            </ol>
+        </article>
+    </div>
+</div>
+<include file="Public/footer" />
