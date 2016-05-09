@@ -1,0 +1,30 @@
+<include file="Public/header" title="促销活动" name="sale" />
+<div class="main">
+    <div class="page_title">
+        <header>
+            <h3 class="cn">促销活动</h3>
+            <h3 class="en">Sale Activity</h3>
+        </header>
+    </div>
+    <div class="wrap">
+        <div class="sales_list">
+            <ul class="list-unstyled">
+                <foreach name="activity" item="vo">
+                    <li>
+                        <a href="#">
+                            <img src="__ROOT__/{$vo['photo']}">
+                            <div class="info">
+                                <h4>{$vo['title']}</h4>
+                                <p>
+                                    <span class="title">活动介绍：</span>
+                                    <span class="value">{$vo['short_desc']}</span>
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                </foreach>
+            </ul>
+        </div>
+    </div>
+</div>
+<include file="Public/footer" />

@@ -1,0 +1,27 @@
+<include file="Public/header" name="search" title="搜索结果" />
+<div class="main">
+    <header class="row">
+        <h3>
+            <span class="fa fa-search"></span>
+            <span class="title">搜索结果</span>
+        </h3>
+    </header>
+    <div class="content row">
+        <ul class="list-unstyled wrap">
+            <foreach name="service" item="vo">
+            <li>
+                <if condition="vo['type']==1">
+                    <a href="{:U('Home/service/info',array('serviceId'=>$vo['id']))}">
+                <else/>
+                    <a href="{:U('Home/special/info',array('serviceId'=>$vo['id']))}">
+                </if>
+                    <img src="__ROOT__/{$vo['logo']}" />
+                    <h6>{$vo['title']}</h6>
+                    <p>{$vo['short_desc']}</p>
+                </a>
+            </li>
+            </foreach>
+        </ul>
+    </div>
+</div>
+<include file="Public/footer" name="search" />

@@ -1,0 +1,20 @@
+<include file="Public/header" title="服务导航" name="service" />
+<div class="main row">
+    <div class="bg">
+        <div class="wrap">
+            <ul class="list-unstyled">
+                <foreach name="service" item="vo">
+                <li>
+                    <a href="{:U('Home/service/lists',array('serviceId'=>$vo['id']))}">
+                        <span class="fa fa-car icon"></span>
+                        <span class="title">{$vo['title']}</span>
+                        <img src="__ROOT__/{$vo['logo']}">
+                        <!-- <img src="__ROOT__/{$vo['logo']}"> -->
+                    </a>
+                </li>
+                </foreach>
+            </ul>
+        </div>
+    </div>
+</div>
+<include file="Public/footer" />
