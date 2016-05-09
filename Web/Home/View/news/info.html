@@ -1,83 +1,8 @@
-<include file="Public/header" title="新闻详情" name="news_info" />
+<include file="Public/header" name="news_info" title="新闻详情" />
 <div class="main">
-    <div class="row">
-        <header class="news_header">
-            <nav class="wrap">
-                <ul>
-                    <li><a href="#">促销活动</a></li>
-                    <li class="active"><a href="#">新闻动态</a></li>
-                    <li><a href="#">实验室展示</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div class="wrap sales_list page">
-            <header>
-                <h3>促销活动列表</h3>
-            </header>
-            <ul class="list-unstyled">
-                <foreach name="activity" item="vo">
-                <li>
-                    <img src="__ROOT__/{$vo['photo']}">
-                    <h4>{$vo['title']}</h4>
-                    <p>
-                        <span class="title">活动介绍：</span>
-                        <span class="value">{$vo['short_desc']}</span>
-                    </p>
-                </li>
-                </foreach>
-            </ul>
-        </div>
-        <div class="news page active">
-            <div class="">
-                <div class="banner"></div>
-                <div class="newest">
-                    <header>
-                        <h3>最新动态</h3>
-                        <ul>
-                            <foreach name="newsCurrent" item="vo">
-                            <li>{$vo['title']}</li>
-                            </foreach>
-                        </ul>
-                    </header>
-                </div>
-            </div>
-            <div class="newsList">
-                <header>
-                    <h3>新闻列表</h3>
-                </header>
-                <ul>
-                    <foreach name="news" item="vo">
-                    <li>
-                        <h6>{$vo['title']}</h6>
-                        <div class="info">
-                            <img src="__PUBLIC__/Home/news_info/pic/news_list_1_img.jpg" height="294" width="500">
-                        </div>
-                    </li>
-                    </foreach>
-                </ul>
-            </div>
-        </div>
-        <div class="laboratory page">
-            <header>
-                <h3>Begin</h3>
-            </header>
-            <ul class="list-unstyled">
-                <foreach name="labs" item="vo">
-                <li>
-                    <img src="__PUBLIC__/Home/news_info/pic/laboratory_list_1_img.jpg">
-                    <div class="info">
-                        <div class="wrap">
-                            <h4>{$vo['name']}</h4>
-                            <p>{$vo['description']}</p>
-                        </div>
-                    </div>
-                    <div class="down">
-                        <span class="fa fa-angle-down"></span>
-                    </div>
-                </li>
-                </foreach>
-            </ul>
-        </div>
+    <include file="public/breadcrumb" />
+    <div class="wrap">
+        <p>内容</p>
     </div>
 </div>
 <include file="Public/footer" />
