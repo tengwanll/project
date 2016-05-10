@@ -1,24 +1,16 @@
-<include file="Public/header" name="special_info" title="特殊服务详情"/>
+<include file="Public/header" name="special_info" title="特殊服务详情" />
 <div class="main">
     <include file="public/breadcrumb" />
     <if condition="$serviceInfo['description']">
     <article class="wrap">
-        <div class="article_title">
-            <header>
-                <h4>项目简介</h4>
-            </header>
-        </div>
+        <h6 class="paragraph_title">项目简介</h6>
         <p>{$serviceInfo['description']}
         </p>
     </article>
     </if>
     <if condition="$serviceInfo['experiment_theory']">
     <article class="wrap">
-        <div class="article_title">
-            <header>
-                <h4>实验原理</h4>
-            </header>
-        </div>
+        <h6 class="paragraph_title">实验原理</h6>
         <p>
             {$serviceInfo['experiment_theory']}
         </p>
@@ -26,67 +18,88 @@
     </if>
     <if condition="$serviceInfo['advantage']">
     <article class="wrap">
+<<<<<<< HEAD
+        <h6 class="paragraph_title">项目优势</h6>
+        <p>{$serviceInfo['user_notice']}
+=======
         <div class="article_title">
             <header>
                 <h4>项目优势</h4>
             </header>
         </div>
         <p>{$serviceInfo['advantage']}
+>>>>>>> e6e133d9c1ab23ca37417415b32ce66e7d7ad87b
         </p>
     </article>
     </if>
     <if condition="$serviceInfo['experiment_flow']">
     <article class="wrap">
+<<<<<<< HEAD
+        <h6 class="paragraph_title">实验流程</h6>
+        <p>{$serviceInfo['result_show']}
+=======
         <div class="article_title">
             <header>
                 <h4>实验流程</h4>
             </header>
         </div>
         <p>{$serviceInfo['experiment_flow']}
+>>>>>>> e6e133d9c1ab23ca37417415b32ce66e7d7ad87b
         </p>
     </article>
     </if>
     <if condition="$serviceInfo['user_notice']">
     <article class="wrap">
+<<<<<<< HEAD
+        <h6 class="paragraph_title">客户须知</h6>
+        <p>{$serviceInfo['server_circle']}
+=======
         <div class="article_title">
             <header>
                 <h4>客户须知</h4>
             </header>
         </div>
         <p>{$serviceInfo['user_notice']}
+>>>>>>> e6e133d9c1ab23ca37417415b32ce66e7d7ad87b
         </p>
     </article>
     </if>
     <if condition="$serviceInfo['result_show']">
     <article class="wrap">
+<<<<<<< HEAD
+        <h6 class="paragraph_title">结果展示</h6>
+        <p>{$serviceInfo['server_circle']}
+=======
         <div class="article_title">
             <header>
                 <h4>结果展示</h4>
             </header>
         </div>
         <p>{$serviceInfo['result_show']}
+>>>>>>> e6e133d9c1ab23ca37417415b32ce66e7d7ad87b
         </p>
     </article>
     </if>
     <if condition="$serviceInfo['server_circle']">
     <article class="wrap">
-        <div class="article_title">
-            <header>
-                <h4>服务周期</h4>
-            </header>
-        </div>
+        <h6 class="paragraph_title">服务周期</h6>
         <p>{$serviceInfo['server_circle']}
         </p>
     </article>
     </if>
     <if condition="$serviceInfo['literature']">
     <article class="wrap">
+<<<<<<< HEAD
+        <h6 class="paragraph_title">参考文献</h6>
+        <p>{$serviceInfo['server_circle']}
+=======
         <div class="article_title">
             <header>
                 <h4>参考文献</h4>
             </header>
         </div>
         <p>{$serviceInfo['literature']}
+>>>>>>> e6e133d9c1ab23ca37417415b32ce66e7d7ad87b
         </p>
     </article>
     </if>

@@ -11,7 +11,7 @@
             <ul class="list-unstyled">
                 <foreach name="activity" item="vo">
                     <li>
-                        <a href="#">
+                        <div class="cont">
                             <img src="__ROOT__/{$vo['photo']}">
                             <div class="info">
                                 <h4>{$vo['title']}</h4>
@@ -20,7 +20,7 @@
                                     <span class="value">{$vo['short_desc']}</span>
                                 </p>
                             </div>
-                        </a>
+                        </div>
                     </li>
                 </foreach>
             </ul>
