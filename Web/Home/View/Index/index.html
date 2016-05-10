@@ -29,11 +29,15 @@
         <ul class="infoList active">
             <foreach name="normalService" item="service">
                 <li>
-                    <a href="#">
-                        <span class="fa fa-car"></span>
-                        <h6>{$service['title']}</h6>
-                        <p>{$service['description']}</p>
-                    </a>
+                    <div class="cont">
+                        <a href="#">
+                            <div class="sort_icon">
+                                <div class="bg"></div>
+                            </div>
+                            <h6>{$service['title']}</h6>
+                            <p>{$service['description']}</p>
+                        </a>
+                    </div>
                 </li>
             </foreach>
         </ul>
