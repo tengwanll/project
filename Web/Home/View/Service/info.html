@@ -2,44 +2,27 @@
 <div class="main">
     <include file="public/breadcrumb" />
     <article class="wrap">
-        <div class="article_title">
-            <header>
-                <h4>项目简介</h4>
-            </header>
+        <h6 class="paragraph_title">项目简介</h6>
+        <div class="indent">
+            <p>{$serviceInfo['description']}</p>
         </div>
-        <p>{$serviceInfo['description']}</p>
     </article>
     <article class="wrap">
-        <div class="article_title">
-            <header>
-                <h4>实验流程</h4>
-            </header>
-        </div>
+        <h6 class="paragraph_title">实验流程</h6>
         <p>{$serviceInfo['experiment_flow']}</p>
     </article>
     <article class="wrap">
-        <div class="article_title">
-            <header>
-                <h4>用户须知</h4>
-            </header>
+        <h6 class="paragraph_title">用户须知</h6>
+        <div class="indent">
+            <p>{$serviceInfo['user_notice']}</p>
         </div>
-        <p>{$serviceInfo['user_notice']}
-        </p>
     </article>
     <article class="wrap">
-        <div class="article_title">
-            <header>
-                <h4>结果展示</h4>
-            </header>
-        </div>
+        <h6 class="paragraph_title">结果展示</h6>
         <p>{$serviceInfo['result_show']}</p>
     </article>
     <article class="wrap">
-        <div class="article_title">
-            <header>
-                <h4>服务周期</h4>
-            </header>
-        </div>
+        <h6 class="paragraph_title">服务周期</h6>
         <p>{$serviceInfo['server_circle']}
         </p>
     </article>

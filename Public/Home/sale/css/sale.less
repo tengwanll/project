@@ -1,27 +1,29 @@
 .sales_list {
     ul {
-        overflow: hidden;
         li {
-            float: left;
+            display: inline-block;
             width: 50%;
-            padding-bottom: 3rem;
-            a {
-                display: block;
-                padding: 1rem;
-                color: #2a2a2a;
+            vertical-align: top;
+            padding-bottom: 2rem;
+            .cont {
+                padding-top: 1rem;
+                width: 80%;
+                margin: 0 auto;
+                text-align: center;
                 img {
-                    float: left;
-                    width: 50%;
-                }
-                .info {
-                    float: left;
-                    padding-left: 1rem;
+                    width: 20rem;
                 }
                 h4 {
-                    line-height: 2;
+                    line-height: 3rem;
+                    margin: 0;
+                }
+                p {
+                    padding-bottom: 2rem;
+                    line-height: 1.4rem;
+                    height: 4rem;
+                    overflow: hidden;
                 }
             }
         }
-
     }
 }
