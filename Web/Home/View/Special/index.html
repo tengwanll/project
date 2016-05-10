@@ -31,33 +31,33 @@
                 <foreach name="service" item="vo" key="key">
                     <if condition="$key==0">
                         <li class="active"><a href="#">{$vo['title']}</a></li>
-                    <else/>
+                        <else/>
                         <li><a href="#">{$vo['title']}</a></li>
                     </if>
                 </foreach>
             </ul>
         </nav>
         <foreach name="serviceList" item="serviceSort" key="k">
-        <div class="list <if condition='$k eq 0'>active</if>">
-            <div class="article_title">
-                <header>
-                    <h4>{$serviceSort['title']}</h4>
-                </header>
+            <div class="list <if condition='$k eq 0'>active</if>">
+                <div class="article_title">
+                    <header>
+                        <h4>{$serviceSort['title']}</h4>
+                    </header>
+                </div>
+                <ul class="list-unstyled">
+                    <foreach name="serviceSort['sortList']" item="service">
+                        <li>
+                            <!-- <img src="__ROOT__/{$service['logo']}"> -->
+                            <h5 class="title">
+                                <a href="{:U('Home/special/info',array('serviceId'=>$service['id']))}">{$service['title']}</a>
+                            </h5>
+                            <!-- <p class="ellipsis_more_line">{$service['description']}</p> -->
+                            <!-- <span class="more">了解更多</span> -->
+                        </li>
+                    </foreach>
+                </ul>
             </div>
-            <ul class="list-unstyled">
-                <foreach name="serviceSort['sortList']" item="service">
-                <li>
-                    <a href="{:U('Home/special/info',array('serviceId'=>$service['id']))}">
-                        <img src="__ROOT__/{$service['logo']}">
-                        <h5 class="title">{$service['title']}</h5>
-                        <p class="ellipsis_more_line">{$service['description']}</p>
-                        <span class="more">了解更多</span>
-                    </a>
-                </li>
-                </foreach>
-            </ul>
-        </div>
         </foreach>
     </div>
 </div>
-<include file="Public/footer" name="special_list"/>
+<include file="Public/footer" name="special_list" />

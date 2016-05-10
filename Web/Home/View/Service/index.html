@@ -6,7 +6,7 @@
                 <foreach name="service" item="vo">
                 <li>
                     <a href="{:U('Home/service/lists',array('serviceId'=>$vo['id']))}">
-                        <span class="fa fa-car icon"></span>
+                        <div class="icon" style="background-image: url('__PUBLIC__/Home/service/img/sort_1.png');"></div>
                         <span class="title">{$vo['title']}</span>
                         <img src="__ROOT__/{$vo['logo']}">
                         <!-- <img src="__ROOT__/{$vo['logo']}"> -->

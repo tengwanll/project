@@ -1,5 +1,5 @@
 .welcome {
-    height: 70%;
+    height: 100%;
     background: url('../../public/background/welcome_bg.jpg') no-repeat;
     background-size: cover;
     background-position: center;
@@ -84,20 +84,35 @@
     padding-bottom: 4rem;
     .infoList {
         display: none;
-        width: 100%;
         background: #f4f4f4;
-        padding-bottom: 2rem;
+        padding: 1rem 0;
         li {
             display: inline-block;
-            width: 24%;
-            padding-left: 1.4rem;
-            padding-right: 1.4rem;
+            width: 25%;
+            .cont {
+                width: 80%;
+                margin: 0 auto;
+                overflow: hidden;
+            }
             a {
+                background: red;
                 text-decoration: none;
                 color: #030303;
                 span {
                     color: #969797;
                     transition: color 0.2s;
+                }
+            }
+            .sort_icon {
+                    background: url('../img/sort_1.png') no-repeat;
+                height: 15.0rem;
+                width: 100%;
+                // background: url('../../index/img/sort_1.png') no-repeat;
+                .bg {
+                    height: 100%;
+                    background: url('../img/sort_1.png') no-repeat;
+                    background: none;
+                    background-position: center center;
                 }
             }
             span {
@@ -120,9 +135,6 @@
                     transition: color 0.2s;
                 }
             }
-        }
-        &.active {
-            display: block;
         }
     }
     .pr {
