@@ -1,30 +1,40 @@
 <include file="Public/header" name="service_info" title="服务详情" />
 <div class="main">
     <include file="public/breadcrumb" />
+    <if condition="$serviceInfo['description']">
     <article class="wrap">
         <h6 class="paragraph_title">项目简介</h6>
         <div class="indent">
             <p>{$serviceInfo['description']}</p>
         </div>
     </article>
+    </if>
+    <if condition="$serviceInfo['experiment_flow']">
     <article class="wrap">
         <h6 class="paragraph_title">实验流程</h6>
         <p>{$serviceInfo['experiment_flow']}</p>
     </article>
+    </if>
+    <if condition="$serviceInfo['user_notice']">
     <article class="wrap">
         <h6 class="paragraph_title">用户须知</h6>
         <div class="indent">
             <p>{$serviceInfo['user_notice']}</p>
         </div>
     </article>
+    </if>
+    <if condition="$serviceInfo['result_show']">
     <article class="wrap">
         <h6 class="paragraph_title">结果展示</h6>
         <p>{$serviceInfo['result_show']}</p>
     </article>
+    </if>
+    <if condition="$serviceInfo['server_circle']">
     <article class="wrap">
         <h6 class="paragraph_title">服务周期</h6>
         <p>{$serviceInfo['server_circle']}
         </p>
     </article>
+    </if>
 </div>
 <include file="Public/footer" />

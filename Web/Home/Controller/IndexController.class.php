@@ -41,7 +41,7 @@ class IndexController extends Controller {
         if($title){
             $where.=" and service.title like '%$title%' ";
         }
-        $service=$serviceModel->field('service.title,service.short_desc,service.logo,service_sort.type,service.id')->where($where)->select();
+        $service=$serviceModel->field('service.title,service.short_desc,service.logo,service_sort.type,service.id,service_sort.title as sortTitle')->where($where)->select();
         foreach($service as $key=>$item){
             $photoId=$item['logo'];
             $photo=$fileModel->where("id=$photoId")->find();

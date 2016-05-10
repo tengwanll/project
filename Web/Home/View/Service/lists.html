@@ -1,19 +1,18 @@
 <include file="Public/header" name="service_list" title="服务列表" />
 <div class="main">
-    <foreach name="serviceList" item="result">
         <div class="info wrap">
             <header>
                 <div class="photo">
-                    <img src="__ROOT__/{$result['logo']}">
+                    <img src="__ROOT__/{$service['photo']}">
                 </div>
                 <div class="des">
-                    <h3>{$result['title']}</h3>
-                    <p>{$result['description']}</p>
+                    <h3>{$service['title']}</h3>
+                    <p>{$service['description']}</p>
                 </div>
             </header>
             <div>
                 <ul class="list-unstyled">
-                    <foreach name="result['sortList']" item="sortList">
+                    <foreach name="serviceList" item="sortList">
                         <li>
                             <div class="card">
                                 <h4 class="ellipsis_one_line">
@@ -29,6 +28,5 @@
                 </ul>
             </div>
         </div>
-    </foreach>
 </div>
 <include file="Public/footer" />
