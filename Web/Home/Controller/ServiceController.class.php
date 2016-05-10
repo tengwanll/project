@@ -45,27 +45,16 @@ class ServiceController extends Controller {
         $service=M('service_sort');
         $serviceInfo=M('service');
         $fileModel=M('file');
-        $services=$service->where('type=1 and status=1 and parent_id=0')->select();
         $serviceSortData=$service->where("id=$serviceId")->find();
         $sortTitle=$serviceSortData['title'];
-        $serviceList=array();
-        foreach($services as $list){
-            $id=$list['id'];
-            $photoId=$list['photo'];
-            $photo=$fileModel->where("id=$photoId")->find();
-            $sortList=$serviceInfo->where("sort_id= $id and status=1")->select();
-            foreach($sortList as $k=>$value){
-                $logoId=$value['logo'];
-                $logo=$fileModel->where("id=$logoId")->find();
-                $sortList[$k]['logo']=$logo?$logo['url']:'';
-            }
-            $serviceList[]=array(
-                'id'=>$id,
-                'title'=>$list['title'],
-                'description'=>$list['description'],
-                'logo'=>$photo?$photo['url']:'',
-                'sortList'=>$sortList
-            );
+        $photoId=$serviceSortData['photo'];
+        $photo=$fileModel->where("id=$photoId")->find();
+        $serviceSortData['photo']=$photo?$photo['url']:'';
+        $sortList=$serviceInfo->where("sort_id= $serviceId and status=1")->select();
+        foreach($sortList as $k=>$value){
+            $logoId=$value['logo'];
+            $logo=$fileModel->where("id=$logoId")->find();
+            $sortList[$k]['logo']=$logo?$logo['url']:'';
         }
         $navigation=array();
         $navigation[]=array(
@@ -73,8 +62,8 @@ class ServiceController extends Controller {
             'url'=>__ROOT__.'/Home/service/lists/serviceId/'.$serviceId
         );
         $this->assign('navigation',$navigation);
-        $this->assign('service',$services);
-        $this->assign('serviceList',$serviceList);
+        $this->assign('service',$serviceSortData);
+        $this->assign('serviceList',$sortList);
         $this->assign('serviceId',$serviceId);
         $this->assign('root','service_list');
         $this->display();
