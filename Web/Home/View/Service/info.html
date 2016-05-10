@@ -1,6 +1,7 @@
 <include file="Public/header" name="service_info" title="服务详情" />
 <div class="main">
     <include file="public/breadcrumb" />
+    <if condition="$serviceInfo['description']">
     <article class="wrap">
         <div class="article_title">
             <header>
@@ -9,6 +10,8 @@
         </div>
         <p>{$serviceInfo['description']}</p>
     </article>
+    </if>
+    <if condition="$serviceInfo['experiment_flow']">
     <article class="wrap">
         <div class="article_title">
             <header>
@@ -17,6 +20,8 @@
         </div>
         <p>{$serviceInfo['experiment_flow']}</p>
     </article>
+    </if>
+    <if condition="$serviceInfo['user_notice']">
     <article class="wrap">
         <div class="article_title">
             <header>
@@ -26,6 +31,8 @@
         <p>{$serviceInfo['user_notice']}
         </p>
     </article>
+    </if>
+    <if condition="$serviceInfo['result_show']">
     <article class="wrap">
         <div class="article_title">
             <header>
@@ -34,6 +41,8 @@
         </div>
         <p>{$serviceInfo['result_show']}</p>
     </article>
+    </if>
+    <if condition="$serviceInfo['server_circle']">
     <article class="wrap">
         <div class="article_title">
             <header>
@@ -43,5 +52,6 @@
         <p>{$serviceInfo['server_circle']}
         </p>
     </article>
+    </if>
 </div>
 <include file="Public/footer" />

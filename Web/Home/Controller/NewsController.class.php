@@ -14,6 +14,9 @@ class NewsController extends Controller {
         $noticeModel=M('notice');
         $fileModel=M('file');
         $notice=$noticeModel->where('status=1')->order('create_time desc')->select();
+        foreach($notice as $key=>$value){
+            $notice[$key]['create_time']=date('Y-m-d',strtotime($value['create_time']));
+        }
         $news=$model->where('status=1')->order('create_time desc')->page($pagePart)->select();
         foreach($news as $key=>$item){
             $photoId=$item['photo'];
