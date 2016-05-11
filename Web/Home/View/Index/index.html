@@ -32,7 +32,9 @@
                     <div class="cont">
                         <a href="#">
                             <div class="sort_icon">
-                                <div class="bg"></div>
+                                <div class="cl">
+                                    <div class="bg" style="background-image: url('__PUBLIC__/Home/index/img/service_sort_1.png');"></div>
+                                </div>
                             </div>
                             <h6>{$service['title']}</h6>
                             <p>{$service['description']}</p>
@@ -44,9 +46,17 @@
         <ul class="infoList">
             <foreach name="specialService" item="service">
                 <li>
-                    <span class="fa fa-car"></span>
-                    <h6>{$service['title']}</h6>
-                    <p>{$service['description']}</p>
+                    <div class="cont">
+                        <a href="#">
+                            <div class="sort_icon">
+                                <div class="cl">
+                                    <div class="bg" style="background-image: url('__PUBLIC__/Home/index/img/special_sort_1.png');"></div>
+                                </div>
+                            </div>
+                            <h6>{$service['title']}</h6>
+                            <p>{$service['description']}</p>
+                        </a>
+                    </div>
                 </li>
             </foreach>
         </ul>

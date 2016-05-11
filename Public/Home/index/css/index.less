@@ -104,14 +104,22 @@
                 }
             }
             .sort_icon {
-                    background: url('../img/sort_1.png') no-repeat;
                 height: 15.0rem;
                 width: 100%;
+                padding-top: 2rem;
                 // background: url('../../index/img/sort_1.png') no-repeat;
+                .cl {
+                    height: 10.0rem;
+                    width: 10.0rem;
+                    margin: 0 auto;
+                    background: #aaa;
+                    transition: background 1s;
+                }
                 .bg {
                     height: 100%;
-                    background: url('../img/sort_1.png') no-repeat;
-                    background: none;
+                    width: 100%;
+                    // background: url('../img/sort_1.png') no-repeat;
+                    background-repeat: no-repeat;
                     background-position: center center;
                 }
             }
@@ -133,6 +141,10 @@
                 span {
                     color: #64f5f5;
                     transition: color 0.2s;
+                }
+                .sort_icon .cl {
+                    background: #11c7c7;
+                    transition: background 0.2s;
                 }
             }
         }
