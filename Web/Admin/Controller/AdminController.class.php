@@ -72,7 +72,7 @@
             $upload->maxSize=5242880 ;// 设置附件上传大小5242880
             $upload->exts=array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
             $upload->rootPath = "./Public";//需要手动设置上传的根目录
-            $upload->savePath='./Uploads/pics/'; // 设置附件上传目录
+            $upload->savePath='/Uploads/pics/'; // 设置附件上传目录
             $info=$upload->uploadOne($_FILES['photo']); // 上传文件
             if($info) {
                 $date=date('Y-m-d H:i:s',time());
@@ -164,6 +164,45 @@
                 $this->buildResponse(10214);
             }
             $this->buildResponse(0);
+        }
+
+        public function cutPhoto(){
+            $upload = new \Think\Upload();// 实例化上传类
+            $upload->maxSize=5242880 ;// 设置附件上传大小5242880
+            $upload->exts=array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+            $upload->rootPath = "./Public";//需要手动设置上传的根目录
+            $upload->savePath='/Uploads/pics/'; // 设置附件上传目录
+            $info=$upload->uploadOne($_FILES['photo']); // 上传文件
+            if($info) {
+                $src=$upload->rootPath.$info['savepath'].$info['savename'];
+                $jpeg_quality = 90;
+                $photos=getimagesize($src);//获取图片大小
+                $src_height=$photos[1];
+                $src_weight=$photos[0];
+                $path=pathinfo($src);
+                $path=$path['extension'];
+                if($path=='jpeg'||$path=='jpg'){
+                    $img_r = imagecreatefromjpeg($src);
+                }
+                if($path=='png'){
+                    $img_r=imagecreatefrompng($src);
+                }
+                if($path=='gif'){
+                    $img_r=imagecreatefromgif($src);
+                }
+                if($path=='bmp'||$path=='wbmp'){
+                    $img_r=imagecreatefromwbmp($src);
+                }
+                $dst_r = ImageCreateTrueColor( $src_weight, $src_weight/2 );//创建一个新图
+                imagecopyresampled($dst_r,$img_r,0,0,0,0,$src_weight,$src_height,$src_weight,$src_height);//最后四个变量设置缩放比例
+                header('Content-type: image/jpeg');//设置格式
+                $photo=imagejpeg($dst_r,'./Public/Uploads/pics/test/'.$info['savename'], $jpeg_quality);//输出图像
+                if($photo){
+                    $this->buildResponse(0);
+                }
+            }else{
+                $this->buildResponse(10204);
+            }
         }
     }
 

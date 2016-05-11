@@ -3,10 +3,10 @@
     <div class="bg">
         <div class="wrap">
             <ul class="list-unstyled">
-                <foreach name="service" item="vo">
+                <foreach name="service" key="key" item="vo">
                 <li>
                     <a href="{:U('Home/service/lists',array('serviceId'=>$vo['id']))}">
-                        <div class="icon" style="background-image: url('__PUBLIC__/Home/service/img/sort_1.png');"></div>
+                        <div class="icon" style="background-image: url('__PUBLIC__/Home/service/img/sort_{$key+1}.png');"></div>
                         <span class="title">{$vo['title']}</span>
                         <img src="__ROOT__/{$vo['logo']}">
                         <!-- <img src="__ROOT__/{$vo['logo']}"> -->
