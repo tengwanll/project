@@ -13,8 +13,9 @@ $(document).ready(function() {
 
 	// 最新资讯
 	$(document).on('click', '.news ol li', function (e) {
+		$('.news .active h6').removeClass('ellipsis_one_line');
 		$('.news ol .active').removeClass('active');
-		$(this).addClass('active');
+		$(this).addClass('active').find('h6').addClass('ellipsis_one_line');
 	});
 
 });

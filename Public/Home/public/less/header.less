@@ -82,6 +82,11 @@
                 width: 100%;
                 text-align: center;
                 line-height: @headerHeight;
+                transition: background 0.1s;
+                &.hover {
+                    background: #5f5c5c;
+                    transition: background 0.1s;
+                }
             }
             & > ul {
                 display: none;
@@ -94,10 +99,13 @@
                     font-size: 12px;
                     display: block;
                     width: 100%;
-                    background: red;
+                    background: #5f5c5c;
                     height: 100%;
                     line-height: 2rem;
                     text-align: center;
+                    &:hover {
+                        background: #09dada;
+                    }
                 }
             }
         }

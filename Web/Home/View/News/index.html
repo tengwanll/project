@@ -12,11 +12,12 @@
                 <foreach name="news" item="vo">
                     <li class="newsItem">
                         <a href="{:U('Home/news/info',array('newsId'=>$vo['id']))}">
-                        <img src="__ROOT__/{$vo['photo']}" />
-                        <div class="info">
-                            <h4>{$vo['title']}</h4>
-                            <p>{$vo['description']}</p>
-                        </div>
+                            <img src="__ROOT__/{$vo['photo']}" />
+                            <div class="info">
+                                <h4>{$vo['title']}</h4>
+                                <p>{$vo['description']}</p>
+                            </div>
+                        </a>
                     </li>
                 </foreach>
             </ul>
@@ -44,4 +45,4 @@
         </div>
     </div>
 </div>
-<include file="Public/footer" />
+<include file="Public/footer" name="news" />

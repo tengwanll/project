@@ -6,16 +6,26 @@
             li.newsItem {
                 overflow: hidden;
                 padding: 1rem;
+                a {
+                    display: block;
+                    overflow: hidden;
+                    color: black;
+                    &:hover,
+                    &:link {
+                        text-decoration: none;
+                    }
+                }
                 img {
                     width: 15rem;
-                    height: auto;
+                    height: 10rem;
                     float: left;
                 }
-                div {
+                .info {
                     padding-left: 16rem;
                     width: 90%;
-                    h6 {
-                        line-height: 2;
+                    h4 {
+                        font-size: 1rem;
+                        line-height: 2rem;
                     }
                     p {
                         line-height: 1.5;
@@ -56,8 +66,11 @@
             padding: 0 1rem 2rem 1rem;
             margin-top: 2rem;
             border-left: 1px solid #c3c1c1;
+            .article_title {
+                margin-bottom: 0.5rem;
+            }
             li {
-                line-height: 3;
+                line-height: 1.6rem;
                 border-bottom: 1px solid #c3c1c1;
                 overflow: hidden;
                 .title {
@@ -66,10 +79,18 @@
                 a {
                     color: #2a2a2a;
                     float: left;
+                    &:hover,
+                    &:link {
+                        text-decoration: none;
+                    }
                 }
                 span {
                     color: #ababab;
                     float: right;
+                    height: 100%;
+                }
+                &:last-child {
+                    border: none;
                 }
             }
         }
