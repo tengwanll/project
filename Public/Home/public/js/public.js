@@ -9,12 +9,15 @@ $(document).ready(function() {
     var navTime = null;
     $(document).on('mouseover', '.header nav > ul > li > a', function() {
         $(this).next().slideDown(80);
+        $(this).addClass('hover');
     });
 
     $(document).on('mouseout', '.header nav > ul > li > a', function() {
-        var list = $(this).next();
+        var _this = $(this);
+        var list = _this.next();
         navTime = setTimeout(function() {
             list.slideUp(80);
+            _this.removeClass('hover');
         }, 10);
     });
 
@@ -23,8 +26,9 @@ $(document).ready(function() {
         $(this).show();
     });
 
-    $(document).on('mouseout', '.header nav > ul > li > ul', function() {
+    $(document).on('mouseout', '.header nav > ul ul', function() {
         $(this).hide();
+        $('.header nav .hover').removeClass('hover');
     });
 
 
