@@ -1,8 +1,4 @@
-<div class="serviceDetail">
-    <div class="btn-group">
-        <button class="btn btn-primary" ng-click="submit()">保存</button>
-        <button class="btn btn-warning">放弃</button>
-    </div>
+<div class="serviceDetail form">
     <div class="form-group _required">
         <label for="title">标题：</label>
         <input type="text" placeholder="请输入标题" id="title" ng-model="serviceDatas.newData.title">
@@ -18,15 +14,14 @@
         </select>
     </div>
     <div class="form-group">
-        <label for="photo" class="_required">封面：</label>
-        <input type="file" id="photo" onchange="angular.element(this).scope().uploadImg(event, 'photo')">
-    </div>
-    <div class="form-group">
         <label for="description" class="_required">项目简介：</label>
         <textarea id="description" ng-model="serviceDatas.newData.description"></textarea>
     </div>
     <div class="form-group">
         <label for="experimentFlow">实验流程：</label>
+        <label for="experimentFlow" class="uploadIcon">
+            <span class="fa fa-file"></span>
+        </label>
         <input type="file" id="experimentFlow" onchange="angular.element(this).scope().uploadImg(event, 'experimentFlow')">
     </div>
     <div class="form-group">
@@ -35,10 +30,17 @@
     </div>
     <div class="form-group">
         <label for="resultShow">结果展示：</label>
+        <label for="experimentFlow" class="uploadIcon">
+            <span class="fa fa-file"></span>
+        </label>
         <input type="file" id="resultShow" onchange="angular.element(this).scope().uploadImg(event, 'resultShow')">
     </div>
     <div class="form-group">
         <label for="serverCircle">服务周期：</label>
         <textarea id="serverCircle" ng-model="serviceDatas.newData.serverCircle"></textarea>
+    </div>
+    <div class="btn-group">
+        <button class="btn btn-primary" ng-click="submit()">保存</button>
+        <button class="btn btn-warning">放弃</button>
     </div>
 </div>
