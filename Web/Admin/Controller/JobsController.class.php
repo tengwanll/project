@@ -69,6 +69,7 @@ class JobsController extends CommonController
         $station=$json['station'];
         $number=$json['number'];
         $demand=$json['demand'];
+        $demand=implode('||',$demand);
         $date=date('Y-m-d H:i:s',time());
         $data=array(
             'lab'=>$lab?$lab:'',
@@ -94,6 +95,7 @@ class JobsController extends CommonController
         $station=$json['station'];
         $number=$json['number'];
         $demand=$json['demand'];
+        $demand=implode('||',$demand);
         $jobModel=M('job');
         $job=$jobModel->where("id=$jobId")->find();
         if(!$job){
