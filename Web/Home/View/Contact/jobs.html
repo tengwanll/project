@@ -41,7 +41,9 @@
                                     <div>
                                         <p class="title">任职要求：</p>
                                         <ol>
-                                            <p>{$vo['demand']}</p>
+                                            <foreach name="vo['demand']" item="dem">
+                                                <li><p>{$dem}</p></li>
+                                                </foreach>
                                         </ol>
                                     </div>
                                 </li>
