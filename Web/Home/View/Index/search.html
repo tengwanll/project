@@ -12,7 +12,7 @@
                 <li>
                     <div class="result">
                         <h6 class="ellipsis_one_line">
-                            <if condition="vo['type']==1">
+                            <if condition="$vo['type']==1">
                                 <a href="{:U('Home/service/info',array('serviceId'=>$vo['id']))}" class="ellipsis_one_line">
                             <else/>
                                 <a href="{:U('Home/special/info',array('serviceId'=>$vo['id']))}" class="ellipsis_one_line">
