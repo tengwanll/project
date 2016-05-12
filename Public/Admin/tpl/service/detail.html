@@ -19,10 +19,9 @@
     </div>
     <div class="form-group">
         <label for="experimentFlow">实验流程：</label>
-        <label for="experimentFlow" class="uploadIcon">
-            <span class="fa fa-file"></span>
-        </label>
-        <input type="file" id="experimentFlow" onchange="angular.element(this).scope().uploadImg(event, 'experimentFlow')">
+        <!-- 编辑器2 -->
+        <script id="editor" id="experimentFlow" type="text/plain" style="width:600px;height:500px;" name="introduction"></script>
+        <!-- 编辑器2 end -->
     </div>
     <div class="form-group">
         <label for="userNotice">用户须知：</label>
@@ -30,7 +29,7 @@
     </div>
     <div class="form-group">
         <label for="resultShow">结果展示：</label>
-        <label for="experimentFlow" class="uploadIcon">
+        <label for="resultShow" class="uploadIcon">
             <span class="fa fa-file"></span>
         </label>
         <input type="file" id="resultShow" onchange="angular.element(this).scope().uploadImg(event, 'resultShow')">

@@ -101,6 +101,13 @@ define(['angular', 'uiRouter'], function(angular) {
                     cb(res.data.result);
                 });
             };
+            <!-- 编辑器3 -->
+            var ue = UE.getEditor('editor', {
+
+                autoHeightEnabled: true,
+                autoFloatEnabled: true
+            });
+            <!-- 编辑器3 end-->
         }])
 
     return app;
