@@ -98,6 +98,8 @@ class ServiceController extends CommonController
         $shortDesc=$json['shortDesc'];      // 简介
         $description=$json['description'];  // 简介
         $experimentFlow=$json['experimentFlow'];    // 实验流程
+        var_dump($experimentFlow);
+        var_dump($_POST['experimentFlow']);
         $userNotice=$json['userNotice'];    // 用户须知
         $resultShow=$json['resultShow'];    // 结果展示
         $serverCircle=$json['serverCircle'];// 服务周期
