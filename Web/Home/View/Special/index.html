@@ -28,8 +28,8 @@
                 <!-- <li class="active"><a href="#">基因组学</a></li>
                 <li><a href="#">细胞学</a></li>
                 <li><a href="#">蛋白质组学</a></li> -->
-                <foreach name="service" item="vo" key="key">
-                    <if condition="$key==0">
+                <foreach name="service" item="vo">
+                    <if condition="$vo['id']==$serviceId">
                         <li class="active"><a href="#">{$vo['title']}</a></li>
                         <else/>
                         <li><a href="#">{$vo['title']}</a></li>
@@ -37,8 +37,8 @@
                 </foreach>
             </ul>
         </nav>
-        <foreach name="serviceList" item="serviceSort" key="k">
-            <div class="list <if condition='$k eq 0'>active</if>">
+        <foreach name="serviceList" item="serviceSort">
+            <div class='list <if condition="$serviceSort['id']==$serviceId">active</if>'>
                 <div class="article_title">
                     <header>
                         <h4>{$serviceSort['title']}</h4>

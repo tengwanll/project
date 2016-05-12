@@ -3,6 +3,8 @@ namespace Home\Controller;
 use Think\Controller;
 class SpecialController extends Controller {
     public function index(){
+        $serviceId=I('get.serviceId');
+        $serviceId=$serviceId?$serviceId:5;
         $model=M('service_sort');
         $serviceInfo=M('service');
         $fileModel=M('file');
@@ -29,6 +31,7 @@ class SpecialController extends Controller {
             'url'=>__ROOT__.'/Home/special/index'
         );
         $this->assign('navigation',$navigation);
+        $this->assign('serviceId',$serviceId);
         $this->assign('root','special_list');
         $this->assign('service',$services);
         $this->assign('serviceList',$serviceList);

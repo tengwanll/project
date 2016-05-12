@@ -27,13 +27,13 @@
             </li>
         </ul>
         <ul class="infoList active">
-            <foreach name="normalService" item="service">
+            <foreach name="normalService" key="key" item="service">
                 <li>
                     <div class="cont">
-                        <a href="#">
+                        <a href="{:U('Home/service/lists',array('serviceId'=>$service['id']))}">
                             <div class="sort_icon">
                                 <div class="cl">
-                                    <div class="bg" style="background-image: url('__PUBLIC__/Home/index/img/service_sort_1.png');"></div>
+                                    <div class="bg" style="background-image: url('/panxu/Public/Home/index/img/service_sort_{$key+1}.png');"></div>
                                 </div>
                             </div>
                             <h6>{$service['title']}</h6>
@@ -44,13 +44,13 @@
             </foreach>
         </ul>
         <ul class="infoList">
-            <foreach name="specialService" item="service">
+            <foreach name="specialService" key="key" item="service">
                 <li>
                     <div class="cont">
-                        <a href="#">
+                        <a href="{:U('Home/special/index',array('serviceId'=>$service['id']))}">
                             <div class="sort_icon">
                                 <div class="cl">
-                                    <div class="bg" style="background-image: url('__PUBLIC__/Home/index/img/special_sort_1.png');"></div>
+                                    <div class="bg" style="background-image: url('/panxu/Public/Home/index/img/special_sort_{$key+1}.png');"></div>
                                 </div>
                             </div>
                             <h6>{$service['title']}</h6>
@@ -91,10 +91,12 @@
                         <span class="num">{++$k}</span>
                         <h6 <if condition="$k eq 0">class="ellipsis_one_line"</if> >{$info['title']}</h6>
                     </div>
+                    <a href="{:U('Home/news/info',array('newsId'=>$info['id']))}">
                     <div class="contact">
                         <p class="indent">{$info['short_desc']}</p>
                         <img src="__ROOT__/{$info['photo']}">
                     </div>
+                    </a>
                 </div>
             </li>
         </foreach>
@@ -122,7 +124,7 @@
                     <div class="activityInfo ellipsis_more_line">
                         <p><span>活动介绍：</span><span class="value">{$vo['short_desc']}</span></p>
                     </div>
-                    <a href="#">更多详情</a>
+                    <a href="{:U('Home/sale/index')}">更多详情</a>
                 </li>
             </foreach>
         </ul>
