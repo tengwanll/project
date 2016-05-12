@@ -5,14 +5,13 @@ class AboutController extends Controller {
     public function index(){
     	$people=M('employee');
         $fileModel=M('file');
-    	$employees=$people->field('id,name,photo,description')->limit('3')->select();
+    	$employees=$people->field('id,name,photo,description,position')->limit('3')->select();
         foreach($employees as $key=>$item){
             $photoId=$item['photo'];
             $photo=$fileModel->where("id=$photoId")->find();
             $employees[$key]['photo']=$photo?$photo['url']:'';
         }
         $companyModel=M('company');
-
         $company=$companyModel->find();
         $photoId=$company['photo'];
         $photo=$fileModel->where("id=$photoId")->find();

@@ -25,12 +25,14 @@ class JobsController extends CommonController
         $arr=array();
         foreach($jobList as $lists){
             $id=$lists['id'];
+            $demand=$lists['demand'];
+            $demand=$demand?explode('||',$demand):array();
             $arr[]=array(
                 'id'=>$id,
                 'lab'=>$lists['lab'],
                 'station'=>$lists['station'],
                 'number'=>$lists['number'],
-                'demand'=>$lists['demand'],
+                'demand'=>$demand,
                 'createTime'=>$lists['create_time']
             );
         }
@@ -48,12 +50,14 @@ class JobsController extends CommonController
         if(!$job){
             $this->buildResponse(10210);
         }
+        $demand=$job['demand'];
+        $demand=$demand?explode('||',$demand):array();
         $arr=array(
             'id'=>$job['id'],
             'lab'=>$job['lab'],
             'station'=>$job['station'],
             'number'=>$job['number'],
-            'demand'=>$job['demand'],
+            'demand'=>$demand,
             'createTime'=>$job['create_time']
         );
         $this->buildResponse(0,$arr);
@@ -65,6 +69,7 @@ class JobsController extends CommonController
         $station=$json['station'];
         $number=$json['number'];
         $demand=$json['demand'];
+        $demand=implode('||',$demand);
         $date=date('Y-m-d H:i:s',time());
         $data=array(
             'lab'=>$lab?$lab:'',
@@ -90,6 +95,7 @@ class JobsController extends CommonController
         $station=$json['station'];
         $number=$json['number'];
         $demand=$json['demand'];
+        $demand=implode('||',$demand);
         $jobModel=M('job');
         $job=$jobModel->where("id=$jobId")->find();
         if(!$job){
