@@ -102,6 +102,5 @@ define(['angular', 'uiRouter'], function(angular) {
                 });
             };
         }])
-
     return app;
 });
