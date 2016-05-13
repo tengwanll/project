@@ -48,11 +48,18 @@ class ContactController extends Controller {
     	$data['update_time']=$date;
     	$feedback=M('feedback');
     	if($feedback->data($data)->add()){
-			//添加成功
-			$this->success('留言添加成功!', U('feedback/index'), 3);
+            $response=array(
+                'errno'=>0,
+                'ermsg'=>'',
+            );
+            $this->ajaxReturn($response);
 		}else{
 			//添加失败
-			$this->error('留言添加失败!', U('feedback/index'), 3);
+            $response=array(
+                'errno'=>10215,
+                'ermsg'=>'添加反馈失败',
+            );
+            $this->ajaxReturn($response);
 		}
     }
 }
