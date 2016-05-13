@@ -2,10 +2,13 @@
 <div class="welcome row section">
     <div class="banner">
         <ul>
-            <li class="part_0" style="background-image: url('__PUBLIC__/Home/index/img/banner_0.jpg');"></li>
-            <li class="part_1" style="background-image: url('__PUBLIC__/Home/index/img/banner_1.jpg');"></li>
-            <li class="part_2" style="background-image: url('__PUBLIC__/Home/index/img/banner_2.jpg');"></li>
-            <li class="part_3" style="background-image: url('__PUBLIC__/Home/index/img/banner_3.jpg');"></li>
+            <li style="background-image: url('__PUBLIC__/Home/index/img/banner_0.jpg');">
+                
+            </li><!--
+         --><li style="background-image: url('__PUBLIC__/Home/index/img/banner_1.jpg');"></li><!--
+         --><li style="background-image: url('__PUBLIC__/Home/index/img/banner_2.jpg');"></li><!--
+         --><li style="background-image: url('__PUBLIC__/Home/index/img/banner_3.jpg');"></li><!--
+         --><li style="background-image: url('__PUBLIC__/Home/index/img/banner_0.jpg');"></li>
         </ul>
         <div class="prev">
             <a href="#"><span class="fa fa-chevron-left"></span></a>
@@ -100,10 +103,10 @@
                         <h6 <if condition="$k eq 0">class="ellipsis_one_line"</if> >{$info['title']}</h6>
                     </div>
                     <a href="{:U('Home/news/info',array('newsId'=>$info['id']))}">
-                    <div class="contact">
-                        <p class="indent">{$info['short_desc']}</p>
-                        <img src="__ROOT__/{$info['photo']}">
-                    </div>
+                        <div class="contact">
+                            <p class="indent">{$info['short_desc']}</p>
+                            <img src="__ROOT__/{$info['photo']}">
+                        </div>
                     </a>
                 </div>
             </li>

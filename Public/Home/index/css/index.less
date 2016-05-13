@@ -8,13 +8,18 @@
     }
     .banner {
         height: 100%;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
         ul {
+            width: 100%;
+            position: absolute;
             height: 100%;
-            overflow: hidden;
+            white-space: nowrap;
             li {
                 display: inline-block;
                 background-repeat: no-repeat;
-                background-size: 100% auto;
+                background-size: cover;
                 background-position: center center;
                 height: 100%;
                 width: 100%;
@@ -31,6 +36,11 @@
                 font-size: 2rem;
                 line-height: 10rem;
                 color: rgba(255, 255, 255, 0.3);
+                transition: color 0.3s;
+                &:hover {
+                    color: white;
+                    transition: color 0.2s;
+                }
             }
         }
         .prev {
