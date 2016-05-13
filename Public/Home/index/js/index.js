@@ -1,4 +1,9 @@
 $(document).ready(function() {
+	// banner
+	$()
+
+
+
 	// 服务项目切换
 	$(document).on('click', '.project .tabs li', function (e) {
 		e.preventDefault();
