@@ -21,45 +21,56 @@ input,
 textarea {
     background: none;
     border: 1px solid #ccc;
-    width: 50%;
     color: white;
     line-height: 1.3rem;
+    width: 70%;
+    float: left;
 }
 
 label {
     color: #ccc;
     font-weight: normal;
-    text-align: right;
-    width: 6rem;
-    padding-right: 0.8rem;
+    width: 30%;
+    float: left;
+    line-height: 1.3rem;
+    text-align: center;
 }
 
 .form {
     font-size: 0.8rem;
-    form {
+    width: 50%;
+    margin: 0 auto;
+    .form_body {
         overflow: hidden;
-        width: 80%;
-        margin: 0 auto;
+        margin-left: -4rem;
     }
     .fl,
     .fr {
-        float: left;
+        overflow: hidden;
         width: 50%;
         div {
-            padding: 0.8rem 0;
+            overflow: hidden;
+            padding: 1rem 0;
         }
+    }
+    .fl {
+        float: left;
+    }
+    .fr {
+        float: right;
+        text-align: right;
     }
     .txt {
         float: left;
         width: 100%;
         label {
-            display: block;
+            width: 15%;
         }
         textarea {
-            display: block;
-            width: 80%;
+            float: left;
             height: 6rem;
-            margin: 0 auto;
+            width: 85%;
+            margin: 1rem auto;
         }
     }
     .btn-group {
