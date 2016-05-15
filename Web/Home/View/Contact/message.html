@@ -8,7 +8,7 @@
             </header>
         </div>
         <div class="form">
-            <form action="{:U('Home/contact/add')}" type="post" class="wrap" method="post">
+            <div class="form_body">
                 <div class="fl">
                     <div>
                         <label>姓名：</label>
@@ -41,11 +41,11 @@
                     <label>内容：</label>
                     <textarea></textarea>
                 </div>
-                <div class="btn-group">
-                    <button class="btn btn-default">发送</button>
-                </div>
-            </form>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-default">发送</button>
+            </div>
         </div>
     </div>
 </div>
-<include file="Public/footer" />
+<include file="Public/footer" name="message" />
