@@ -5,18 +5,6 @@ define(['app'], function(app) {
         var baseurl = "/Public/Admin";
         $urlRouterProvider.otherwise('/');
 
-        var loader = function(ctrlName) {
-            return {
-                loadCtrl: ["$q", function($q) {
-                    var deferred = $q.defer();
-                    require(['./scripts/controllers/' + ctrlName], function() {
-                        deferred.resolve();
-                    });
-                    return deferred.promise;
-                }]
-            };
-        };
-
         $stateProvider
             // 首页
             .state('index', {
@@ -69,6 +57,12 @@ define(['app'], function(app) {
             .state('news', {
                 url: '/news',
                 templateUrl: baseurl + '/tpl/news/list.html?t=' + Math.floor(Date.now() / 1000),
+                controller: 'NewsController',
+                // resolve: loader("NewsController")
+            })
+            .state('newsAdd', {
+                url: '/news/add',
+                templateUrl: baseurl + '/tpl/news/detail.html?t=' + Math.floor(Date.now() / 1000),
                 controller: 'NewsController',
                 // resolve: loader("NewsController")
             })

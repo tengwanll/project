@@ -87,7 +87,7 @@
                 );
                 $file=$fileModel->data($data)->add();
                 if($file){
-                    $this->buildResponse(0,$file);
+                    $this->buildResponse(0,$data['url']);
                 }else{
                     $this->buildResponse(10204);
                 }

@@ -1,0 +1,25 @@
+<div class="news _detail">
+    <div class="form-group">
+        <label>标题：</label>
+        <input type="text" id="title" ng-model="newsDatas.newData.title">
+    </div>
+    <div class="form-group">
+        <label for="newsPhoto">封面：</label>
+        <label for="newsPhoto" class="uploadIcon">
+            <span class="fa fa-file"></span>
+        </label>
+        <input type="file" id="newsPhoto" onchange="angular.element(this).scope().uploadImg(event, 'photo')">
+    </div>
+    <div class="form-group">
+        <label>摘要：</label>
+        <textarea ng-model="newsDatas.newData.shortDesc"></textarea>
+    </div>
+    <div class="form-group">
+        <label>正文：</label>
+        <textarea id="wangeditor" ng-model="newsDatas.newData.content"></textarea>
+    </div>
+    <div class="btn-group">
+        <button class="btn btn-primary" ng-click="createNews()">保存</button>
+        <button class="btn btn-default">取消</button>
+    </div>
+</div>

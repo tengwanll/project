@@ -14,9 +14,11 @@ define(['app'], function(app) {
 
         // 获取列表数据
         $scope.getListDatas = function(cb) {
+            $rootScope.pageLoading();
             $http.get('/Admin/service/serviceList/rows/' + $scope.pageLen + '/page/' + $scope.serviceDatas.currentPage).then(function(res) {
                 $scope.serviceDatas.list = res.data.result.serviceList;
                 $scope.serviceDatas.listTotal = res.data.result.total;
+                $rootScope.hidePageLoading();
             });
         }
 
