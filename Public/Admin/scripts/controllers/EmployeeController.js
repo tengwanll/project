@@ -1,13 +1,27 @@
-define(['app'], function (app) {
-    app.controller('EmployeeController', ['$scope', '$http', function($scope, $http){
+define(['app'], function(app) {
+    app.controller('EmployeeController', ['$scope', '$http', function($scope, $http) {
         // 教职员数据
         $scope.employeeDatas = {
-        	list: []
+            list: []
         };
 
-        // 初始化数据
-        $http.get('/Admin/employee/employeeList').then(function (res) {
-        	$scope.employeeDatas.list = res.data.result.employeeList;
-        })
+        // 初始化界面
+        init();
+
+
+
+
+
+
+
+        /**
+         * 初始化
+         */
+        function init() {
+            // 初始化数据
+            $http.get('/Admin/employee/employeeList').then(function(res) {
+                $scope.employeeDatas.list = res.data.result.employeeList;
+            });
+        }
     }])
 });

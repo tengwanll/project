@@ -15,7 +15,7 @@ require.config({
         'PicsController': './scripts/controllers/PicsController',
         'InfoController': './scripts/controllers/InfoController',
         'SettingController': './scripts/controllers/SettingController',
-        'wangEditor': './libs/wangeditor/wangEditor.min',
+        'wangEditor': './libs/wangeditor/js/wangEditor',
     },
     shim: {
         'angular': {
