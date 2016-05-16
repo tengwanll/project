@@ -126,7 +126,8 @@
          * 删除新闻
          */
         public function delete(){
-            $newsId=I('post.newsId');
+            $json=$this->getContent();
+            $newsId=$json['newsId'];
             $newsModel=M('news');
             $news=$newsModel->where("id=$newsId")->find();
             if(!$news){

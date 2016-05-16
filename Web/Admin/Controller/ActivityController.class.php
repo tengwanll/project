@@ -123,7 +123,8 @@ class ActivityController extends CommonController
     }
 
     public function delete(){
-        $activityId=I('post.activityId');
+        $json=$this->getContent();
+        $activityId=$json['activityId'];
         $activityModel=M('activity');
         $activity=$activityModel->where("id=$activityId")->find();
         if(!$activity){

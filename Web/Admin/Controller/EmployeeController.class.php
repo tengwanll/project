@@ -119,7 +119,7 @@ class EmployeeController extends CommonController
         $date=date('Y-m-d H:i:s',time());
         $data=array(
             'content'=>$content?$content:'',
-            '$employee_id'=>$employeeId?$employeeId:0,
+            'employee_id'=>$employeeId?$employeeId:0,
             'status'=>1,
             'create_time'=>$date,
             'update_time'=>$date
@@ -197,8 +197,9 @@ class EmployeeController extends CommonController
     }
 
     public function deleteEmployee(){
-        $employeeId=I('post.employeeId');
-        $employeeModel=M('notice');
+        $json=$this->getContent();
+        $employeeId=$json['employeeId'];
+        $employeeModel=M('employee');
         $employee=$employeeModel->where("id=$employeeId")->find();
         if(!$employee){
             $this->buildResponse(10212);
@@ -212,7 +213,8 @@ class EmployeeController extends CommonController
     }
 
     public function deleteThesis(){
-        $thesisId=I('post.thesisId');
+        $json=$this->getContent();
+        $thesisId=$json['thesisId'];
         $thesisModel=M('thesis');
         $thesis=$thesisModel->where("id=$thesisId")->find();
         if(!$thesis){

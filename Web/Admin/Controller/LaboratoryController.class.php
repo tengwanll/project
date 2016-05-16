@@ -81,7 +81,7 @@ class LaboratoryController extends CommonController
         $date=date('Y-m-d H:i:s',time());
         $data=array(
             'name'=>$name?$name:'',
-            '$photo_detail'=>$photoDetail?$photoDetail:0,
+            'photo_detail'=>$photoDetail?$photoDetail:0,
             'description'=>$description?$description:'',
             'photo'=>$photo?$photo:0,
             'status'=>1,
@@ -129,7 +129,8 @@ class LaboratoryController extends CommonController
     }
 
     public function delete(){
-        $labId=I('post.labId');
+        $json=$this->getContent();
+        $labId=$json['labId'];
         $labModel=M('lab');
         $lab=$labModel->where("id=$labId")->find();
         if(!$lab){

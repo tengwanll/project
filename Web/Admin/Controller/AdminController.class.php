@@ -96,12 +96,15 @@
             }
         }
 
+        /**
+         * 留言
+         */
         public function feedback(){
             $page=$this->getPage();
             $name=I('get.name');
             $feedbackModel=M('feedback');
             if($name){
-                $where=" title like '%$name%' and status=1 ";
+                $where=" name like '%$name%' and status=1 ";
             }else{
                 $where='status=1';
             }

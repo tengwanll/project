@@ -60,7 +60,7 @@ class NoticeController extends CommonController
         $content=$json['content'];
         $date=date('Y-m-d H:i:s',time());
         $data=array(
-            'englishContent'=>$englishContent?$englishContent:'',
+            'english_content'=>$englishContent?$englishContent:'',
             'content'=>$content?$content:'',
             'status'=>1,
             'create_time'=>$date,
@@ -99,7 +99,8 @@ class NoticeController extends CommonController
     }
 
     public function delete(){
-        $noticeId=I('post.noticeId');
+        $json=$this->getContent();
+        $noticeId=$json['noticeId'];
         $noticeModel=M('notice');
         $notice=$noticeModel->where("id=$noticeId")->find();
         if(!$notice){

@@ -115,7 +115,8 @@ class TrainingController extends CommonController
     }
 
     public function delete(){
-        $trainingId=I('post.trainingId');
+        $json=$this->getContent();
+        $trainingId=$json['trainingId'];
         $trainingModel=M('training');
         $training=$trainingModel->where("id=$trainingId")->find();
         if(!$training){

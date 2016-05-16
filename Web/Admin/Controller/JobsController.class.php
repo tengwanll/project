@@ -16,7 +16,7 @@ class JobsController extends CommonController
         $lab=I('get.lab');
         $jobModel=M('job');
         if($lab){
-            $where=" title like '%$lab%' and status=1 ";
+            $where=" lab like '%$lab%' and status=1 ";
         }else{
             $where='status=1';
         }
@@ -69,6 +69,7 @@ class JobsController extends CommonController
         $station=$json['station'];
         $number=$json['number'];
         $demand=$json['demand']; //传数组
+        var_dump($demand);
         $demand=implode('||',$demand);
         $date=date('Y-m-d H:i:s',time());
         $data=array(
@@ -122,7 +123,8 @@ class JobsController extends CommonController
     }
 
     public function delete(){
-        $jobId=I('post.jobId');
+        $json=$this->getContent();
+        $jobId=$json['jobId'];
         $jobModel=M('job');
         $job=$jobModel->where("id=$jobId")->find();
         if(!$job){
