@@ -13,14 +13,19 @@
                 </div>
             </div>
         </header>
+        <if condition="$people['description']">
         <article class="wrap">
             <h5 class="paragraph_title">个人简历</h5>
             <p class="indent">{$people['description']}</p>
         </article>
+            </if>
+        <if condition="$people['study']">
         <article class="wrap">
             <h5 class="paragraph_title">研究方向</h5>
             <p class="indent">{$people['study']}</p>
         </article>
+        </if>
+        <if condition="$thesis">
         <article class="wrap">
             <h5 class="paragraph_title">近期主要代表论著</h5>
             <ol>
@@ -29,6 +34,7 @@
                 </foreach>
             </ol>
         </article>
+            </if>
     </div>
 </div>
 <include file="Public/footer" />
