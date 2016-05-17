@@ -6,6 +6,7 @@ require.config({
         'uiRouter': '//cdn.bootcss.com/angular-ui-router/0.2.18/angular-ui-router.min',
         'app': './app',
         'routes': './routes',
+        'MainController': './scripts/controllers/MainController',
         'IndexController': './scripts/controllers/IndexController',
         'ServiceController': './scripts/controllers/ServiceController',
         'EmployeeController': './scripts/controllers/EmployeeController',
@@ -16,6 +17,8 @@ require.config({
         'InfoController': './scripts/controllers/InfoController',
         'SettingController': './scripts/controllers/SettingController',
         'wangEditor': './libs/wangeditor/js/wangEditor',
+        'DataTables': './scripts/directives/DataTables/DataTables',
+        'Detail': './scripts/directives/Detail/Detail',
     },
     shim: {
         'angular': {
@@ -45,6 +48,7 @@ require([
         'bootstrap',
         'uiRouter',
         'routes',
+        'MainController',
         'IndexController',
         'ServiceController',
         'EmployeeController',
@@ -55,6 +59,8 @@ require([
         'InfoController',
         'SettingController',
         'wangEditor',
+        'DataTables',
+        'Detail'
         ],
     function (angular, $) {
     	$(document).ready(function() {
