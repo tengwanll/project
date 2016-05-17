@@ -28,16 +28,19 @@ require.config({
         	deps: ['jquery']
         },
         'uiRouter': {
-            deps: ['angular'],
+            deps: ['angular']
         },
         'angular-ui-router': {
-            deps: ['angular'],
+            deps: ['angular']
         },
         'wangEditor': {
             deps: ['jquery']
+        },
+        'routes': {
+            deps: ['app']
         }
     },
-    deps: ['routes'],
+    deps: ['app', 'routes'],
     urlArgs: "bust=" + (new Date()).getTime() // debug:防止读写缓存
 });
 
@@ -60,7 +63,7 @@ require([
         'SettingController',
         'wangEditor',
         'DataTables',
-        'Detail'
+        // 'Detail'
         ],
     function (angular, $) {
     	$(document).ready(function() {
