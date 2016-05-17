@@ -92,6 +92,7 @@
                     $this->buildResponse(10204);
                 }
             }else{
+                var_dump($upload->getError());
                 $this->buildResponse(10204);
             }
         }
