@@ -74,6 +74,7 @@
             $upload->rootPath = "./Public";//需要手动设置上传的根目录
             $upload->savePath='/Uploads/pics/'; // 设置附件上传目录
             $info=$upload->uploadOne($_FILES['photo']); // 上传文件
+            var_dump(is_writable($upload->rootPath));
             if($info) {
                 $date=date('Y-m-d H:i:s',time());
                 $src=$upload->rootPath.$info['savepath'].$info['savename'];
@@ -92,7 +93,7 @@
                     $this->buildResponse(10204);
                 }
             }else{
-                var_dump($upload->getError());
+
                 $this->buildResponse(10204);
             }
         }
