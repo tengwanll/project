@@ -128,6 +128,5 @@ define(['app'], function(app) {
             $('#pageLoading').hide();
             $('.mainView').css('overflow', 'visible');
         };
-
     }])
 });
