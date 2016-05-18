@@ -18,8 +18,8 @@
             if(md5($password)!=$oldPassword){
                 $this->buildResponse(10202);
             }
-            session('adminLogin',1);
-            session('username',$username);
+            cookie('username',$username,604800);
+            cookie('adminLogin',1,604800);
             $this->buildResponse(0);
 		}
 

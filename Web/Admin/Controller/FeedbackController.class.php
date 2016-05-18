@@ -9,7 +9,7 @@
 namespace Admin\Controller;
 
 
-class FeedbackController extends BaseController
+class FeedbackController extends CommonController
 {
     /**
      * 留言
