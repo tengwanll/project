@@ -55,7 +55,7 @@ class FeedbackController extends BaseController
             $this->buildResponse(10216);
         }
         $data=array('status'=>0);
-        $id=$feedback->where("id=$id")->save($data);
+        $id=$feedbackModel->where("id=$id")->save($data);
         if(!$id){
             $this->buildResponse(10214);
         }
