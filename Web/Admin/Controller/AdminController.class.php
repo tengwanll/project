@@ -92,45 +92,11 @@
                     $this->buildResponse(10204);
                 }
             }else{
-
                 $this->buildResponse(10204);
             }
         }
 
-        /**
-         * 留言
-         */
-        public function feedback(){
-            $page=$this->getPage();
-            $name=I('get.name');
-            $feedbackModel=M('feedback');
-            if($name){
-                $where=" name like '%$name%' and status=1 ";
-            }else{
-                $where='status=1';
-            }
-            $feedbackList=$feedbackModel->where($where)->page($page)->select();
-            $total=$feedbackModel->where($where)->count();
-            $arr=array();
-            foreach($feedbackList as $lists){
-                $arr[]=array(
-                    'id'=>$lists['id'],
-                    'name'=>$lists['name'],
-                    'address'=>$lists['address'],
-                    'telephone'=>$lists['telephone'],
-                    'phone'=>$lists['phone'],
-                    'email'=>$lists['email'],
-                    'work'=>$lists['work'],
-                    'content'=>$lists['content'],
-                    'createTime'=>$lists['create_time']
-                );
-            }
-            $result=array(
-                'feedbackList'=>$arr,
-                'total'=>$total
-            );
-            $this->buildResponse(0,$result);
-        }
+
 
         public function company(){
             $companyModel=M('company');

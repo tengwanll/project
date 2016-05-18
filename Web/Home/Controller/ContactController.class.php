@@ -34,6 +34,9 @@ class ContactController extends Controller {
         $this->display();
     }
 
+    /**
+     * 留言
+     */
     public function add(){
     	$data['name']=I('post.name');
     	$data['address']=I('post.address');
