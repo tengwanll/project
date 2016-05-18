@@ -27,8 +27,8 @@
          * 注销
          */
         public function logout(){
-            session('adminLogin',0);
-            session('username',0);
+            cookie('adminLogin',0);
+            cookie('username',0);
             $this->buildResponse(0);
         }
 
