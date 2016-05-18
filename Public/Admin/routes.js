@@ -17,23 +17,13 @@ define(['app'], function(app) {
             .state('service', {
                 url: '/service',
                 templateUrl: baseurl + '/tpl/service/list.html?t=' + Math.floor(Date.now() / 1000),
-                controller: 'ServiceController',
+                controller: 'ServiceListCtrl',
                 // resolve: loader("ServiceController")
             })
-            .state('serviceAdd', {
-                url: '/service/add',
-                templateUrl: baseurl + '/tpl/service/detail.html?t=' + Math.floor(Date.now() / 1000),
-                controller: 'ServiceController',
-            })
             .state('serviceDatail', {
-                url: '/service/detail',
+                url: '/service/status/:status/_id/:_id',
                 templateUrl: baseurl + '/tpl/service/detail.html?t=' + Math.floor(Date.now() / 1000),
-                controller: 'ServiceController',
-            })
-            .state('serviceEdit', {
-                url: '/service/edit',
-                templateUrl: baseurl + '/tpl/service/detail.html?t=' + Math.floor(Date.now() / 1000),
-                controller: 'ServiceController',
+                controller: 'ServiceDetailctrl',
             })
             // .state('serviceDetail', {
             //     url: '/service/:type/:id',

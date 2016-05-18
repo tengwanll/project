@@ -48,55 +48,6 @@ define(['app'], function(app) {
             $scope.mainDatas.currentMenu = $index;
         };
 
-        // 富文本编辑器
-        $rootScope.initEditor = function() {
-            // wangEditor.config.printLog = false;
-            var editor = new wangEditor('wangeditor');
-            editor.config.uploadImgFileName = 'photo';
-            editor.config.uploadImgUrl = '/Admin/admin/upload';
-            editor.config.menus = [
-                // 'source',
-                '|',
-                'bold',
-                'underline',
-                'italic',
-                // 'strikethrough',
-                // 'eraser',
-                // 'forecolor',
-                // 'bgcolor',
-                '|',
-                'quote',
-                'fontfamily',
-                'fontsize',
-                'head',
-                'unorderlist',
-                'orderlist',
-                'alignleft',
-                'aligncenter',
-                'alignright',
-                '|',
-                'link',
-                'unlink',
-                'table',
-                // 'emotion',
-                '|',
-                'img',
-                // 'video',
-                // 'location',
-                // 'insertcode',
-                '|',
-                'undo',
-                'redo',
-                'fullscreen'
-            ];
-            // 自定义load事件
-            editor.config.uploadImgFns.onload = function(resultText, xhr) {
-                result = JSON.parse(resultText).result;
-                editor.command(null, 'insertHtml', '<img src="' + result.substr(1) + '" style="max-width:100%;"/>');
-            };
-            editor.create();
-        };
-
         // 上传图片
         $rootScope.upload = function(event, cb) {
             var formData = new FormData();
@@ -113,20 +64,15 @@ define(['app'], function(app) {
             });
         };
 
+        // 分页
+        $rootScope.rows = 20;
+
         // 加载画面
         $rootScope.loading = function() {
             $('#loading').show();
         };
         $rootScope.hideLoading = function() {
             $('#loading').hide();
-        };
-        $rootScope.pageLoading = function() {
-            $('#pageLoading').show();
-            $('.mainView').css('overflow', 'hidden');
-        };
-        $rootScope.hidePageLoading = function() {
-            $('#pageLoading').hide();
-            $('.mainView').css('overflow', 'visible');
         };
     }])
 });

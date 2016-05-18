@@ -1,30 +1,28 @@
 <div>
-    <!-- <select class="btn btn-default" ng-change="sortList(value)">
-        <option value="">所有项目</option>
-        <option value="{{item.id}}" ng-repeat="item in serviceDatas.sort">{{item.title}}</option>
-    </select> -->
-    <button class="btn btn-primary" ui-sref="serviceAdd">添加</button>
+    <div class="btn-group">
+        <button class="btn btn-primary" ui-sref="serviceDatail({status: 'add'})">添加</button>
+    </div>
 </div>
 <div class="_listTable">
     <table class="table">
         <thead>
             <tr>
                 <th>序号</th>
-                <th>标题</th>
-                <th>类别</th>
+                <th>项目名称</th>
+                <th>分类</th>
                 <th>创建时间</th>
                 <th>操作</th>
             </tr>
         </thead>
         <tbody class="table-hover">
-            <tr ng-repeat="item in serviceDatas.list">
-                <td>{{serviceDatas.pageLen * (serviceDatas.currentPage - 1) + $index + 1}}</td>
+            <tr ng-repeat="item in serviceListDatas.list">
+                <td>{{rows * (serviceListDatas.currentPage - 1) + $index + 1}}</td>
                 <td>{{item.title}}</td>
                 <td>{{item.sortTitle}}</td>
                 <td>{{item.createTime | date:'yyyy-MM-dd hh:ss'}}</td>
                 <td>
-                    <a ui-sref="serviceDatail">详情</a>
-                    <a ui-sref="serviceEdit">编辑</a>
+                    <a ui-sref="serviceDatail({status: 'detail', _id: item.id})">详情</a>
+                    <a ui-sref="serviceDatail({status: 'edit', _id: item.id})">编辑</a>
                     <a ng-click="deleteService(item.id)">删除</a>
                 </td>
             </tr>
@@ -33,15 +31,15 @@
 </div>
 <nav>
     <ul class="pagination">
-        <li ng-if="serviceDatas.currentPage !== 1">
+        <li ng-if="serviceListDatas.currentPage !== 1">
             <a aria-label="Previous" ng-click="changePage('prev')">
                 <span aria-hidden="true">&laquo;</span>
             </a>
         </li>
         <li class="active">
-            <a href="#">{{serviceDatas.currentPage}}</a>
+            <a href="#">{{serviceListDatas.currentPage}}</a>
         </li>
-        <li ng-if="serviceDatas.pageLen * serviceDatas.currentPage < serviceDatas.listTotal">
+        <li ng-if="serviceListDatas.pageLen * serviceListDatas.currentPage < serviceListDatas.listTotal">
             <a aria-label="Next" ng-click="changePage('next')">
                 <span aria-hidden="true">&raquo;</span>
             </a>
