@@ -88,6 +88,8 @@
         height: 100px;
         margin-top: -100px;
         span {
+            animation: loading 2s;
+            animation-iteration-count: infinite;
             display: block;
             font-size: 40px;
             line-height: 50px;
@@ -115,6 +117,8 @@
         height: 100px;
         margin-top: -100px;
         span {
+            animation: loading 2s;
+            animation-iteration-count: infinite;
             display: block;
             font-size: 40px;
             line-height: 50px;
@@ -124,5 +128,14 @@
             line-height: 50px;
             color: #666;
         }
+    }
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }
