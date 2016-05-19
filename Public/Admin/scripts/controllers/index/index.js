@@ -1,31 +1,16 @@
 define(['app'], function(app) {
     app.controller('IndexController', ['$scope', '$rootScope', function($scope, $rootScope) {
-        $scope.submit = function() {};
-
-        $scope.demo = "asdasd";
-
-        $scope.test = function () {
-        	alert('111');
-        }
-
         $scope.indexDatas = {
             config: {
-                th: [
-                	{title: {name: "名称"}, key: 'title'},
-                	{sortTitle: {name: "分类"}, key: 'sortTitle'},
-                ],
-                currentPage: 1,
-                rows: $rootScope.rows,
-                action: {
-                    list: {
-                        api: '/Admin/service/serviceList',
-                    },
-                	view: '查看',
-                	edit: '编辑',
-                	delete: '删除',
-                	serach: '搜索',
-                	sort: '排序'
-                }
+            	content: [
+            		{title: '标题', type: 'input', key: 'title'},
+            		{title: '分类', type: 'sort', key: 'sort_id'},
+            		{title: '项目简介', type: 'editor', key: ''},
+            		{title: '实验流程', type: 'editor', key: ''},
+            		{title: '用户需知', type: 'text'},
+            		{title: '结果展示', type: 'editor'},
+            		{title: '服务周期', type: 'editor'},
+            	],
             }
         }
     }])

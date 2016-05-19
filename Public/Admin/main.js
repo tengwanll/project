@@ -31,7 +31,7 @@ require.config({
 
         // 指令
         'dataTable': './scripts/directives/datatable/datatable',
-        'Detail': './scripts/directives/Detail/Detail',
+        'detail': './scripts/directives/detail/detail',
         'editor': './scripts/directives/editor/editor',
 
         // 服务
@@ -70,6 +70,7 @@ require([
         'uiRouter',
         'routes',
         'dataTable',
+        'detail',
         "MainController",
         "IndexController",
         "ServiceListController",

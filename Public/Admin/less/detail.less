@@ -1,0 +1,60 @@
+._detail {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 100px;
+    label {
+        width: 90px;
+        &:after {
+            content: '：';
+            display: inline;
+        }
+    }
+    textarea,
+    input {
+        border-color: #ccc;
+    }
+    input {
+        border: none;
+        border-bottom: 1px solid #888;
+        &:focus {
+            border: none;
+            border-bottom: 1px solid #888;
+            outline: none;
+        }
+        &[type="file"] {
+            display: none;
+        }
+    }
+    textarea {
+        display: block;
+        width: 100%;
+        height: 100px;
+    }
+    .form-group {
+        margin: 0;
+        padding: 5px 0;
+    }
+    .uploadIcon {
+        display: block;
+        padding-top: 10px;
+        .fa:before {
+            display: block;
+            height: 100px;
+            width: 100px;
+            border: 2px dashed #aaa;
+            line-height: 80px;
+            text-align: center;
+            font-size: 30px;
+            color: #aaa;
+        }
+        .fa:after {
+            content: "上传图片";
+            display: block;
+            margin-top: -30px;
+            line-height: 30px;
+            font-size: 14px;
+            text-align: center;
+            color: #aaa;
+        }
+    }
+}

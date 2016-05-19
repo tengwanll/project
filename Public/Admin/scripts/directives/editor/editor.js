@@ -21,48 +21,52 @@ define(['app'], function(app) {
                 var editor = new wangEditor(element);
                 editor.config.uploadImgFileName = 'photo';
                 editor.config.uploadImgUrl = '/Admin/admin/upload';
-                editor.config.menus = [
-                    // 'source',
-                    '|',
-                    'bold',
-                    'underline',
-                    'italic',
-                    // 'strikethrough',
-                    // 'eraser',
-                    // 'forecolor',
-                    // 'bgcolor',
-                    '|',
-                    'quote',
-                    'fontfamily',
-                    'fontsize',
-                    'head',
-                    'unorderlist',
-                    'orderlist',
-                    'alignleft',
-                    'aligncenter',
-                    'alignright',
-                    '|',
-                    'link',
-                    'unlink',
-                    'table',
-                    // 'emotion',
-                    '|',
-                    'img',
-                    // 'video',
-                    // 'location',
-                    // 'insertcode',
-                    '|',
-                    'undo',
-                    'redo',
-                    'fullscreen'
-                ];
+                if (attrs.type === 'all') {
+                    editor.config.menus = [
+                        // 'source',
+                        '|',
+                        'bold',
+                        'underline',
+                        'italic',
+                        // 'strikethrough',
+                        // 'eraser',
+                        // 'forecolor',
+                        // 'bgcolor',
+                        '|',
+                        'quote',
+                        'fontfamily',
+                        'fontsize',
+                        'head',
+                        'unorderlist',
+                        'orderlist',
+                        'alignleft',
+                        'aligncenter',
+                        'alignright',
+                        '|',
+                        'link',
+                        'unlink',
+                        'table',
+                        // 'emotion',
+                        '|',
+                        'img',
+                        // 'video',
+                        // 'location',
+                        // 'insertcode',
+                        '|',
+                        'undo',
+                        'redo',
+                        'fullscreen'
+                    ];
+                } else if (attrs.type === 'text') {
+                    editor.config.menus = ['fullscreen'];
+                }
                 // 自定义load事件
                 editor.config.uploadImgFns.onload = function(resultText, xhr) {
                     result = JSON.parse(resultText).result;
                     editor.command(null, 'insertHtml', '<img src="' + result.substr(1) + '" style="max-width:100%;"/>');
                 };
 
-                scope.getEditorContent = function () {
+                scope.getEditorContent = function() {
                     return editor.txt.$txt.html();
                 };
 
