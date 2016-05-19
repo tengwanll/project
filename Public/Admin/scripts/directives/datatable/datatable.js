@@ -16,26 +16,56 @@ define(['app'], function(app) {
                 console.log(attrs);
                 $scope.listConfig = JSON.parse(attrs.listConfig);
 
-                $scope.$watch('$scope.listConfig.currentPage', function() {
-                    getListDatas();
-                });
+                $scope.page = {
+                    current: 1,
+                    total: 1,
+                    pages: []
+                }
+
+                getListDatas();
 
                 // 获取列表数据
-                function getListDatas() {
+                function getListDatas(page) {
+                    var set = true;
+                    if (!page) {
+                        page = $scope.page.current;
+                        var set = false;
+                    }
                     httpRequest.get({
                         api: $scope.listConfig.listApi,
-                        params: { rows: $scope.listConfig.rows, page: $scope.listConfig.currentPage },
+                        params: { rows: $scope.listConfig.rows, page: page },
                         success: function(data) {
+                            if (set) {
+                                $scope.page.current = page;
+                            }
                             $scope.listData = data.list;
+                            $scope.page.total = parseInt(data.total / $scope.listConfig.rows) + 1;
+                            if (true) {
+                                $scope.page.pages = [];
+                                for (var i = parseInt($scope.page.current / 10) * 10 + 1; i <= Math.min(parseInt($scope.page.current / 10 + 1) * 10, $scope.page.total); i++) {
+                                    $scope.page.pages.push(i);
+                                }
+                            }
                         }
                     })
                 }
 
-                $scope.changePage = function() {
-                    $scope.listConfig.currentPage++;
-                }
-
-
+                // 分页
+                $scope.page.first = function() {
+                    getListDatas(1);
+                };
+                $scope.page.last = function() {
+                    getListDatas($scope.page.total);
+                };
+                $scope.page.prev = function() {
+                    getListDatas($scope.page.current - 1);
+                };
+                $scope.page.next = function() {
+                    getListDatas($scope.page.current + 1);
+                };
+                $scope.page.changeTo = function (num) {
+                    getListDatas(num);
+                };
             }
         };
     }]);

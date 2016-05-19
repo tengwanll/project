@@ -23,7 +23,7 @@
         </thead>
         <tbody class="table-hover">
             <tr ng-repeat="rowDatas in listData">
-                <td>{{rows * (listConfig.currentPage - 1) + $index + 1}}</td>
+                <td>{{rows * (page.current - 1) + $index + 1}}</td>
                 <td ng-repeat="colData in listConfig.th">{{rowDatas[colData.key]}}</td>
                 <td class="ac">
                     <a class="text-info" href="" ng-click="view(rowDatas.id)" ng-if="listConfig.action.view"><span class="fa fa-eye"></span></a>
@@ -35,12 +35,16 @@
     </table>
     <footer>
         <nav class="text-right">
-            <ul class="pagination">
-                <li class="disabled"><a><span aria-hidden="true">&laquo;</span></a></li>
-                <li class="active"><a>1</a></li>
-                <li><a>2</a></li>
-                <li><a>3</a></li>
-                <li><a ng-click=""><span aria-hidden="true">&raquo;</span></a></li>
+            <ul class="page">
+                <li ng-show="page.current > 1"><a href="javascript:void(0);" ng-click="page.first()">首页</a></li>
+                <li ng-show="page.current > 1"><a href="javascript:void(0);" ng-click="page.prev()">上一页</a></li>
+                <li ng-repeat="num in page.pages">
+                    <span ng-if="page.pages[0] + $index === page.current">{{num}}</span>
+                    <a href="javascript:void(0);" ng-if="page.pages[0] + $index !== page.current" ng-click="page.changeTo(num)">{{num}}</a>
+                </li>
+                <li ng-show="page.current !== page.total"><a href="javascript:void(0);" ng-click="page.next()">下一页</a></li>
+                <li ng-show="page.current !== page.total"><a href="javascript:void(0);" ng-click="page.last()">末页</a></li>
+                <li>共{{page.total}}页</li>
             </ul>
         </nav>
     </footer>
