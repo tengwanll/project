@@ -30,7 +30,7 @@ require.config({
         'SettingController': './scripts/controllers/setting/setting',
 
         // 指令
-        'dataTable': './scripts/directives/dataTable/dataTable',
+        'dataTable': './scripts/directives/datatable/datatable',
         'Detail': './scripts/directives/Detail/Detail',
         'editor': './scripts/directives/editor/editor',
 
