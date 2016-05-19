@@ -41,7 +41,7 @@ class LaboratoryController extends CommonController
             );
         }
         $result=array(
-            'labList'=>$arr,
+            'list'=>$arr,
             'total'=>$total
         );
         $this->buildResponse(0,$result);

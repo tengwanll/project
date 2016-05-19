@@ -8,9 +8,9 @@ define(['app'], function(app) {
                 { name: '职员管理', state: 'employee' },
                 { name: '活动管理', state: 'activity' },
                 { name: '新闻管理', state: 'news' },
-                { name: '招聘管理', state: 'jobs' },
+                { name: '招聘管理', state: 'job' },
                 { name: '留言管理', state: 'message' },
-                { name: '实验室', state: 'pics' },
+                { name: '实验室展示', state: 'laboratory' },
                 { name: '公司信息', state: 'info' },
                 { name: '系统设置', state: 'setting' }
             ],

@@ -1,17 +1,17 @@
 define(['app'], function(app) {
-    app.controller('EmployeeListCtrl', ['$scope', '$rootScope', '$http', 'httpRequest',
+    app.controller('laboratoryListCtrl', ['$scope', '$rootScope', '$http', 'httpRequest',
         function($scope, $rootScope, $http, httpRequest) {
-            // 职员模块所有数据
-            $scope.employeeListDatas = {
+            // 招聘 相关 数据
+            $scope.laboratoryListDatas = {
                 config: {
                     th: [
-                        { name: { name: '姓名' }, key: 'name' },
-                        { position: { name: '职位' }, key: 'position' },
+                        { name: { name: '名称' }, key: 'name' },
+                        { discription: { name: '描述' }, key: 'discription' },
                         { createTime: { name: '创建时间' }, key: 'createTime' },
                     ],
                     currentPage: 1,
                     rows: $rootScope.rows,
-                    listApi: '/Admin/employee/employeeList',
+                    listApi: '/Admin/laboratory/lists',
                     action: {
                         search: '搜索',
                         sort: '筛选',
@@ -22,7 +22,6 @@ define(['app'], function(app) {
                     }
                 }
             };
-
         }
     ])
 });

@@ -12,27 +12,35 @@ define(['app'], function(app) {
                     currentPage: 1,
                     rows: $rootScope.rows,
                     listApi: '/Admin/service/serviceList',
-                    header: {
-                        search: '搜索',
-                        sort: '排序',
-                        add: '添加',
-                    },
                     action: {
-                        view: {
-                            name: '查看',
-                            sref: '',
-                        },
-                        edit: {
-                            name: '编辑',
-                            sref: '',
-                        },
-                        delete: {
-                            name: '<b>asdasd</b>',
-                            handle: 'delete'
-                        }
+                        search: '搜索',
+                        sort: '筛选',
+                        add: '添加',
+                        view: '查看',
+                        edit: '编辑',
+                        delete: '删除'
                     }
                 }
             };
+
+            // 添加
+            $scope.add = function () {
+                $state.go('serviceDatail', {status: 'add'});
+            };
+
+            // 查看
+            $scope.view = function (id) {
+                $state.go('serviceDatail', {status: 'view', service_id: id});
+            };
+
+            // 删除
+            $scope.delete = function (id) {
+            };
+
+            // 修改
+            $scope.edit = function (id) {
+                $state.go('serviceDatail', {status: 'edit', service_id: id});
+            }
         }
     ])
 });

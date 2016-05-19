@@ -13,6 +13,7 @@ define(['app'], function(app) {
             // transclude: true,
             // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
             link: function($scope, element, attrs) {
+                console.log(attrs);
                 $scope.listConfig = JSON.parse(attrs.listConfig);
 
                 $scope.$watch('$scope.listConfig.currentPage', function() {

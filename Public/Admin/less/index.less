@@ -88,8 +88,6 @@
         height: 100px;
         margin-top: -100px;
         span {
-            animation: loading 2s;
-            animation-iteration-count: infinite;
             display: block;
             font-size: 40px;
             line-height: 50px;
@@ -97,6 +95,7 @@
         }
         p {
             line-height: 50px;
+            text-align: center;
             color: #666;
         }
     }
@@ -117,25 +116,15 @@
         height: 100px;
         margin-top: -100px;
         span {
-            animation: loading 2s;
-            animation-iteration-count: infinite;
             display: block;
             font-size: 40px;
             line-height: 50px;
             color: #666;
         }
         p {
+            text-align: center;
             line-height: 50px;
             color: #666;
         }
-    }
-}
-
-@keyframes loading {
-    from {
-        transform: rotate(0);
-    }
-    to {
-        transform: rotate(360deg);
     }
 }
