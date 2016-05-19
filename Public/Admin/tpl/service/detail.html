@@ -1,21 +1,21 @@
-<div class="service _detail">
+<div class="service _detail _edit" ng-if="serviceDetailDatas.edit">
     <div class="form-group _required">
         <label for="title">标题：</label>
-        <input type="text" placeholder="请输入标题" id="title" ng-model="serviceDatas.newData.title">
+        <input type="text" placeholder="请输入标题" id="title" ng-model="serviceDetailDatas.data.title">
     </div>
     <div class="form-group _required">
         <label for="sort">分类：</label>
-        <select ng-model="serviceDatas.topSort">
+        <select ng-model="serviceDetailDatas.topSort">
             <option value="0" selected="selected">普通服务</option>
             <option value="1">特色服务</option>
         </select>
-        <select id="sort" ng-model="serviceDatas.newData.sortId">
-            <option ng-repeat="sort in serviceDatas.sort" value="{{sort.id}}">{{sort.title}}</option>
+        <select id="sort" ng-model="serviceDetailDatas.data.sortId">
+            <option ng-repeat="sort in serviceDetailDatas.sort" value="{{sort.id}}">{{sort.title}}</option>
         </select>
     </div>
     <div class="form-group">
         <label for="description" class="_required">项目简介：</label>
-        <textarea id="description" ng-model="serviceDatas.newData.description"></textarea>
+        <textarea id="description" ng-model="serviceDetailDatas.data.description"></textarea>
     </div>
     <div class="form-group">
         <label for="experimentFlow">实验流程：</label>
@@ -23,7 +23,7 @@
     </div>
     <div class="form-group">
         <label for="userNotice">用户须知：</label>
-        <textarea id="userNotice" ng-model="serviceDatas.newData.userNotice"></textarea>
+        <textarea id="userNotice" ng-model="serviceDetailDatas.data.userNotice"></textarea>
     </div>
     <div class="form-group">
         <label for="resultShow">结果展示：</label>
@@ -32,7 +32,48 @@
     </div>
     <div class="form-group">
         <label for="serverCircle">服务周期：</label>
-        <textarea id="serverCircle" ng-model="serviceDatas.newData.serverCircle"></textarea>
+        <textarea id="serverCircle" ng-model="serviceDetailDatas.data.serverCircle"></textarea>
+    </div>
+    <div class="btn-group">
+        <button class="btn btn-primary" ng-click="submit()">保存</button>
+        <button class="btn btn-warning">放弃</button>
+    </div>
+</div>
+<div class="service _detail _view" ng-if="!serviceDetailDatas.edit">
+    <div class="form-group _required">
+        <label for="title">标题：</label>
+        <input type="text" placeholder="请输入标题" id="title" ng-model="serviceDetailDatas.data.title">
+    </div>
+    <div class="form-group _required">
+        <label for="sort">分类：</label>
+        <select ng-model="serviceDetailDatas.topSort">
+            <option value="0" selected="selected">普通服务</option>
+            <option value="1">特色服务</option>
+        </select>
+        <select id="sort" ng-model="serviceDetailDatas.data.sortId">
+            <option ng-repeat="sort in serviceDetailDatas.sort" value="{{sort.id}}">{{sort.title}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="description" class="_required">项目简介：</label>
+        <textarea id="description" ng-model="serviceDetailDatas.data.description"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="experimentFlow">实验流程：</label>
+        <editor></editor>
+    </div>
+    <div class="form-group">
+        <label for="userNotice">用户须知：</label>
+        <textarea id="userNotice" ng-model="serviceDetailDatas.data.userNotice"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="resultShow">结果展示：</label>
+        <editor></editor>
+        <input type="file" id="resultShow" onchange="angular.element(this).scope().uploadImg(event, 'resultShow')">
+    </div>
+    <div class="form-group">
+        <label for="serverCircle">服务周期：</label>
+        <textarea id="serverCircle" ng-model="serviceDetailDatas.data.serverCircle"></textarea>
     </div>
     <div class="btn-group">
         <button class="btn btn-primary" ng-click="submit()">保存</button>

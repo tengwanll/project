@@ -6,7 +6,7 @@ define(['app'], function(app) {
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
-            // 首页
+        // 首页
             .state('index', {
                 url: '/',
                 templateUrl: baseurl + '/tpl/index/index.html?t=' + Math.floor(Date.now() / 1000),
@@ -61,6 +61,13 @@ define(['app'], function(app) {
                 url: '/jobs',
                 templateUrl: baseurl + '/tpl/jobs/list.html?t=' + Math.floor(Date.now() / 1000),
                 controller: 'JobsController',
+                // resolve: loader("JobsController")
+            })
+            // 招聘
+            .state('message', {
+                url: '/message',
+                templateUrl: baseurl + '/tpl/message/list.html?t=' + Math.floor(Date.now() / 1000),
+                controller: 'messageListCtrl',
                 // resolve: loader("JobsController")
             })
             // 实验室

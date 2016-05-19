@@ -38,7 +38,7 @@ class ActivityController extends CommonController
             );
         }
         $result=array(
-            'activityList'=>$arr,
+            'list'=>$arr,
             'total'=>$total
         );
         $this->buildResponse(0,$result);

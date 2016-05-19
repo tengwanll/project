@@ -53,7 +53,7 @@ class ServiceController extends CommonController
             );
         }
         $result=array(
-            'serviceList'=>$arr,
+            'list'=>$arr,
             'total'=>$total
         );
         $this->buildResponse(0,$result);

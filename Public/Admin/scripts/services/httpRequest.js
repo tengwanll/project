@@ -21,6 +21,7 @@ define(['app'], function(app) {
 
                 $http.get(handleUrl(options.api, options.params))
                     .then(function(res) {
+                        console.info(res);
                         $rootScope.showPageLoading = false;
                         if (res.data.errno === 0) {
                             options.success(res.data.result);

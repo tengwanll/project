@@ -41,7 +41,7 @@ class EmployeeController extends CommonController
             );
         }
         $result=array(
-            'employeeList'=>$arr,
+            'list'=>$arr,
             'total'=>$total
         );
         $this->buildResponse(0,$result);

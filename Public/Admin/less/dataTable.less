@@ -1,0 +1,52 @@
+._listTable {
+    padding-top: 20px;
+    header {
+        & > div {
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .sort {
+            width: 10%;
+        }
+        .search {
+            width: 20%;
+            position: relative;
+            button {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 40px;
+                color: #aaa;
+                background: none;
+                border: none;
+            }
+        }
+        .add {}
+    }
+    table {
+        table-layout: fixed;
+        th,
+        td {
+            text-align: center;
+            padding-right: 0;
+            line-height: 20px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .index {
+            width: 6%;
+        }
+        .action {
+        	width: 14%;
+        }
+        .ac {
+            a {
+                padding: 0 5px;
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+    }
+}

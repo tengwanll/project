@@ -4,7 +4,6 @@ require.config({
         'wangEditor': './libs/wangeditor/js/wangEditor',
         'angular': '//cdn.bootcss.com/angular.js/1.5.0/angular.min',
         'jquery': '//cdn.bootcss.com/jquery/2.2.1/jquery.min',
-        'bootstrap': '//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap',
         'uiRouter': '//cdn.bootcss.com/angular-ui-router/0.2.18/angular-ui-router.min',
 
         // 入口文件
@@ -24,13 +23,14 @@ require.config({
         'NewsDetailController': './scripts/controllers/news/detail',
         'JobListController': './scripts/controllers/job/list',
         'JobDetailController': './scripts/controllers/job/detail',
+        'MessageListCtrl': './scripts/controllers/message/list',
         'PicsListController': './scripts/controllers/pics/list',
         'PicsDetailController': './scripts/controllers/pics/detail',
         'InfoController': './scripts/controllers/info/info',
         'SettingController': './scripts/controllers/setting/setting',
 
         // 指令
-        'DataTables': './scripts/directives/DataTables/DataTables',
+        'dataTable': './scripts/directives/dataTable/dataTable',
         'Detail': './scripts/directives/Detail/Detail',
         'editor': './scripts/directives/editor/editor',
 
@@ -67,7 +67,6 @@ require([
         'angular',
         'jquery',
         'app',
-        'bootstrap',
         'uiRouter',
         'routes',
         "MainController",
@@ -82,14 +81,14 @@ require([
         "NewsDetailController",
         "JobListController",
         "JobDetailController",
+        'MessageListCtrl',
         "PicsListController",
         "PicsDetailController",
         "InfoController",
         "SettingController",
         'wangEditor',
-        'DataTables',
+        'dataTable',
         'editor',
-        // 'Detail'
         'httpRequest',
     ],
     function(angular, $) {

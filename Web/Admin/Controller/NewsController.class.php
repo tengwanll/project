@@ -32,7 +32,7 @@
                 );
             }
             $result=array(
-                'newsList'=>$arr,
+                'list'=>$arr,
                 'total'=>$total
             );
             $this->buildResponse(0,$result);

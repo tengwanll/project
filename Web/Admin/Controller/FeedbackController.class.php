@@ -40,7 +40,7 @@ class FeedbackController extends CommonController
             );
         }
         $result=array(
-            'feedbackList'=>$arr,
+            'list'=>$arr,
             'total'=>$total
         );
         $this->buildResponse(0,$result);

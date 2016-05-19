@@ -37,7 +37,7 @@ class JobsController extends CommonController
             );
         }
         $result=array(
-            'jobList'=>$arr,
+            'list'=>$arr,
             'total'=>$total
         );
         $this->buildResponse(0,$result);

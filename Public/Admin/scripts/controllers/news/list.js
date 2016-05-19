@@ -2,52 +2,40 @@
 define(['app'], function(app) {
     app.controller('NewsController', ['$scope', '$http', '$rootScope', '$state', 'httpRequest',
         function($scope, $http, $rootScope, $state, httpRequest) {
-            // 新闻所有数据
             $scope.newsDatas = {
-                list: [],
-                newData: {
-                    title: '',
-                    shortDesc: '',
-                    content: '',
-                    photo: ''
-                },
-            };
-
-
-            // 不同状态的处理
-            if ($state.is('news')) {
-                init();
-            } else if ($state.is('newsAdd')) {
-                $rootScope.initEditor();
-                $rootScope.hidePageLoading();
-            }
-
-            // 获取新闻列表
-            function init() {
-                httpRequest.get({
-                    api: '/Admin/news/newsList',
-                    success: function (result) {
-                        $scope.newsDatas.list = result.newsList;
+                config: {
+                    th: [
+                        { title: { name: '标题' }, key: 'title' },
+                        { shortDesc: { name: '摘要' }, key: 'shortDesc' },
+                        { createTime: { name: '创建时间' }, key: 'createTime' },
+                    ],
+                    currentPage: 1,
+                    rows: $rootScope.rows,
+                    listApi: '/Admin/news/newsList',
+                    header: {
+                        search: '搜索',
+                        sort: '排序',
+                        add: '添加',
+                    },
+                    action: {
+                        view: {
+                            name: '查看',
+                            sref: '',
+                        },
+                        edit: {
+                            name: '编辑',
+                            sref: '',
+                        },
+                        delete: {
+                            name: '<b>asdasd</b>',
+                            handle: 'delete'
+                        }
                     }
-                })
+                }
             }
 
-            // 创建新闻
-            $scope.createNews = function() {
-                $scope.newsDatas.newData.content = $('.wangEditor-txt').html();
-                $http.post('/Admin/news/create', $scope.newsDatas.newData).then(function(res) {
-                    if (res.data.errno === 0) {
-                        alert('添加成功!');
-                        $state.go('news');
-                    };
-                });
-            };
-
-            // 图片上传
-            $scope.uploadImg = function(event, type) {
-                $rootScope.upload(event, function(id) {
-                    $scope.newsDatas.newData[type] = id;
-                });
+            $scope.delete = function () {
+                console.log(1)
             }
         }
     ])
