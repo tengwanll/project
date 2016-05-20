@@ -1,7 +1,7 @@
 define(['app'], function(app) {
-    app.controller('ServiceDetailctrl', ['$scope', '$stateParams', '$http', 'httpRequest',
+    app.controller('MessageDetailctrl', ['$scope', '$stateParams', '$http', 'httpRequest',
         function($scope, $stateParams, $http, httpRequest) {
-            $scope.serviceDetailDatas = {
+            $scope.messageDetailDatas = {
                 config: {
                     content: [
                         { title: '标题', type: 'input', key: 'title'},
@@ -13,9 +13,8 @@ define(['app'], function(app) {
                         { title: '服务周期', type: 'editor', key: 'serverCircle'},
                     ],
                     api: {
-                        add: '/Admin/service/create',
-                        view: '/Admin/service/detail',
-                        edit: '/Admin/service/update',
+                        view: '/Admin/feedback/detail',
+                        edit: '/Admin/feedback/update',
                     }
                 }
             }

@@ -1,11 +1,25 @@
+<!-- 编辑 / 添加 状态下 -->
 <div class="_detail _edit" ng-if="detailDatas.status !== 'view'">
     <div clas="form-group" ng-repeat="item in detailConfig.content">
         <label>{{item.title}}</label>
-        <input type="text" ng-if="item.type === 'input'">
-        <editor type="all" ng-if="item.type === 'editor'"></editor>
-        <editor type="text" ng-if="item.type === 'text'"></editor>
+        <input type="text" ng-if="item.type === 'input'" ng-model="detailDatas.data[item.key]">
+        <editor type="all" ng-if="item.type === 'editor'" ng-model="detailDatas.data[item.key]"></editor>
+        <editor type="text" ng-if="item.type === 'text'" ng-model="detailDatas.data[item.key]"></editor>
+    </div>
+    <div class="btn-group">
+        <button class="btn btn-primary" ng-click="save(event)">保存</button>
+        <button class="btn btn-danger" ng-click="cancel()">取消</button>
     </div>
 </div>
+
+<!-- 查看状态下 -->
 <div class="_detail _view" ng-if="detailDatas.status === 'view'">
-    
+    <section ng-repeat="item in detailConfig.content">
+        <h4>{{item.title}}</h4>
+        <div>{{detailDatas.data[item.key]}}</div>
+    </section>
+    <div class="btn-group">
+        <button class="btn btn-primary" ng-click="edit()">修改</button>
+        <button class="btn btn-default" ng-click="cancel()">返回</button>
+    </div>
 </div>

@@ -39,7 +39,7 @@
 		}
 
         public function detail(){
-            $newsId=I('get.newsId');
+            $newsId=I('get._id');
             $newsModel=M('news');
             $fileModel=M('file');
             $news=$newsModel->where("id=$newsId")->find();

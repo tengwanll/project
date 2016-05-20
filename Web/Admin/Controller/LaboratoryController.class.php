@@ -48,7 +48,7 @@ class LaboratoryController extends CommonController
     }
 
     public function detail(){
-        $labId=I('get.labId');
+        $labId=I('get._id');
         $labModel=M('lab');
         $fileModel=M('file');
         $lab=$labModel->where("id=$labId")->find();

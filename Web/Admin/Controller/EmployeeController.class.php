@@ -48,7 +48,7 @@ class EmployeeController extends CommonController
     }
 
     public function employeeDetail(){
-        $employeeId=I('get.employeeId');
+        $employeeId=I('get._id');
         $employeeModel=M('employee');
         $fileModel=M('file');
         $employee=$employeeModel->where("id=$employeeId")->find();

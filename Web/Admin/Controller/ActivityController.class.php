@@ -45,7 +45,7 @@ class ActivityController extends CommonController
     }
 
     public function detail(){
-        $activityId=I('get.activityId');
+        $activityId=I('get._id');
         $activityModel=M('activity');
         $fileModel=M('file');
         $activity=$activityModel->where("id=$activityId")->find();

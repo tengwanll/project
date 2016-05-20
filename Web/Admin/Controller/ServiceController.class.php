@@ -60,7 +60,7 @@ class ServiceController extends CommonController
     }
 
     public function detail(){
-        $serviceId=I('get.serviceId');
+        $serviceId=I('get._id');
         $fileModel=M('file');
         $serviceModel=M('service s,service_sort t');
         $where=" s.status=1 and s.sort_id=t.id and s.id=$serviceId ";

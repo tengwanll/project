@@ -1,39 +1,24 @@
 define(['app'], function(app) {
-    app.controller('NewsDetailCtrl', ['$scope', function($scope) {
-        // 不同状态的处理
-        if ($state.is('news')) {
-            init();
-        } else if ($state.is('newsAdd')) {
-            $rootScope.initEditor();
-            $rootScope.hidePageLoading();
-        }
-
-        // 获取新闻列表
-        function init() {
-            httpRequest.get({
-                api: '/Admin/news/newsList',
-                success: function(result) {
-                    $scope.newsDatas.list = result.newsList;
+    app.controller('NewsDetailctrl', ['$scope', '$stateParams', '$http', 'httpRequest',
+        function($scope, $stateParams, $http, httpRequest) {
+            $scope.newsDetailDatas = {
+                config: {
+                    content: [
+                        { title: '标题', type: 'input', key: 'title'},
+                        { title: '分类', type: 'sort', key: 'sortTitle'},
+                        { title: '项目简介', type: 'editor', key: 'description'},
+                        { title: '实验流程', type: 'editor', key: 'experimentFlow'},
+                        { title: '用户需知', type: 'editor', key: 'userNotice' },
+                        { title: '结果展示', type: 'editor', key: 'resultShow'},
+                        { title: '服务周期', type: 'editor', key: 'serverCircle'},
+                    ],
+                    api: {
+                        add: '/Admin/news/create',
+                        view: '/Admin/news/detail',
+                        edit: '/Admin/news/update',
+                    }
                 }
-            })
+            }
         }
-
-        // 创建新闻
-        $scope.createNews = function() {
-            $scope.newsDatas.newData.content = $('.wangEditor-txt').html();
-            $http.post('/Admin/news/create', $scope.newsDatas.newData).then(function(res) {
-                if (res.data.errno === 0) {
-                    alert('添加成功!');
-                    $state.go('news');
-                };
-            });
-        };
-
-        // 图片上传
-        $scope.uploadImg = function(event, type) {
-            $rootScope.upload(event, function(id) {
-                $scope.newsDatas.newData[type] = id;
-            });
-        }
-    }])
+    ])
 })

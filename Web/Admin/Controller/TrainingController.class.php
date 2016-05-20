@@ -44,7 +44,7 @@ class TrainingController extends CommonController
     }
 
     public function detail(){
-        $trainingId=I('get.trainingId');
+        $trainingId=I('get._id');
         $trainingModel=M('training');
         $fileModel=M('file');
         $training=$trainingModel->where("id=$trainingId")->find();

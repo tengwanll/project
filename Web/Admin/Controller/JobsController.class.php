@@ -44,7 +44,7 @@ class JobsController extends CommonController
     }
 
     public function detail(){
-        $jobId=I('get.jobId');
+        $jobId=I('get._id');
         $jobModel=M('job');
         $job=$jobModel->where("id=$jobId")->find();
         if(!$job){

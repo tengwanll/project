@@ -25,12 +25,13 @@ define(['app'], function(app) {
 
             // 添加
             $scope.add = function () {
+                console.log(1)
                 $state.go('serviceDatail', {status: 'add'});
             };
 
             // 查看
             $scope.view = function (id) {
-                $state.go('serviceDatail', {status: 'view', service_id: id});
+                $state.go('serviceDatail', {status: 'view', _id: id});
             };
 
             // 删除
@@ -39,7 +40,7 @@ define(['app'], function(app) {
 
             // 修改
             $scope.edit = function (id) {
-                $state.go('serviceDatail', {status: 'edit', service_id: id});
+                $state.go('serviceDatail', {status: 'edit', _id: id});
             }
         }
     ])

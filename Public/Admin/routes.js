@@ -21,7 +21,7 @@ define(['app'], function(app) {
                 // resolve: loader("ServiceController")
             })
             .state('serviceDatail', {
-                url: '/service/status/:status/service_id/:service_id',
+                url: '/service/status/:status/_id/:_id',
                 templateUrl: baseurl + '/tpl/service/detail.html?t=' + Math.floor(Date.now() / 1000),
                 controller: 'ServiceDetailctrl',
             })
@@ -33,7 +33,7 @@ define(['app'], function(app) {
                 // resolve: loader("EmployeeController")
             })
             .state('employeeDetail', {
-                url: '/employee/status/:status/employee_id/:employee_id',
+                url: '/employee/status/:status/_id/:_id',
                 templateUrl: baseurl + '/tpl/employee/detail.html?t=' + Math.floor(Date.now() / 1000),
                 controller: 'EmployeeDetailCtrl',
                 // resolve: loader("EmployeeController")
@@ -46,7 +46,7 @@ define(['app'], function(app) {
                 // resolve: loader("EmployeeController")
             })
             .state('activityDetail', {
-                url: '/activity/status/:status/activity_id/:activity_id',
+                url: '/activity/status/:status/_id/:_id',
                 templateUrl: baseurl + '/tpl/activity/detail.html?t=' + Math.floor(Date.now() / 1000),
                 controller: 'ActivityDetailCtrl',
                 // resolve: loader("EmployeeController")
@@ -59,7 +59,7 @@ define(['app'], function(app) {
                 // resolve: loader("NewsController")
             })
             .state('newsDetail', {
-                url: '/news/status/:status/news_id/:news_id',
+                url: '/news/status/:status/_id/:_id',
                 templateUrl: baseurl + '/tpl/news/detail.html?t=' + Math.floor(Date.now() / 1000),
                 controller: 'NewsDetailCtrl',
                 // resolve: loader("NewsController")
@@ -67,13 +67,13 @@ define(['app'], function(app) {
             // 招聘
             .state('job', {
                 url: '/job',
-                templateUrl: baseurl + '/tpl/jobs/list.html?t=' + Math.floor(Date.now() / 1000),
+                templateUrl: baseurl + '/tpl/job/list.html?t=' + Math.floor(Date.now() / 1000),
                 controller: 'JobListCtrl',
                 // resolve: loader("JobsController")
             })
             .state('jobDetail', {
-                url: '/job/status/:status/job_id/:job_id',
-                templateUrl: baseurl + '/tpl/jobs/detail.html?t=' + Math.floor(Date.now() / 1000),
+                url: '/job/status/:status/_id/:_id',
+                templateUrl: baseurl + '/tpl/job/detail.html?t=' + Math.floor(Date.now() / 1000),
                 controller: 'JobDetailCtrl',
                 // resolve: loader("JobsController")
             })
@@ -85,7 +85,7 @@ define(['app'], function(app) {
                 // resolve: loader("JobsController")
             })
             .state('messageDetail', {
-                url: '/message/status/:status/message_id/:message_id',
+                url: '/message/status/:status/_id/:_id',
                 templateUrl: baseurl + '/tpl/message/detail.html?t=' + Math.floor(Date.now() / 1000),
                 controller: 'messageDetailCtrl',
                 // resolve: loader("JobsController")
@@ -98,7 +98,7 @@ define(['app'], function(app) {
                 // resolve: loader("PicsController")
             })
             .state('laboratoryDetail', {
-                url: '/laboratory/status/:status/laboratory_id/:laboratory_id',
+                url: '/laboratory/status/:status/_id/:_id',
                 templateUrl: baseurl + '/tpl/laboratory/detail.html?t=' + Math.floor(Date.now() / 1000),
                 controller: 'laboratoryDetailCtrl',
                 // resolve: loader("PicsController")
