@@ -34,6 +34,9 @@ require.config({
         'detail': './scripts/directives/detail/detail',
         'editor': './scripts/directives/editor/editor',
 
+        // 过滤器
+        'serviceSort': './scripts/filters/servicesort',
+
         // 服务
         'httpRequest': './scripts/services/httpRequest',
 
@@ -71,6 +74,7 @@ require([
         'routes',
         'dataTable',
         'detail',
+        'serviceSort',
         "MainController",
         "IndexController",
         "ServiceListController",

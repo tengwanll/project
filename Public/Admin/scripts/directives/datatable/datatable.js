@@ -14,7 +14,6 @@ define(['app'], function(app) {
                 // transclude: true,
                 // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
                 link: function($scope, element, attrs) {
-                    console.log(attrs);
                     $scope.listConfig = JSON.parse(attrs.listConfig);
 
                     $scope.page = {
@@ -67,19 +66,6 @@ define(['app'], function(app) {
                     $scope.page.changeTo = function(num) {
                         getListDatas(num);
                     };
-
-                    // 跳转
-                    var _state = $state.current.name + "Detail";
-                    console.log(_state);
-                    // $scope.add = function() {
-                    //     $state.go(_state, { status: 'add' });
-                    // };
-                    // $scope.view = function(id) {
-                    //     $state.go(_state, { status: 'view', _id: id });
-                    // };
-                    // $scope.edit = function(id) {
-                    //     $state.go(_state, { status: 'edit', _id: id });
-                    // };
                 }
             };
         }

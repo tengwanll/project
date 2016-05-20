@@ -1,6 +1,6 @@
 define(['app'], function(app) {
-    app.controller('messageListCtrl', ['$scope', '$rootScope', 'httpRequest',
-        function($scope, $rootScope, httpRequest) {
+    app.controller('messageListCtrl', ['$scope', '$rootScope', '$state', 'httpRequest',
+        function($scope, $rootScope, $state, httpRequest) {
             $scope.messageListDatas = {
                 config: {
                     th: [
@@ -26,17 +26,17 @@ define(['app'], function(app) {
 
             // 添加
             $scope.add = function() {
-                $state.go('newsDetail', { status: 'add' });
+                $state.go('messageDetail', { status: 'add' });
             };
 
             // 查看
             $scope.view = function(id) {
-                $state.go('newsDetail', { status: 'view', news_id: id });
+                $state.go('messageDetail', { status: 'view', news_id: id });
             };
 
             // 修改
             $scope.edit = function(id) {
-                $state.go('newsDetail', { status: 'edit', news_id: id });
+                $state.go('messageDetail', { status: 'edit', news_id: id });
             };
 
             // 删除

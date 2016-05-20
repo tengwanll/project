@@ -1,6 +1,6 @@
 define(['app'], function(app) {
-    app.directive('detail', ['$stateParams', '$state', 'httpRequest',
-        function($stateParams, $state, httpRequest) {
+    app.directive('detail', ['$stateParams', '$state', '$http', 'httpRequest',
+        function($stateParams, $state, $http, httpRequest) {
             // Runs during compile
             return {
                 // name: '',
@@ -19,15 +19,18 @@ define(['app'], function(app) {
                     $scope.detailConfig = JSON.parse(iAttrs.detailConfig);
                     $scope.detailDatas = {
                         data: {},
+                        sortDatas: [],
                         status: $stateParams.status,
                         _id: $stateParams._id
                     };
                     // 初始化界面
                     switch ($scope.detailDatas.status) {
                         case 'add':
+                            getSortListDatas();
                             break;
                         case 'edit':
                             getDetailDatas($scope.detailDatas._id);
+                            getSortListDatas();
                             break;
                         case 'view':
                             getDetailDatas($scope.detailDatas._id);
@@ -47,6 +50,14 @@ define(['app'], function(app) {
                         })
                     }
 
+                    function getSortListDatas() {
+                        $http.get($scope.detailConfig.api.sort).then(function(res) {
+                            $scope.detailDatas.sortDatas = res.data.result;
+                            console.log($scope)
+                        });
+                    }
+
+
                     // 保存
                     $scope.save = function(e) {
                         console.log(e);
@@ -58,8 +69,7 @@ define(['app'], function(app) {
                     };
 
                     // 修改
-                    $scope.edit = function() {
-                    };
+                    $scope.edit = function() {};
                 }
             };
         }

@@ -1,6 +1,6 @@
 define(['app'], function(app) {
-    app.controller('EmployeeListCtrl', ['$scope', '$rootScope', '$http', 'httpRequest',
-        function($scope, $rootScope, $http, httpRequest) {
+    app.controller('EmployeeListCtrl', ['$scope', '$rootScope', '$state', '$http', 'httpRequest',
+        function($scope, $rootScope, $state, $http, httpRequest) {
             // 职员模块所有数据
             $scope.employeeListDatas = {
                 config: {
@@ -21,6 +21,26 @@ define(['app'], function(app) {
                         delete: '删除'
                     }
                 }
+            };
+
+
+            // 添加
+            $scope.add = function () {
+                $state.go('employeeDatail', {status: 'add'});
+            };
+
+            // 查看
+            $scope.view = function (id) {
+                $state.go('employeeDatail', {status: 'view', _id: id});
+            };
+
+            // 删除
+            $scope.delete = function (id) {
+            };
+
+            // 修改
+            $scope.edit = function (id) {
+                $state.go('employeeDatail', {status: 'edit', _id: id});
             };
 
         }

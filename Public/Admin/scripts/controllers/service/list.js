@@ -25,7 +25,6 @@ define(['app'], function(app) {
 
             // 添加
             $scope.add = function () {
-                console.log(1)
                 $state.go('serviceDatail', {status: 'add'});
             };
 
@@ -41,7 +40,7 @@ define(['app'], function(app) {
             // 修改
             $scope.edit = function (id) {
                 $state.go('serviceDatail', {status: 'edit', _id: id});
-            }
+            };
         }
     ])
 });

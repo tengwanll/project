@@ -1,6 +1,6 @@
 define(['app'], function(app) {
-    app.controller('JobListCtrl', ['$scope', '$rootScope', '$http', 'httpRequest',
-        function($scope, $rootScope, $http, httpRequest) {
+    app.controller('JobListCtrl', ['$scope', '$rootScope', '$state', '$http', 'httpRequest',
+        function($scope, $rootScope, $state, $http, httpRequest) {
             // 招聘 相关 数据
             $scope.jobListDatas = {
                 config: {
@@ -22,6 +22,25 @@ define(['app'], function(app) {
                         delete: '删除'
                     }
                 }
+            };
+
+            // 添加
+            $scope.add = function () {
+                $state.go('jobDatail', {status: 'add'});
+            };
+
+            // 查看
+            $scope.view = function (id) {
+                $state.go('jobDatail', {status: 'view', _id: id});
+            };
+
+            // 删除
+            $scope.delete = function (id) {
+            };
+
+            // 修改
+            $scope.edit = function (id) {
+                $state.go('jobDatail', {status: 'edit', _id: id});
             };
         }
     ])

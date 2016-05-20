@@ -5,6 +5,9 @@
         <input type="text" ng-if="item.type === 'input'" ng-model="detailDatas.data[item.key]">
         <editor type="all" ng-if="item.type === 'editor'" ng-model="detailDatas.data[item.key]"></editor>
         <editor type="text" ng-if="item.type === 'text'" ng-model="detailDatas.data[item.key]"></editor>
+        <select ng-if="item.type === 'select'" ng-model="detailDatas.data[item.key]" class="form-control">
+            <option ng-repeat="item in detailDatas.sortDatas">{{item.type | servicesort}} - {{item.title}}</option>
+        </select>
     </div>
     <div class="btn-group">
         <button class="btn btn-primary" ng-click="save(event)">保存</button>

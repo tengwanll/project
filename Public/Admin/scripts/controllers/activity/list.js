@@ -1,6 +1,6 @@
 define(['app'], function(app) {
-    app.controller('ActivityListCtrl', ['$scope', '$rootScope', '$http', 'httpRequest',
-        function($scope, $rootScope, $http, httpRequest) {
+    app.controller('ActivityListCtrl', ['$scope', '$rootScope', '$state', '$http', 'httpRequest',
+        function($scope, $rootScope, $state, $http, httpRequest) {
             // 活动 所有数据
             $scope.activityListDatas = {
                 config: {
@@ -21,6 +21,26 @@ define(['app'], function(app) {
                         delete: '删除'
                     }
                 }
+            };
+
+
+            // 添加
+            $scope.add = function () {
+                $state.go('activityDatail', {status: 'add'});
+            };
+
+            // 查看
+            $scope.view = function (id) {
+                $state.go('activityDatail', {status: 'view', _id: id});
+            };
+
+            // 删除
+            $scope.delete = function (id) {
+            };
+
+            // 修改
+            $scope.edit = function (id) {
+                $state.go('activityDatail', {status: 'edit', _id: id});
             };
         }
     ])
