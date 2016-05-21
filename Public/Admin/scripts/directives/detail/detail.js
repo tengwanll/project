@@ -6,7 +6,7 @@ define(['app'], function(app) {
                 // name: '',
                 // priority: 1,
                 // terminal: true,
-                // scope: {}, // {} = isolate, true = child, false/undefined = no change
+                scope: {}, // {} = isolate, true = child, false/undefined = no change
                 // controller: function($scope, $element, $attrs, $transclude) {},
                 // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
                 restrict: 'E', // E = Element, A = Attribute, C = Class, M = Comment
@@ -26,11 +26,11 @@ define(['app'], function(app) {
                     // 初始化界面
                     switch ($scope.detailDatas.status) {
                         case 'add':
-                            getSortListDatas();
+                            // getSortListDatas();
                             break;
                         case 'edit':
                             getDetailDatas($scope.detailDatas._id);
-                            getSortListDatas();
+                            // getSortListDatas();
                             break;
                         case 'view':
                             getDetailDatas($scope.detailDatas._id);
@@ -41,26 +41,38 @@ define(['app'], function(app) {
 
                     // 获取详情数据
                     function getDetailDatas(_id) {
+                        var params = {};
+                        if ($scope.detailDatas.status !== 'add' ) {
+                            params._id = _id;
+                        }
                         httpRequest.get({
                             api: $scope.detailConfig.api.view,
-                            params: { _id: _id },
+                            params: params,
                             success: function(data) {
                                 $scope.detailDatas.data = data;
                             }
                         })
                     }
 
+                    // 获取分组数据
                     function getSortListDatas() {
                         $http.get($scope.detailConfig.api.sort).then(function(res) {
                             $scope.detailDatas.sortDatas = res.data.result;
-                            console.log($scope)
                         });
                     }
 
 
                     // 保存
                     $scope.save = function(e) {
-                        console.log(e);
+                        $(e.target).html('保存中').addClass('disabled');
+                        var api = '';
+                        if ($scope.detailDatas.status === 'add') {
+                            api = $scope.detailConfig.api.add;
+                        } else if ($scope.detailDatas.status === 'edit') {
+                            api = $scope.detailConfig.api.edit;
+                        }
+
+                        console.log($scope.detailDatas.data);
                     };
 
                     // 取消
@@ -69,7 +81,9 @@ define(['app'], function(app) {
                     };
 
                     // 修改
-                    $scope.edit = function() {};
+                    $scope.edit = function() {
+                        $state.go($state.current.name, {status: 'edit', _id: $scope.detailDatas._id});
+                    };
                 }
             };
         }

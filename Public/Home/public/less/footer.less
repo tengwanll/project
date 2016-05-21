@@ -10,16 +10,17 @@
         li {
             float: left;
             overflow: hidden;
-            width: 30%;
+            width: 28%;
             padding-right: 2rem;
             h4 {
-                width: 40%;
+                display: inline-block;
                 text-align: center;
                 margin-top: 2rem;
                 margin-bottom: 1rem;
                 border-bottom: 0.2rem solid #64f5f5;
                 line-height: 2rem;
                 color: white;
+                padding: 0 1rem;
                 a {
                     font-size: 0.9rem;
                 }
@@ -30,6 +31,9 @@
             }
             p {
                 color: white;
+            }
+            .con {
+                overflow: hidden;
             }
             .address {
                 .fa {
@@ -43,16 +47,18 @@
                 text-align: center;
                 font-size: 1rem;
             }
-            &:nth-child(1) {
-            }
+            &:nth-child(1) {}
             &:nth-child(2) {
-                width:40%;
+                width: 44%;
                 .connect {
                     float: left;
                     padding-right: 0.7rem;
                     line-height: 2;
                     .name {
                         font-size: 0.8rem;
+                        .title {
+                            padding-right: 0.5rem;
+                        }
                     }
                 }
             }

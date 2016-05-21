@@ -14,10 +14,7 @@ define(['app'], function(app) {
                     listApi: '/Admin/activity/lists',
                     action: {
                         search: '搜索',
-                        sort: '筛选',
-                        add: '添加',
                         view: '查看',
-                        edit: '编辑',
                         delete: '删除'
                     }
                 }
@@ -31,12 +28,12 @@ define(['app'], function(app) {
 
             // 查看
             $scope.view = function(id) {
-                $state.go('messageDetail', { status: 'view', news_id: id });
+                $state.go('messageDetail', { status: 'view', _id: id });
             };
 
             // 修改
             $scope.edit = function(id) {
-                $state.go('messageDetail', { status: 'edit', news_id: id });
+                $state.go('messageDetail', { status: 'edit', _id: id });
             };
 
             // 删除

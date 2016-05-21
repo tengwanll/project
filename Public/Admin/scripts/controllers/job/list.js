@@ -15,7 +15,6 @@ define(['app'], function(app) {
                     listApi: '/Admin/jobs/lists',
                     action: {
                         search: '搜索',
-                        sort: '筛选',
                         add: '添加',
                         view: '查看',
                         edit: '编辑',

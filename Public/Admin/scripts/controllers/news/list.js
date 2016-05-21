@@ -30,7 +30,7 @@ define(['app'], function(app) {
 
             // 查看
             $scope.view = function (id) {
-                $state.go('newsDetail', {status: 'view', news_id: id});
+                $state.go('newsDetail', {status: 'view', _id: id});
             };
 
             // 删除
@@ -39,7 +39,7 @@ define(['app'], function(app) {
 
             // 修改
             $scope.edit = function (id) {
-                $state.go('newsDetail', {status: 'edit', news_id: id});
+                $state.go('newsDetail', {status: 'edit', _id: id});
             };
         }
     ])

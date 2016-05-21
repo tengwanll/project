@@ -1,5 +1,5 @@
 define(['app'], function(app) {
-    app.controller('MessageDetailctrl', ['$scope', '$stateParams', '$http', 'httpRequest',
+    app.controller('messageDetailCtrl', ['$scope', '$stateParams', '$http', 'httpRequest',
         function($scope, $stateParams, $http, httpRequest) {
             $scope.messageDetailDatas = {
                 config: {
