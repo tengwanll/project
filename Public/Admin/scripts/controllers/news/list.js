@@ -12,9 +12,9 @@ define(['app'], function(app) {
                     currentPage: 1,
                     rows: $rootScope.rows,
                     listApi: '/Admin/news/newsList',
+                    deleteApi: '/Admin/news/delete',
                     action: {
                         search: '搜索',
-                        sort: '筛选',
                         add: '添加',
                         view: '查看',
                         edit: '编辑',
@@ -35,6 +35,15 @@ define(['app'], function(app) {
 
             // 删除
             $scope.delete = function (id) {
+                if (confirm('确认删除？')) {
+                    httpRequest.post({
+                        api: $scope.newsDatas.config.deleteApi,
+                        data: {id: id},
+                        success: function (result) {
+                            $state.reload();
+                        }
+                    });
+                }
             };
 
             // 修改

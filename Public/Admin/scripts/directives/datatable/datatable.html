@@ -24,7 +24,7 @@
         <tbody class="table-hover">
             <tr ng-repeat="rowDatas in listData">
                 <td>{{rows * (page.current - 1) + $index + 1}}</td>
-                <td ng-repeat="colData in listConfig.th">{{rowDatas[colData.key]}}</td>
+                <td ng-repeat="colData in listConfig.th" ng-bind-html="rowDatas[colData.key] | sce"></td>
                 <td class="ac">
                     <a class="text-info" href="" ng-click="view(rowDatas.id)" ng-if="listConfig.action.view"><span class="fa fa-eye"></span></a>
                     <a class="text-muted" href="" ng-click="edit(rowDatas.id)" ng-if="listConfig.action.edit"><span class="fa fa-edit"></span></a>

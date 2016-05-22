@@ -127,7 +127,7 @@
          */
         public function delete(){
             $json=$this->getContent();
-            $newsId=$json['newsId'];
+            $newsId=$json['id'];
             $newsModel=M('news');
             $news=$newsModel->where("id=$newsId")->find();
             if(!$news){
