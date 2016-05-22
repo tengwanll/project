@@ -46,6 +46,27 @@ class FeedbackController extends CommonController
         $this->buildResponse(0,$result);
     }
 
+    public function detail(){
+        $id=I('get.feedbackId');
+        $feedbackModel=M('feedback');
+        $feedback=$feedbackModel->where("id=$id and status=1")->find();
+        if(!$feedback){
+            $this->buildResponse(10216);
+        }
+        $arr=array(
+            'id'=>$feedback['id'],
+            'name'=>$feedback['name'],
+            'address'=>$feedback['address'],
+            'telephone'=>$feedback['telephone'],
+            'phone'=>$feedback['phone'],
+            'email'=>$feedback['email'],
+            'work'=>$feedback['work'],
+            'content'=>$feedback['content'],
+            'createTime'=>$feedback['create_time']
+        );
+        $this->buildResponse(0,$arr);
+    }
+
     public function delete(){
         $json=$this->getContent();
         $id=$json['feedbackId'];
