@@ -15,6 +15,7 @@ class LaboratoryController extends CommonController
         $page=$this->getPage();
         $name=I('get.name');
         $labModel=M('lab');
+        $labPhotoModel=M('lab_photo');
         $fileModel=M('file');
         if($name){
             $where=" name like '%$name%' and status=1 ";
@@ -25,12 +26,21 @@ class LaboratoryController extends CommonController
         $total=$labModel->where($where)->count();
         $arr=array();
         foreach($labList as $lists){
+            $labId=$lists['id'];
             $photoId=$lists['photo'];
-            $photoDetailId=$lists['photo_detail'];
             $photo=$fileModel->where("id=$photoId")->find();
             $photoUrl=$photo?__ROOT__.'/'.$photo['url']:'';
-            $photoDetail=$fileModel->where("id=$photoDetailId")->find();
-            $photoDetailUrl=$photoDetail?__ROOT__.'/'.$photoDetail['url']:'';
+            $photoDetailUrl=array();
+            $labPhotos=$labPhotoModel->where("lab_id=$labId and status=1")->select();
+            foreach($labPhotos as $labPhoto){
+                $id=$labPhoto['id'];
+                $photoDetailId=$labPhoto['file_id'];
+                $photoDetail=$fileModel->where("id=$photoDetailId")->find();
+                $photoDetailUrl[]=array(
+                    'id'=>$id,
+                    'url'=>$photoDetail?__ROOT__.'/'.$photoDetail['url']:'',
+                );
+            }
             $arr[]=array(
                 'id'=>$lists['id'],
                 'name'=>$lists['name'],
@@ -51,16 +61,25 @@ class LaboratoryController extends CommonController
         $labId=I('get._id');
         $labModel=M('lab');
         $fileModel=M('file');
+        $labPhotoModel=M('lab_photo');
         $lab=$labModel->where("id=$labId")->find();
         if(!$lab){
             $this->buildResponse(10208);
         }
         $photoId=$lab['photo'];
-        $photoDetailId=$lab['photo_detail'];
         $photo=$fileModel->where("id=$photoId")->find();
         $photoUrl=$photo?__ROOT__.'/'.$photo['url']:'';
-        $photoDetail=$fileModel->where("id=$photoDetailId")->find();
-        $photoDetailUrl=$photoDetail?__ROOT__.'/'.$photoDetail['url']:'';
+        $photoDetailUrl=array();
+        $labPhotos=$labPhotoModel->where("lab_id=$labId and status=1")->select();
+        foreach($labPhotos as $labPhoto){
+            $id=$labPhoto['id'];
+            $photoDetailId=$labPhoto['file_id'];
+            $photoDetail=$fileModel->where("id=$photoDetailId")->find();
+            $photoDetailUrl[]=array(
+                'id'=>$id,
+                'url'=>$photoDetail?__ROOT__.'/'.$photoDetail['url']:'',
+            );
+        }
         $arr=array(
             'id'=>$lab['id'],
             'name'=>$lab['name'],
@@ -139,6 +158,42 @@ class LaboratoryController extends CommonController
         $data=array('status'=>0);
         $labId=$labModel->where("id=$labId")->save($data);
         if(!$labId){
+            $this->buildResponse(10214);
+        }
+        $this->buildResponse(0);
+    }
+
+    public function createPhoto(){
+        $json=$this->getContent();
+        $labId=$json['labId'];
+        $fileId=$json['fileId'];
+        $model=M('lab_photo');
+        $date=date('Y-m-d H:i:s',time());
+        $data=array(
+            'lab_id'=>$labId?$labId:0,
+            'file_id'=>$fileId?$fileId:0,
+            'status'=>1,
+            'create_time'=>$date,
+            'update_time'=>$date
+        );
+        $labPhotoId=$model->data($data)->add();
+        if(!$labPhotoId){
+            $this->buildResponse(10214);
+        }
+        $this->buildResponse(0,$labPhotoId);
+    }
+
+    public function deletePhoto(){
+        $json=$this->getContent();
+        $photoId=$json['photoId'];
+        $labPhotoModel=M('lab_photo');
+        $labPhoto=$labPhotoModel->where("id=$photoId")->find();
+        if(!$labPhoto){
+            $this->buildResponse(10217);
+        }
+        $data=array('status'=>0);
+        $photoId=$labPhotoModel->where("id=$photoId")->save($data);
+        if(!$photoId){
             $this->buildResponse(10214);
         }
         $this->buildResponse(0);
