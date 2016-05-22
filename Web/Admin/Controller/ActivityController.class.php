@@ -38,14 +38,14 @@ class ActivityController extends CommonController
             );
         }
         $result=array(
-            'activityList'=>$arr,
+            'list'=>$arr,
             'total'=>$total
         );
         $this->buildResponse(0,$result);
     }
 
     public function detail(){
-        $activityId=I('get.activityId');
+        $activityId=I('get._id');
         $activityModel=M('activity');
         $fileModel=M('file');
         $activity=$activityModel->where("id=$activityId")->find();

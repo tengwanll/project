@@ -39,7 +39,7 @@ class NoticeController extends CommonController
     }
 
     public function detail(){
-        $noticeId=I('get.noticeId');
+        $noticeId=I('get._id');
         $noticeModel=M('notice');
         $notice=$noticeModel->where("id=$noticeId")->find();
         if(!$notice){

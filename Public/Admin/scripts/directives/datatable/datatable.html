@@ -1,0 +1,51 @@
+<div class="_listTable">
+    <header class="text-right">
+        <div class="add btn-group pull-left" ng-if="listConfig.action.add">
+            <button class="btn btn-info add" ng-click="add()">添加</button>
+        </div>
+        <div class="sort form-group" ng-if="listConfig.action.sort">
+            <select class="form-control">
+                <option>11</option>
+            </select>
+        </div>
+        <div class="search form-group" ng-if="listConfig.action.search">
+            <input type="text" class="form-control" placeholder="请输入关键词搜索">
+            <button><span class="fa fa-search"></span></button>
+        </div>
+    </header>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="index">序号</th>
+                <th ng-repeat="item in listConfig.th" class="{{item.key}}">{{item[item.key].name}}</th>
+                <th class="action">操作</th>
+            </tr>
+        </thead>
+        <tbody class="table-hover">
+            <tr ng-repeat="rowDatas in listData">
+                <td>{{rows * (page.current - 1) + $index + 1}}</td>
+                <td ng-repeat="colData in listConfig.th">{{rowDatas[colData.key]}}</td>
+                <td class="ac">
+                    <a class="text-info" href="" ng-click="view(rowDatas.id)" ng-if="listConfig.action.view"><span class="fa fa-eye"></span></a>
+                    <a class="text-muted" href="" ng-click="edit(rowDatas.id)" ng-if="listConfig.action.edit"><span class="fa fa-edit"></span></a>
+                    <a class="text-danger" href="" ng-click="delete(rowDatas.id)" ng-if="listConfig.action.delete"><span class="fa fa-trash-o"></span></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <footer>
+        <nav class="text-right">
+            <ul class="page" ng-if="page.total > 1">
+                <li ng-show="page.current > 1"><a href="javascript:void(0);" ng-click="page.first()">首页</a></li>
+                <li ng-show="page.current > 1"><a href="javascript:void(0);" ng-click="page.prev()">上一页</a></li>
+                <li ng-repeat="num in page.pages">
+                    <span ng-if="page.pages[0] + $index === page.current">{{num}}</span>
+                    <a href="javascript:void(0);" ng-if="page.pages[0] + $index !== page.current" ng-click="page.changeTo(num)">{{num}}</a>
+                </li>
+                <li ng-show="page.current !== page.total"><a href="javascript:void(0);" ng-click="page.next()">下一页</a></li>
+                <li ng-show="page.current !== page.total"><a href="javascript:void(0);" ng-click="page.last()">末页</a></li>
+                <li>共{{page.total}}页</li>
+            </ul>
+        </nav>
+    </footer>
+</div>

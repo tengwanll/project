@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <base href="__PUBLIC__/Admin/index">
     <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/style.css">
     <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/libs/wangeditor/css/wangEditor.min.css">
@@ -21,19 +22,19 @@
             </div>
         </header>
         <div class="section">
-            <aside class="col-md-2 col-sm-2" id="sideBar">
+            <aside id="sideBar">
                 <nav>
                     <ul class="list-unstyled">
-                        <li ng-repeat="item in mainDatas.menu" class="{{mainDatas.currentMenu === $index ? 'active' : ''}}"><a ui-sref="{{item.state}}" ng-click="changeMenu($index)">{{item.name}}</a></li>
+                        <li ng-repeat="item in mainDatas.menu" class="{{mainDatas.currentMenu === $index ? 'active' : ''}}"><a ui-sref="{{item.state}}" ng-click="changeMenu($index)" ng-bind="item.name"></a></li>
                     </ul>
                 </nav>
             </aside>
-            <div class="col-md-10 col-sm-10 col-md-offset-2 col-sm-offset-2 mainView">
+            <div class="mainView {{showPageLoading ? 'pageLoading' : ''}}">
                 <div class="breadcrumb"></div>
                 <div ui-view id="main"></div>
-                <div id="pageLoading">
+                <div id="pageLoading" ng-show="showPageLoading">
                     <div class="cont">
-                        <span class="fa fa-spinner"></span>
+                        <span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>
                         <p>加载中</p>
                     </div>
                 </div>
@@ -42,7 +43,7 @@
     </div>
     <div id="loading" class="ng-hide">
         <div class="cont">
-            <span class="fa fa-spinner"></span>
+            <span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>
             <p>加载中</p>
         </div>
     </div>

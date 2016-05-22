@@ -53,14 +53,14 @@ class ServiceController extends CommonController
             );
         }
         $result=array(
-            'serviceList'=>$arr,
+            'list'=>$arr,
             'total'=>$total
         );
         $this->buildResponse(0,$result);
     }
 
     public function detail(){
-        $serviceId=I('get.serviceId');
+        $serviceId=I('get._id');
         $fileModel=M('file');
         $serviceModel=M('service s,service_sort t');
         $where=" s.status=1 and s.sort_id=t.id and s.id=$serviceId ";

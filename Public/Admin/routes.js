@@ -6,7 +6,7 @@ define(['app'], function(app) {
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
-            // 首页
+        // 首页
             .state('index', {
                 url: '/',
                 templateUrl: baseurl + '/tpl/index/index.html?t=' + Math.floor(Date.now() / 1000),
@@ -17,67 +17,90 @@ define(['app'], function(app) {
             .state('service', {
                 url: '/service',
                 templateUrl: baseurl + '/tpl/service/list.html?t=' + Math.floor(Date.now() / 1000),
-                controller: 'ServiceController',
+                controller: 'ServiceListCtrl',
                 // resolve: loader("ServiceController")
             })
-            .state('serviceAdd', {
-                url: '/service/add',
-                templateUrl: baseurl + '/tpl/service/detail.html?t=' + Math.floor(Date.now() / 1000),
-                controller: 'ServiceController',
-            })
             .state('serviceDatail', {
-                url: '/service/detail',
+                url: '/service/status/:status/_id/:_id',
                 templateUrl: baseurl + '/tpl/service/detail.html?t=' + Math.floor(Date.now() / 1000),
-                controller: 'ServiceController',
+                controller: 'ServiceDetailctrl',
             })
-            .state('serviceEdit', {
-                url: '/service/edit',
-                templateUrl: baseurl + '/tpl/service/detail.html?t=' + Math.floor(Date.now() / 1000),
-                controller: 'ServiceController',
-            })
-            // .state('serviceDetail', {
-            //     url: '/service/:type/:id',
-            //     templateUrl: baseurl + '/tpl/'
-            // })
             // 职员
             .state('employee', {
                 url: '/employee',
                 templateUrl: baseurl + '/tpl/employee/list.html?t=' + Math.floor(Date.now() / 1000),
-                controller: 'EmployeeController',
+                controller: 'EmployeeListCtrl',
+                // resolve: loader("EmployeeController")
+            })
+            .state('employeeDetail', {
+                url: '/employee/status/:status/_id/:_id',
+                templateUrl: baseurl + '/tpl/employee/detail.html?t=' + Math.floor(Date.now() / 1000),
+                controller: 'EmployeeDetailCtrl',
                 // resolve: loader("EmployeeController")
             })
             // 活动
             .state('activity', {
                 url: '/activity',
                 templateUrl: baseurl + '/tpl/activity/list.html?t=' + Math.floor(Date.now() / 1000),
-                controller: 'ActivityController',
-                // resolve: loader("ActivityController")
+                controller: 'ActivityListCtrl',
+                // resolve: loader("EmployeeController")
+            })
+            .state('activityDetail', {
+                url: '/activity/status/:status/_id/:_id',
+                templateUrl: baseurl + '/tpl/activity/detail.html?t=' + Math.floor(Date.now() / 1000),
+                controller: 'ActivityDetailCtrl',
+                // resolve: loader("EmployeeController")
             })
             // 新闻
             .state('news', {
                 url: '/news',
                 templateUrl: baseurl + '/tpl/news/list.html?t=' + Math.floor(Date.now() / 1000),
-                controller: 'NewsController',
+                controller: 'NewsListCtrl',
                 // resolve: loader("NewsController")
             })
-            .state('newsAdd', {
-                url: '/news/add',
+            .state('newsDetail', {
+                url: '/news/status/:status/_id/:_id',
                 templateUrl: baseurl + '/tpl/news/detail.html?t=' + Math.floor(Date.now() / 1000),
-                controller: 'NewsController',
+                controller: 'NewsDetailCtrl',
                 // resolve: loader("NewsController")
             })
             // 招聘
-            .state('jobs', {
-                url: '/jobs',
-                templateUrl: baseurl + '/tpl/jobs/list.html?t=' + Math.floor(Date.now() / 1000),
-                controller: 'JobsController',
+            .state('job', {
+                url: '/job',
+                templateUrl: baseurl + '/tpl/job/list.html?t=' + Math.floor(Date.now() / 1000),
+                controller: 'JobListCtrl',
+                // resolve: loader("JobsController")
+            })
+            .state('jobDetail', {
+                url: '/job/status/:status/_id/:_id',
+                templateUrl: baseurl + '/tpl/job/detail.html?t=' + Math.floor(Date.now() / 1000),
+                controller: 'JobDetailCtrl',
+                // resolve: loader("JobsController")
+            })
+            // 留言
+            .state('message', {
+                url: '/message',
+                templateUrl: baseurl + '/tpl/message/list.html?t=' + Math.floor(Date.now() / 1000),
+                controller: 'messageListCtrl',
+                // resolve: loader("JobsController")
+            })
+            .state('messageDetail', {
+                url: '/message/status/:status/_id/:_id',
+                templateUrl: baseurl + '/tpl/message/detail.html?t=' + Math.floor(Date.now() / 1000),
+                controller: 'messageDetailCtrl',
                 // resolve: loader("JobsController")
             })
             // 实验室
-            .state('pics', {
-                url: '/pics',
-                templateUrl: baseurl + '/tpl/pics/list.html?t=' + Math.floor(Date.now() / 1000),
-                controller: 'PicsController',
+            .state('laboratory', {
+                url: '/laboratory',
+                templateUrl: baseurl + '/tpl/laboratory/list.html?t=' + Math.floor(Date.now() / 1000),
+                controller: 'laboratoryListCtrl',
+                // resolve: loader("PicsController")
+            })
+            .state('laboratoryDetail', {
+                url: '/laboratory/status/:status/_id/:_id',
+                templateUrl: baseurl + '/tpl/laboratory/detail.html?t=' + Math.floor(Date.now() / 1000),
+                controller: 'laboratoryDetailCtrl',
                 // resolve: loader("PicsController")
             })
             // 公司信息

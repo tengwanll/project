@@ -51,14 +51,14 @@ class LaboratoryController extends CommonController
             );
         }
         $result=array(
-            'labList'=>$arr,
+            'list'=>$arr,
             'total'=>$total
         );
         $this->buildResponse(0,$result);
     }
 
     public function detail(){
-        $labId=I('get.labId');
+        $labId=I('get._id');
         $labModel=M('lab');
         $fileModel=M('file');
         $labPhotoModel=M('lab_photo');

@@ -32,6 +32,7 @@
     <script type="text/javascript">
     $(document).ready(function() {
         $('button').click(function() {
+            console.log(1)
             var btn = $(this).attr('disabled', 'disabled').html('登陆中');
             var postData = {
                 username: $('#username').val(),

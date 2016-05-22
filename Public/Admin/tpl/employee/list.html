@@ -1,30 +1,4 @@
-<!-- 教职员 列表 -->
+<!-- 职员 列表 -->
 <div class="employeeList">
-    <div>
-        <button class="btn btn-primary" ng-click="addService()">添加</button>
-    </div>
-    <div class="dataTable">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>序号</th>
-                    <th>姓名</th>
-                    <th>创建时间</th>
-                    <th>操作</th>
-                </tr>
-            </thead>
-            <tbody class="table-hover">
-                <tr ng-repeat="item in employeeDatas.list">
-                    <td>{{$index + 1}}</td>
-                    <td>{{item.name}}</td>
-                    <td>{{item.createTime | date:'yyyy-MM-dd hh:ss'}}</td>
-                    <td>
-                        <a ng-click="showService(item.id)">详情</a>
-                        <a ng-click="editService(item.id)">编辑</a>
-                        <a ng-click="deleteService(item.id)">删除</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <datatable list-config="{{employeeListDatas.config}}"></datatable>
 </div>
