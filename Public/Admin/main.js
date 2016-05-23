@@ -2,9 +2,11 @@ require.config({
     paths: {
         // 三方
         'wangEditor': './libs/wangeditor/js/wangEditor',
-        'angular': '//cdn.bootcss.com/angular.js/1.5.0/angular.min',
+        // 'angular': '//cdn.bootcss.com/angular.js/1.5.0/angular.min',
+        'angular': '//cdn.bootcss.com/angular.js/1.5.0/angular',
         'jquery': '//cdn.bootcss.com/jquery/2.2.1/jquery.min',
-        'uiRouter': '//cdn.bootcss.com/angular-ui-router/0.2.18/angular-ui-router.min',
+        // 'uiRouter': '//cdn.bootcss.com/angular-ui-router/0.2.18/angular-ui-router.min',
+        'uiRouter': '//cdn.bootcss.com/angular-ui-router/0.2.18/angular-ui-router',
 
         // 入口文件
         'app': './app',
@@ -24,6 +26,7 @@ require.config({
         'JobListController': './scripts/controllers/job/list',
         'JobDetailController': './scripts/controllers/job/detail',
         'MessageListCtrl': './scripts/controllers/message/list',
+        'MessageListDetail': './scripts/controllers/message/detail',
         'LaboratoryListController': './scripts/controllers/laboratory/list',
         'LaboratoryDetailController': './scripts/controllers/laboratory/detail',
         'InfoController': './scripts/controllers/info/info',
@@ -33,6 +36,7 @@ require.config({
         'dataTable': './scripts/directives/datatable/datatable',
         'detail': './scripts/directives/detail/detail',
         'editor': './scripts/directives/editor/editor',
+        'uploader': './scripts/directives/uploader/uploader',
 
         // 过滤器
         'serviceSort': './scripts/filters/servicesort',
@@ -40,6 +44,7 @@ require.config({
 
         // 服务
         'httpRequest': './scripts/services/httpRequest',
+        'notify': './scripts/services/notify',
 
 
     },
@@ -77,6 +82,8 @@ require([
         'detail',
         'serviceSort',
         'sce',
+        'uploader',
+        'notify',
         "MainController",
         "IndexController",
         "ServiceListController",
@@ -90,6 +97,7 @@ require([
         "JobListController",
         "JobDetailController",
         'MessageListCtrl',
+        'MessageListDetail',
         "LaboratoryListController",
         "LaboratoryDetailController",
         "InfoController",

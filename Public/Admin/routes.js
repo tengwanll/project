@@ -35,7 +35,7 @@ define(['app'], function(app) {
             .state('employeeDetail', {
                 url: '/employee/status/:status/_id/:_id',
                 templateUrl: baseurl + '/tpl/employee/detail.html?t=' + Math.floor(Date.now() / 1000),
-                controller: 'EmployeeDetailCtrl',
+                controller: 'EmployeeDetailctrl',
                 // resolve: loader("EmployeeController")
             })
             // 活动
@@ -81,13 +81,13 @@ define(['app'], function(app) {
             .state('message', {
                 url: '/message',
                 templateUrl: baseurl + '/tpl/message/list.html?t=' + Math.floor(Date.now() / 1000),
-                controller: 'messageListCtrl',
+                controller: 'MessageListCtrl',
                 // resolve: loader("JobsController")
             })
             .state('messageDetail', {
                 url: '/message/status/:status/_id/:_id',
                 templateUrl: baseurl + '/tpl/message/detail.html?t=' + Math.floor(Date.now() / 1000),
-                controller: 'messageDetailCtrl',
+                controller: 'MessageDetailCtrl',
                 // resolve: loader("JobsController")
             })
             // 实验室

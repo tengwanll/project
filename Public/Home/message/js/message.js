@@ -1,5 +1,7 @@
 $(document).ready(function() {
 	$(document).on('click', '.form button', function (e) {
+		e.preventDefault();
+
 		var formEle = $('.form');
 		var postDatas = {
 			name: formEle.find('input[name="name"]').val(),
@@ -10,6 +12,15 @@ $(document).ready(function() {
 			work: formEle.find('input[name="work"]').val(),
 			txt: formEle.find('textarea').val()
 		};
+
+		// check
+		for(var i in postDatas) {
+			if (!postDatas[i]) {
+				alert($('input[name="' + i + '"]').prev().html() + '不能为空。');
+				return;
+			}
+		}
+
 		var btn = $(this);
 		btn.html('提交中...').attr('disabled', 'disabled');
 

@@ -8,13 +8,16 @@
         <select ng-if="item.type === 'select'" ng-model="detailDatas.data[item.key]" class="form-control">
             <option ng-repeat="item in detailDatas.sortDatas">{{item.type | servicesort}} - {{item.title}}</option>
         </select>
+        <!--
+        <input type="file" ng-if="item.type === 'photo'" ng-model="detailDatas.data[item.key]" id="{{'input' + $index}}" ng-change="upload($event, 'asd')">
+        <label class="uploadIcon" ng-if="item.type === 'photo'" for="{{'input' + $index}}"><span class="fa fa-car"></span></label> -->
+        <uploader ng-model="detailDatas.data[item.key]" ng-if="item.type === 'photo'"></uploader>
     </div>
     <div class="btn-group">
         <button class="btn btn-primary" ng-click="save($event)">保存</button>
         <button class="btn btn-danger" ng-click="cancel()">取消</button>
     </div>
 </div>
-
 <!-- 查看状态下 -->
 <div class="_detail _view" ng-if="detailDatas.status === 'view'">
     <section ng-repeat="item in detailConfig.content">
