@@ -7,7 +7,7 @@
          */
 		public function newsList(){
             $page=$this->getPage();
-            $title=I('get.title');
+            $title=I('get.keyword');
             $newsModel=M('news');
             $fileModel=M('file');
             if($title){

@@ -86,8 +86,12 @@
                     'update_time'=>$date
                 );
                 $file=$fileModel->data($data)->add();
+                $arr=array(
+                    'id'=>$file,
+                    'url'=>$src
+                );
                 if($file){
-                    $this->buildResponse(0,$data['url']);
+                    $this->buildResponse(0,$arr);
                 }else{
                     $this->buildResponse(10204);
                 }

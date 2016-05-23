@@ -17,7 +17,7 @@ class IndexController extends Controller {
     	$specialService=$service->where('type=2 and parent_id=0 and status=1')->limit('4')->select();
     	$normalService=$service->where('type=1 and parent_id=0 and status=1')->limit('4')->select();
     	$information=M('news');
-    	$informations=$information->order('create_time desc')->limit('3')->select();
+    	$informations=$information->where('status=1')->order('create_time desc')->limit('3')->select();
         foreach($informations as $key=>$item){
             $photoId=$item['photo'];
             $photo=$fileModel->where("id=$photoId")->find();

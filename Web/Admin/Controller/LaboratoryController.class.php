@@ -13,7 +13,7 @@ class LaboratoryController extends CommonController
 {
     public function lists(){
         $page=$this->getPage();
-        $name=I('get.name');
+        $name=I('get.keyword');
         $labModel=M('lab');
         $labPhotoModel=M('lab_photo');
         $fileModel=M('file');
