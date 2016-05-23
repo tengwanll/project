@@ -6,7 +6,7 @@ define(['app'], function(app) {
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
-        // 首页
+            // 首页
             .state('index', {
                 url: '/',
                 templateUrl: baseurl + '/tpl/index/index.html?t=' + Math.floor(Date.now() / 1000),
@@ -20,7 +20,7 @@ define(['app'], function(app) {
                 controller: 'ServiceListCtrl',
                 // resolve: loader("ServiceController")
             })
-            .state('serviceDatail', {
+            .state('serviceDetail', {
                 url: '/service/status/:status/_id/:_id',
                 templateUrl: baseurl + '/tpl/service/detail.html?t=' + Math.floor(Date.now() / 1000),
                 controller: 'ServiceDetailctrl',

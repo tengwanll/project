@@ -3,13 +3,14 @@ define(['app'], function(app) {
             $scope.employeeDetailDatas = {
                 config: {
                     content: [
-                        { title: '标题', type: 'input', key: 'title'},
-                        { title: '分类', type: 'sort', key: 'sortTitle'},
-                        { title: '项目简介', type: 'editor', key: 'description'},
-                        { title: '实验流程', type: 'editor', key: 'experimentFlow'},
-                        { title: '用户需知', type: 'editor', key: 'userNotice' },
-                        { title: '结果展示', type: 'editor', key: 'resultShow'},
-                        { title: '服务周期', type: 'editor', key: 'serverCircle'},
+                        { title: '姓名', type: 'input', key: 'name'},
+                        { title: '职位', type: 'input', key: 'position'},
+                        { title: '头像', type: 'photo', key: 'photo'},
+                        { title: 'email', type: 'input', key: 'email'},
+                        { title: '电话', type: 'input', key: 'telephone'},
+                        { title: '简介', type: 'editor', key: 'description'},
+                        { title: '研究方向', type: 'editor', key: 'study'},
+                        { title: '文献', type: 'editor', key: 'thesis'},
                     ],
                     api: {
                         add: '/Admin/employee/createEmployee',
