@@ -13,7 +13,7 @@ class TrainingController extends CommonController
 {
     public function lists(){
         $page=$this->getPage();
-        $title=I('get.title');
+        $title=I('get.keyword');
         $trainingModel=M('training');
         $fileModel=M('file');
         if($title){

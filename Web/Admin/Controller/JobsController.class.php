@@ -13,7 +13,7 @@ class JobsController extends CommonController
 {
     public function lists(){
         $page=$this->getPage();
-        $lab=I('get.lab');
+        $lab=I('get.keyword');
         $jobModel=M('job');
         if($lab){
             $where=" lab like '%$lab%' and status=1 ";

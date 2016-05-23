@@ -13,7 +13,7 @@ class NewsController extends Controller {
         $model=M('news');
         $noticeModel=M('notice');
         $fileModel=M('file');
-        $notice=$noticeModel->where('status=1')->order('create_time desc')->select();
+        $notice=$noticeModel->where('status=1')->order('create_time desc')->limit(5)->select();
         foreach($notice as $key=>$value){
             $notice[$key]['create_time']=date('Y-m-d',strtotime($value['create_time']));
         }

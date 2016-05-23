@@ -16,7 +16,7 @@ class FeedbackController extends CommonController
      */
     public function lists(){
         $page=$this->getPage();
-        $name=I('get.name');
+        $name=I('get.keyword');
         $feedbackModel=M('feedback');
         if($name){
             $where=" name like '%$name%' and status=1 ";

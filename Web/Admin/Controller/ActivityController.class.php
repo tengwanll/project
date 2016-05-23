@@ -13,7 +13,7 @@ class ActivityController extends CommonController
 {
     public function lists(){
         $page=$this->getPage();
-        $title=I('get.title');
+        $title=I('get.keyword');
         $activityModel=M('activity');
         $fileModel=M('file');
         if($title){

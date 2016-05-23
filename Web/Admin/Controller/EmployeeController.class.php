@@ -13,7 +13,7 @@ class EmployeeController extends CommonController
 {
     public function employeeList(){
         $page=$this->getPage();
-        $name=I('get.name');
+        $name=I('get.keyword');
         $employeeModel=M('employee');
         $fileModel=M('file');
         if($name){

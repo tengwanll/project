@@ -13,7 +13,7 @@ class NoticeController extends CommonController
 {
     public function noticeList(){
         $page=$this->getPage();
-        $content=I('get.content');
+        $content=I('get.keyword');
         $noticeModel=M('notice');
         if($content){
             $where=" content like '%$content%' and status=1 ";

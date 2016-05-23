@@ -11,7 +11,7 @@ class ServiceController extends CommonController
     public function serviceList(){
         $page=$this->getPage();
         $type=I('get.type');
-        $title=I('get.title');
+        $title=I('get.keyword');
         $sortId=I('get.sortId');
         $fileModel=M('file');
         $serviceModel=M('service s,service_sort t');
