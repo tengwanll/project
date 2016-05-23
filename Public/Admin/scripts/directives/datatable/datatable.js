@@ -22,6 +22,10 @@ define(['app'], function(app) {
                         pages: []
                     };
 
+                    $scope.datatable = {
+                        keyword: ''
+                    };
+
                     getListDatas();
 
                     // 获取列表数据
@@ -31,9 +35,13 @@ define(['app'], function(app) {
                             page = $scope.page.current;
                             var set = false;
                         }
+                        var params = { rows: $scope.listConfig.rows, page: page };
+                        console.log(params);
+                        console.log(keyword);
+                        if (keyword) params.keyword = keyword;
                         httpRequest.get({
                             api: $scope.listConfig.listApi,
-                            params: { rows: $scope.listConfig.rows, page: page },
+                            params: params,
                             success: function(data) {
                                 if (set) {
                                     $scope.page.current = page;
@@ -50,8 +58,10 @@ define(['app'], function(app) {
                         })
                     }
 
-                    $scope.search = function(keyword) {
-                        getListDatas(1, keyword);
+                    // 搜索
+                    $scope.search = function() {
+                        console.log($scope);
+                        getListDatas(1, $scope.datatable.keyword);
                     }
 
                     // 分页

@@ -9,8 +9,8 @@
             </select>
         </div>
         <div class="search form-group" ng-if="listConfig.action.search">
-            <input type="text" class="form-control" placeholder="请输入关键词搜索">
-            <button ng-click=""><span class="fa fa-search"></span></button>
+            <input type="text" class="form-control" placeholder="请输入关键词搜索" ng-model="datatable.keyword">
+            <button ng-click="search()"><span class="fa fa-search"></span></button>
         </div>
     </header>
     <table class="table">
