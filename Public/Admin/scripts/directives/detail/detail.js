@@ -42,7 +42,7 @@ define(['app'], function(app) {
                     // 获取详情数据
                     function getDetailDatas(_id) {
                         var params = {};
-                        if ($scope.detailDatas.status !== 'add' ) {
+                        if ($scope.detailDatas.status !== 'add') {
                             params._id = _id;
                         }
                         httpRequest.get({
@@ -50,6 +50,7 @@ define(['app'], function(app) {
                             params: params,
                             success: function(data) {
                                 $scope.detailDatas.data = data;
+                                $scope.$broadcast('detailDataReady');
                             }
                         })
                     }
@@ -71,8 +72,14 @@ define(['app'], function(app) {
                         } else if ($scope.detailDatas.status === 'edit') {
                             api = $scope.detailConfig.api.edit;
                         }
-
-                        console.log($scope.detailDatas.data);
+                        // 发送请求
+                        httpRequest.post({
+                            api: api,
+                            data: $scope.detailDatas.data,
+                            success: function(result) {
+                                $state.go($state.current.name.substr(0, $state.current.name.length - 6));
+                            }
+                        });
                     };
 
                     // 取消
@@ -82,7 +89,7 @@ define(['app'], function(app) {
 
                     // 修改
                     $scope.edit = function() {
-                        $state.go($state.current.name, {status: 'edit', _id: $scope.detailDatas._id});
+                        $state.go($state.current.name, { status: 'edit', _id: $scope.detailDatas._id });
                     };
                 }
             };

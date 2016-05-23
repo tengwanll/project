@@ -133,7 +133,7 @@ class ServiceController extends CommonController
     public function update(){
         $serviceModel=M('service');
         $json=$this->getContent();
-        $serviceId=$json['serviceId'];
+        $serviceId=$json['id'];
         $title=$json['title'];
         $logo=$json['logo'];
         $shortDesc=$json['shortDesc'];
@@ -196,7 +196,7 @@ class ServiceController extends CommonController
 
     public function delete(){
         $json=$this->getContent();
-        $serviceId=$json['serviceId'];
+        $serviceId=$json['id'];
         $serviceModel=M('service');
         $service=$serviceModel->where("id=$serviceId")->find($serviceId);
         if(!$service){

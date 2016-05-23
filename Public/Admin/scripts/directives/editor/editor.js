@@ -7,9 +7,9 @@ define(['app'], function(app) {
             // terminal: true,
             scope: {
             // name: "=asd"
-                ngModel: '@'
+                ngModel: '='
             }, // {} = isolate, true = child, false/undefined = no change
-            scope: true,
+            // scope: true,
             // controller: function($scope, $element, $attrs, $transclude) {},
             require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
             restrict: 'E', // E = Element, A = Attribute, C = Class, M = Comment
@@ -18,15 +18,18 @@ define(['app'], function(app) {
             replace: true,
             // transclude: true,
             // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
-            link: function($scope, element, attrs, ctrl) {
+            link: function($scope, element, attrs, ngModelController) {
                 // wangEditor.config.printLog = false;
                 // 初始化编辑器，获取实例
                 $scope.editor = init();
 
-setTimeout(function () {
-                console.log(attrs)
+                // 设置初始值
+                $scope.$on('detailDataReady', function() {
+                    ngModelController.$formatters.push(function (modelValue) {
+                        $scope.editor.txt.$txt.html(modelValue);
+                    });
+                });
 
-            }, 5000)
                 // 初始化编辑器
                 function init() {
                     var editor = new wangEditor(element);
@@ -82,7 +85,7 @@ setTimeout(function () {
                     editor.onchange = function() {
                         $scope.$apply(function() {
                             var html = editor.$txt.html();
-                            ctrl.$setViewValue(html);
+                            ngModelController.$setViewValue(html);
                         });
                     };
 

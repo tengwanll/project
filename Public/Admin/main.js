@@ -36,6 +36,7 @@ require.config({
 
         // 过滤器
         'serviceSort': './scripts/filters/servicesort',
+        'sce': './scripts/filters/sce',
 
         // 服务
         'httpRequest': './scripts/services/httpRequest',
@@ -75,6 +76,7 @@ require([
         'dataTable',
         'detail',
         'serviceSort',
+        'sce',
         "MainController",
         "IndexController",
         "ServiceListController",
