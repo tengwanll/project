@@ -22,34 +22,6 @@ define(['app'], function(app) {
                     }
                 }
             }
-
-            // 添加
-            $scope.add = function () {
-                $state.go('newsDetail', {status: 'add'});
-            };
-
-            // 查看
-            $scope.view = function (id) {
-                $state.go('newsDetail', {status: 'view', _id: id});
-            };
-
-            // 删除
-            $scope.delete = function (id) {
-                if (confirm('确认删除？')) {
-                    httpRequest.post({
-                        api: $scope.newsDatas.config.deleteApi,
-                        data: {id: id},
-                        success: function (result) {
-                            $state.reload();
-                        }
-                    });
-                }
-            };
-
-            // 修改
-            $scope.edit = function (id) {
-                $state.go('newsDetail', {status: 'edit', _id: id});
-            };
         }
     ])
 });

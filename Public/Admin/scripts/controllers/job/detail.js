@@ -1,6 +1,5 @@
 define(['app'], function(app) {
-    app.controller('JobDetailctrl', ['$scope', '$stateParams', '$http', 'httpRequest',
-        function($scope, $stateParams, $http, httpRequest) {
+    app.controller('JobDetailCtrl', ['$scope', function($scope) {
             $scope.jobDetailDatas = {
                 config: {
                     content: [

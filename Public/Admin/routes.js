@@ -35,7 +35,7 @@ define(['app'], function(app) {
             .state('employeeDetail', {
                 url: '/employee/status/:status/_id/:_id',
                 templateUrl: baseurl + '/tpl/employee/detail.html?t=' + Math.floor(Date.now() / 1000),
-                controller: 'EmployeeDetailctrl',
+                controller: 'EmployeeDetailCtrl',
                 // resolve: loader("EmployeeController")
             })
             // 活动
@@ -94,13 +94,13 @@ define(['app'], function(app) {
             .state('laboratory', {
                 url: '/laboratory',
                 templateUrl: baseurl + '/tpl/laboratory/list.html?t=' + Math.floor(Date.now() / 1000),
-                controller: 'laboratoryListCtrl',
+                controller: 'LaboratoryListCtrl',
                 // resolve: loader("PicsController")
             })
             .state('laboratoryDetail', {
                 url: '/laboratory/status/:status/_id/:_id',
                 templateUrl: baseurl + '/tpl/laboratory/detail.html?t=' + Math.floor(Date.now() / 1000),
-                controller: 'laboratoryDetailCtrl',
+                controller: 'LaboratoryDetailCtrl',
                 // resolve: loader("PicsController")
             })
             // 公司信息

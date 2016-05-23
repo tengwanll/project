@@ -1,6 +1,5 @@
 define(['app'], function(app) {
-    app.controller('LaboratoryDetailctrl', ['$scope', '$stateParams', '$http', 'httpRequest',
-        function($scope, $stateParams, $http, httpRequest) {
+    app.controller('LaboratoryDetailCtrl', ['$scope', function($scope) {
             $scope.laboratoryDetailDatas = {
                 config: {
                     content: [

@@ -1,6 +1,5 @@
 define(['app'], function(app) {
-    app.controller('ActivityDetailctrl', ['$scope', '$stateParams', '$http', 'httpRequest',
-        function($scope, $stateParams, $http, httpRequest) {
+    app.controller('ActivityDetailCtrl', ['$scope', function($scope) {
             $scope.activityDetailDatas = {
                 config: {
                     content: [
