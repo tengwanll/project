@@ -48,22 +48,6 @@ define(['app'], function(app) {
             $scope.mainDatas.currentMenu = $index;
         };
 
-        // 上传图片
-        $rootScope.upload = function(event, cb) {
-            var formData = new FormData();
-            formData.append('photo', event.target.files[0]);
-            $http({
-                method: 'POST',
-                url: '/Admin/admin/upload',
-                headers: {
-                    'Content-Type': undefined
-                },
-                data: formData
-            }).then(function(res) {
-                cb(res.data.result);
-            });
-        };
-
         // 分页
         $rootScope.rows = 20;
 

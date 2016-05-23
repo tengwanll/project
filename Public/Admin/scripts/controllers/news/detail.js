@@ -15,7 +15,9 @@ define(['app'], function(app) {
                         edit: '/Admin/news/update',
                     }
                 }
-            }
+            };
+
+            
         }
     ])
 })

@@ -1,0 +1,20 @@
+<div class="_uploader">
+    <input type="file">
+    <!-- 上传 -->
+    <div class="upload" ng-if="uploaderDatas.state !== 'uploaded'">
+        <div class="icon" ng-click="selectFile()" ng-if="uploaderDatas.state === 'toupload'">
+            <span class="fa fa-car"></span>
+            <span class="txt">上传图片</span>
+        </div>
+        <div class="icon" ng-if="uploaderDatas.state === 'uploading'">
+            <span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>
+            <span class="txt">上传中</span>
+        </div>
+    </div>
+    <!-- 预览 -->
+    <div class="view" ng-if="uploaderDatas.state === 'uploaded'">
+        <div class="photo" ng-repeat="item in uploaderDatas.srcs">
+            <img src="{{item}}">
+        </div>
+    </div>
+</div>

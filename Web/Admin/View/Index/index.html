@@ -47,6 +47,14 @@
             <p>加载中</p>
         </div>
     </div>
+    <div id="notify" ng-if="notify.success.show || notify.error.show">
+        <div class="success bg-success" ng-show="notify.success.show">
+            保存成功!
+        </div>
+        <div class="error bg-danger" ng-show="notify.error.show">
+            {{notify.error.message}}
+        </div>
+    </div>
     <script src="//cdn.bootcss.com/require.js/2.1.22/require.js" data-main="__PUBLIC__/Admin/main.js"></script>
 </body>
 

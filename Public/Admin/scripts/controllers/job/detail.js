@@ -18,7 +18,8 @@ define(['app'], function(app) {
                         edit: '/Admin/jobs/update',
                     }
                 }
-            }
+            };
+
         }
     ])
 })

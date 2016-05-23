@@ -38,7 +38,7 @@ define(['app'], function(app) {
                     success: options.success || function() {},
                 };
                 $http.post(handleUrl(options.api, options.params), options.data)
-                    .then(function (res) {
+                    .then(function(res) {
                         if (res.data.errno === 0) {
                             res.data.result = res.data.result || {};
                             options.success(res.data.result);
@@ -46,7 +46,25 @@ define(['app'], function(app) {
                             console.log(res.data.ermsg);
                         }
                     })
-            }
+            },
+            upload: function(options) {
+                options = {
+                    data: options.data || {},
+                    success: options.success || function () {}
+                };
+                $http({
+                    method: 'POST',
+                    url: '/Admin/admin/upload',
+                    headers: {
+                        'Content-Type': undefined
+                    },
+                    data: options.data
+                }).then(function (res) {
+                    var result = res.data.result.substr(1);
+                    options.success(result);
+                });
+            },
+
         };
     }])
 });

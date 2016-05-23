@@ -36,3 +36,26 @@ body,
     }
 }
 
+
+
+// 通知
+#notify {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 99999;
+    padding: 40px 20px;
+    display: none;
+    & > div {
+        margin-bottom: 20px;
+        width: 200px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 12px;
+        trasition: background 1s;
+    }
+    .success {
+    }
+    .error {
+    }
+}

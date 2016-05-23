@@ -1,6 +1,6 @@
 define(['app'], function(app) {
-    app.directive('detail', ['$stateParams', '$state', '$http', 'httpRequest',
-        function($stateParams, $state, $http, httpRequest) {
+    app.directive('detail', ['$stateParams', '$state', '$http', 'httpRequest', 'notify',
+        function($stateParams, $state, $http, httpRequest, notify) {
             // Runs during compile
             return {
                 // name: '',
@@ -77,6 +77,7 @@ define(['app'], function(app) {
                             api: api,
                             data: $scope.detailDatas.data,
                             success: function(result) {
+                                notify.success('保存');
                                 $state.go($state.current.name.substr(0, $state.current.name.length - 6));
                             }
                         });
@@ -91,6 +92,7 @@ define(['app'], function(app) {
                     $scope.edit = function() {
                         $state.go($state.current.name, { status: 'edit', _id: $scope.detailDatas._id });
                     };
+
                 }
             };
         }
