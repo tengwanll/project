@@ -3,9 +3,9 @@
         <div class="add btn-group pull-left" ng-if="listConfig.action.add">
             <button class="btn btn-info add" ng-click="add()">添加</button>
         </div>
-        <div class="sort form-group" ng-if="listConfig.action.sort">
-            <select class="form-control">
-                <option>11</option>
+        <div class="group form-group" ng-if="listConfig.action.group">
+            <select class="form-control" ng-options="item.id as item.title for item in datatable.groupList" ng-model="datatable.group" ng-change="group()">
+                <option value="">全部分类</option>
             </select>
         </div>
         <div class="search form-group" ng-if="listConfig.action.search">

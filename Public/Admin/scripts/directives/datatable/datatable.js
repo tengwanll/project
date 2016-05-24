@@ -1,6 +1,6 @@
 define(['app'], function(app) {
-    app.directive('datatable', ['$state', '$stateParams', 'httpRequest',
-        function($state, $stateParams, httpRequest) {
+    app.directive('datatable', ['$state', '$stateParams', '$http', 'httpRequest',
+        function($state, $stateParams, $http, httpRequest) {
             return {
                 // name: '',
                 // priority: 1,
@@ -23,22 +23,31 @@ define(['app'], function(app) {
                     };
 
                     $scope.datatable = {
-                        keyword: ''
+                        keyword: '',
+                        groupList: '',
+                        group: ''
                     };
 
-                    getListDatas();
+                    init();
+
+
+                    // 初始化界面
+                    function init() {
+                        getListDatas();
+                        if ($scope.listConfig.groupApi) getGroupListDatas();
+                    }
+
 
                     // 获取列表数据
-                    function getListDatas(page, keyword) {
+                    function getListDatas(page, keyword, group) {
                         var set = true;
                         if (!page) {
                             page = $scope.page.current;
                             var set = false;
                         }
                         var params = { rows: $scope.listConfig.rows, page: page };
-                        console.log(params);
-                        console.log(keyword);
                         if (keyword) params.keyword = keyword;
+                        if (group) params.sortId = group;
                         httpRequest.get({
                             api: $scope.listConfig.listApi,
                             params: params,
@@ -58,11 +67,22 @@ define(['app'], function(app) {
                         })
                     }
 
+                    // 获取分类列表
+                    function getGroupListDatas() {
+                        $http.get($scope.listConfig.groupApi).then(function(res) {
+                            $scope.datatable.groupList = res.data.result;
+                        });
+                    }
+
                     // 搜索
                     $scope.search = function() {
-                        console.log($scope);
                         getListDatas(1, $scope.datatable.keyword);
                     }
+
+                    // 筛选
+                    $scope.group = function () {
+                        getListDatas(1, '', $scope.datatable.group);
+                    };
 
                     // 分页
                     $scope.page.first = function() {
@@ -84,18 +104,18 @@ define(['app'], function(app) {
                     var detail = $state.current.name + 'Detail';
 
                     // 添加
-                    $scope.add = function () {
-                        $state.go(detail, {status: 'add'});
+                    $scope.add = function() {
+                        $state.go(detail, { status: 'add' });
                     };
 
                     // 编辑
-                    $scope.edit = function (id) {
-                        $state.go(detail, {status: 'edit', _id: id});
+                    $scope.edit = function(id) {
+                        $state.go(detail, { status: 'edit', _id: id });
                     };
 
                     // 查看
-                    $scope.view = function (id) {
-                        $state.go(detail, {status: 'view', _id: id});
+                    $scope.view = function(id) {
+                        $state.go(detail, { status: 'view', _id: id });
                     };
 
                     // 删除

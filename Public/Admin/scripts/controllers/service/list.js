@@ -12,9 +12,10 @@ define(['app'], function(app) {
                     currentPage: 1,
                     rows: $rootScope.rows,
                     listApi: '/Admin/service/serviceList',
+                    groupApi: '/Admin/service/sortList',
                     action: {
                         search: '搜索',
-                        sort: '筛选',
+                        group: '筛选',
                         add: '添加',
                         view: '查看',
                         edit: '编辑',
