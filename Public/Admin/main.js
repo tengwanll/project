@@ -68,7 +68,7 @@ require.config({
             deps: ['app']
         }
     },
-    deps: ['app', 'routes'],
+    deps: ['routes'],
     urlArgs: "bust=" + (new Date()).getTime() // debug:防止读写缓存
 });
 

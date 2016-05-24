@@ -1,6 +1,5 @@
 define(['app'], function(app) {
-    app.controller('NewsDetailCtrl', ['$scope', '$stateParams', '$http', 'httpRequest',
-        function($scope, $stateParams, $http, httpRequest) {
+    app.controller('NewsDetailCtrl', ['$scope', function($scope) {
             $scope.newsDetailDatas = {
                 config: {
                     content: [
@@ -16,8 +15,6 @@ define(['app'], function(app) {
                     }
                 }
             };
-
-            
         }
     ])
 })

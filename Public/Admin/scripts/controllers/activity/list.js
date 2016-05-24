@@ -12,6 +12,7 @@ define(['app'], function(app) {
                     currentPage: 1,
                     rows: $rootScope.rows,
                     listApi: '/Admin/activity/lists',
+                    deleteApi: '/Admin/activity/delete',
                     action: {
                         search: '搜索',
                         add: '添加',
@@ -20,26 +21,6 @@ define(['app'], function(app) {
                         delete: '删除'
                     }
                 }
-            };
-
-
-            // 添加
-            $scope.add = function () {
-                $state.go('activityDatail', {status: 'add'});
-            };
-
-            // 查看
-            $scope.view = function (id) {
-                $state.go('activityDatail', {status: 'view', _id: id});
-            };
-
-            // 删除
-            $scope.delete = function (id) {
-            };
-
-            // 修改
-            $scope.edit = function (id) {
-                $state.go('activityDatail', {status: 'edit', _id: id});
             };
         }
     ])

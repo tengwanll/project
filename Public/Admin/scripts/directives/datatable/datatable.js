@@ -20,12 +20,12 @@ define(['app'], function(app) {
                         current: 1,
                         total: 1,
                         pages: []
-                    }
+                    };
 
                     getListDatas();
 
                     // 获取列表数据
-                    function getListDatas(page) {
+                    function getListDatas(page, keyword) {
                         var set = true;
                         if (!page) {
                             page = $scope.page.current;
@@ -50,6 +50,10 @@ define(['app'], function(app) {
                         })
                     }
 
+                    $scope.search = function(keyword) {
+                        getListDatas(1, keyword);
+                    }
+
                     // 分页
                     $scope.page.first = function() {
                         getListDatas(1);
@@ -65,6 +69,36 @@ define(['app'], function(app) {
                     };
                     $scope.page.changeTo = function(num) {
                         getListDatas(num);
+                    };
+
+                    var detail = $state.current.name + 'Detail';
+
+                    // 添加
+                    $scope.add = function () {
+                        $state.go(detail, {status: 'add'});
+                    };
+
+                    // 编辑
+                    $scope.edit = function (id) {
+                        $state.go(detail, {status: 'edit', _id: id});
+                    };
+
+                    // 查看
+                    $scope.view = function (id) {
+                        $state.go(detail, {status: 'view', _id: id});
+                    };
+
+                    // 删除
+                    $scope.delete = function(id) {
+                        if (confirm('确认删除？')) {
+                            httpRequest.post({
+                                api: $scope.newsDatas.listConfig.deleteApi,
+                                data: { id: id },
+                                success: function(result) {
+                                    $state.reload();
+                                }
+                            });
+                        }
                     };
                 }
             };

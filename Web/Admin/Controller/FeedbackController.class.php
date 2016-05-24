@@ -47,7 +47,7 @@ class FeedbackController extends CommonController
     }
 
     public function detail(){
-        $id=I('get.feedbackId');
+        $id=I('get._id');
         $feedbackModel=M('feedback');
         $feedback=$feedbackModel->where("id=$id and status=1")->find();
         if(!$feedback){
