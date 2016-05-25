@@ -15,21 +15,38 @@ class CarouselController extends CommonController
         $page=$this->getPage();
         $carouselModel=M('carousel');
         $fileModel=M('file');
+        $newsModel=M('news');
+        $serviceModel=M('service');
+        $activityModel=M('activity');
         $where='status=1';
         $carouselList=$carouselModel->where($where)->page($page)->select();
         $total=$carouselModel->where($where)->count();
         $arr=array();
         foreach($carouselList as $lists){
+            $type=$lists['type'];
+            $id=$lists['type_id'];
+            if($type=='news'){
+                $news=$newsModel->where("status=1 and id=$id")->find();
+                $title=$news['title'];
+            }elseif($type=='activity'){
+                $activity=$activityModel->where("status=1 and id=$id")->find();
+                $title=$activity['title'];
+            }elseif($type=='service'){
+                $service=$serviceModel->where("status=1 and id=$id")->find();
+                $title=$service['title'];
+            }else{
+                $title='主页';
+            }
             $photoId=$lists['photo'];
             $photo=$fileModel->where("id=$photoId")->find();
             $photoUrl=$photo?__ROOT__.'/'.$photo['url']:'';
             $arr[]=array(
                 'id'=>$lists['id'],
-                'title'=>$lists['title'],
+                'title'=>$title,
                 'description'=>$lists['desc'],
                 'photo'=>$photoUrl,
-                'type'=>$lists['type'],
-                'detailId'=>$lists['type_id'],
+                'type'=>$type,
+                'detailId'=>$id,
                 'createTime'=>$lists['create_time']
             );
         }
@@ -44,21 +61,38 @@ class CarouselController extends CommonController
         $id=I('get._id');
         $carouselModel=M('carousel');
         $fileModel=M('file');
+        $newsModel=M('news');
+        $serviceModel=M('service');
+        $activityModel=M('activity');
         $where="status=1 and id=$id ";
         $carousel=$carouselModel->where($where)->find();
         if(!$carousel){
             $this->buildResponse(10218);
+        }
+        $type=$carousel['type'];
+        $id=$carousel['type_id'];
+        if($type=='news'){
+            $news=$newsModel->where("status=1 and id=$id")->find();
+            $title=$news['title'];
+        }elseif($type=='activity'){
+            $activity=$activityModel->where("status=1 and id=$id")->find();
+            $title=$activity['title'];
+        }elseif($type=='service'){
+            $service=$serviceModel->where("status=1 and id=$id")->find();
+            $title=$service['title'];
+        }else{
+            $title='主页';
         }
         $photoId=$carousel['photo'];
         $photo=$fileModel->where("id=$photoId")->find();
         $photoUrl=$photo?__ROOT__.'/'.$photo['url']:'';
         $arr=array(
             'id'=>$carousel['id'],
-            'title'=>$carousel['title'],
+            'title'=>$title,
             'description'=>$carousel['desc'],
             'photo'=>$photoUrl,
-            'type'=>$carousel['type'],
-            'detailId'=>$carousel['type_id'],
+            'type'=>$type,
+            'detailId'=>$id,
             'createTime'=>$carousel['create_time']
         );
         $this->buildResponse(0,$arr);
@@ -67,7 +101,6 @@ class CarouselController extends CommonController
     public function update(){
         $json=$this->getContent();
         $id=$json['carouselId'];
-        $title=$json['title'];
         $desc=$json['description'];
         $photo=$json['photo'];
         $type=$json['type'];
@@ -79,16 +112,13 @@ class CarouselController extends CommonController
             $this->buildResponse(10218);
         }
         $data=array();
-        if($title){
-            $data['title']=$title;
-        }
         if($desc){
             $data['desc']=$desc;
         }
         if($photo){
             $data['photo']=$photo;
         }
-        if($type){
+        if($type&&$id!=1){
             $data['type']=$type;
         }
         if($typeId){
@@ -103,7 +133,6 @@ class CarouselController extends CommonController
 
     public function create(){
         $json=$this->getContent();
-        $title=$json['title'];
         $desc=$json['description'];
         $photo=$json['photo'];
         $type=$json['type'];
@@ -111,7 +140,6 @@ class CarouselController extends CommonController
         $carouselModel=M('carousel');
         $date=date('Y-m-d H:i:s',time());
         $data=array(
-            'title'=>$title?$title:'',
             'desc'=>$desc?$desc:'',
             'photo'=>$photo?$photo:0,
             'type'=>$type?$type:'',
@@ -130,6 +158,9 @@ class CarouselController extends CommonController
     public function delete(){
         $json=$this->getContent();
         $id=$json['carouselId'];
+        if($id==1){
+            $this->buildResponse(10219);
+        }
         $carouselModel=M('carousel');
         $where="status=1 and id=$id ";
         $carousel=$carouselModel->where($where)->find();
