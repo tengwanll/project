@@ -3,8 +3,15 @@ namespace Home\Controller;
 use Think\Controller;
 class IndexController extends Controller {
     public function index(){
-    	$noticeModel=M('notice');
         $fileModel=M('file');
+    	$noticeModel=M('notice');
+        $carouselModel=M('carousel');
+        $carousel=$carouselModel->where('status=1')->select();
+        foreach($carousel as $key=>$item){
+            $photoId=$item['photo'];
+            $photo=$fileModel->where("id=$photoId")->find();
+            $carousel[$key]['photo']=$photo?$photo['url']:'';
+        }
     	$notice=$noticeModel->order('create_time desc')->find(1);
     	$service=M('service_sort');
         $activityModel=M('activity');
@@ -23,7 +30,8 @@ class IndexController extends Controller {
             $photo=$fileModel->where("id=$photoId")->find();
             $informations[$key]['photo']=$photo?$photo['url']:'';
         }
-    	$this->assign('notice',$notice);
+        $this->assign('notice',$notice);
+        $this->assign('carousel',$carousel);
     	$this->assign('normalService',$normalService);
     	$this->assign('specialService',$specialService);
     	$this->assign('informations',$informations);

@@ -25,14 +25,10 @@
             <p class="indent">{$people['study']}</p>
         </article>
         </if>
-        <if condition="$thesis">
+        <if condition="$people['thesis']">
         <article class="wrap">
             <h5 class="paragraph_title">近期主要代表论著</h5>
-            <ol>
-                <foreach name="thesis" item="vo">
-                    <li>{$vo['content']}</li>
-                </foreach>
-            </ol>
+            <p class="indent">{$people['thesis']}</p>
         </article>
             </if>
     </div>

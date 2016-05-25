@@ -55,15 +55,6 @@ class EmployeeController extends CommonController
         if(!$employee){
             $this->buildResponse(10212);
         }
-        $thesisModel=M('thesis');
-        $thesis=$thesisModel->where("employee_id=$employeeId and status=1")->select();
-        $thesisArray=array();
-        foreach($thesis as $list){
-            $thesisArray[]=array(
-                'id'=>$list['id'],
-                'content'=>$list['content']
-            );
-        }
         $photoId=$employee['photo'];
         $photo=$fileModel->where("id=$photoId")->find();
         $photoUrl=$photo?__ROOT__.'/'.$photo['url']:'';
@@ -76,7 +67,7 @@ class EmployeeController extends CommonController
             'telephone'=>$employee['telephone'],
             'email'=>$employee['email'],
             'study'=>$employee['study'],
-            'thesis'=>$thesisArray,
+            'thesis'=>$employee['thesis'],
             'createTime'=>$employee['create_time']
         );
         $this->buildResponse(0,$arr);
@@ -91,6 +82,7 @@ class EmployeeController extends CommonController
         $telephone=$json['telephone'];
         $email=$json['email'];
         $study=$json['study'];
+        $thesis=$json['thesis'];
         $date=date('Y-m-d H:i:s',time());
         $data=array(
             'name'=>$name?$name:'',
@@ -100,6 +92,7 @@ class EmployeeController extends CommonController
             'telephone'=>$telephone?$telephone:'',
             'email'=>$email?$email:'',
             'study'=>$study?$study:'',
+            'thesis'=>$thesis?$thesis:'',
             'status'=>1,
             'create_time'=>$date,
             'update_time'=>$date
@@ -112,45 +105,45 @@ class EmployeeController extends CommonController
         $this->buildResponse(0,$id);
     }
 
-    public function createThesis(){
-        $json=$this->getContent();
-        $content=$json['content'];
-        $employeeId=$json['employeeId'];
-        $date=date('Y-m-d H:i:s',time());
-        $data=array(
-            'content'=>$content?$content:'',
-            'employee_id'=>$employeeId?$employeeId:0,
-            'status'=>1,
-            'create_time'=>$date,
-            'update_time'=>$date
-        );
-        $thesisModel=M('thesis');
-        $thesisId=$thesisModel->data($data)->add();
-        if(!$thesisId){
-            $this->buildResponse(10214);
-        }
-        $this->buildResponse(0,$thesisId);
-    }
-
-    public function updateThesis(){
-        $json=$this->getContent();
-        $content=$json['content'];
-        $thesisId=$json['thesisId'];
-        $thesisModel=M('thesis');
-        $thesis=$thesisModel->where("id=$thesisId")->find();
-        if(!$thesis){
-            $this->buildResponse(10213);
-        }
-        $data=array();
-        if($content){
-            $data['content']=$content;
-        }
-        $thesisId=$thesisModel->where("id=$thesisId")->save($data);
-        if(!$thesisId){
-            $this->buildResponse(10214);
-        }
-        $this->buildResponse(0,$thesisId);
-    }
+//    public function createThesis(){
+//        $json=$this->getContent();
+//        $content=$json['content'];
+//        $employeeId=$json['employeeId'];
+//        $date=date('Y-m-d H:i:s',time());
+//        $data=array(
+//            'content'=>$content?$content:'',
+//            'employee_id'=>$employeeId?$employeeId:0,
+//            'status'=>1,
+//            'create_time'=>$date,
+//            'update_time'=>$date
+//        );
+//        $thesisModel=M('thesis');
+//        $thesisId=$thesisModel->data($data)->add();
+//        if(!$thesisId){
+//            $this->buildResponse(10214);
+//        }
+//        $this->buildResponse(0,$thesisId);
+//    }
+//
+//    public function updateThesis(){
+//        $json=$this->getContent();
+//        $content=$json['content'];
+//        $thesisId=$json['thesisId'];
+//        $thesisModel=M('thesis');
+//        $thesis=$thesisModel->where("id=$thesisId")->find();
+//        if(!$thesis){
+//            $this->buildResponse(10213);
+//        }
+//        $data=array();
+//        if($content){
+//            $data['content']=$content;
+//        }
+//        $thesisId=$thesisModel->where("id=$thesisId")->save($data);
+//        if(!$thesisId){
+//            $this->buildResponse(10214);
+//        }
+//        $this->buildResponse(0,$thesisId);
+//    }
 
     public function updateEmployee(){
         $json=$this->getContent();
@@ -162,6 +155,7 @@ class EmployeeController extends CommonController
         $email=$json['email'];
         $study=$json['study'];
         $employeeId=$json['employeeId'];
+        $thesis=$json['thesis'];
         $employeeModel=M('employee');
         $employee=$employeeModel->where("id=$employeeId")->find();
         if(!$employee){
@@ -189,6 +183,9 @@ class EmployeeController extends CommonController
         if($study){
             $data['study']=$study;
         }
+        if($thesis){
+            $data['thesis']=$thesis;
+        }
         $thesisId=$employeeModel->where("id=$employeeId")->save($data);
         if(!$thesisId){
             $this->buildResponse(10214);
@@ -212,19 +209,19 @@ class EmployeeController extends CommonController
         $this->buildResponse(0);
     }
 
-    public function deleteThesis(){
-        $json=$this->getContent();
-        $thesisId=$json['thesisId'];
-        $thesisModel=M('thesis');
-        $thesis=$thesisModel->where("id=$thesisId")->find();
-        if(!$thesis){
-            $this->buildResponse(10213);
-        }
-        $data=array('status'=>0);
-        $thesisId=$thesisModel->where("id=$thesisId")->save($data);
-        if(!$thesisId){
-            $this->buildResponse(10214);
-        }
-        $this->buildResponse(0);
-    }
+//    public function deleteThesis(){
+//        $json=$this->getContent();
+//        $thesisId=$json['thesisId'];
+//        $thesisModel=M('thesis');
+//        $thesis=$thesisModel->where("id=$thesisId")->find();
+//        if(!$thesis){
+//            $this->buildResponse(10213);
+//        }
+//        $data=array('status'=>0);
+//        $thesisId=$thesisModel->where("id=$thesisId")->save($data);
+//        if(!$thesisId){
+//            $this->buildResponse(10214);
+//        }
+//        $this->buildResponse(0);
+//    }
 }

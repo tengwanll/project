@@ -36,8 +36,6 @@ class AboutController extends Controller {
         $photoId=$people['photo'];
         $photo=$fileModel->where("id=$photoId")->find();
         $people['photo']=$photo?$photo['url']:'';
-        $thesis=M('thesis');
-        $result=$thesis->field('content')->where("employee_id=$id and status=1")->select();
         $navigation=array();
         $navigation[]=array(
             'title'=>'关于我们',
@@ -47,7 +45,6 @@ class AboutController extends Controller {
             'title'=>'团队顾问',
             'url'=>__ROOT__.'/Home/about/employee/id/'.$id
         );
-        $this->assign('thesis',$result);
         $this->assign('people',$people);
         $this->assign('root','about');
         $this->assign('navigation',$navigation);
