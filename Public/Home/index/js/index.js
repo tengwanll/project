@@ -12,14 +12,16 @@ $(document).ready(function() {
     	bannerTimmer = setInterval(next, 5000);
     }
 
-    $(document).on('click', '.banner .prev a', function() {
+    $(document).on('click', '.banner .prev a', function(e) {
+        e.preventDefault();
     	clearInterval(bannerTimmer);
     	bannerList.stop();
         prev();
         bannerAutoPlay();
     })
 
-    $(document).on('click', '.banner .next a', function() {
+    $(document).on('click', '.banner .next a', function(e) {
+        e.preventDefault();
     	clearInterval(bannerTimmer);
     	bannerList.stop();
         next();

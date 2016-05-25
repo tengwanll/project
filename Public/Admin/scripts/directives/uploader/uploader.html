@@ -3,12 +3,12 @@
     <!-- 上传 -->
     <div class="upload" ng-if="uploaderDatas.state !== 'uploaded'">
         <div class="icon" ng-click="selectFile()" ng-if="uploaderDatas.state === 'toupload'">
-            <span class="fa fa-car"></span>
             <span class="txt">上传图片</span>
+            <span class="fa fa-file-image-o"></span>
         </div>
         <div class="icon" ng-if="uploaderDatas.state === 'uploading'">
-            <span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>
             <span class="txt">上传中</span>
+            <span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>
         </div>
     </div>
     <!-- 预览 -->

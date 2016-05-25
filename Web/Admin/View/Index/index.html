@@ -29,7 +29,7 @@
                     </ul>
                 </nav>
             </aside>
-            <div class="mainView {{showPageLoading ? 'pageLoading' : ''}}">
+            <div class="mainView" ng-class="{pageLoading: showPageLoading}">
                 <div class="breadcrumb"></div>
                 <div ui-view id="main"></div>
                 <div id="pageLoading" ng-show="showPageLoading">

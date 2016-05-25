@@ -1,31 +1,20 @@
 ._uploader {
+	display: inline-block;
 	.upload {
-		input[type="file"] {
-			display: none;
-		}
 		.icon {
-			width: 100px;
-			height: 100px;
-			border: 2px dashed #aaa;
-			span {
-				display: block;
-				text-align: center;
-				color: #aaa;
-			}
 			.fa {
-				line-height: 70px;
-				font-size: 30px;
+				font-size: 14px;
 			}
-			.txt {
-				line-height: 30px;
-				font-size: 12px;
+			&:hover {
+				cursor: pointer;
+				text-decoration: underline;
 			}
 		}
 	}
 	.view {
 		.photo {
 			width: 100%;
-			text-align: center;
+			text-align: left;
 			img {
 				width: 50%;
 			}

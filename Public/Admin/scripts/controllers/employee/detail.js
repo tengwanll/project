@@ -5,9 +5,9 @@ define(['app'], function(app) {
                     content: [
                         { title: '姓名', type: 'input', key: 'name'},
                         { title: '职位', type: 'input', key: 'position'},
-                        { title: '头像', type: 'photo', key: 'photo'},
                         { title: 'email', type: 'input', key: 'email'},
                         { title: '电话', type: 'input', key: 'telephone'},
+                        { title: '头像', type: 'photo', key: 'photo'},
                         { title: '简介', type: 'editor', key: 'description'},
                         { title: '研究方向', type: 'editor', key: 'study'},
                         { title: '文献', type: 'editor', key: 'thesis'},
