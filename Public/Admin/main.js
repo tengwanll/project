@@ -31,6 +31,8 @@ require.config({
         'LaboratoryDetailController': './scripts/controllers/laboratory/detail',
         'InfoController': './scripts/controllers/info/info',
         'SettingController': './scripts/controllers/setting/setting',
+        'CarouselListController': './scripts/controllers/carousel/list',
+        'CarouselDetailController': './scripts/controllers/carousel/detail',
 
         // 指令
         'dataTable': './scripts/directives/datatable/datatable',
@@ -41,6 +43,7 @@ require.config({
         // 过滤器
         'serviceSort': './scripts/filters/servicesort',
         'sce': './scripts/filters/sce',
+        'tartype': './scripts/filters/tartype',
 
         // 服务
         'httpRequest': './scripts/services/httpRequest',
@@ -82,6 +85,7 @@ require([
         'detail',
         'serviceSort',
         'sce',
+        'tartype',
         'uploader',
         'notify',
         "MainController",
@@ -100,6 +104,8 @@ require([
         'MessageListDetail',
         "LaboratoryListController",
         "LaboratoryDetailController",
+        'CarouselListController',
+        'CarouselDetailController',
         "InfoController",
         "SettingController",
         'wangEditor',

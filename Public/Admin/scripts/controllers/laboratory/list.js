@@ -6,7 +6,7 @@ define(['app'], function(app) {
                 config: {
                     th: [
                         { name: { name: '名称' }, key: 'name' },
-                        { discription: { name: '描述' }, key: 'discription' },
+                        { description: { name: '描述' }, key: 'description' },
                         { createTime: { name: '创建时间' }, key: 'createTime' },
                     ],
                     currentPage: 1,

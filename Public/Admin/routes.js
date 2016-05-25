@@ -103,6 +103,19 @@ define(['app'], function(app) {
                 controller: 'LaboratoryDetailCtrl',
                 // resolve: loader("PicsController")
             })
+            // 轮播图
+            .state('carousel', {
+                url: '/carousel',
+                templateUrl: baseurl + '/tpl/carousel/list.html?t=' + Math.floor(Date.now() / 1000),
+                controller: 'CarouselListCtrl',
+                // resolve: loader("PicsController")
+            })
+            .state('carouselDetail', {
+                url: '/carousel/status/:status/_id/:_id',
+                templateUrl: baseurl + '/tpl/carousel/detail.html?t=' + Math.floor(Date.now() / 1000),
+                controller: 'CarouselDetailCtrl',
+                // resolve: loader("PicsController")
+            })
             // 公司信息
             .state('info', {
                 url: '/info',
