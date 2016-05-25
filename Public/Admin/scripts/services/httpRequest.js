@@ -50,7 +50,7 @@ define(['app'], function(app) {
             upload: function(options) {
                 options = {
                     data: options.data || {},
-                    success: options.success || function () {}
+                    success: options.success || function() {}
                 };
                 $http({
                     method: 'POST',
@@ -59,9 +59,14 @@ define(['app'], function(app) {
                         'Content-Type': undefined
                     },
                     data: options.data
-                }).then(function (res) {
-                    var result = res.data.result.substr(1);
-                    options.success(result);
+                }).then(function(res) {
+                    if (res.data.errno === 0) {
+                        var result = res.data.result;
+                        result.url = result.url.substr(1);
+                        options.success(result);
+                    } else {
+                        console.log(res.data.ermsg);
+                    }
                 });
             },
 

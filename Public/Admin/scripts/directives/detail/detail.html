@@ -22,7 +22,8 @@
 <div class="_detail _view" ng-if="detailDatas.status === 'view'">
     <section ng-repeat="item in detailConfig.content">
         <h4>{{item.title}}</h4>
-        <div>{{detailDatas.data[item.key]}}</div>
+        <div class="cont" ng-if="item.key !== 'photo'">{{detailDatas.data[item.key]}}</div>
+        <div class="cont photo" ng-if="item.key === 'photo'"><img src="{{detailDatas.data[item.key]}}"></div>
     </section>
     <div class="btn-group">
         <button class="btn btn-primary" ng-click="edit()">修改</button>

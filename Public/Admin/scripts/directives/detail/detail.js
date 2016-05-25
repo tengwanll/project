@@ -72,10 +72,12 @@ define(['app'], function(app) {
                         } else if ($scope.detailDatas.status === 'edit') {
                             api = $scope.detailConfig.api.edit;
                         }
+                        var postDatas = angular.copy($scope.detailDatas.data);
+                        
                         // 发送请求
                         httpRequest.post({
                             api: api,
-                            data: $scope.detailDatas.data,
+                            data: postDatas,
                             success: function(result) {
                                 notify.success('保存');
                                 $state.go($state.current.name.substr(0, $state.current.name.length - 6));

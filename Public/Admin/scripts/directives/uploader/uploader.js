@@ -25,7 +25,6 @@ define(['app'], function(app) {
                     }
                     // 触发选择文件
                 $scope.selectFile = function() {
-                    console.log(inputFile)
                     inputFile.click();
                 };
 
@@ -38,9 +37,9 @@ define(['app'], function(app) {
                         data: formData,
                         success: function(result) {
                             $scope.uploaderDatas.state = 'uploaded';
-                            $scope.uploaderDatas.srcs.push(result);
+                            $scope.uploaderDatas.srcs.push(result.url);
 
-                            ngModelController.$setViewValue('.' + result);
+                            ngModelController.$setViewValue('.' + result.url);
                         }
                     })
 
