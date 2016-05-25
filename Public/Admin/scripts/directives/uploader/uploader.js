@@ -39,7 +39,7 @@ define(['app'], function(app) {
                             $scope.uploaderDatas.state = 'uploaded';
                             $scope.uploaderDatas.srcs.push(result.url);
 
-                            ngModelController.$setViewValue('.' + result.url);
+                            ngModelController.$setViewValue(result);
                         }
                     })
 

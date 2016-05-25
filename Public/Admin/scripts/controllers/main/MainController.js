@@ -11,6 +11,7 @@ define(['app'], function(app) {
                 { name: '招聘管理', state: 'job' },
                 { name: '留言管理', state: 'message' },
                 { name: '实验室展示', state: 'laboratory' },
+                { name: '轮播图管理', state: 'carousel' },
                 { name: '公司信息', state: 'info' },
                 { name: '系统设置', state: 'setting' }
             ],

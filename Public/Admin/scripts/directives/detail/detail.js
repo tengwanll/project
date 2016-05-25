@@ -73,7 +73,8 @@ define(['app'], function(app) {
                             api = $scope.detailConfig.api.edit;
                         }
                         var postDatas = angular.copy($scope.detailDatas.data);
-                        
+                        postDatas.photo = postDatas.photo.id;
+
                         // 发送请求
                         httpRequest.post({
                             api: api,
