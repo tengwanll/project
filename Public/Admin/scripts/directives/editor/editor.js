@@ -6,7 +6,7 @@ define(['app'], function(app) {
             // priority: 1,
             // terminal: true,
             scope: {
-            // name: "=asd"
+                // name: "=asd"
                 ngModel: '='
             }, // {} = isolate, true = child, false/undefined = no change
             // scope: true,
@@ -20,80 +20,73 @@ define(['app'], function(app) {
             // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
             link: function($scope, element, attrs, ngModelController) {
                 // wangEditor.config.printLog = false;
-                // 初始化编辑器，获取实例
-                $scope.editor = init();
+
+                // 初始化编辑器
+                $scope.editor = new wangEditor(element);
+
+                $scope.editor.config.uploadImgFileName = 'photo';
+                $scope.editor.config.uploadImgUrl = '/Admin/admin/upload';
+                if (attrs.type === 'all') {
+                    $scope.editor.config.menus = [
+                        // 'source',
+                        '|',
+                        'bold',
+                        'underline',
+                        'italic',
+                        // 'strikethrough',
+                        // 'eraser',
+                        // 'forecolor',
+                        // 'bgcolor',
+                        '|',
+                        'quote',
+                        'fontfamily',
+                        'fontsize',
+                        'head',
+                        'unorderlist',
+                        'orderlist',
+                        'alignleft',
+                        'aligncenter',
+                        'alignright',
+                        '|',
+                        'link',
+                        'unlink',
+                        'table',
+                        // 'emotion',
+                        '|',
+                        'img',
+                        // 'video',
+                        // 'location',
+                        // 'insertcode',
+                        '|',
+                        'undo',
+                        'redo',
+                        'fullscreen'
+                    ];
+                } else if (attrs.type === 'text') {
+                    $scope.editor.config.menus = ['fullscreen'];
+                }
 
                 // 设置初始值
                 $scope.$on('detailDataReady', function() {
-                    ngModelController.$formatters.push(function (modelValue) {
-                        $scope.editor.txt.$txt.html(modelValue);
+                    ngModelController.$formatters.push(function(modelValue) {
+                        $scope.editor.$txt.html(modelValue);
                     });
                 });
-
-                // 初始化编辑器
-                function init() {
-                    var editor = new wangEditor(element);
-
-                    editor.config.uploadImgFileName = 'photo';
-                    editor.config.uploadImgUrl = '/Admin/admin/upload';
-                    if (attrs.type === 'all') {
-                        editor.config.menus = [
-                            // 'source',
-                            '|',
-                            'bold',
-                            'underline',
-                            'italic',
-                            // 'strikethrough',
-                            // 'eraser',
-                            // 'forecolor',
-                            // 'bgcolor',
-                            '|',
-                            'quote',
-                            'fontfamily',
-                            'fontsize',
-                            'head',
-                            'unorderlist',
-                            'orderlist',
-                            'alignleft',
-                            'aligncenter',
-                            'alignright',
-                            '|',
-                            'link',
-                            'unlink',
-                            'table',
-                            // 'emotion',
-                            '|',
-                            'img',
-                            // 'video',
-                            // 'location',
-                            // 'insertcode',
-                            '|',
-                            'undo',
-                            'redo',
-                            'fullscreen'
-                        ];
-                    } else if (attrs.type === 'text') {
-                        editor.config.menus = ['fullscreen'];
-                    }
-                    // 自定义load事件
-                    editor.config.uploadImgFns.onload = function(resultText, xhr) {
-                        result = JSON.parse(resultText).result;
-                        editor.command(null, 'insertHtml', '<img src="' + result.substr(1) + '" style="max-width:100%;"/>');
-                    };
-
-                    // 绑定数据
-                    editor.onchange = function() {
-                        $scope.$apply(function() {
-                            var html = editor.$txt.html();
-                            ngModelController.$setViewValue(html);
-                        });
-                    };
-
-                    editor.create();
-
-                    return editor;
+                // 自定义load事件
+                $scope.editor.config.uploadImgFns.onload = function(resultText, xhr) {
+                    var result = JSON.parse(resultText).result.url.substr(1);
+                    $scope.editor.$txt.html($scope.editor.$txt.html() + '<img src="' + result + '" style="max-width:100%;"/>');
                 };
 
+                // 绑定数据
+                $scope.editor.onchange = function() {
+                    $scope.$apply(function() {
+                        var html = $scope.editor.$txt.html();
+                        ngModelController.$setViewValue(html);
+                    });
+                };
+
+                $scope.editor.create();
             }
         };
     }]);

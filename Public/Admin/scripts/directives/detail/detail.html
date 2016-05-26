@@ -1,17 +1,31 @@
 <!-- 编辑 / 添加 状态下 -->
 <div class="_detail _edit" ng-if="detailDatas.status !== 'view'">
-    <div clas="form-group" ng-repeat="item in detailConfig.content">
+    <div class="form-group sort{{detailDatas.type}}" ng-repeat="item in detailConfig.content">
         <label>{{item.title}}</label>
+
+        <!-- 普通 Input -->
         <input type="text" ng-if="item.type === 'input'" ng-model="detailDatas.data[item.key]">
+
+        <!-- 编辑器 -->
         <editor type="all" ng-if="item.type === 'editor'" ng-model="detailDatas.data[item.key]"></editor>
-        <editor type="text" ng-if="item.type === 'text'" ng-model="detailDatas.data[item.key]"></editor>
-        <select ng-if="item.type === 'select'" ng-model="detailDatas.data[item.key]" class="form-control">
-            <option ng-repeat="item in detailDatas.sortDatas">{{item.type | servicesort}} - {{item.title}}</option>
+
+        <!-- 下拉菜单 -->
+        <select ng-if="item.type === 'select'" ng-model="detailDatas.data[item.key]" ng-options="item.id as item.title for item in detailDatas.sortDatas" class="form-control">
+            <option value="">--  请选择服务 --</option>
         </select>
-        <!--
-        <input type="file" ng-if="item.type === 'photo'" ng-model="detailDatas.data[item.key]" id="{{'input' + $index}}" ng-change="upload($event, 'asd')">
-        <label class="uploadIcon" ng-if="item.type === 'photo'" for="{{'input' + $index}}"><span class="fa fa-car"></span></label> -->
+
+        <!-- 文本 -->
+        <textarea class="form-control" ng-if="item.type === 'text'" ng-model="detailDatas.data[item.key]"></textarea>
+
+        <!-- 上传图片 -->
         <uploader ng-model="detailDatas.data[item.key]" ng-if="item.type === 'photo'"></uploader>
+
+        <!-- 图片集 -->
+       <!--  <div class="photoSet">
+            <ul>
+                <li></li>
+            </ul>
+        </div> -->
     </div>
     <div class="btn-group">
         <button class="btn btn-primary" ng-click="save($event)">保存</button>

@@ -4,10 +4,10 @@ define(['app'], function(app) {
                 config: {
                     content: [
                         { title: '标题', type: 'input', key: 'title'},
-                        { title: '封面', type: 'photo', key: 'photo'},
-                        { title: '描述', type: 'editor', key: 'description'},
-                        { title: '链接类型', type: 'editor', key: 'type'},
-                        { title: '链接标题', type: 'editor', key: 'content'},
+                        { title: '链接', type: 'input', key: 'href'},
+                        { title: '背景图', type: 'photo', key: 'photo'},
+                        { title: '备注', type: 'editor', key: 'description'}
+
                     ],
                     api: {
                         add: '/Admin/carousel/create',

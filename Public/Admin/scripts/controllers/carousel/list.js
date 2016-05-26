@@ -6,9 +6,8 @@ define(['app'], function(app) {
                 config: {
                     th: [
                         { title: { name: '名称' }, key: 'title' },
-                        { type: { name: '链接类型' }, key: 'type' },
-                        { type_id: { name: '链接标题' }, key: 'type_id' },
                         { description: { name: '备注' }, key: 'description' },
+                        { href: { name: '链接' }, key: 'href' },
                     ],
                     currentPage: 1,
                     rows: $rootScope.rows,

@@ -21,16 +21,17 @@ define(['app'], function(app) {
                         data: {},
                         sortDatas: [],
                         status: $stateParams.status,
-                        _id: $stateParams._id
+                        _id: $stateParams._id,
+                        type: 0,
                     };
                     // 初始化界面
                     switch ($scope.detailDatas.status) {
                         case 'add':
-                            // getSortListDatas();
+                            if ($scope.detailConfig.showBy) getSortListDatas();
                             break;
                         case 'edit':
                             getDetailDatas($scope.detailDatas._id);
-                            // getSortListDatas();
+                            if ($scope.detailConfig.showBy) getSortListDatas();
                             break;
                         case 'view':
                             getDetailDatas($scope.detailDatas._id);
@@ -73,7 +74,9 @@ define(['app'], function(app) {
                             api = $scope.detailConfig.api.edit;
                         }
                         var postDatas = angular.copy($scope.detailDatas.data);
-                        postDatas.photo = postDatas.photo.id;
+
+                        // 处理图片
+                        if (postDatas.photo) postDatas.photo = postDatas.photo.id;
 
                         // 发送请求
                         httpRequest.post({

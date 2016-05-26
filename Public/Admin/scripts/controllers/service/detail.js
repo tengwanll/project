@@ -3,8 +3,9 @@ define(['app'], function(app) {
         $scope.serviceDetailDatas = {
             config: {
                 content: [
-                    { title: '标题', type: 'input', key: 'title' },
-                    { title: '分类', type: 'select', key: 'sortTitle' },
+                    { title: '标题', type: 'input', key: 'title', sort: 0 },
+                    { title: '分类', type: 'select', key: 'sort_id', sort: 0 },
+                    { title: '概述', type: 'text', key: 'shortDesc', sort: 0 },
                     { title: '项目简介', type: 'editor', key: 'description', sort: 0 },
                     { title: '实验流程', type: 'editor', key: 'experimentFlow', sort: 1 },
                     { title: '用户需知', type: 'editor', key: 'userNotice', sort: 1 },
