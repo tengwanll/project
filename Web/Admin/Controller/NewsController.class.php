@@ -92,7 +92,7 @@
          */
         public function update(){
             $json=$this->getContent();
-            $newsId=$json['newsId'];
+            $newsId=$json['id'];
             $title=$json['title'];
             $shortDesc=$json['shortDesc'];
             $content=$json['content'];
