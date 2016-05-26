@@ -6,29 +6,45 @@
             li.newsItem {
                 overflow: hidden;
                 padding: 1rem;
-                a {
-                    display: block;
-                    overflow: hidden;
-                    color: black;
-                    &:hover,
-                    &:link {
-                        text-decoration: none;
-                    }
-                }
-                img {
+                .pic {
                     width: 15rem;
                     height: 10rem;
                     float: left;
+                    overflow: hidden;
+                    border: 1px solid #eee;
+                    line-height: 10rem;
+                    text-align: center;
+                    img {
+                        width: 100%;
+                    }
                 }
                 .info {
                     padding-left: 16rem;
                     width: 90%;
                     h4 {
                         font-size: 1rem;
-                        line-height: 2rem;
+                        line-height: 3rem;
+                        width: 100%;
+                        a {
+                            width: 100%;
+                            display: block;
+                            color: black;
+                            font-size: 0.9rem;
+                            transition: color 0.2s;
+                            &:hover,
+                            &:link {
+                                text-decoration: none;
+                            }
+                            &:hover {
+                                color: #09dada;
+                                transition: color 0.2s;
+                            }
+                        }
                     }
                     p {
-                        line-height: 1.5;
+                        font-size: 0.7rem;
+                        line-height: 2;
+                        color: #888;
                     }
                 }
             }

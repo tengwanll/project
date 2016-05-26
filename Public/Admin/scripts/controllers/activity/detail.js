@@ -5,7 +5,7 @@ define(['app'], function(app) {
                     content: [
                         { title: '标题', type: 'input', key: 'title'},
                         { title: '封面', type: 'photo', key: 'photo'},
-                        { title: '简介', type: 'editor', key: 'shortDesc'},
+                        { title: '简介', type: 'text', key: 'shortDesc'},
                         { title: '活动详情', type: 'editor', key: 'content'},
                     ],
                     api: {

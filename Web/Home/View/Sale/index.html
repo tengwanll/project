@@ -12,9 +12,17 @@
                 <foreach name="activity" item="vo">
                     <li>
                         <div class="cont">
-                            <img src="__ROOT__/{$vo['photo']}">
+                            <div class="pic">
+                                <a href="#">
+                                    <img src="__ROOT__/{$vo['photo']}">
+                                </a>
+                            </div>
                             <div class="info">
-                                <h4>{$vo['title']}</h4>
+                                <h4>
+                                    <a href="#">
+                                        {$vo['title']}
+                                    </a>
+                                </h4>
                                 <p>
                                     <span class="title">活动介绍：</span>
                                     <span class="value">{$vo['short_desc']}</span>
@@ -24,6 +32,7 @@
                     </li>
                 </foreach>
             </ul>
+            <p class="more">更多活动，敬请关注。</p>
         </div>
     </div>
 </div>

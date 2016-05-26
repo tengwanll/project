@@ -11,13 +11,16 @@
             <ul class="list-unstyled">
                 <foreach name="news" item="vo">
                     <li class="newsItem">
-                        <a href="{:U('Home/news/info',array('newsId'=>$vo['id']))}">
-                            <img src="__ROOT__/{$vo['photo']}" />
-                            <div class="info">
-                                <h4>{$vo['title']}</h4>
-                                <p>{$vo['description']}</p>
-                            </div>
-                        </a>
+                        <div class="pic">
+                            <a href="{:U('Home/news/info',array('newsId'=>$vo['id']))}" class="ellipsis_one_line"><img src="__ROOT__/{$vo['photo']}" /></a>
+                        </div>
+                        <div class="info">
+                            <h4>
+                                <a href="{:U('Home/news/info',array('newsId'=>$vo['id']))}" class="ellipsis_one_line">{$vo['title']}</a>
+                            </h4>
+                            <!-- <p>{$vo['shortDesc']}</p> -->
+                            <p class="desc">这里因该是描述de阿松打了解开了卡死都啊刻录机阿斯顿请问asd。</p>
+                        </div>
                     </li>
                 </foreach>
             </ul>

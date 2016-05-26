@@ -3,11 +3,38 @@
     <div class="banner">
         <ul>
             <li style="background-image: url('__PUBLIC__/Home/index/img/banner_0.jpg');">
-            </li><!--
-         --><li style="background-image: url('__PUBLIC__/Home/index/img/banner_1.jpg');"></li><!--
-         --><li style="background-image: url('__PUBLIC__/Home/index/img/banner_2.jpg');"></li><!--
-         --><li style="background-image: url('__PUBLIC__/Home/index/img/banner_3.jpg');"></li><!--
-         --><li style="background-image: url('__PUBLIC__/Home/index/img/banner_0.jpg');"></li>
+                <div class="detail">
+                    <a href="#">查看详情</a>
+                </div>
+            </li>
+            <!--
+         -->
+            <li style="background-image: url('__PUBLIC__/Home/index/img/banner_1.jpg');">
+                <div class="detail">
+                    <a href="#">查看详情</a>
+                </div>
+            </li>
+            <!--
+         -->
+            <li style="background-image: url('__PUBLIC__/Home/index/img/banner_2.jpg');">
+                <div class="detail">
+                    <a href="#">查看详情</a>
+                </div>
+            </li>
+            <!--
+         -->
+            <li style="background-image: url('__PUBLIC__/Home/index/img/banner_3.jpg');">
+                <div class="detail">
+                    <a href="#">查看详情</a>
+                </div>
+            </li>
+            <!--
+         -->
+            <li style="background-image: url('__PUBLIC__/Home/index/img/banner_0.jpg');">
+                <div class="detail">
+                    <a href="#">查看详情</a>
+                </div>
+            </li>
         </ul>
         <div class="prev">
             <a href="#"><span class="fa fa-chevron-left"></span></a>
@@ -15,6 +42,9 @@
         <div class="next">
             <a href="#"><span class="fa fa-chevron-right"></span></a>
         </div>
+    </div>
+    <div class="more">
+        <a href=""></a>
     </div>
 </div>
 <!-- 项目介绍 -->
@@ -113,12 +143,15 @@
                         <span class="num">{++$k}</span>
                         <h6 <if condition="$k eq 0">class="ellipsis_one_line"</if> >{$info['title']}</h6>
                     </div>
-                    <a href="{:U('Home/news/info',array('newsId'=>$info['id']))}">
-                        <div class="contact">
-                            <p class="indent">{$info['short_desc']}</p>
+                    <div class="contact">
+                        <p class="indent">
+                            <span>{$info['short_desc']}</span>
+                            <a href="{:U('Home/news/info',array('newsId'=>$info['id']))}">查看</a>
+                        </p>
+                        <div class="pic">
                             <img src="__ROOT__/{$info['photo']}">
                         </div>
-                    </a>
+                    </div>
                 </div>
             </li>
         </foreach>
@@ -141,7 +174,11 @@
         <ul class="list list-unstyled">
             <foreach name="activity" item="vo">
                 <li>
-                    <img src="__ROOT__/{$vo['photo']}">
+                    <div class="fo">
+                        <div class="pic">
+                            <img src="__ROOT__/{$vo['photo']}">
+                        </div>
+                    </div>
                     <h5>{$vo['title']}</h5>
                     <div class="activityInfo ellipsis_more_line">
                         <p><span>活动介绍：</span><span class="value">{$vo['short_desc']}</span></p>

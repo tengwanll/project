@@ -1,4 +1,8 @@
 .sales_list {
+    a:hover,
+    a:link {
+        text-decoration: none;
+    }
     ul {
         li {
             display: inline-block;
@@ -9,23 +13,45 @@
                 padding-top: 1rem;
                 width: 80%;
                 margin: 0 auto;
-                text-align: center;
-                img {
+                overflow: hidden;
+                .pic {
                     height: 12.0rem;
-                    max-width: 20.0rem;
-                    line-height: 12rem;
+                    width: 24rem;
+                    margin: 0 auto;
+                    overflow: hidden;
+                    text-align: center;
+                    border: 1px solid #eee;
+                    img {
+                        line-height: 12rem;
+                    }
                 }
                 h4 {
                     line-height: 3rem;
-                    margin: 0;
+                    text-align: center;
+                    a {
+                        color: black;
+                        font-size: 1rem;
+                        transition: color 0.2s;
+                        &:hover {
+                            color: #09dada;
+                            transition: color 0.2s;
+                        }
+                    }
                 }
                 p {
                     padding-bottom: 2rem;
                     line-height: 1.4rem;
                     height: 4rem;
                     overflow: hidden;
+                    color: #888;
                 }
             }
         }
+    }
+    .more {
+        text-align: center;
+        font-size: 0.9rem;
+        line-height: 4rem;
+        color: #ccc;
     }
 }
