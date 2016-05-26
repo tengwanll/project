@@ -1,0 +1,14 @@
+<include file="Public/header" name="sale_info" title="活动详情" />
+<div class="main">
+    <include file="Public/breadcrumb" />
+    <h3>{$saleInfo['title']}</h3>
+    <if condition="$serviceInfo['description']">
+    <article class="wrap">
+        <h6 class="paragraph_title">活动详情</h6>
+        <div class="indent">
+            <p>{$saleInfo['description']}</p>
+        </div>
+    </article>
+    </if>
+</div>
+<include file="Public/footer" />
