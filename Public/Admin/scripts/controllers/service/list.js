@@ -13,6 +13,7 @@ define(['app'], function(app) {
                     rows: $rootScope.rows,
                     listApi: '/Admin/service/serviceList',
                     groupApi: '/Admin/service/sortList',
+                    deleteApi: '/Admin/service/delete',
                     action: {
                         search: '搜索',
                         group: '筛选',
