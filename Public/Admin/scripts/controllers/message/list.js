@@ -12,6 +12,7 @@ define(['app'], function(app) {
                     currentPage: 1,
                     rows: $rootScope.rows,
                     listApi: '/Admin/feedback/lists',
+                    deleteApi: '/Admin/feedback/delete',
                     action: {
                         search: '搜索',
                         view: '查看',
