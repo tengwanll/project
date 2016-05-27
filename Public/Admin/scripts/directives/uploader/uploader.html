@@ -15,6 +15,7 @@
     <div class="view" ng-if="uploaderDatas.state === 'uploaded'">
         <div class="photo" ng-repeat="item in uploaderDatas.srcs">
             <img src="{{item}}">
+            <div class="edit" ng-click="selectFile()"><span class="txt">修改</span></div>
         </div>
     </div>
 </div>

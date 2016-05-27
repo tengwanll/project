@@ -1,23 +1,54 @@
 ._uploader {
-	display: inline-block;
-	.upload {
-		.icon {
-			.fa {
-				font-size: 14px;
-			}
-			&:hover {
-				cursor: pointer;
-				text-decoration: underline;
-			}
-		}
-	}
-	.view {
-		.photo {
-			width: 100%;
-			text-align: left;
-			img {
-				width: 50%;
-			}
-		}
-	}
+    display: inline-block;
+    .upload {
+        .icon {
+            .fa {
+                font-size: 14px;
+            }
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+    .view {
+        .photo {
+            width: 100%;
+            text-align: left;
+            position: relative;
+            img {
+                width: 50%;
+            }
+            .edit {
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 50%;
+                bottom: 0;
+                z-index: 2;
+                background: rgba(0, 0, 0, 0.3);
+                opacity: 0;
+                text-align: center;
+                color: white;
+                .txt {
+                    height: 30px;
+                    line-height: 30px;
+                    margin: auto;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    text-align: center;
+                    font-size: 20px;
+                }
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .edit:hover {
+                opacity: 1;
+            }
+        }
+    }
 }
