@@ -119,8 +119,8 @@ define(['app'], function(app) {
             // 公司信息
             .state('info', {
                 url: '/info',
-                templateUrl: baseurl + '/tpl/info/list.html?t=' + Math.floor(Date.now() / 1000),
-                controller: 'InfoController',
+                templateUrl: baseurl + '/tpl/info/info.html?t=' + Math.floor(Date.now() / 1000),
+                controller: 'InfoCtrl',
                 // resolve: loader("InfoController")
             })
             // 设置

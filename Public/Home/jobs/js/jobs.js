@@ -1,24 +1,9 @@
 $(document).ready(function() {
-
-
-
-
-
-
-	// 服务项目
-	$(document).on('click', '.project .tabs li', function () {
-		var _index = $('.project .tabs li').index(this);
-
-		$('.project .infoList.active').removeClass('active');
-		$($('.project .infoList')[_index]).addClass('active');
+	$(document).on('mouseover', '.concept .info li', function (e) {
+		$(this).parent().find('li').removeClass('hover').addClass('nohover');
+		$(this).removeClass('nohover').addClass('hover');
 	});
-
-
-	// 最新资讯
-	$(document).on('click', '.news li', function () {
-		$('.news .active').removeClass('active');
-		$(this).addClass('active');
-	});
-
-
+	$(document).on('mouseout', '.concept .info ul', function (e) {
+		$(this).find('li').removeClass('hover nohover');
+	})
 });

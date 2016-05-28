@@ -20,18 +20,128 @@
             &.en {
                 line-height: 2;
                 font-size: 1.4rem;
+                &:after {
+                    display: block;
+                    content: ' ';
+                    border-bottom: 2px solid white;
+                    width: 8.0rem;
+                    margin: 0 auto;
+                    height: 1.5rem;
+                }
             }
         }
     }
-    .concept {
-        img {
-            float: left;
-            height: 15rem;
-            padding-right: 2rem;
-        }
-        p {
-            font-size: 0.8rem;
-            line-height: 2;
+    .concept .info {
+        ul {
+            padding: 2rem 0;
+            li {
+                display: inline-block;
+                width: 33%;
+                vertical-align: top;
+                transition: width 0.7s;
+                height: 22rem;
+                overflow: hidden;
+                background-repeat: no-repeat;
+                background-size: cover;
+                .icon {
+                    height: 22rem;
+                    width: 100%;
+                    position: relative;
+                    background: rgba(250, 250, 250, 0.9);
+                    transition: width height 0.7s;
+                    h4 {
+                        position: absolute;
+                        width: 6rem;
+                        height: 7rem;
+                        text-align: center;
+                        padding: 1rem 0 0;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        margin: auto;
+                        .fa {
+                            display: block;
+                            width: 4.0rem;
+                            height: 4.0rem;
+                            line-height: 3.9rem;
+                            margin: 0 auto;
+                            font-size: 2rem;
+                            border-width: 4px;
+                            border-style: solid;
+                            border-radius: 50%;
+                        }
+                        .value {
+                            display: block;
+                            line-height: 2rem;
+                        }
+                    }
+                }
+                p {
+                    width: 21rem;
+                    margin: 1rem auto 0;
+                    padding: 1rem 0.5rem;
+                    color: white;
+                    opacity: 0;
+                    transition: opacity 0.7s;
+                    span {
+                        display: block;
+                        padding-bottom: 0.3rem;
+                    }
+                }
+                &:nth-child(1) {
+                    background-image: url('../img/concept_bg_1.jpg');
+                    h4 .fa {
+                        color: red;
+                        border-color: red;
+                    }
+                    p {
+                        background: rgba(255, 0, 0, 0.7);
+                    }
+                }
+                &:nth-child(2) {
+                    background-image: url('../img/concept_bg_2.jpg');
+                    h4 .fa {
+                        color: rgb(0, 128, 0);
+                        border-color: rgb(0, 128, 0);
+                    }
+                    p {
+                        background: rgba(0, 128, 0, 0.7);
+                    }
+                }
+                &:nth-child(3) {
+                    background-image: url('../img/concept_bg_3.jpg');
+                    h4 .fa {
+                        color: blue;
+                        border-color: blue;
+                    }
+                    p {
+                        background: rgba(0, 0, 255, 0.7);
+                    }
+                }
+            }
+            li.hover {
+                width: 50%;
+                padding-top: 1rem;
+                .icon {
+                    width: 6rem;
+                    height: 7rem;
+                    margin: 0 auto;
+                    transition: width height 0.7s;
+                }
+                p {
+                    opacity: 1;
+                    transition: opacity 0.7s;
+                }
+            }
+            li.nohover {
+                width: 24%;
+                transition: width 0.7s;
+                p {
+                    opacity: 0;
+                    transition: opacity 0.7s;
+                }
+            }
         }
     }
     .jobList {
