@@ -18,18 +18,26 @@
 .logo {
     float: left;
     a {
-        padding-top: 0.3rem;
         display: inline-block;
-        height: 2rem;
+        height: @headerHeight;
+        overflow: hidden;
         line-height: @headerHeight;
+        padding-top: 0.5rem;
     }
     img {
-        float: left;
+        height: 70%;
+        display: inline-block;
+        vertical-align: top;
+    }
+    div {
+        display: inline-block;
+        padding-left: 0.5rem;
     }
     h1 {
         margin: 0;
         font-size: 0.8rem;
-        line-height: 1.5rem;
+        line-height: 1;
+        padding-bottom: 0.2rem;
     }
     p {
         margin: 0;
