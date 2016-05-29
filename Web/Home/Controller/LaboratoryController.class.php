@@ -5,15 +5,13 @@ class LaboratoryController extends Controller {
     public function index(){
         $model=M('lab');
         $fileModel=M('file');
-        $labPhotoModel=M('lab_photo');
         $labs=$model->where('status=1')->select();
         foreach($labs as $key=>$item){
             $labId=$item['id'];
-            $labPhotos=$labPhotoModel->where("lab_id=$labId and status=1")->select();
+            $labPhotos=json_decode($item['photo_detail'],true);
             $photoDetailUrl=array();
             foreach($labPhotos as $labPhoto){
-                $photoDetailId=$labPhoto['file_id'];
-                $photoDetail=$fileModel->where("id=$photoDetailId")->find();
+                $photoDetail=$fileModel->where("id=$labPhoto")->find();
                 $photoDetailUrl[]=$photoDetail?__ROOT__.'/'.$photoDetail['url']:'';
             }
             $labs[$key]['photo_detail']=$photoDetailUrl;

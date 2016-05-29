@@ -19,7 +19,7 @@
                                     <a href="{:U('Home/service/info',array('serviceId'=>$sortList['id']))}" class="ellipsis_one_line">{$sortList['title']}</a>
                                 </h4>
                                 <div class="des">
-                                    <p class="description">{$sortList['description']}</p>
+                                    <p class="description">{$sortList['short_desc']|subRep}</p>
                                     <a href="{:U('Home/service/info',array('serviceId'=>$sortList['id']))}" class="more">查看详情</a>
                                 </div>
                             </div>
