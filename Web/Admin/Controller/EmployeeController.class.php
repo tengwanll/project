@@ -154,7 +154,7 @@ class EmployeeController extends CommonController
         $telephone=$json['telephone'];
         $email=$json['email'];
         $study=$json['study'];
-        $employeeId=$json['_id'];
+        $employeeId=$json['id'];
         $thesis=$json['thesis'];
         $employeeModel=M('employee');
         $employee=$employeeModel->where("id=$employeeId")->find();

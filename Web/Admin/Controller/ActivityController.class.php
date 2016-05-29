@@ -92,7 +92,7 @@ class ActivityController extends CommonController
 
     public function update(){
         $json=$this->getContent();
-        $activityId=$json['_id'];
+        $activityId=$json['id'];
         $title=$json['title'];
         $shortDesc=$json['shortDesc'];
         $content=$json['content'];

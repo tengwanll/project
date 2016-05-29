@@ -20,13 +20,22 @@ define(['app'], function(app) {
                 var inputFile = $(iElm).find('input[type="file"]');
 
                 $scope.uploaderDatas = {
-                        state: 'toupload', // toupload: 上传前  uploading:上传中  uploaded： 已上传
-                        srcs: [],
-                    }
-                    // 触发选择文件
+                    state: 'toupload', // toupload: 上传前  uploading:上传中  uploaded： 已上传
+                    srcs: [],
+                };
+
+                // 触发选择文件
                 $scope.selectFile = function() {
                     inputFile.click();
                 };
+
+                // 修改时的初始值
+                ngModelController.$formatters.push(function(modelValue) {
+                    if (modelValue) {
+                        $scope.uploaderDatas.state = "uploaded";
+                        $scope.uploaderDatas.srcs.push(modelValue);
+                    }
+                });
 
                 // 监听文件变动
                 inputFile.on('change', function(e) {

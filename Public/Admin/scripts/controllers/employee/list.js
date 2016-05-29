@@ -12,7 +12,7 @@ define(['app'], function(app) {
                     currentPage: 1,
                     rows: $rootScope.rows,
                     listApi: '/Admin/employee/employeeList',
-                    deleteApi: '/Admin/employee/delete',
+                    deleteApi: '/Admin/employee/deleteEmployee',
                     action: {
                         search: '搜索',
                         add: '添加',
