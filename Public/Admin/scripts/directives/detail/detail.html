@@ -1,27 +1,27 @@
 <!-- 编辑 / 添加 状态下 -->
 <div class="_detail _edit" ng-if="detailDatas.status !== 'view'">
-    <div class="form-group sort{{detailDatas.type}}" ng-repeat="item in detailConfig.content">
+    <div class="form-group" ng-repeat="item in detailConfig.content" ng-show="!item.sort || item.sort == detailDatas.type">
         <label>{{item.title}}</label>
-
         <!-- 普通 Input -->
         <input type="text" ng-if="item.type === 'input'" ng-model="detailDatas.data[item.key]">
-
         <!-- 编辑器 -->
         <editor type="all" ng-if="item.type === 'editor'" ng-model="detailDatas.data[item.key]"></editor>
 
-        <!-- 下拉菜单 -->
-        <select ng-if="item.type === 'select'" ng-model="detailDatas.data[item.key]" ng-options="item.id as item.title for item in detailDatas.sortDatas" class="form-control">
-            <option value="">--  请选择服务 --</option>
-        </select>
-
+        <!-- 下拉菜单：对于服务模块的特殊处理 -->
+        <div ng-if="item.type === 'select'">
+            <select ng-model="detailDatas.type" class="form-control" ng-options="item.key as item.value for item in detailConfig.sort">
+                <option value="">-- 请选择分类 --</option>
+            </select>
+            <select ng-if="detailDatas.type" ng-model="detailDatas.data[item.key]" ng-options="item.id as item.title for item in detailDatas.sortDatas" class="form-control">
+                <option value="">-- 请选择服务 --</option>
+            </select>
+        </div>
         <!-- 文本 -->
         <textarea class="form-control" ng-if="item.type === 'text'" ng-model="detailDatas.data[item.key]"></textarea>
-
         <!-- 上传图片 -->
         <uploader ng-model="detailDatas.data[item.key]" ng-if="item.type === 'photo'"></uploader>
-
         <!-- 图片集 -->
-       <!--  <div class="photoSet">
+        <!--  <div class="photoSet">
             <ul>
                 <li></li>
             </ul>

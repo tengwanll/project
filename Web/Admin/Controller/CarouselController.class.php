@@ -68,7 +68,7 @@ class CarouselController extends CommonController
 
     public function update(){
         $json=$this->getContent();
-        $id=$json['_id'];
+        $id=$json['id'];
         $title=$json['title'];
         $desc=$json['description'];
         $photo=$json['photo'];

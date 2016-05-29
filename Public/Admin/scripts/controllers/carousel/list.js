@@ -7,7 +7,6 @@ define(['app'], function(app) {
                     th: [
                         { title: { name: '名称' }, key: 'title' },
                         { description: { name: '备注' }, key: 'description' },
-                        { href: { name: '链接' }, key: 'href' },
                     ],
                     currentPage: 1,
                     rows: $rootScope.rows,
