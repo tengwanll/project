@@ -7,6 +7,7 @@ define(['app'], function(app) {
                     th: [
                         { title: { name: '名称' }, key: 'title' },
                         { description: { name: '备注' }, key: 'description' },
+                        { createTime: { name: '创建时间' }, key: 'createTime' },
                     ],
                     currentPage: 1,
                     rows: $rootScope.rows,

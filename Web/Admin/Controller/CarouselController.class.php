@@ -126,9 +126,9 @@ class CarouselController extends CommonController
     public function delete(){
         $json=$this->getContent();
         $id=$json['_id'];
-        if($id==1){
-            $this->buildResponse(10219);
-        }
+        // if($id==1){
+        //     $this->buildResponse(10219);
+        // }
         $carouselModel=M('carousel');
         $where="status=1 and id=$id ";
         $carousel=$carouselModel->where($where)->find();
