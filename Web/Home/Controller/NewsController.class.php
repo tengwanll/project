@@ -3,13 +3,7 @@ namespace Home\Controller;
 use Think\Controller;
 class NewsController extends Controller {
     public function index(){
-        $page=I('get.page');
-        $rows=I('get.rows');
-        if($page&&$rows){
-            $pagePart=$page.','.$rows;
-        }else{
-            $pagePart='1,10';
-        }
+        $rows=I('get.rows')?I('get.rows'):5;
         $model=M('news');
         $noticeModel=M('notice');
         $fileModel=M('file');
@@ -17,7 +11,17 @@ class NewsController extends Controller {
         foreach($notice as $key=>$value){
             $notice[$key]['create_time']=date('Y-m-d',strtotime($value['create_time']));
         }
-        $news=$model->where('status=1')->order('create_time desc')->page($pagePart)->select();
+        //获取数据库中的总数
+        $count = $model->where('status=1')->count();
+
+        //实例化分页类
+        $Page = new \Think\Page($count,$rows);// 实例化分页类 传入总记录数和每页显示的记录数(25)
+
+        $pages = $Page->show();
+
+        //获取limit参数
+        $limit = $Page->firstRow.','.$Page->listRows;
+        $news=$model->where('status=1')->order('create_time desc')->limit($limit)->select();
         foreach($news as $key=>$item){
             $photoId=$item['photo'];
             $photo=$fileModel->where("id=$photoId")->find();
@@ -26,6 +30,7 @@ class NewsController extends Controller {
         $this->assign('news',$news);
         $this->assign('notice',$notice);
         $this->assign('root','news');
+        $this->assign('pages',$pages);
         $this->display();
     }
 
