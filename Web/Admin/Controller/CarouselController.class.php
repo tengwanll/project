@@ -68,7 +68,7 @@ class CarouselController extends CommonController
 
     public function update(){
         $json=$this->getContent();
-        $id=$json['carouselId'];
+        $id=$json['_id'];
         $title=$json['title'];
         $desc=$json['description'];
         $photo=$json['photo'];
@@ -125,7 +125,7 @@ class CarouselController extends CommonController
 
     public function delete(){
         $json=$this->getContent();
-        $id=$json['carouselId'];
+        $id=$json['_id'];
         if($id==1){
             $this->buildResponse(10219);
         }

@@ -7,6 +7,8 @@ require.config({
         'jquery': '//cdn.bootcss.com/jquery/2.2.1/jquery.min',
         // 'uiRouter': '//cdn.bootcss.com/angular-ui-router/0.2.18/angular-ui-router.min',
         'uiRouter': '//cdn.bootcss.com/angular-ui-router/0.2.18/angular-ui-router',
+        // sanitize
+        // 'sanitize': '//cdn.bootcss.com/angular.js/1.5.5/angular-sanitize.min',
 
         // 入口文件
         'app': './app',
@@ -78,6 +80,7 @@ require.config({
 require([
         'angular',
         'jquery',
+        // 'sanitize',
         'app',
         'uiRouter',
         'routes',

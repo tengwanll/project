@@ -6,7 +6,7 @@ define(['app'], function(app) {
                         { title: '标题', type: 'input', key: 'title'},
                         { title: '链接', type: 'input', key: 'href'},
                         { title: '背景图', type: 'photo', key: 'photo'},
-                        { title: '备注', type: 'editor', key: 'description'}
+                        { title: '备注', type: 'text', key: 'description'}
 
                     ],
                     api: {

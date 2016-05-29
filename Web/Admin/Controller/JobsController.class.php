@@ -91,7 +91,7 @@ class JobsController extends CommonController
 
     public function update(){
         $json=$this->getContent();
-        $jobId=$json['jobId'];
+        $jobId=$json['_id'];
         $lab=$json['lab'];
         $station=$json['station'];
         $number=$json['number'];
@@ -124,7 +124,7 @@ class JobsController extends CommonController
 
     public function delete(){
         $json=$this->getContent();
-        $jobId=$json['jobId'];
+        $jobId=$json['_id'];
         $jobModel=M('job');
         $job=$jobModel->where("id=$jobId")->find();
         if(!$job){

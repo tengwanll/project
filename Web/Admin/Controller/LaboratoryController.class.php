@@ -118,7 +118,7 @@ class LaboratoryController extends CommonController
 
     public function update(){
         $json=$this->getContent();
-        $labId=$json['labId'];
+        $labId=$json['_id'];
         $name=$json['name'];
         $photoDetail=$json['photoDetail'];
         $description=$json['description'];
@@ -150,7 +150,7 @@ class LaboratoryController extends CommonController
 
     public function delete(){
         $json=$this->getContent();
-        $labId=$json['labId'];
+        $labId=$json['_id'];
         $labModel=M('lab');
         $lab=$labModel->where("id=$labId")->find();
         if(!$lab){
@@ -164,4 +164,39 @@ class LaboratoryController extends CommonController
         $this->buildResponse(0);
     }
 
+    // public function createPhoto(){
+    //     $json=$this->getContent();
+    //     $labId=$json['_id'];
+    //     $fileId=$json['fileId'];
+    //     $model=M('lab_photo');
+    //     $date=date('Y-m-d H:i:s',time());
+    //     $data=array(
+    //         'lab_id'=>$labId?$labId:0,
+    //         'file_id'=>$fileId?$fileId:0,
+    //         'status'=>1,
+    //         'create_time'=>$date,
+    //         'update_time'=>$date
+    //     );
+    //     $labPhotoId=$model->data($data)->add();
+    //     if(!$labPhotoId){
+    //         $this->buildResponse(10214);
+    //     }
+    //     $this->buildResponse(0,$labPhotoId);
+    // }
+
+    // public function deletePhoto(){
+    //     $json=$this->getContent();
+    //     $photoId=$json['photoId'];
+    //     $labPhotoModel=M('lab_photo');
+    //     $labPhoto=$labPhotoModel->where("id=$photoId")->find();
+    //     if(!$labPhoto){
+    //         $this->buildResponse(10217);
+    //     }
+    //     $data=array('status'=>0);
+    //     $photoId=$labPhotoModel->where("id=$photoId")->save($data);
+    //     if(!$photoId){
+    //         $this->buildResponse(10214);
+    //     }
+    //     $this->buildResponse(0);
+    // }
 }

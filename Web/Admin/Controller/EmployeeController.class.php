@@ -154,7 +154,7 @@ class EmployeeController extends CommonController
         $telephone=$json['telephone'];
         $email=$json['email'];
         $study=$json['study'];
-        $employeeId=$json['employeeId'];
+        $employeeId=$json['id'];
         $thesis=$json['thesis'];
         $employeeModel=M('employee');
         $employee=$employeeModel->where("id=$employeeId")->find();
@@ -195,7 +195,7 @@ class EmployeeController extends CommonController
 
     public function deleteEmployee(){
         $json=$this->getContent();
-        $employeeId=$json['employeeId'];
+        $employeeId=$json['_id'];
         $employeeModel=M('employee');
         $employee=$employeeModel->where("id=$employeeId")->find();
         if(!$employee){

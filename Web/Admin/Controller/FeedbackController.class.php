@@ -69,7 +69,7 @@ class FeedbackController extends CommonController
 
     public function delete(){
         $json=$this->getContent();
-        $id=$json['feedbackId'];
+        $id=$json['_id'];
         $feedbackModel=M('feedback');
         $feedback=$feedbackModel->where("id=$id")->find();
         if(!$feedback){

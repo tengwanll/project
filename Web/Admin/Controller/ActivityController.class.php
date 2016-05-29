@@ -124,7 +124,7 @@ class ActivityController extends CommonController
 
     public function delete(){
         $json=$this->getContent();
-        $activityId=$json['activityId'];
+        $activityId=$json['_id'];
         $activityModel=M('activity');
         $activity=$activityModel->where("id=$activityId")->find();
         if(!$activity){
