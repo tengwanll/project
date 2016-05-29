@@ -29,7 +29,7 @@ class CarouselController extends CommonController
             $photoUrl=$photo?__ROOT__.'/'.$photo['url']:'';
             $arr[]=array(
                 'id'=>$lists['id'],
-                'title'=>$title['title'],
+                'title'=>$lists['title'],
                 'description'=>$lists['desc'],
                 'photo'=>$photoUrl,
                 'link'=>$lists['link'],
