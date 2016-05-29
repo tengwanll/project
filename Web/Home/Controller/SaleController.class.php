@@ -28,4 +28,12 @@ class SaleController extends Controller {
         $this->assign('root','sale');
         $this->display();
     }
+
+    public function info(){
+        $slaeId=I('get.saleId');
+        $model=M('activity');
+        $activity=$model->where("status=1 and id=$slaeId")->find();
+        $this->assign('saleInfo',$activity);
+        $this->display();
+    }
 }

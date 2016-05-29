@@ -2,31 +2,13 @@
 <div class="welcome row section">
     <div class="banner">
         <ul>
-            <li style="background-image: url('__PUBLIC__/Home/index/img/banner_0.jpg');">
-                <div class="detail">
-                    <a href="#">查看详情</a>
-                </div>
-            </li><!--
-         --><li style="background-image: url('__PUBLIC__/Home/index/img/banner_1.jpg');">
-                <div class="detail">
-                    <a href="#">查看详情</a>
-                </div>
-            </li><!--
-         --><li style="background-image: url('__PUBLIC__/Home/index/img/banner_2.jpg');">
-                <div class="detail">
-                    <a href="#">查看详情</a>
-                </div>
-            </li><!--
-         --><li style="background-image: url('__PUBLIC__/Home/index/img/banner_3.jpg');">
-                <div class="detail">
-                    <a href="#">查看详情</a>
-                </div>
-            </li><!--
-         --><li style="background-image: url('__PUBLIC__/Home/index/img/banner_0.jpg');">
-                <div class="detail">
-                    <a href="#">查看详情</a>
-                </div>
-            </li>
+            <foreach name="carousel" item="vo">
+                <li style="background-image: url('__ROOT__/{$vo[\'photo\']}');">
+                    <div class="detail">
+                        <a href="{$vo['link']}">查看详情</a>
+                    </div>
+                </li>
+            </foreach>
         </ul>
         <div class="prev">
             <a href="#"><span class="fa fa-chevron-left"></span></a>
@@ -107,7 +89,8 @@
             </header>
         </div>
         <div class="wrap">
-            <p>asdasdasdasdadasd</p>
+            <p>{$notice['english_content']}</p>
+            <p>{$notice['content']}</p>
         </div>
     </div>
 </div>
@@ -173,7 +156,7 @@
                     </div>
                     <h5>{$vo['title']}</h5>
                     <div class="activityInfo ellipsis_more_line">
-                        <p><span>活动介绍：</span><span class="value">{$vo['short_desc']}</span></p>
+                        <p><span>活动介绍：</span><span class="value">{$vo['short_desc']|delHtml}</span></p>
                     </div>
                     <a href="{:U('Home/sale/index')}">更多详情</a>
                 </li>

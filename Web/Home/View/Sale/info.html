@@ -2,13 +2,11 @@
 <div class="main">
     <include file="Public/breadcrumb" />
     <h3>{$saleInfo['title']}</h3>
-    <if condition="$serviceInfo['description']">
     <article class="wrap">
         <h6 class="paragraph_title">活动详情</h6>
         <div class="indent">
-            <p>{$saleInfo['description']}</p>
+            <p>{$saleInfo['content']}</p>
         </div>
     </article>
-    </if>
 </div>
 <include file="Public/footer" />

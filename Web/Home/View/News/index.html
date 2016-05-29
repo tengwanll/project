@@ -19,19 +19,15 @@
                                 <a href="{:U('Home/news/info',array('newsId'=>$vo['id']))}" class="ellipsis_one_line">{$vo['title']}</a>
                             </h4>
                             <!-- <p>{$vo['shortDesc']}</p> -->
-                            <p class="desc">这里因该是描述de阿松打了解开了卡死都啊刻录机阿斯顿请问asd。</p>
+                            <p class="desc">{$vo['short_desc']}</p>
                         </div>
                     </li>
                 </foreach>
             </ul>
             <div class="paging">
-                <ul>
-                    <li><a href="#"><span class="fa fa-angle-left"></span></a></li>
-                    <li class="active"><a href="#"><span>1</span></a></li>
-                    <li><a href="#"><span>2</span></a></li>
-                    <li><a href="#"><span>3</span></a></li>
-                    <li><a href="#"><span class="fa fa-angle-right"></span></a></li>
-                </ul>
+                    <span>
+                        {$pages}
+                    </span>
             </div>
         </div>
         <div class="newest">
