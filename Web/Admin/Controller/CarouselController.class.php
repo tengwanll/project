@@ -13,7 +13,7 @@ class CarouselController extends CommonController
 {
     public function lists(){
         $page=$this->getPage();
-        $title=I('get.title');
+        $title=I('get.keyword');
         $carouselModel=M('carousel');
         $fileModel=M('file');
         $where='status=1';
@@ -29,7 +29,7 @@ class CarouselController extends CommonController
             $photoUrl=$photo?__ROOT__.'/'.$photo['url']:'';
             $arr[]=array(
                 'id'=>$lists['id'],
-                'title'=>$title['title'],
+                'title'=>$lists['title'],
                 'description'=>$lists['desc'],
                 'photo'=>$photoUrl,
                 'link'=>$lists['link'],

@@ -19,7 +19,7 @@ class FeedbackController extends CommonController
         $name=I('get.keyword');
         $feedbackModel=M('feedback');
         if($name){
-            $where=" (name like '%$name%' or telephone like %$name% or phone like %$name%) and status=1 ";
+            $where=" (name like '%$name%' or telephone like '%$name%' or phone like '%$name%') and status=1 ";
         }else{
             $where='status=1';
         }
