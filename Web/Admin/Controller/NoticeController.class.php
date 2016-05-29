@@ -76,7 +76,7 @@ class NoticeController extends CommonController
 
     public function update(){
         $json=$this->getContent();
-        $noticeId=$json['noticeId'];
+        $noticeId=$json['_id'];
         $englishContent=$json['englishContent'];
         $content=$json['content'];
         $noticeModel=M('notice');
@@ -100,7 +100,7 @@ class NoticeController extends CommonController
 
     public function delete(){
         $json=$this->getContent();
-        $noticeId=$json['noticeId'];
+        $noticeId=$json['_id'];
         $noticeModel=M('notice');
         $notice=$noticeModel->where("id=$noticeId")->find();
         if(!$notice){

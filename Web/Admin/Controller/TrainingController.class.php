@@ -88,7 +88,7 @@ class TrainingController extends CommonController
 
     public function update(){
         $json=$this->getContent();
-        $trainingId=$json['trainingId'];
+        $trainingId=$json['_id'];
         $title=$json['title'];
         $content=$json['content'];
         $photo=$json['photo'];
@@ -116,7 +116,7 @@ class TrainingController extends CommonController
 
     public function delete(){
         $json=$this->getContent();
-        $trainingId=$json['trainingId'];
+        $trainingId=$json['_id'];
         $trainingModel=M('training');
         $training=$trainingModel->where("id=$trainingId")->find();
         if(!$training){

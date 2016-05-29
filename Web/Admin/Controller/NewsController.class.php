@@ -92,7 +92,7 @@
          */
         public function update(){
             $json=$this->getContent();
-            $newsId=$json['id'];
+            $newsId=$json['_id'];
             $title=$json['title'];
             $shortDesc=$json['shortDesc'];
             $content=$json['content'];
@@ -127,7 +127,7 @@
          */
         public function delete(){
             $json=$this->getContent();
-            $newsId=$json['id'];
+            $newsId=$json['_id'];
             $newsModel=M('news');
             $news=$newsModel->where("id=$newsId")->find();
             if(!$news){

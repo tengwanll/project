@@ -117,7 +117,7 @@ class LaboratoryController extends CommonController
 
     public function update(){
         $json=$this->getContent();
-        $labId=$json['labId'];
+        $labId=$json['_id'];
         $name=$json['name'];
         $photoDetail=$json['photoDetail'];
         $description=$json['description'];
@@ -149,7 +149,7 @@ class LaboratoryController extends CommonController
 
     public function delete(){
         $json=$this->getContent();
-        $labId=$json['labId'];
+        $labId=$json['_id'];
         $labModel=M('lab');
         $lab=$labModel->where("id=$labId")->find();
         if(!$lab){
@@ -165,7 +165,7 @@ class LaboratoryController extends CommonController
 
     public function createPhoto(){
         $json=$this->getContent();
-        $labId=$json['labId'];
+        $labId=$json['_id'];
         $fileId=$json['fileId'];
         $model=M('lab_photo');
         $date=date('Y-m-d H:i:s',time());

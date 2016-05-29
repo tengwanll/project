@@ -122,9 +122,10 @@ define(['app'], function(app) {
                     $scope.delete = function(id) {
                         if (confirm('确认删除？')) {
                             httpRequest.post({
-                                api: $scope.newsDatas.listConfig.deleteApi,
-                                data: { id: id },
+                                api: $scope.listConfig.deleteApi,
+                                data: { _id: id },
                                 success: function(result) {
+                                    alert("删除成功！");
                                     $state.reload();
                                 }
                             });
