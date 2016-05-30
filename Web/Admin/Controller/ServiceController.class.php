@@ -64,7 +64,7 @@ class ServiceController extends CommonController
         $fileModel=M('file');
         $serviceModel=M('service s,service_sort t');
         $where=" s.status=1 and s.sort_id=t.id and s.id=$serviceId ";
-        $service=$serviceModel->field('s.id,s.title,s.logo,s.short_desc,s.description,s.experiment_flow,s.user_notice,s.result_show,s.server_circle,s.experiment_theory,s.advantage,s.literature,s.create_time,t.title as sortTitle')->where($where)->find();
+        $service=$serviceModel->field('s.id,t.id as tid,s.title,s.logo,s.short_desc,s.description,s.experiment_flow,s.user_notice,s.result_show,s.server_circle,s.experiment_theory,s.advantage,s.literature,s.create_time,t.title as sortTitle,t.type')->where($where)->find();
         if(!$service){
             $this->buildResponse(10206);
         }
@@ -73,6 +73,8 @@ class ServiceController extends CommonController
         $photoUrl=$photo?__ROOT__.'/'.$photo['url']:'';
         $arr=array(
             'id'=>$service['id'],
+            'sortId'=>$service['tid'],
+            'type'=>$service['type'],
             'title'=>$service['title'],
             'sortTitle'=>$service['sortTitle'],
             'logo'=>$photoUrl,
