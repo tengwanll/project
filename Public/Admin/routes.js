@@ -32,6 +32,11 @@ define(['app'], function(app) {
                 controller: 'EmployeeListCtrl',
                 // resolve: loader("EmployeeController")
             })
+            // .state('employee.add', function () {
+            //     url: '/employee/add',
+            //     templateUrl: baseurl + '/tpl/employee/detail.html?t=' + Math.floor(Date.now() / 1000),
+            //     controller: 'EmployeeDetailCtrl',
+            // })
             .state('employeeDetail', {
                 url: '/employee/status/:status/_id/:_id',
                 templateUrl: baseurl + '/tpl/employee/detail.html?t=' + Math.floor(Date.now() / 1000),

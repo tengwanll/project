@@ -1,7 +1,11 @@
 <div class="_photoset">
     <input type="file" class="ng-hide">
     <ul class="list-unstyled">
-        <li></li>
-        <li><a href="#"><span class="fa fa-plus"></span></a></li>
+        <li ng-repeat="item in photosetDatas.set.url" ng-if="photosetDatas.set.url.length">
+            <a href="#" ng-click="selectFile($event)">
+                <img src="{{item}}">
+            </a>
+        </li>
+        <li><a href="#" ng-click="selectFile($event)"><span class="fa fa-plus"></span></a></li>
     </ul>
 </div>

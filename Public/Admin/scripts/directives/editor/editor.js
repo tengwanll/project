@@ -26,45 +26,41 @@ define(['app'], function(app) {
 
                 $scope.editor.config.uploadImgFileName = 'photo';
                 $scope.editor.config.uploadImgUrl = '/Admin/admin/upload';
-                if (attrs.type === 'all') {
-                    $scope.editor.config.menus = [
-                        // 'source',
-                        '|',
-                        'bold',
-                        'underline',
-                        'italic',
-                        // 'strikethrough',
-                        // 'eraser',
-                        // 'forecolor',
-                        // 'bgcolor',
-                        '|',
-                        'quote',
-                        'fontfamily',
-                        'fontsize',
-                        'head',
-                        'unorderlist',
-                        'orderlist',
-                        'alignleft',
-                        'aligncenter',
-                        'alignright',
-                        '|',
-                        'link',
-                        'unlink',
-                        'table',
-                        // 'emotion',
-                        '|',
-                        'img',
-                        // 'video',
-                        // 'location',
-                        // 'insertcode',
-                        '|',
-                        'undo',
-                        'redo',
-                        'fullscreen'
-                    ];
-                } else if (attrs.type === 'text') {
-                    $scope.editor.config.menus = ['fullscreen'];
-                }
+                $scope.editor.config.menus = [
+                    // 'source',
+                    '|',
+                    'bold',
+                    'underline',
+                    'italic',
+                    // 'strikethrough',
+                    // 'eraser',
+                    // 'forecolor',
+                    // 'bgcolor',
+                    '|',
+                    'quote',
+                    'fontfamily',
+                    'fontsize',
+                    'head',
+                    'unorderlist',
+                    'orderlist',
+                    'alignleft',
+                    'aligncenter',
+                    'alignright',
+                    '|',
+                    'link',
+                    'unlink',
+                    'table',
+                    // 'emotion',
+                    '|',
+                    'img',
+                    // 'video',
+                    // 'location',
+                    // 'insertcode',
+                    '|',
+                    'undo',
+                    'redo',
+                    'fullscreen'
+                ];
 
                 // 设置初始值
                 $scope.$on('detailDataReady', function() {
@@ -75,7 +71,21 @@ define(['app'], function(app) {
                 // 自定义load事件
                 $scope.editor.config.uploadImgFns.onload = function(resultText, xhr) {
                     var result = JSON.parse(resultText).result.url.substr(1);
+                    // console.log($scope.editor.$txt.html());
                     $scope.editor.$txt.html($scope.editor.$txt.html() + '<img src="' + result + '" style="max-width:100%;"/>');
+                    // console.log($scope.editor.$txt.html());
+
+                    // var html = "";
+                    // console.log(ngModelController)
+                    // ngModelController.$parsers.push(function (viewValue) {
+                    //     console.log(viewValue)
+                    // });
+                    // ngModelController.$formatters.push(function(modelValue) {
+                    //     modelValue += '<img src="' + result + '" style="max-width:100%;"/>';
+                    //     $scope.editor.$txt.html(modelValue);
+                    //     console.log(modelValue)
+                    // });
+                    // ngModelController.$setViewValue(html);
                 };
 
                 // 绑定数据

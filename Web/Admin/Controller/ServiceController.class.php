@@ -135,7 +135,7 @@ class ServiceController extends CommonController
     public function update(){
         $serviceModel=M('service');
         $json=$this->getContent();
-        $serviceId=$json['_id'];
+        $serviceId=$json['id'];
         $title=$json['title'];
         $logo=$json['logo'];
         $shortDesc=$json['shortDesc'];
