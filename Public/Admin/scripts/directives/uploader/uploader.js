@@ -38,7 +38,8 @@ define(['app'], function(app) {
                 });
 
                 // 监听文件变动
-                inputFile.on('change', function(e) {
+                inputFile.on('change', function(event) {
+                    if (!event.target.files[0]) return;
                     $scope.uploaderDatas.state = 'uploading';
                     var formData = new FormData();
                     formData.append('photo', event.target.files[0]);
@@ -51,9 +52,7 @@ define(['app'], function(app) {
                             ngModelController.$setViewValue(result);
                         }
                     })
-
                 });
-
             }
         };
     }]);

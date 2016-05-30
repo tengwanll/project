@@ -1,0 +1,46 @@
+._photoset {
+    ul {
+        li {
+            display: inline-block;
+            width: 24%;
+            text-align: center;
+            overflow: hidden;
+            margin-bottom: 50px;
+            a {
+                display: block;
+                text-align: center;
+                line-height: 200px;
+                position: relative;
+                &:hover:after {
+                    content: '修改';
+                    color: white;
+                    position: absolute;
+                    display: block;
+                    font-size: 30px;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    background: rgba(0, 0, 0, 0.6);
+                }
+                img {
+                    display: inline-block;
+                    width: 100%;
+                }
+            }
+            &:last-child {
+                a {
+                    font-size: 30px;
+                    color: #aaa;
+                    &:hover {
+						color: #666;
+                        &:after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

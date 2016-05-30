@@ -27,11 +27,11 @@ define(['app'], function(app) {
                     // 初始化界面
                     switch ($scope.detailDatas.status) {
                         case 'add':
-                            if ($scope.detailConfig.showBy) getSortListDatas();
+                            if ($scope.detailConfig.sort) getSortListDatas();
                             break;
                         case 'edit':
                             getDetailDatas($scope.detailDatas._id);
-                            if ($scope.detailConfig.showBy) getSortListDatas();
+                            if ($scope.detailConfig.sort) getSortListDatas();
                             break;
                         case 'view':
                             getDetailDatas($scope.detailDatas._id);
@@ -83,7 +83,7 @@ define(['app'], function(app) {
                             api: api,
                             data: postDatas,
                             success: function(result) {
-                                notify.success('保存');
+                                alert('保存成功！');
                                 $state.go($state.current.name.substr(0, $state.current.name.length - 6));
                             }
                         });
@@ -96,6 +96,7 @@ define(['app'], function(app) {
 
                     // 修改
                     $scope.edit = function() {
+                        alert('保存成功！');
                         $state.go($state.current.name, { status: 'edit', _id: $scope.detailDatas._id });
                     };
 

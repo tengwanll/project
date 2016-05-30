@@ -41,6 +41,7 @@ require.config({
         'detail': './scripts/directives/detail/detail',
         'editor': './scripts/directives/editor/editor',
         'uploader': './scripts/directives/uploader/uploader',
+        'photoset': './scripts/directives/photoset/photoset',
 
         // 过滤器
         'serviceSort': './scripts/filters/servicesort',
@@ -86,6 +87,7 @@ require([
         'routes',
         'dataTable',
         'detail',
+        'photoset',
         'serviceSort',
         'sce',
         'tartype',

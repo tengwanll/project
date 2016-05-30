@@ -5,8 +5,8 @@ define(['app'], function(app) {
                 content: [
                     { title: '名称', type: 'input', key: 'name' },
                     { title: '封面', type: 'photo', key: 'photo' },
-                    { title: '简介', type: 'editor', key: 'description' },
-                    { title: '图片集', type: 'editor', key: 'photoDetailUrl' },
+                    { title: '简介', type: 'text', key: 'description' },
+                    { title: '图片集', type: 'photoset', key: 'photoDetailUrl' },
                 ],
                 api: {
                     add: '/Admin/laboratory/create',
