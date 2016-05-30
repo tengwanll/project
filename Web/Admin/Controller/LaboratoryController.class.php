@@ -15,7 +15,6 @@ class LaboratoryController extends CommonController
         $page=$this->getPage();
         $name=I('get.keyword');
         $labModel=M('lab');
-        $labPhotoModel=M('lab_photo');
         $fileModel=M('file');
         if($name){
             $where=" name like '%$name%' and status=1 ";
@@ -26,20 +25,14 @@ class LaboratoryController extends CommonController
         $total=$labModel->where($where)->count();
         $arr=array();
         foreach($labList as $lists){
-            $labId=$lists['id'];
             $photoId=$lists['photo'];
             $photo=$fileModel->where("id=$photoId")->find();
             $photoUrl=$photo?__ROOT__.'/'.$photo['url']:'';
             $photoDetailUrl=array();
-            $labPhotos=$labPhotoModel->where("lab_id=$labId and status=1")->select();
+            $labPhotos=json_decode($lists['photo_detail'],true);
             foreach($labPhotos as $labPhoto){
-                $id=$labPhoto['id'];
-                $photoDetailId=$labPhoto['file_id'];
-                $photoDetail=$fileModel->where("id=$photoDetailId")->find();
-                $photoDetailUrl[]=array(
-                    'id'=>$id,
-                    'url'=>$photoDetail?__ROOT__.'/'.$photoDetail['url']:'',
-                );
+                $photoDetail=$fileModel->where("id=$labPhoto")->find();
+                $photoDetailUrl[]=$photoDetail?__ROOT__.'/'.$photoDetail['url']:'';
             }
             $arr[]=array(
                 'id'=>$lists['id'],
@@ -61,7 +54,6 @@ class LaboratoryController extends CommonController
         $labId=I('get._id');
         $labModel=M('lab');
         $fileModel=M('file');
-        $labPhotoModel=M('lab_photo');
         $lab=$labModel->where("id=$labId")->find();
         if(!$lab){
             $this->buildResponse(10208);
@@ -70,15 +62,10 @@ class LaboratoryController extends CommonController
         $photo=$fileModel->where("id=$photoId")->find();
         $photoUrl=$photo?__ROOT__.'/'.$photo['url']:'';
         $photoDetailUrl=array();
-        $labPhotos=$labPhotoModel->where("lab_id=$labId and status=1")->select();
+        $labPhotos=json_decode($lab['photo_detail'],true);
         foreach($labPhotos as $labPhoto){
-            $id=$labPhoto['id'];
-            $photoDetailId=$labPhoto['file_id'];
-            $photoDetail=$fileModel->where("id=$photoDetailId")->find();
-            $photoDetailUrl[]=array(
-                'id'=>$id,
-                'url'=>$photoDetail?__ROOT__.'/'.$photoDetail['url']:'',
-            );
+            $photoDetail=$fileModel->where("id=$labPhoto")->find();
+            $photoDetailUrl[]=$photoDetail?__ROOT__.'/'.$photoDetail['url']:'';
         }
         $arr=array(
             'id'=>$lab['id'],
