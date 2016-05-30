@@ -72,20 +72,20 @@ define(['app'], function(app) {
                 $scope.editor.config.uploadImgFns.onload = function(resultText, xhr) {
                     var result = JSON.parse(resultText).result.url.substr(1);
                     // console.log($scope.editor.$txt.html());
-                    // $scope.editor.$txt.html($scope.editor.$txt.html() + '<img src="' + result + '" style="max-width:100%;"/>');
+                    $scope.editor.$txt.html($scope.editor.$txt.html() + '<img src="' + result + '" style="max-width:100%;"/>');
                     // console.log($scope.editor.$txt.html());
 
-                    var html = "";
-                    console.log(ngModelController)
-                    ngModelController.$parsers.push(function (viewValue) {
-                        console.log(viewValue)
-                    });
-                    ngModelController.$formatters.push(function(modelValue) {
-                        modelValue += '<img src="' + result + '" style="max-width:100%;"/>';
-                        $scope.editor.$txt.html(modelValue);
-                        console.log(modelValue)
-                    });
-                    ngModelController.$setViewValue(html);
+                    // var html = "";
+                    // console.log(ngModelController)
+                    // ngModelController.$parsers.push(function (viewValue) {
+                    //     console.log(viewValue)
+                    // });
+                    // ngModelController.$formatters.push(function(modelValue) {
+                    //     modelValue += '<img src="' + result + '" style="max-width:100%;"/>';
+                    //     $scope.editor.$txt.html(modelValue);
+                    //     console.log(modelValue)
+                    // });
+                    // ngModelController.$setViewValue(html);
                 };
 
                 // 绑定数据
