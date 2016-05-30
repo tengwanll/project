@@ -31,7 +31,9 @@ define(['app'], function(app) {
                             break;
                         case 'edit':
                             getDetailDatas($scope.detailDatas._id);
-                            if ($scope.detailConfig.sort) getSortListDatas();
+                            if ($scope.detailConfig.sort) {
+                                getSortListDatas();
+                            }
                             break;
                         case 'view':
                             getDetailDatas($scope.detailDatas._id);
@@ -51,6 +53,7 @@ define(['app'], function(app) {
                             params: params,
                             success: function(data) {
                                 $scope.detailDatas.data = data;
+                                if ($scope.detailConfig.sort) $scope.detailDatas.type = data.type;
                                 $scope.$broadcast('detailDataReady');
                             }
                         })
