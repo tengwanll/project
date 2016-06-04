@@ -1,5 +1,6 @@
 define(['app'], function(app) {
-    return app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+    return app.config(['$stateProvider', '$urlRouterProvider',
+        function($stateProvider, $urlRouterProvider) {
         // $locationProvider.html5Mode(true);
 
         var baseurl = "/Public/Admin";

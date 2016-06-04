@@ -29,8 +29,12 @@
                 <td>{{rows * (page.current - 1) + $index + 1}}</td>
                 <td ng-repeat="colData in listConfig.th" ng-bind-html="rowDatas[colData.key] | sce"></td>
                 <td class="ac">
-                    <a class="text-info" href="#/{{currentState.url}}/view/{{rowDatas.id}}" ng-if="listConfig.action.view"><span class="fa fa-eye"></span></a>
-                    <a class="text-muted" href="#/{{currentState.url}}/edit/{{rowDatas.id}}" ng-if="listConfig.action.edit"><span class="fa fa-edit"></span></a>
+                    <a class="text-info" ui-sref="{{currentState.name}}.detail({status: 'view', _id: rowDatas.id})" ng-if="listConfig.action.view">
+                        <span class="fa fa-eye"></span>
+                    </a>
+                    <a class="text-muted" ui-sref="{{currentState.name}}.detail({status: 'edit', _id: rowDatas.id})" ng-if="listConfig.action.edit">
+                        <span class="fa fa-edit"></span>
+                    </a>
                     <a class="text-danger" href="" ng-click="delete(rowDatas.id)" ng-if="listConfig.action.delete"><span class="fa fa-trash-o"></span></a>
                 </td>
             </tr>
