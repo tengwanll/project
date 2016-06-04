@@ -28,6 +28,8 @@ define(['app'], function(app) {
                         group: ''
                     };
 
+                    $scope.currentState = $state.current;
+
                     init();
 
 
@@ -101,16 +103,17 @@ define(['app'], function(app) {
                         getListDatas(num);
                     };
 
-                    var detail = $state.current.name + 'Detail';
 
                     // 添加
                     $scope.add = function() {
-                        $state.go(detail, { status: 'add' });
+                        $state.go($state.current.name + '.add');
                     };
+
+                        console.log('' + $state.current.url + '');
 
                     // 编辑
                     $scope.edit = function(id) {
-                        $state.go(detail, { status: 'edit', _id: id });
+                        $state.go($state.current.name + '.detail');
                     };
 
                     // 查看

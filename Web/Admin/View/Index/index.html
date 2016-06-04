@@ -14,45 +14,10 @@
 </head>
 
 <body class="container-fluid">
-    <div class="row" ng-controller="MainController">
-        <header id="header">
-            <div>
-                <a href="#" ng-click="uploadPassword()"><span class="fa fa-user" class="user"></span></a>
-                <a href="#" ng-click="logout()" class="signout"><span class="fa fa-sign-out"></span></a>
-            </div>
-        </header>
-        <div class="section">
-            <aside id="sideBar">
-                <nav>
-                    <ul class="list-unstyled">
-                        <li ng-repeat="item in mainDatas.menu" class="{{mainDatas.currentMenu === $index ? 'active' : ''}}"><a ui-sref="{{item.state}}" ng-click="changeMenu($index)" ng-bind="item.name"></a></li>
-                    </ul>
-                </nav>
-            </aside>
-            <div class="mainView" ng-class="{pageLoading: showPageLoading}">
-                <div class="breadcrumb"></div>
-                <div ui-view id="main"></div>
-                <div id="pageLoading" ng-show="showPageLoading">
-                    <div class="cont">
-                        <span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>
-                        <p>加载中</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="loading" class="ng-hide">
-        <div class="cont">
+    <div class="row" ui-view id="page">
+        <div class="loading">
             <span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>
             <p>加载中</p>
-        </div>
-    </div>
-    <div id="notify" ng-if="notify.success.show || notify.error.show">
-        <div class="success bg-success" ng-show="notify.success.show">
-            保存成功!
-        </div>
-        <div class="error bg-danger" ng-show="notify.error.show">
-            {{notify.error.message}}
         </div>
     </div>
     <script src="//cdn.bootcss.com/require.js/2.1.22/require.js" data-main="__PUBLIC__/Admin/main.js"></script>

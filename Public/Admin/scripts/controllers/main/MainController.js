@@ -1,5 +1,6 @@
 define(['app'], function(app) {
-    app.controller('MainController', ['$scope', '$http', '$rootScope', function($scope, $http, $rootScope) {
+    app.controller('MainController', ['$scope', '$http', '$rootScope', '$state',
+        function($scope, $http, $rootScope, $state) {
         // 所有数据
         $scope.mainDatas = {
             menu: [
@@ -20,9 +21,7 @@ define(['app'], function(app) {
 
         // 初始化菜单激活状态
         $scope.mainDatas.menu.map(function(item, index, arr) {
-            if (item.state === window.location.hash.split('/')[1]) {
-                $scope.mainDatas.currentMenu = index;
-            }
+            if (item.state === $state.current.name.split('.')[1]) $scope.mainDatas.currentMenu = index;
         });
 
         // 短消息

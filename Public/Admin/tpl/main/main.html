@@ -1,0 +1,21 @@
+<header id="header">
+    <div>
+        <a href="#" ng-click="uploadPassword()"><span class="fa fa-user" class="user"></span></a>
+        <a href="#" ng-click="logout()" class="signout"><span class="fa fa-sign-out"></span></a>
+    </div>
+</header>
+<div class="section">
+    <aside id="sideBar">
+        <nav>
+            <ul class="list-unstyled">
+                <li ng-repeat="item in mainDatas.menu" class="{{mainDatas.currentMenu === $index ? 'active' : ''}}">
+                    <a ui-sref="root.{{item.state}}" ng-click="changeMenu($index)" ng-bind="item.name"></a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="mainView" ng-class="{pageLoading: showPageLoading}">
+        <div class="breadcrumb"></div>
+        <div ui-view id="main"></div>
+    </div>
+</div>

@@ -1,14 +1,14 @@
 require.config({
     paths: {
         // 三方
-        'wangEditor': './libs/wangeditor/js/wangEditor',
         // 'angular': '//cdn.bootcss.com/angular.js/1.5.0/angular.min',
         'angular': '//cdn.bootcss.com/angular.js/1.5.0/angular',
         'jquery': '//cdn.bootcss.com/jquery/2.2.1/jquery.min',
         // 'uiRouter': '//cdn.bootcss.com/angular-ui-router/0.2.18/angular-ui-router.min',
         'uiRouter': '//cdn.bootcss.com/angular-ui-router/0.2.18/angular-ui-router',
         // sanitize
-        // 'sanitize': '//cdn.bootcss.com/angular.js/1.5.5/angular-sanitize.min',
+        'sanitize': '//cdn.bootcss.com/angular.js/1.5.5/angular-sanitize.min',
+        'wangEditor': './libs/wangeditor/js/wangEditor',
 
         // 入口文件
         'app': './app',
@@ -17,24 +17,24 @@ require.config({
         // 控制器
         'MainController': './scripts/controllers/main/MainController',
         'IndexController': './scripts/controllers/index/index',
-        'ServiceListController': './scripts/controllers/service/list',
-        'ServiceDetailController': './scripts/controllers/service/detail',
-        'EmployeeListController': './scripts/controllers/employee/list',
-        'EmployeeDetailController': './scripts/controllers/employee/detail',
-        'ActivityListController': './scripts/controllers/activity/list',
-        'ActivityDetailController': './scripts/controllers/activity/detail',
-        'NewsListController': './scripts/controllers/news/list',
-        'NewsDetailController': './scripts/controllers/news/detail',
-        'JobListController': './scripts/controllers/job/list',
-        'JobDetailController': './scripts/controllers/job/detail',
+        'ServiceListCtrl': './scripts/controllers/service/list',
+        'ServiceDetailCtrl': './scripts/controllers/service/detail',
+        'EmployeeListCtrl': './scripts/controllers/employee/list',
+        'EmployeeDetailCtrl': './scripts/controllers/employee/detail',
+        'ActivityListCtrl': './scripts/controllers/activity/list',
+        'ActivityDetailCtrl': './scripts/controllers/activity/detail',
+        'NewsListCtrl': './scripts/controllers/news/list',
+        'NewsDetailCtrl': './scripts/controllers/news/detail',
+        'JobListCtrl': './scripts/controllers/job/list',
+        'JobDetailCtrl': './scripts/controllers/job/detail',
         'MessageListCtrl': './scripts/controllers/message/list',
         'MessageListDetail': './scripts/controllers/message/detail',
-        'LaboratoryListController': './scripts/controllers/laboratory/list',
-        'LaboratoryDetailController': './scripts/controllers/laboratory/detail',
+        'LaboratoryListCtrl': './scripts/controllers/laboratory/list',
+        'LaboratoryDetailCtrl': './scripts/controllers/laboratory/detail',
         'InfoController': './scripts/controllers/info/info',
         'SettingController': './scripts/controllers/setting/setting',
-        'CarouselListController': './scripts/controllers/carousel/list',
-        'CarouselDetailController': './scripts/controllers/carousel/detail',
+        'CarouselListCtrl': './scripts/controllers/carousel/list',
+        'CarouselDetailCtrl': './scripts/controllers/carousel/detail',
 
         // 指令
         'dataTable': './scripts/directives/datatable/datatable',
@@ -64,6 +64,9 @@ require.config({
         'uiRouter': {
             deps: ['angular']
         },
+        'sanitize': {
+            deps: ['angular']
+        },
         'angular-ui-router': {
             deps: ['angular']
         },
@@ -79,43 +82,26 @@ require.config({
 });
 
 require([
-        'angular',
-        'jquery',
-        // 'sanitize',
-        'app',
-        'uiRouter',
-        'routes',
-        'dataTable',
-        'detail',
-        'photoset',
-        'serviceSort',
-        'sce',
-        'tartype',
-        'uploader',
-        'notify',
-        "MainController",
-        "IndexController",
-        "ServiceListController",
-        "ServiceDetailController",
-        "EmployeeListController",
-        "EmployeeDetailController",
-        "ActivityListController",
-        "ActivityDetailController",
-        "NewsListController",
-        "NewsDetailController",
-        "JobListController",
-        "JobDetailController",
-        'MessageListCtrl',
-        'MessageListDetail',
-        "LaboratoryListController",
-        "LaboratoryDetailController",
-        'CarouselListController',
-        'CarouselDetailController',
-        "InfoController",
-        "SettingController",
-        'wangEditor',
-        'editor',
-        'httpRequest',
+        // 三方
+        'angular', 'jquery', 'uiRouter', 'sanitize', 'wangEditor',
+
+        // 入口文件
+        'app', 'routes',
+
+        // 控制器
+        'MainController', 'IndexController', 'ServiceListCtrl', 'ServiceDetailCtrl',
+        'EmployeeListCtrl', 'EmployeeDetailCtrl', 'ActivityListCtrl', 'ActivityDetailCtrl',
+        'NewsListCtrl', 'NewsDetailCtrl', 'JobListCtrl', 'JobDetailCtrl', 'MessageListCtrl', 'MessageListDetail',
+        'LaboratoryListCtrl', 'LaboratoryDetailCtrl', 'InfoController', 'SettingController', 'CarouselListCtrl', 'CarouselDetailCtrl',
+
+        // 指令
+        'dataTable', 'detail', 'editor', 'uploader', 'photoset',
+
+        // 过滤器
+        'serviceSort', 'sce', 'tartype',
+
+        // 服务
+        'httpRequest', 'notify',
     ],
     function(angular, $) {
         $(document).ready(function() {

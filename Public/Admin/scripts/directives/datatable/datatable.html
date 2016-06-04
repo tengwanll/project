@@ -1,7 +1,8 @@
-<div class="_listTable">
+<div class="_listTable" ui-view>
+    <!-- 头部功能：添加  筛选  搜索 -->
     <header class="text-right">
         <div class="add btn-group pull-left" ng-if="listConfig.action.add">
-            <button class="btn btn-info" ng-click="add()">添加</button>
+            <button class="btn btn-info" ui-sref="{{currentState.name}}.add">添加</button>
         </div>
         <div class="group form-group" ng-if="listConfig.action.group">
             <select class="form-control" ng-options="item.id as item.title for item in datatable.groupList" ng-model="datatable.group" ng-change="group()">
@@ -13,6 +14,8 @@
             <a ng-click="search()"><span class="fa fa-search"></span></a>
         </div>
     </header>
+
+    <!-- 表格内容 -->
     <table class="table">
         <thead>
             <tr>
@@ -26,13 +29,21 @@
                 <td>{{rows * (page.current - 1) + $index + 1}}</td>
                 <td ng-repeat="colData in listConfig.th" ng-bind-html="rowDatas[colData.key] | sce"></td>
                 <td class="ac">
-                    <a class="text-info" href="" ng-click="view(rowDatas.id)" ng-if="listConfig.action.view"><span class="fa fa-eye"></span></a>
-                    <a class="text-muted" href="" ng-click="edit(rowDatas.id)" ng-if="listConfig.action.edit"><span class="fa fa-edit"></span></a>
+                    <a class="text-info" href="#/{{currentState.url}}/view/{{rowDatas.id}}" ng-if="listConfig.action.view"><span class="fa fa-eye"></span></a>
+                    <a class="text-muted" href="#/{{currentState.url}}/edit/{{rowDatas.id}}" ng-if="listConfig.action.edit"><span class="fa fa-edit"></span></a>
                     <a class="text-danger" href="" ng-click="delete(rowDatas.id)" ng-if="listConfig.action.delete"><span class="fa fa-trash-o"></span></a>
                 </td>
             </tr>
         </tbody>
     </table>
+
+    <!-- 加载进度条 -->
+    <div class="loading" ng-if="!listData.length">
+        <span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>
+        <p>加载中</p>
+    </div>
+
+    <!-- 地步功能：分页 -->
     <footer>
         <nav class="text-right">
             <ul class="page" ng-if="page.total > 1">

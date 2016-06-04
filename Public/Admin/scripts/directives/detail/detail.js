@@ -24,6 +24,7 @@ define(['app'], function(app) {
                         _id: $stateParams._id,
                         type: 0,
                     };
+                    console.log($scope.detailDatas)
                     // 初始化界面
                     switch ($scope.detailDatas.status) {
                         case 'add':
