@@ -1,30 +1,25 @@
 <!-- 编辑 / 添加 状态下 -->
-<div class="_detail _edit" ng-if="detailDatas.status !== 'view'">
+<div class="_detail _edit" ng-if="detailDatas.data && detailDatas.status !== 'view'">
     <div class="form-group" ng-repeat="item in detailConfig.content" ng-if="!item.sort || item.sort == detailDatas.type">
         <label>{{item.title}}</label>
-
         <!-- 普通 Input -->
         <input type="text" ng-if="item.type === 'input'" ng-model="detailDatas.data[item.key]">
-
         <!-- 编辑器 -->
         <editor type="all" ng-if="item.type === 'editor'" ng-model="detailDatas.data[item.key]"></editor>
-
         <!-- 下拉菜单：对于服务模块的特殊处理 -->
         <div ng-if="item.type === 'select'">
             <select ng-model="detailDatas.type" class="form-control" ng-options="item.key as item.value for item in detailConfig.sort">
                 <option value="">-- 请选择分类 --</option>
             </select>
+            {{detailDatas.data[item.key]}}
             <select ng-if="detailDatas.type" ng-model="detailDatas.data[item.key]" ng-options="item.id as item.title for item in detailDatas.sortDatas | filter: {type: detailDatas.type}" class="form-control">
                 <option value="">-- 请选择服务 --</option>
             </select>
         </div>
-
         <!-- 文本 -->
         <textarea class="form-control" ng-if="item.type === 'text'" ng-model="detailDatas.data[item.key]"></textarea>
-
         <!-- 上传图片 -->
         <uploader ng-model="detailDatas.data[item.key]" ng-if="item.type === 'photo'"></uploader>
-
         <!-- 图片集 -->
         <photoset ng-model="detailDatas.data[item.key]" ng-if="item.type === 'photoset'"></photoset>
     </div>
@@ -34,7 +29,7 @@
     </div>
 </div>
 <!-- 查看状态下 -->
-<div class="_detail _view" ng-if="detailDatas.status === 'view'">
+<div class="_detail _view" ng-if="detailDatas.data && detailDatas.status === 'view'">
     <section ng-repeat="item in detailConfig.content">
         <h4>{{item.title}}</h4>
         <div class="cont" ng-if="!item.sort || item.sort === detailDatas.type || item.key !== 'photo'" ng-bind-html="detailDatas.data[item.key]"></div>
@@ -44,4 +39,8 @@
         <button class="btn btn-primary edit" ng-click="edit()">修改</button>
         <button class="btn btn-default" ng-click="cancel()">返回</button>
     </div>
+</div>
+<div class="_detail loading" ng-if="!detailDatas.data">
+    <span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>
+    <p>加载中</p>
 </div>

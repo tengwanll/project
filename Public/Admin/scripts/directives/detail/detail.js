@@ -18,13 +18,13 @@ define(['app'], function(app) {
                 link: function($scope, iElm, iAttrs, controller) {
                     $scope.detailConfig = JSON.parse(iAttrs.detailConfig);
                     $scope.detailDatas = {
-                        data: {},
+                        data: null,
                         sortDatas: [],
-                        status: $stateParams.status,
+                        status: $stateParams.status || $state.current.name.split('.')[2],
                         _id: $stateParams._id,
                         type: 0,
                     };
-                    console.log($scope.detailDatas)
+
                     // 初始化界面
                     switch ($scope.detailDatas.status) {
                         case 'add':
@@ -40,11 +40,12 @@ define(['app'], function(app) {
                             getDetailDatas($scope.detailDatas._id);
                             break;
                         default:
-                            console.error('状态有误！');
+                            console.error('状态有误：' + $scope.detailDatas.status);
                     }
 
                     // 获取详情数据
                     function getDetailDatas(_id) {
+                        $scope.detailDatas.data = null;
                         var params = {};
                         if ($scope.detailDatas.status !== 'add') {
                             params._id = _id;

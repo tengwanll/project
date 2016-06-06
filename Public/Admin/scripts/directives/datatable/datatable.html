@@ -48,7 +48,7 @@
     </div>
 
     <!-- 地步功能：分页 -->
-    <footer>
+    <footer ng-if="listData.length">
         <nav class="text-right">
             <ul class="page" ng-if="page.total > 1">
                 <li ng-show="page.current > 1"><a href="javascript:void(0);" ng-click="page.first()">首页</a></li>

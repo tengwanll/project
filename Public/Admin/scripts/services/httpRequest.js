@@ -1,5 +1,7 @@
 define(['app'], function(app) {
     app.factory('httpRequest', ['$http', '$rootScope', function($http, $rootScope) {
+        var server = "http://baihaobio.com";
+
         // 拼装url参数
         function handleUrl(api, params) {
             var url = api;
@@ -54,7 +56,7 @@ define(['app'], function(app) {
                 };
                 $http({
                     method: 'POST',
-                    url: '/Admin/admin/upload',
+                    url: server + '/Admin/admin/upload',
                     headers: {
                         'Content-Type': undefined
                     },

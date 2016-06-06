@@ -28,7 +28,9 @@ define(['app'], function(app) {
                         group: ''
                     };
 
-                    $scope.currentState = $state.current;
+                    $scope.$watch('$state.current', function(newValue, oldValue, scope) {
+                        $scope.current = newValue;
+                    });
 
                     init();
 
@@ -42,6 +44,7 @@ define(['app'], function(app) {
 
                     // 获取列表数据
                     function getListDatas(page, keyword, group) {
+                        $scope.listData = [];
                         var set = true;
                         if (!page) {
                             page = $scope.page.current;
@@ -103,23 +106,6 @@ define(['app'], function(app) {
                         getListDatas(num);
                     };
 
-
-                    // 添加
-                    $scope.add = function() {
-                        $state.go($state.current.name + '.add');
-                    };
-
-                        console.log('' + $state.current.url + '');
-
-                    // 编辑
-                    $scope.edit = function(id) {
-                        $state.go($state.current.name + '.detail');
-                    };
-
-                    // 查看
-                    $scope.view = function(id) {
-                        $state.go(detail, { status: 'view', _id: id });
-                    };
 
                     // 删除
                     $scope.delete = function(id) {

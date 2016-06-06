@@ -3,6 +3,8 @@ $(document).ready(function() {
     var hasMore = true;
     var oLoad = $('.loading');
     var currentPage = 0;
+    var currentPhotoIndex = 0;
+    var currentData = {};
     var rows = 12;
     var listDatas = [];
     var oList = $('.list');
@@ -32,28 +34,57 @@ $(document).ready(function() {
 
                     // 插入数据
                     for (var i = 0, len = data.length; i < len; i++) {
-                        var html = ' 												\
-							<li data-listindex="'+ (indexBegin + i) + '">			\
-								<a href="#">										\
-									<img src="' + data[i].photo + '">				\
-									<h6 class="ellipsis_one_line">					\
-										<span>' + data[i].name + '</span>			\
-									</h6>											\
-								</a>												\
-							</li>													\
-                    	';
-                    	colLeft.append(html);
-                    	var leftHeight = $(oList.find('ul')[0]).height();
-                    	var centerHeight = $(oList.find('ul')[1]).height();
-                    	var rightHeight = $(oList.find('ul')[2]).height();
-                    	var heightArr = [leftHeight, centerHeight, rightHeight].sort();
-                    	(leftHeight === heightArr[0] ? colLeft : (centerHeight === heightArr[0] ? colCenter : colRight)).append(html);
+                        var html = '                                                \
+                            <li data-listindex="' + (indexBegin + i) + '">          \
+                                <a href="#">                                        \
+                                    <img src="' + data[i].photo + '">               \
+                                    <h6 class="ellipsis_one_line">                  \
+                                        <span>' + data[i].name + '</span>           \
+                                    </h6>                                           \
+                                </a>                                                \
+                            </li>                                                   \
+                        ';
+                        colLeft.append(html);
+                        var leftHeight = $(oList.find('ul')[0]).height();
+                        var centerHeight = $(oList.find('ul')[1]).height();
+                        var rightHeight = $(oList.find('ul')[2]).height();
+                        var heightArr = [leftHeight, centerHeight, rightHeight].sort();
+                        (leftHeight === heightArr[0] ? colLeft : (centerHeight === heightArr[0] ? colCenter : colRight)).append(html);
                     }
                 });
             }
         }
     });
 
+    // 查看图片集
+    $(document).on('click', '.list li a', function(e) {
+        e.preventDefault();
+        currentData = listDatas[$(this).parent().data('listindex')];
+        var html = '<li><img src="' + currentData.photo + '"/></li>';
+        for (var i in currentData.photoDetailUrl) {
+            html += '<li><img src="' + currentData.photoDetailUrl[i] + '"/></li>';
+        }
+        $('.detail .photos ul').html(html);
+        $('.detail .info .name').html(currentData.name).next().html(currentData.description);
+
+        $('.detail').show();
+    });
+
+    // 下一张
+    $(document).on('click', '.detail .next', function (e) {
+        e.preventDefault();
+        if (currentPhotoIndex < currentData.photoDetailUrl.length) {};
+    });
+
+    // 上一张
+    $(document).on('click', '.detail .prev', function (e) {
+        e.preventDefault();
+    });
+
+    // 关闭图片集页面
+    $(document).on('click', '.detail .fa-close', function(e) {
+        $('.detail').hide();
+    });
 
     function getListDatas(page, cb) {
         var options = {
