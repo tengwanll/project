@@ -1,7 +1,8 @@
 <?php
 namespace Home\Controller;
-use Think\Controller;
-class NewsController extends Controller {
+
+
+class NewsController extends CommonController {
     public function index(){
         $rows=I('get.rows')?I('get.rows'):5;
         $model=M('news');

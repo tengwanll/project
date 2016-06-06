@@ -1,7 +1,6 @@
 <?php
 namespace Home\Controller;
-use Think\Controller;
-class ContactController extends Controller {
+class ContactController extends CommonController {
     public function index(){
         $this->assign('root','contact');
         $this->display();

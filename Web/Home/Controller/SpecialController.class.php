@@ -1,7 +1,6 @@
 <?php
 namespace Home\Controller;
-use Think\Controller;
-class SpecialController extends Controller {
+class SpecialController extends CommonController {
     public function index(){
         $serviceId=I('get.serviceId');
         $serviceId=$serviceId?$serviceId:5;

@@ -1,7 +1,6 @@
 <?php
 namespace Home\Controller;
-use Think\Controller;
-class ServiceController extends Controller {
+class ServiceController extends CommonController {
     public function index(){
         $service=M('service_sort');
         $fileModel=M('file');

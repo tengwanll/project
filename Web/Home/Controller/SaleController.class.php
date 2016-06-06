@@ -1,7 +1,7 @@
 <?php
 namespace Home\Controller;
-use Think\Controller;
-class SaleController extends Controller {
+
+class SaleController extends CommonController {
     public function index(){
         $page=I('get.page');
         $rows=I('get.rows');

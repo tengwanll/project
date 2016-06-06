@@ -1,7 +1,7 @@
 <?php
 namespace Home\Controller;
-use Think\Controller;
-class AboutController extends Controller {
+
+class AboutController extends CommonController {
     public function index(){
     	$people=M('employee');
         $fileModel=M('file');

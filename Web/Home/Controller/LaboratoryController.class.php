@@ -1,7 +1,6 @@
 <?php
 namespace Home\Controller;
-use Think\Controller;
-class LaboratoryController extends Controller {
+class LaboratoryController extends CommonController {
     public function index(){
         $model=M('lab');
         $fileModel=M('file');
