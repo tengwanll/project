@@ -1,3 +1,3 @@
 define(['angular', 'uiRouter'], function(angular) {
-    return angular.module('admin', ['ui.router']);
+    return angular.module('admin', ['ui.router', 'ngSanitize']);
 });
