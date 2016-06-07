@@ -15,21 +15,22 @@ $(document).ready(function() {
     // 获取第一页数据
     getListDatas();
 
+    // 动态加载
     $(document).on('scroll', function(e) {
         // console.log(oLoad.position());
         // console.log(oLoad.offset());
         // console.log($(this).scrollTop());
 
         if ($(this).scrollTop() > oList.height() / 2 && !getDatas) {
+            console.log(1)
             getDatas = true;
+            console.log(hasMore);
             if (hasMore) {
                 getListDatas(++currentPage, function(data) {
                     if (!hasMore) {
                         oLoad.hide();
                         return;
                     }
-                    getDatas = false;
-
                     var indexBegin = currentPage * rows;
 
                     // 插入数据
@@ -51,6 +52,8 @@ $(document).ready(function() {
                         var heightArr = [leftHeight, centerHeight, rightHeight].sort();
                         (leftHeight === heightArr[0] ? colLeft : (centerHeight === heightArr[0] ? colCenter : colRight)).append(html);
                     }
+
+                    getDatas = false;
                 });
             }
         }
@@ -64,21 +67,45 @@ $(document).ready(function() {
         for (var i in currentData.photoDetailUrl) {
             html += '<li><img src="' + currentData.photoDetailUrl[i] + '"/></li>';
         }
+
+        // reset
+        $('.detail .next').removeClass('hide');
+        $('.detail .prev').addClass('hide');
+        currentPhotoIndex = 0;
+
         $('.detail .photos ul').html(html);
         $('.detail .info .name').html(currentData.name).next().html(currentData.description);
 
+        if ($('.detail .photos li').size() <= 1) {
+            $('.detail .next').addClass('hide');
+        }
         $('.detail').show();
     });
 
     // 下一张
-    $(document).on('click', '.detail .next', function (e) {
+    $(document).on('click', '.detail .next', function(e) {
         e.preventDefault();
-        if (currentPhotoIndex < currentData.photoDetailUrl.length) {};
+
+        $(this).prev().removeClass('hide');
+
+        $('.detail .photos li:eq(' + currentPhotoIndex++ + ')').hide().next().show();
+        if (currentPhotoIndex === currentData.photoDetailUrl.length) {
+            $(this).addClass('hide');
+        } else {
+            $(this).removeClass('hide');
+        }
     });
 
     // 上一张
-    $(document).on('click', '.detail .prev', function (e) {
+    $(document).on('click', '.detail .prev', function(e) {
+        $(this).next().removeClass('hide');
+        $('.detail .photos li:eq(' + currentPhotoIndex-- + ')').hide().prev().show();
         e.preventDefault();
+        if (currentPhotoIndex === 0) {
+            $(this).addClass('hide');
+        } else {
+            $(this).removeClass('hide');
+        }
     });
 
     // 关闭图片集页面
@@ -87,6 +114,7 @@ $(document).ready(function() {
     });
 
     function getListDatas(page, cb) {
+        console.log(arguments);
         var options = {
             page: page || 0,
             rows: rows
@@ -97,6 +125,8 @@ $(document).ready(function() {
             success: function(data) {
                 if (data.result.page * options.rows + data.result.list.length >= parseInt(data.result.total)) {
                     hasMore = false;
+                } else {
+                    hasMore = true;
                 }
                 listDatas = listDatas.concat(data.result.list);
                 if (cb) cb(data.result.list);

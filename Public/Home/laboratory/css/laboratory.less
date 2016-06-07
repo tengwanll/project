@@ -103,7 +103,7 @@
                             padding-top: 15%;
                             display: inline-block;
                             max-height: 70%;
-                            max-width: 60%;
+                            max-width: 100%;
                         }
                     }
                 }
@@ -113,13 +113,39 @@
                     left: 0;
                     right: 0;
                     height: 20%;
-                    background: yellow;
+                    border-top: 1px solid #eee;
+                    text-align: center;
+                    a {
+                        display: inline-block;
+                        height: 50px;
+                        width: 100px;
+                        line-height: 50px;
+                        text-align: center;
+                        border: 1px solid #eee;
+                        margin: 40px 20px 0 0;
+                        color: black;
+                        &:hover,
+                        &:link {
+                            text-decoration: none;
+                        }
+                    }
                 }
             }
             .info {
                 float: left;
                 width: 40%;
-                background: red;
+                padding: 20px;
+                .name {
+                    line-height: 30px;
+                    font-size: 20px;
+                }
+                .description {
+                    line-height: 20px;
+                    font-size: 14px;
+                    &:before {
+                        content: '介绍：';
+                    }
+                }
             }
             .fa-close {
                 position: absolute;
