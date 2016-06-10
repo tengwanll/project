@@ -1,5 +1,5 @@
 <!-- 编辑 / 添加 状态下 -->
-<div class="_detail _edit" ng-if="detailDatas.data && detailDatas.status !== 'view'">
+<div class="_detail _edit" ng-if="(detailDatas.status === 'add') || (detailDatas.status === 'edit' && detailDatas.data)">
     <div class="form-group" ng-repeat="item in detailConfig.content" ng-if="!item.sort || item.sort == detailDatas.type">
         <label>{{item.title}}</label>
         <!-- 普通 Input -->
@@ -11,7 +11,6 @@
             <select ng-model="detailDatas.type" class="form-control" ng-options="item.key as item.value for item in detailConfig.sort">
                 <option value="">-- 请选择分类 --</option>
             </select>
-            {{detailDatas.data[item.key]}}
             <select ng-if="detailDatas.type" ng-model="detailDatas.data[item.key]" ng-options="item.id as item.title for item in detailDatas.sortDatas | filter: {type: detailDatas.type}" class="form-control">
                 <option value="">-- 请选择服务 --</option>
             </select>
@@ -30,17 +29,19 @@
 </div>
 <!-- 查看状态下 -->
 <div class="_detail _view" ng-if="detailDatas.data && detailDatas.status === 'view'">
-    <section ng-repeat="item in detailConfig.content">
+    <section ng-repeat="item in detailConfig.content" ng-if="!item.sort || (item.sort == detailDatas.type)">
         <h4>{{item.title}}</h4>
-        <div class="cont" ng-if="!item.sort || item.sort === detailDatas.type || item.key !== 'photo'" ng-bind-html="detailDatas.data[item.key]"></div>
-        <div class="cont photo" ng-if="item.key === 'photo'"><img src="{{detailDatas.data[item.key]}}"></div>
+        <div class="cont" ng-if="!item.sort || item.sort === detailDatas.type || item.key !== 'photo' || item.key !== sort_id" ng-bind-html="detailDatas.data[item.key]"></div>
+        <div class="cont photo" ng-if="item.key === 'photo'"><img ng-src="{{detailDatas.data[item.key]}}"></div>
+        <div class="cont" ng-if="item.key === 'sort_id'" ng-bind="detailDatas.data.sortTitle"></div>
     </section>
     <div class="btn-group">
         <button class="btn btn-primary edit" ng-click="edit()">修改</button>
         <button class="btn btn-default" ng-click="cancel()">返回</button>
     </div>
 </div>
-<div class="_detail loading" ng-if="!detailDatas.data">
+<div class="_detail loading" ng-if="(detailDatas.status !== 'add') && !detailDatas.data">
     <span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>
     <p>加载中</p>
 </div>
+

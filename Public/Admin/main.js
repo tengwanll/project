@@ -44,9 +44,9 @@ require.config({
         'photoset': './scripts/directives/photoset/photoset',
 
         // 过滤器
-        'serviceSort': './scripts/filters/servicesort',
         'sce': './scripts/filters/sce',
         'tartype': './scripts/filters/tartype',
+        'daterange': './scripts/filters/daterange',
 
         // 服务
         'httpRequest': './scripts/services/httpRequest',
@@ -98,7 +98,7 @@ require([
         'dataTable', 'detail', 'editor', 'uploader', 'photoset',
 
         // 过滤器
-        'serviceSort', 'sce', 'tartype',
+        'sce', 'tartype', 'daterange',
 
         // 服务
         'httpRequest', 'notify',

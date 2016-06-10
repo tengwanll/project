@@ -1,1 +1,12 @@
-<p>欢迎</p>
+<div class="index">
+    <div class="count">
+        <ul class="list-unstyled">
+            <li ng-repeat="(key, value) in indexDatas.count">
+                <div class="cont">
+                    <h5 ng-bind="key | daterange"></h5>
+                    <p ng-bind="value"></p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
