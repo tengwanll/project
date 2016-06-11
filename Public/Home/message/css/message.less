@@ -1,10 +1,10 @@
 .main {
-    height: 100%;
     background: url('../../public/background/message_bg.jpg') no-repeat;
     background-size: 100% auto;
     .bg {
+        padding-bottom: 3rem;
         background: rgba(0, 0, 0, 0.3);
-        height: 100%;
+        overflow: hidden;
         .en {
             background: none;
         }
@@ -15,76 +15,73 @@
             }
         }
     }
-}
-
-input,
-textarea {
-    background: none;
-    border: 1px solid #ccc;
-    color: white;
-    line-height: 1.3rem;
-    width: 70%;
-    float: left;
-}
-
-label {
-    color: #ccc;
-    font-weight: normal;
-    width: 30%;
-    float: left;
-    line-height: 1.3rem;
-    text-align: center;
-    &:after {
-        content: ':';
+    input,
+    textarea {
+        background: none;
+        border: 1px solid #ccc;
+        color: white;
+        line-height: 1.3rem;
+        width: 70%;
+        float: left;
     }
-}
-
-.form {
-    font-size: 0.8rem;
-    width: 50%;
-    margin: 0 auto;
-    .form_body {
-        overflow: hidden;
-        margin-left: -4rem;
+    label {
+        color: #ccc;
+        font-weight: normal;
+        width: 30%;
+        float: left;
+        line-height: 1.3rem;
+        text-align: center;
+        &:after {
+            content: ':';
+        }
     }
-    .fl,
-    .fr {
-        overflow: hidden;
+    .form {
+        font-size: 0.8rem;
         width: 50%;
-        div {
+        margin: 0 auto;
+        .form_body {
             overflow: hidden;
-            padding: 1rem 0;
+            margin-left: -4rem;
         }
-    }
-    .fl {
-        float: left;
-    }
-    .fr {
-        float: right;
-        text-align: right;
-    }
-    .txt {
-        float: left;
-        width: 100%;
-        label {
-            width: 15%;
+        .fl,
+        .fr {
+            overflow: hidden;
+            width: 50%;
+            div {
+                overflow: hidden;
+                padding: 1rem 0;
+            }
         }
-        textarea {
+        .fl {
             float: left;
-            height: 6rem;
-            width: 85%;
-            margin: 1rem auto;
         }
-    }
-    .btn-group {
-		float: left;
-		padding-top: 1.5rem;
-		margin-left: 40%;
-		width: 10rem;
-    	.btn {
-    		background: none;
-    		color: white;
-    		width: 8rem;
-    	}
+        .fr {
+            float: right;
+            text-align: right;
+        }
+        .txt {
+            float: left;
+            width: 100%;
+            label {
+                width: 15%;
+            }
+            textarea {
+                float: left;
+                height: 6rem;
+                width: 85%;
+                margin: 1rem auto;
+            }
+        }
+        .btn-group {
+            float: left;
+            padding-top: 1.5rem;
+            margin-left: 40%;
+            width: 10rem;
+            .btn {
+                background: none;
+                color: white;
+                width: 8rem;
+            }
+        }
     }
 }

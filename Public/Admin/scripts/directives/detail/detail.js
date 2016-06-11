@@ -89,13 +89,14 @@ define(['app'], function(app) {
                             data: postDatas,
                             success: function(result) {
                                 alert('保存成功！');
-                                $state.go($state.current.name.substr(0, $state.current.name.length - 6));
+                                $state.go($state.current.name);
                             }
                         });
                     };
 
                     // 取消
                     $scope.cancel = function() {
+                        console.log($state.current.name);
                         $state.go($state.current.name.substr(0, $state.current.name.length - 6));
                     };
 
