@@ -54,8 +54,7 @@
     // display: none;
     height: @headerHeight;
     div {
-        border: 1px solid @headerFontColor;
-        border-radius: 10px;
+        border-bottom: 1px solid @headerFontColor;
         position: relative;
         overflow: hidden;
     }
@@ -64,6 +63,10 @@
         line-height: 2;
         background: @headerBgColor;
         border: none;
+        &:focus {
+            outline: none;
+            border: none;
+        }
     }
     input {
         margin-right: 0.2rem;
@@ -92,10 +95,6 @@
                 text-align: center;
                 line-height: @headerHeight;
                 transition: background 0.1s;
-                &.hover {
-                    background: #5f5c5c;
-                    transition: background 0.1s;
-                }
             }
             & > ul {
                 display: none;
@@ -116,6 +115,10 @@
                         background: #09dada;
                     }
                 }
+            }
+            &.hover {
+                background: #5f5c5c;
+                transition: background 0.1s;
             }
         }
     }
