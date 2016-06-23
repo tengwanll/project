@@ -58,7 +58,7 @@
 
 // 侧边栏样式
 #sideBar {
-    background: #32323a;
+    background: #2c2e3a;
     height: 100%;
     position: fixed;
     z-index: 999;
@@ -68,12 +68,13 @@
     width: 200px;
     nav {
         position: absolute;
-        bottom: 0;
+        top: 50px;
         left: 0;
         right: 0;
         height: auto;
         ul {
             li {
+                position: relative;
                 a {
                     display: block;
                     text-align: center;
@@ -87,8 +88,20 @@
                         background: #3b4975;
                     }
                 }
+                ul {
+                    display: none;
+                    background: #757580;
+                }
                 &.active {
                     background: #3b4975;
+                }
+                &.showChild {
+                    & > a {
+                        background: #eee;
+                    }
+                    ul {
+                        display: block;
+                    }
                 }
             }
         }

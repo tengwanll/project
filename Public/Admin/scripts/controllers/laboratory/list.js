@@ -9,8 +9,6 @@ define(['app'], function(app) {
                         { description: { name: '描述' }, key: 'description' },
                         { createTime: { name: '创建时间' }, key: 'createTime' },
                     ],
-                    currentPage: 1,
-                    rows: $rootScope.rows,
                     listApi: '/Admin/laboratory/lists',
                     deleteApi: '/Admin/laboratory/delete',
                     action: {

@@ -8,14 +8,22 @@
     <aside id="sideBar">
         <nav>
             <ul class="list-unstyled">
-                <li ng-repeat="item in mainDatas.menu" class="{{mainDatas.currentMenu === $index ? 'active' : ''}}">
-                    <a ui-sref="root.{{item.state}}" ng-click="changeMenu($index)" ng-bind="item.name"></a>
+                <li ng-repeat="item in mainDatas.menu" ng-class="{active: (item.state && item.state === mainDatas.currentState[1]), showChild: ($index === mainDatas.showChildMenuIndex)}" ng-click="changeMenu(item.state, $index)">
+                    <a ui-sref="root.{{item.state}}" ng-bind="item.name" ng-if="!item.children"></a>
+                    <!-- 有子集 -->
+                    <a ng-click="changeMenu($index)" ng-bind="item.name" ng-if="item.children"></a>
+                    <ul class="list-unstyled">
+                        <li ng-repeat="child in item.children" ng-init="childindex = $index" ng-class="{active: (child.state === mainDatas.currentState[1])}">
+                            <a ui-sref="root.{{child.state}}" ng-click="changeMenu(child.state, childindex)" ng-bind="child.name"></a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </nav>
     </aside>
     <div class="mainView">
-        <div class="breadcrumb"></div>
+        <div class="breadcrumb">
+        </div>
         <div ui-view id="main"></div>
     </div>
 </div>

@@ -1,6 +1,6 @@
 define(['app'], function(app) {
-    app.directive('datatable', ['$state', '$stateParams', '$http', 'httpRequest',
-        function($state, $stateParams, $http, httpRequest) {
+    app.directive('datatable', ['$state', '$stateParams', '$http', '$rootScope', 'httpRequest',
+        function($state, $stateParams, $http, $rootScope, httpRequest) {
             return {
                 // name: '',
                 // priority: 1,
@@ -50,7 +50,7 @@ define(['app'], function(app) {
                             page = $scope.page.current;
                             var set = false;
                         }
-                        var params = { rows: $scope.listConfig.rows, page: page };
+                        var params = { rows: $rootScope.rows, page: page };
                         if (keyword) params.keyword = keyword;
                         if (group) params.sortId = group;
                         httpRequest.get({
@@ -61,7 +61,7 @@ define(['app'], function(app) {
                                     $scope.page.current = page;
                                 }
                                 $scope.listData = data.list;
-                                $scope.page.total = parseInt(data.total / $scope.listConfig.rows) + 1;
+                                $scope.page.total = parseInt(data.total / params.rows) + 1;
                                 if (true) {
                                     $scope.page.pages = [];
                                     for (var i = parseInt($scope.page.current / 10) * 10 + 1; i <= Math.min(parseInt($scope.page.current / 10 + 1) * 10, $scope.page.total); i++) {

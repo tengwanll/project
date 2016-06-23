@@ -68,7 +68,6 @@ define(['app'], function(app) {
                         });
                     }
 
-
                     // 保存
                     $scope.save = function(e) {
                         $(e.target).html('保存中').addClass('disabled');
@@ -89,15 +88,14 @@ define(['app'], function(app) {
                             data: postDatas,
                             success: function(result) {
                                 alert('保存成功！');
-                                $state.go($state.current.name);
+                                $state.go($state.current.name.split('.')[0] + '.' + $state.current.name.split('.')[1]);
                             }
                         });
                     };
 
                     // 取消
                     $scope.cancel = function() {
-                        console.log($state.current.name);
-                        $state.go($state.current.name.substr(0, $state.current.name.length - 6));
+                        $state.go($state.current.name.split('.')[0] + '.' + $state.current.name.split('.')[1]);
                     };
 
                     // 修改

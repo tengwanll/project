@@ -9,8 +9,6 @@ define(['app'], function(app) {
                         { shortDesc: { name: '简介' }, key: 'shortDesc' },
                         { createTime: { name: '创建时间' }, key: 'createTime' },
                     ],
-                    currentPage: 1,
-                    rows: $rootScope.rows,
                     listApi: '/Admin/activity/lists',
                     deleteApi: '/Admin/activity/delete',
                     action: {

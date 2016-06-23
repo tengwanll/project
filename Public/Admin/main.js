@@ -35,6 +35,8 @@ require.config({
         'SettingController': './scripts/controllers/setting/setting',
         'CarouselListCtrl': './scripts/controllers/carousel/list',
         'CarouselDetailCtrl': './scripts/controllers/carousel/detail',
+        'NoticeListCtrl': './scripts/controllers/notice/list',
+        'NoticleDtailCtrl': './scripts/controllers/notice/detail',
 
         // 指令
         'dataTable': './scripts/directives/datatable/datatable',
@@ -93,7 +95,7 @@ require([
         'EmployeeListCtrl', 'EmployeeDetailCtrl', 'ActivityListCtrl', 'ActivityDetailCtrl',
         'NewsListCtrl', 'NewsDetailCtrl', 'JobListCtrl', 'JobDetailCtrl', 'MessageListCtrl', 'MessageListDetail',
         'LaboratoryListCtrl', 'LaboratoryDetailCtrl', 'InfoController', 'SettingController', 'CarouselListCtrl', 'CarouselDetailCtrl',
-
+        'NoticeListCtrl', 'NoticleDtailCtrl',
         // 指令
         'dataTable', 'detail', 'editor', 'uploader', 'photoset',
 

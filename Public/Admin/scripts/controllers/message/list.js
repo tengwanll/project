@@ -9,8 +9,6 @@ define(['app'], function(app) {
                         { content: { name: '留言内容' }, key: 'content' },
                         { createTime: { name: '留言时间' }, key: 'createTime' },
                     ],
-                    currentPage: 1,
-                    rows: $rootScope.rows,
                     listApi: '/Admin/feedback/lists',
                     deleteApi: '/Admin/feedback/delete',
                     action: {

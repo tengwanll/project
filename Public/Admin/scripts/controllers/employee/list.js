@@ -9,8 +9,6 @@ define(['app'], function(app) {
                         { position: { name: '职位' }, key: 'position' },
                         { createTime: { name: '创建时间' }, key: 'createTime' },
                     ],
-                    currentPage: 1,
-                    rows: $rootScope.rows,
                     listApi: '/Admin/employee/employeeList',
                     deleteApi: '/Admin/employee/deleteEmployee',
                     action: {

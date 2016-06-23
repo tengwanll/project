@@ -9,8 +9,6 @@ define(['app'], function(app) {
                         { sortTitle: { name: '分类' }, key: 'sortTitle' },
                         { createTime: { name: '创建时间' }, key: 'createTime' },
                     ],
-                    currentPage: 1,
-                    rows: $rootScope.rows,
                     listApi: '/Admin/service/serviceList',
                     groupApi: '/Admin/service/sortList',
                     deleteApi: '/Admin/service/delete',

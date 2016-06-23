@@ -207,5 +207,25 @@ define(['app'], function(app) {
                 controller: 'SettingController',
                 // resolve: loader("SettingController")
             })
+
+            // 公告
+            .state('root.notice', {
+                url: 'notice',
+                templateUrl: baseurl + '/tpl/notice/list.html' + urlParams,
+                controller: 'NoticeListCtrl',
+                // resolve: loader("PicsController")
+            })
+            .state('root.notice.add', {
+                url: '/add',
+                templateUrl: baseurl + '/tpl/notice/detail.html' + urlParams,
+                controller: 'NoticeDetailCtrl',
+                // resolve: loader("PicsController")
+            })
+            .state('root.notice.detail', {
+                url: '/:status/:_id',
+                templateUrl: baseurl + '/tpl/notice/detail.html' + urlParams,
+                controller: 'NoticeDetailCtrl',
+                // resolve: loader("PicsController")
+            })
     }])
 });

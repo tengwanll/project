@@ -32,7 +32,7 @@ class NoticeController extends CommonController
             );
         }
         $result=array(
-            'noticeList'=>$arr,
+            'list'=>$arr,
             'total'=>$total
         );
         $this->buildResponse(0,$result);
