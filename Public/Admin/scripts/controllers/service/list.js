@@ -1,7 +1,9 @@
+/**
+ * 服务列表界面
+ */
 define(['app'], function(app) {
-    app.controller('ServiceListCtrl', ['$scope', '$http', '$state', '$rootScope', '$stateParams', 'httpRequest',
-        function($scope, $http, $state, $rootScope, $stateParams, httpRequest) {
-            // 服务模块所有数据
+    app.controller('ServiceListCtrl', ['$scope',
+        function($scope) {
             $scope.serviceListDatas = {
                 config: {
                     th: [

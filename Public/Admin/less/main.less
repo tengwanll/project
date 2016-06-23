@@ -58,7 +58,7 @@
 
 // 侧边栏样式
 #sideBar {
-    background: #2c2e3a;
+    background: #222;
     height: 100%;
     position: fixed;
     z-index: 999;
@@ -89,18 +89,26 @@
                     }
                 }
                 ul {
-                    display: none;
-                    background: #757580;
+                    height: 0;
+                    overflow: hidden;
+                    background: #333;
+                    transition: height 0.5s;
+                    box-shadow:  0 6px 10px -10px black inset;
                 }
                 &.active {
-                    background: #3b4975;
+                    background: #00b8e7;
+                    a:hover {
+                        background: #00b8e7;
+                    }
                 }
                 &.showChild {
                     & > a {
-                        background: #eee;
+                        // background: #eee;
                     }
                     ul {
-                        display: block;
+                        // TODO !!!!! 此处直接用auto不显示动画
+                        height: 80px;
+                        transition: height 0.5s;
                     }
                 }
             }

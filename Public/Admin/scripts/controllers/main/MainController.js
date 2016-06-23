@@ -57,6 +57,7 @@ define(['app'], function(app) {
 
             // 更改菜单
             $scope.changeMenu = function(state, index) {
+                console.log(arguments);
                 $scope.mainDatas.currentState = $state.current.name.split('.');
                 if (state) {
                     $scope.mainDatas.currentState[1] = state;
