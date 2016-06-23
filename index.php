@@ -1,5 +1,9 @@
 <?php 
 	header('content-type:text/html;charset=utf8');
+
+    // 跨域支持
+    header("Access-Control-Allow-Origin: *");
+
 	date_default_timezone_set('PRC');
 	define('APP_PATH','./Web/');
 
