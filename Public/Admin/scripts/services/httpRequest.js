@@ -64,7 +64,7 @@ define(['app'], function(app) {
                 }).then(function(res) {
                     if (res.data.errno === 0) {
                         var result = res.data.result;
-                        result.url = result.url.substr(1);
+                        result.url = server + result.url.substr(1);
                         options.success(result);
                     } else {
                         console.log(res.data.ermsg);

@@ -25,7 +25,7 @@ $(document).ready(function() {
                 var indexBegin = (currentPage - 1) * rows;
                 // 插入数据
                 for (var i = 0, len = data.length; i < len; i++) {
-                    var html = '                                                \
+                    var html = '                                                    \
                             <li data-listindex="' + (indexBegin + i) + '">          \
                                 <a href="#">                                        \
                                     <img src="' + data[i].photo + '">               \

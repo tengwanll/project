@@ -10,6 +10,7 @@ define(['app'], function(app) {
                     listApi: '/Admin/notice/noticeList',
                     deleteApi: '/Admin/notice/delete',
                     action: {
+                        add: '添加',
                         view: '查看',
                         edit: '修改',
                         delete: '删除'

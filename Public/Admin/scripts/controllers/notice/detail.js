@@ -1,17 +1,15 @@
 define(['app'], function(app) {
     app.controller('NoticeDetailCtrl', ['$scope', function($scope) {
-            $scope.newsDetailDatas = {
+            $scope.noticeDetailDatas = {
                 config: {
                     content: [
-                        { title: '内容', type: 'input', key: 'title'},
-                        { title: '封面', type: 'photo', key: 'photo'},
-                        { title: '简介', type: 'text', key: 'shortDesc'},
-                        { title: '详情', type: 'editor', key: 'content'},
+                        { title: '内容(中文)', type: 'text', key: 'content'},
+                        { title: '内容(英文)', type: 'text', key: 'englishContent'}
                     ],
                     api: {
-                        add: '/Admin/news/create',
-                        view: '/Admin/news/detail',
-                        edit: '/Admin/news/update',
+                        add: '/Admin/notice/create',
+                        view: '/Admin/notice/detail',
+                        edit: '/Admin/notice/update',
                     }
                 }
             };

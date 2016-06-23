@@ -1,3 +1,24 @@
-<div class="infoDetail">
-    <detail detail-config="{{infoDetailDatas.config}}"></detail>
+<div class="info">
+    <div class="_detail _edit" ng-if="infoDatas.newData.name">
+        <div class="form-group">
+            <label>名称</label>
+            <input type="text" ng-model="infoDatas.newData.name">
+        </div>
+        <div class="form-group">
+            <label>公司外景</label>
+            <uploader ng-model="infoDatas.newData.photo"></uploader>
+        </div>
+        <div class="form-group information">
+            <label>介绍</label>
+            <textarea ng-model="infoDatas.newData.information" class="form-control"></textarea>
+        </div>
+        <div class="btn-group">
+            <button class="btn btn-primary" ng-click="save($event)">保存</button>
+            <button class="btn btn-danger" ng-click="reset($event)">重填</button>
+        </div>
+    </div>
+    <div class="_detail loading" ng-if="!infoDatas.newData.name">
+        <span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>
+        <p>加载中</p>
+    </div>
 </div>
