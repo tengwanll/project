@@ -100,7 +100,6 @@ define(['app'], function(app) {
 
                     // 修改
                     $scope.edit = function() {
-                        alert('保存成功！');
                         $state.go($state.current.name, { status: 'edit', _id: $scope.detailDatas._id });
                     };
 
