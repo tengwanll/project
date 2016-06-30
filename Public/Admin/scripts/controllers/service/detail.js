@@ -18,7 +18,7 @@ define(['app'], function(app) {
                     { title: '实验流程', type: 'editor', key: 'experimentFlow', sort: 2 },
                     { title: '结果展示', type: 'editor', key: 'resultShow', sort: 2 },
                     { title: '服务周期', type: 'editor', key: 'serverCircle', sort: 2 },
-                    { title: '参考文献', type: 'editor', key: 'experimentFlow', sort: 2 },
+                    { title: '参考文献', type: 'editor', key: 'literature', sort: 2 },
                     { title: '客户须知', type: 'editor', key: 'userNotice', sort: 2 },
                 ],
                 api: {
