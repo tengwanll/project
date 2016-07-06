@@ -63,9 +63,12 @@ define(['app'], function(app) {
 
                     // 获取分组数据
                     function getSortListDatas() {
-                        $http.get($scope.detailConfig.api.sort).then(function(res) {
-                            $scope.detailDatas.sortDatas = res.data.result;
-                        });
+                        httpRequest.get({
+                            api: $scope.detailConfig.api.sort,
+                            success: function (data) {
+                                $scope.detailDatas.sortDatas = data.result;
+                            }
+                        })
                     }
 
                     // 保存

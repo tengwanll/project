@@ -52,6 +52,7 @@
             elem = '#' + elem;
         }
 
+        console.log(elem);
         // ---------------获取基本节点------------------
         var $elem = $(elem);
         if ($elem.length !== 1) {
@@ -62,6 +63,7 @@
             // 只能是 textarea 和 div ，其他类型的元素不行
             return;   
         }
+
         this.valueNodeName = nodeName.toLowerCase();
         this.$valueContainer = $elem;
 
