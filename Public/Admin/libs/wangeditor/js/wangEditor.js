@@ -52,7 +52,7 @@
             elem = '#' + elem;
         }
 
-        console.log(elem);
+        // console.log(elem);
         // ---------------获取基本节点------------------
         var $elem = $(elem);
         if ($elem.length !== 1) {

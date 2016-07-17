@@ -107,7 +107,7 @@ class ServiceController extends CommonController
         $advantage=$json['advantage'];      // 优势
         $literature=$json['literature'];    // 文献
         $date=date('Y-m-d H:i:s',time());
-        $sortId=$json['sort_id'];            // 分类
+        $sortId=$json['sortId'];            // 分类
         $data=array(
             'title'=>$title?$title:'',
             'logo'=>$logo?$logo:0,
@@ -147,7 +147,7 @@ class ServiceController extends CommonController
         $experimentTheory=$json['experimentTheory'];
         $advantage=$json['advantage'];
         $literature=$json['literature'];
-        $sortId=$json['sort_id'];
+        $sortId=$json['sortId'];
         $service=$serviceModel->where("id=$serviceId")->find();
         if(!$service){
             $this->buildResponse(10206);

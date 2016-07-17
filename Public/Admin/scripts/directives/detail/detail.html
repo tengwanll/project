@@ -8,11 +8,16 @@
         <editor type="all" ng-if="item.type === 'editor'" ng-model="detailDatas.data[item.key]" id="edit-{{item.key}}"></editor>
         <!-- 下拉菜单：对于服务模块的特殊处理 -->
         <div ng-if="item.type === 'select'">
-            <select ng-model="detailDatas.type" class="form-control" ng-options="item.key as item.value for item in detailConfig.sort">
+            <select ng-model="detailDatas.type" class="form-control" ng-options="_item.key as _item.value for _item in detailConfig.sort">
                 <option value="">-- 请选择分类 --</option>
             </select>
-            <select ng-if="detailDatas.type" ng-model="detailDatas.data[item.key]" ng-options="item.id as item.title for item in detailDatas.sortDatas | filter: {type: detailDatas.type}" class="form-control">
+
+            <select ng-if="detailDatas.status === 'add' && detailDatas.type" ng-model="detailDatas.data[item.key]" ng-options="_item.id as _item.title for _item in detailDatas.sortDatas | filter: {type: detailDatas.type}" class="form-control">
                 <option value="">-- 请选择服务 --</option>
+            </select>
+
+            <select ng-if="detailDatas.status === 'edit'" ng-model="detailDatas.data[item.key]" class="form-control">
+                <option ng-repeat="_item in detailDatas.sortDatas | filter: {type: detailDatas.type}" value="{{_item.id}}">{{_item.title}}</option>
             </select>
         </div>
         <!-- 文本 -->

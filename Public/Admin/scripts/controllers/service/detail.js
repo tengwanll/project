@@ -4,7 +4,7 @@ define(['app'], function(app) {
             config: {
                 content: [
                     { title: '服务名称', type: 'input', key: 'title'},
-                    { title: '分类', type: 'select', key: 'sort_id'},
+                    { title: '分类', type: 'select', key: 'sortId'},
                     { title: '概述', type: 'text', key: 'shortDesc'},
                     { title: '项目简介', type: 'editor', key: 'description'},
 

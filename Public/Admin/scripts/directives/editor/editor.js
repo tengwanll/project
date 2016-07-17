@@ -71,10 +71,13 @@ define(['app'], function(app) {
                         });
                     });
 
+                    // 手动触发事件，don't known what B thing, 事件传递不过来
+                    $scope.$broadcast('detailDataReady');
+
                     // 自定义load事件
                     pageEditor.config.uploadImgFns.onload = function(resultText, xhr) {
                         var result = JSON.parse(resultText).result.url.substr(1);
-                        console.log(pageEditor.$txt.html());    // 最后一个
+                        // console.log(pageEditor.$txt.html());    // 最后一个
                         pageEditor.$txt.html(pageEditor.$txt.html() + '<img src="' + result + '" style="max-width:100%;"/>');
                         // console.log($scope.pageEditor.$txt.html());
 
@@ -93,7 +96,7 @@ define(['app'], function(app) {
 
                     // 绑定数据
                     pageEditor.onchange = function() {
-                        console.log(pageEditor.$txt.html())     // 当前的
+                        // console.log(pageEditor.$txt.html())     // 当前的
                         $scope.$apply(function() {
                             var html = pageEditor.$txt.html();
                             ngModelController.$setViewValue(html);

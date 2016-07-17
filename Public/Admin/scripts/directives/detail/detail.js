@@ -1,6 +1,6 @@
 define(['app'], function(app) {
-    app.directive('detail', ['$stateParams', '$state', '$http', 'httpRequest', 'notify',
-        function($stateParams, $state, $http, httpRequest, notify) {
+    app.directive('detail', ['$stateParams', '$state', '$http', 'httpRequest', 'notify', '$rootScope',
+        function($stateParams, $state, $http, httpRequest, notify, $rootScope) {
             // Runs during compile
             return {
                 // name: '',
@@ -56,6 +56,8 @@ define(['app'], function(app) {
                             success: function(data) {
                                 $scope.detailDatas.data = data;
                                 if ($scope.detailConfig.sort) $scope.detailDatas.type = data.type;
+
+                                // 通知editor数据就位
                                 $scope.$broadcast('detailDataReady');
                             }
                         })
@@ -66,7 +68,7 @@ define(['app'], function(app) {
                         httpRequest.get({
                             api: $scope.detailConfig.api.sort,
                             success: function (data) {
-                                $scope.detailDatas.sortDatas = data.result;
+                                $scope.detailDatas.sortDatas = data;
                             }
                         })
                     }
