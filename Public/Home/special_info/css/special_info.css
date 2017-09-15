@@ -1,1 +1,17 @@
-.main h3{color:#aaa;line-height:3rem}.main article p{text-indent:1.5rem;text-indent:justify;padding-left:1rem;line-height:2}.main article img{display:block;width:30%;margin:0 auto}
+.main h3 {
+    color: #aaa;
+    line-height: 3rem
+}
+
+.main article p {
+    text-indent: 1.5rem;
+    text-indent: justify;
+    padding-left: 1rem;
+    line-height: 2
+}
+
+.main article img {
+    display: block;
+    width: 80%;
+    margin: 0 auto
+}
