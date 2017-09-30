@@ -14,7 +14,7 @@ class IndexController extends CommonController {
     	$notice=$noticeModel->order('create_time desc')->find(1);
     	$service=M('service_sort');
         $activityModel=M('activity');
-        $activity=$activityModel->where('status=1')->limit(3)->select();
+        $activity=$activityModel->where('status=1')->order('create_time desc')->limit(3)->select();
         foreach($activity as $key=>$item){
             $photoId=$item['photo'];
             $photo=$fileModel->where("id=$photoId")->find();

@@ -12,7 +12,7 @@ class SaleController extends CommonController {
         }
         $model2=M('activity');
         $fileModel=M('file');
-        $activity=$model2->where('status=1')->page($pagePart)->order('create_time desc')->select();
+        $activity=$model2->where('status=1')->page($pagePart)->select();
         foreach($activity as $key=>$item){
             $photoId=$item['photo'];
             $photo=$fileModel->where("id=$photoId")->find();
